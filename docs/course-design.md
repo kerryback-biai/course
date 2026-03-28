@@ -64,3 +64,17 @@ The course should have exercises where the AI produces a technically correct but
 
 ### 5. Privacy and Access Control
 Not everyone should see everything. The VP of Sales shouldn't see individual compensation data. The regional manager should only see their region. The AI agent needs to enforce the same access controls as the underlying systems. A governance topic that most AI demos ignore.
+
+### 6. Code Execution Architecture — Where Does the Python Run?
+
+When the AI agent merges data from multiple systems, it runs Python code. In production, where that code executes is an important architectural decision. Three options:
+
+**Option A: Cloud LLM sandbox (e.g., Anthropic's code execution tool).** The LLM vendor runs the Python code on their infrastructure. Zero infrastructure for the company. But query results are sent to the vendor's servers for processing — fine for non-sensitive data, typically rejected by compliance teams (HIPAA, SOX, GDPR) for real customer/financial/HR data.
+
+**Option B: SQL-only with client-side charting.** Skip Python entirely. The LLM generates SQL; the database does the computation; the frontend renders charts with a JavaScript library. Simpler and avoids code execution security concerns entirely. But this cannot work for multi-system integration — there's no single database to query when data is scattered across Salesforce, Workday, and SAP.
+
+**Option C: Vendor data platforms (Databricks, Snowflake, ThoughtSpot).** The AI agent, database, and code execution all run within the vendor's managed platform under the company's security boundary. The "buy not build" path. But these are designed around their own data warehouse, not querying 10 external systems directly.
+
+**For multi-system integration (the core use case of this course), only Option A works** — you need Python to merge data from separate systems, and it must run within the company's own infrastructure. In production, this means Docker containers on the company's servers: each request spins up a sandboxed container with limited CPU/memory/time, no network access, and read-only data mounts. The data never leaves the company's network.
+
+**Note for the teaching app:** Our demo uses Anthropic's cloud sandbox (Option A) because the data is synthetic. In production, the Python execution would move to the company's own servers. The user experience is identical — the only difference is where the code runs.
