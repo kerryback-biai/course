@@ -1,0 +1,31 @@
+## Database: Chinook Music Retailer
+
+A digital music store with 11 tables covering artists, albums, tracks, customers, and sales.
+
+### Tables
+
+**artists** (275 rows): ArtistId, Name
+**albums** (347 rows): AlbumId, Title, ArtistId → artists
+**tracks** (3,503 rows): TrackId, Name, AlbumId → albums, MediaTypeId → media_types, GenreId → genres, Composer, Milliseconds, Bytes, UnitPrice
+**genres** (25 rows): GenreId, Name
+**media_types** (5 rows): MediaTypeId, Name
+**playlists** (18 rows): PlaylistId, Name
+**playlist_track** (8,715 rows): PlaylistId → playlists, TrackId → tracks
+
+**customers** (59 rows): CustomerId, FirstName, LastName, Company, Address, City, State, Country, PostalCode, Phone, Fax, Email, SupportRepId → employees
+**employees** (8 rows): EmployeeId, LastName, FirstName, Title, ReportsTo → employees, BirthDate, HireDate, Address, City, State, Country, PostalCode, Phone, Fax, Email
+**invoices** (412 rows): InvoiceId, CustomerId → customers, InvoiceDate, BillingAddress, BillingCity, BillingState, BillingCountry, BillingPostalCode, Total
+**invoice_items** (2,240 rows): InvoiceLineId, InvoiceId → invoices, TrackId → tracks, UnitPrice, Quantity
+
+### Key relationships
+- artists → albums → tracks (one-to-many chain)
+- tracks → genres, tracks → media_types
+- customers → invoices → invoice_items → tracks
+- employees.ReportsTo is a self-referencing hierarchy (org chart)
+- playlists ↔ tracks via playlist_track (many-to-many)
+
+### Common query patterns
+- Revenue by genre: JOIN invoice_items → tracks → genres
+- Customer spending: JOIN customers → invoices
+- Top-selling artists: JOIN invoice_items → tracks → albums → artists
+- Employee hierarchy: self-join on employees.ReportsTo

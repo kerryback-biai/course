@@ -1,0 +1,48 @@
+## Database: Employee Attrition
+
+Table: `employees` (1,470 rows)
+
+Fictional HR dataset with 35 attributes per employee, including whether they left the company.
+
+| Column | Type | Description |
+|--------|------|-------------|
+| Age | BIGINT | Employee age |
+| Attrition | BOOLEAN | true = left the company, false = stayed |
+| BusinessTravel | VARCHAR | Non-Travel, Travel_Rarely, Travel_Frequently |
+| DailyRate | BIGINT | Daily pay rate |
+| Department | VARCHAR | Human Resources, Research & Development, Sales |
+| DistanceFromHome | BIGINT | Distance from home in miles |
+| Education | BIGINT | 1=Below College, 2=College, 3=Bachelor, 4=Master, 5=Doctor |
+| EducationField | VARCHAR | Life Sciences, Medical, Marketing, Technical Degree, Human Resources, Other |
+| EmployeeCount | BIGINT | Always 1 |
+| EmployeeNumber | BIGINT | Unique employee ID |
+| EnvironmentSatisfaction | BIGINT | 1=Low, 2=Medium, 3=High, 4=Very High |
+| Gender | VARCHAR | Male, Female |
+| HourlyRate | BIGINT | Hourly pay rate |
+| JobInvolvement | BIGINT | 1=Low, 2=Medium, 3=High, 4=Very High |
+| JobLevel | BIGINT | 1-5 (junior to senior) |
+| JobRole | VARCHAR | Sales Executive, Research Scientist, Laboratory Technician, etc. |
+| JobSatisfaction | BIGINT | 1=Low, 2=Medium, 3=High, 4=Very High |
+| MaritalStatus | VARCHAR | Single, Married, Divorced |
+| MonthlyIncome | BIGINT | Monthly income in USD |
+| MonthlyRate | BIGINT | Monthly rate |
+| NumCompaniesWorked | BIGINT | Number of previous employers |
+| Over18 | VARCHAR | Always "Y" |
+| OverTime | BOOLEAN | true = works overtime |
+| PercentSalaryHike | BIGINT | Last salary increase percentage |
+| PerformanceRating | BIGINT | 1=Low, 2=Good, 3=Excellent, 4=Outstanding |
+| RelationshipSatisfaction | BIGINT | 1=Low, 2=Medium, 3=High, 4=Very High |
+| StandardHours | BIGINT | Always 80 |
+| StockOptionLevel | BIGINT | 0-3 |
+| TotalWorkingYears | BIGINT | Total career experience |
+| TrainingTimesLastYear | BIGINT | Training sessions attended |
+| WorkLifeBalance | BIGINT | 1=Bad, 2=Good, 3=Better, 4=Best |
+| YearsAtCompany | BIGINT | Years at current company |
+| YearsInCurrentRole | BIGINT | Years in current role |
+| YearsSinceLastPromotion | BIGINT | Years since last promotion |
+| YearsWithCurrManager | BIGINT | Years with current manager |
+
+**Key analysis questions:**
+- What predicts attrition? (overtime, satisfaction, income, distance)
+- How do departments compare on satisfaction and turnover?
+- What's the relationship between tenure and attrition?

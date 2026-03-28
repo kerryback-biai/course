@@ -1,0 +1,108 @@
+## Enterprise Systems: Meridian Corp
+
+Meridian Corp (~$500M revenue) is a B2B industrial supplies distributor with 3 operating divisions + corporate HQ. Each division runs its own CRM, finance, and operations systems. Data is NOT centralized — you must query each system separately using the `system` parameter.
+
+### Division Structure
+| Division | Revenue | Regions | CRM | Finance | Operations |
+|---|---|---|---|---|---|
+| **Industrial** | ~$250M | Northeast, Midwest | Salesforce | NetSuite | SAP |
+| **Energy** | ~$150M | West, Gulf Coast | Legacy CRM | QuickBooks | Oracle SCM |
+| **Safety** | ~$100M | Nationwide | HubSpot | (shared NetSuite) | Minimal |
+| **Corporate HQ** | — | — | — | NetSuite Corporate | — |
+
+Corporate also runs: **Workday** (HR for all divisions) and **Zendesk** (support for all divisions)
+
+---
+
+### System: salesforce (Meridian Industrial CRM)
+CamelCase column names. IDs like "001AB..."
+
+- **sf_accounts** (200): AccountId, AccountName, Industry, BillingState, OwnerId, AnnualRevenue, Type
+- **sf_contacts** (374): ContactId, AccountId, FirstName, LastName, Title, Email
+- **sf_opportunities** (600): OpportunityId, AccountId, OwnerId, Name, StageName (Prospecting/Qualification/Proposal/Negotiation/Closed Won/Closed Lost), Amount, CloseDate, CreatedDate
+- **sf_orders** (224): OrderId, AccountId, OpportunityId, OrderDate, TotalAmount, Status
+- **sf_order_items** (661): OrderItemId, OrderId, ProductCode (SAP material numbers), Quantity, UnitPrice, Discount
+
+### System: legacy_crm (Meridian Energy CRM)
+snake_case columns. **IMPORTANT: All date columns are VARCHAR in MM/DD/YYYY format.** Use `strptime(column, '%m/%d/%Y')` to cast them.
+
+- **clients** (150): client_id (integer), client_name, sector, state, sales_rep_code, annual_rev, date_added (VARCHAR)
+- **deals** (400): deal_id, client_id, rep_code, deal_name, status (Open/Won/Lost/Stalled), value_usd, expected_close (VARCHAR), created (VARCHAR)
+- **client_orders** (459): order_num (integer), client_id, deal_id, order_dt (VARCHAR), ship_dt (VARCHAR), total
+- **order_details** (1000): detail_id, order_num, item_id (Oracle SCM item IDs), qty, price, disc_pct
+
+### System: hubspot (Meridian Safety CRM)
+HubSpot naming conventions, integer IDs.
+
+- **hs_companies** (100): company_id, name, industry, lifecycle_stage (subscriber/lead/opportunity/customer), owner_id, annual_revenue, create_date
+- **hs_deals** (250): deal_id, company_id, owner_id, dealname, dealstage (appointmentscheduled/qualifiedtobuy/presentationscheduled/decisionmakerboughtin/contractsent/closedwon/closedlost), amount, closedate, createdate
+- **hs_line_items** (199): line_item_id, deal_id, product_id (HubSpot internal), quantity, price, discount
+
+### System: netsuite_industrial (Meridian Industrial Finance)
+5-digit account codes (40000=Revenue, 50000=COGS, 60000=OpEx).
+
+- **ns_accounts** (10): account_code (5-digit), account_name, account_type, department
+- **ns_transactions** (424): transaction_id, entity_id (Salesforce AccountId), tran_date, tran_type (Invoice/Journal), amount, status, account_code
+- **ns_budget** (108): budget_id, fiscal_year, fiscal_month, account_code, department, amount
+
+### System: quickbooks_energy (Meridian Energy Finance)
+4-digit account codes (4000=Revenue, 5000=COGS, 6000=OpEx). Different numbering than NetSuite.
+
+- **qb_accounts** (8): acct_num (4-digit), acct_name, acct_type, detail_type
+- **qb_invoices** (459): invoice_num, customer_ref (legacy_crm client_id), invoice_date, due_date, total, balance_due
+- **qb_payments** (407): payment_id, invoice_num, payment_date, amount, method
+- **qb_journal** (108): journal_id, txn_date, acct_num, debit, credit, memo
+
+### System: netsuite_corporate (Corporate Finance — Consolidation)
+The "Rosetta Stone" for financial reporting across divisions.
+
+- **ns_acct_mapping** (6): division_account_code, corporate_account_code, division — maps Industrial's 5-digit and Energy's 4-digit codes to corporate codes (REV-001, COGS-001, OPEX-001)
+- **ns_corp_budget** (108): budget_id, division, fiscal_year, fiscal_month, account_code, amount
+- **ns_corp_actuals** (108): actual_id, division, fiscal_year, fiscal_month, account_code, amount
+
+### System: sap (Meridian Industrial Operations)
+SAP conventions: material_number, vendor_code, po_number.
+
+- **sap_materials** (400): material_number (MAT-10001 format), description, material_group, standard_price, list_price
+- **sap_vendors** (40): vendor_code (V-1000 format), vendor_name, country, payment_terms, quality_score
+- **sap_purchase_orders** (1500): po_number, vendor_code, po_date, delivery_date, actual_delivery, total_value, status
+- **sap_po_items** (3815): item_number, po_number, material_number, quantity, net_price
+- **sap_inventory** (1200): material_number, plant, unrestricted_qty, reorder_point
+- **sap_deliveries** (212): delivery_number, sales_order (sf_orders.OrderId), ship_date, actual_delivery, carrier, on_time
+
+### System: oracle_scm (Meridian Energy Operations)
+Oracle conventions: item_id, supplier_num, po_id.
+
+- **ora_items** (300): item_id (ITEM-5001 format), item_description, category, subcategory, unit_cost, unit_price
+- **ora_suppliers** (30): supplier_num (SUP-2001 format), supplier_name, country, lead_time, performance_rating
+- **ora_purchase_orders** (800): po_id, supplier_num, order_date, promise_date, received_date, total, status
+- **ora_po_lines** (2038): line_id, po_id, item_id, quantity, unit_cost
+- **ora_shipments** (459): shipment_id, order_ref (legacy_crm order_num as string), ship_from, ship_date, delivery_date, carrier, delivery_status (On Time/Late)
+
+### System: workday (Corporate HR — all divisions)
+Workday conventions. The wd_system_ids table is the KEY cross-system link for employees.
+
+- **wd_workers** (796): worker_id (WD-0001 format), first_name, last_name, email, hire_date, termination_date, division, department, job_title, job_level (1-6), manager_id, location, status
+- **wd_compensation** (2040): comp_id, worker_id, effective_date, base_pay, bonus_target_pct, bonus_actual
+- **wd_reviews** (2118): review_id, worker_id, review_period (FY2023/FY2024/FY2025), reviewer_id, rating (1-5), goals_pct
+- **wd_headcount** (1296): snapshot_date, division, department, location, headcount, open_reqs
+- **wd_system_ids** (44): worker_id, system_name (salesforce/legacy_crm/hubspot), external_id — maps Workday worker_id to CRM rep IDs
+
+### System: zendesk (Corporate Support — all divisions)
+Zendesk conventions. The `organization` field contains customer names (may not exactly match CRM names).
+
+- **zd_tickets** (600): ticket_id, requester_email, organization, created_at, solved_at, priority (low/normal/high/urgent), ticket_type, satisfaction_rating (1-5), status, subject
+- **zd_ticket_tags** (1399): ticket_id, tag — includes division tags (industrial/energy/safety) and product category tags
+- **zd_assignees** (729): ticket_id, assignee_email (matches workday email), assigned_at
+
+---
+
+### Cross-System Data Challenges
+
+1. **Customer Identity**: The same company appears under different names across CRMs. "General Electric" in Salesforce = "GE Industrial Solutions" in Legacy CRM = "GE Safety Division" in HubSpot. ~25 companies buy from multiple divisions. No mapping table exists. Use fuzzy string matching or Zendesk organization names as a bridge.
+
+2. **Employee ID Mapping**: Use `workday.wd_system_ids` to map worker_id to CRM rep IDs (Salesforce OwnerId, Legacy CRM rep_code, HubSpot owner_id).
+
+3. **Account Code Mapping**: Use `netsuite_corporate.ns_acct_mapping` to reconcile Industrial's 5-digit codes (40000) with Energy's 4-digit codes (4000) for consolidated reporting.
+
+4. **Date Formats**: Legacy CRM stores dates as VARCHAR "MM/DD/YYYY". Cast with `strptime(column, '%m/%d/%Y')` before comparing with proper DATE columns from other systems.
