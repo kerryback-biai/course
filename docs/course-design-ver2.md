@@ -7,6 +7,37 @@ In February 2026, AI agents wiped $2 trillion from software company valuations. 
 
 ---
 
+## Course Resources
+
+### The Meridian Corp App (browser-based, no installation)
+
+A web-based AI data assistant that simulates a real enterprise data environment. Students open a browser, log in, and ask questions in plain English. The app connects to **10 enterprise systems** for a fictional $500M B2B industrial supplies distributor with three operating divisions:
+
+- **Industrial Division** (~$250M): Salesforce CRM, NetSuite Finance, SAP Operations
+- **Energy Division** (~$150M): Legacy CRM (custom-built), QuickBooks Finance, Oracle SCM
+- **Safety Division** (~$100M): HubSpot CRM, shared NetSuite Finance
+- **Corporate HQ**: Workday HR (all divisions), NetSuite Consolidation, Zendesk Support
+
+The data includes realistic cross-system friction: Salesforce uses CamelCase column names while the Legacy CRM uses snake_case; the Legacy CRM stores dates as text strings ("MM/DD/YYYY") instead of proper dates; and ~25 customers appear under different names across divisions (e.g., "General Electric" in Salesforce, "GE Industrial Solutions" in the Legacy CRM, "GE Safety Division" in HubSpot).
+
+The AI agent queries each system separately — it cannot join across systems in a single query. For cross-system questions, it pulls data from each system, then uses Python to merge, reconcile, and analyze the combined results. This mirrors how a real enterprise AI tool would work.
+
+**41 tables, 26,000+ rows, 3 years of data (2023-2025).** Students can query sales pipelines, financial statements, employee compensation, supply chain performance, and support tickets — and combine data across all of them.
+
+### The Linux Server (optional, for hands-on building)
+
+A shared Linux server with individual student accounts, pre-installed with Claude Code (an AI coding assistant). Students who want hands-on experience can SSH in and build working data agents with AI assistance — they type directions in English, and the AI writes the Python code.
+
+Four scaffolded exercises are pre-loaded:
+- **Exercise 1**: Build a 50-line agent that queries one database (~30 min)
+- **Exercise 2**: Extend it to query two systems and merge results (~30 min)
+- **Exercise 3**: Wrap it in a web interface (~45 min)
+- **Exercise 4**: Red-team the agent for security vulnerabilities (~30 min)
+
+The server exercises are optional throughout the course. They are demonstrated by the instructor in Session 3 and available for self-paced exploration. Students who complete them gain a deeper understanding of how agents work, but the course does not require terminal or coding experience.
+
+---
+
 ## Reviewer Feedback Incorporated
 
 Three independent reviews (executive education designer, Fortune 500 CTO, Big 4 AI consulting partner) identified these themes:
@@ -202,8 +233,6 @@ Three independent reviews (executive education designer, Fortune 500 CTO, Big 4 
 - Present a credible, scoped AI adoption strategy to peers
 - Synthesize the technical, strategic, and organizational dimensions
 - Leave with a concrete next step
-
-**Session flow:**
 
 **Session flow (30 students):**
 
