@@ -78,3 +78,19 @@ When the AI agent merges data from multiple systems, it runs Python code. In pro
 **For multi-system integration (the core use case of this course), only Option A works** — you need Python to merge data from separate systems, and it must run within the company's own infrastructure. In production, this means Docker containers on the company's servers: each request spins up a sandboxed container with limited CPU/memory/time, no network access, and read-only data mounts. The data never leaves the company's network.
 
 **Note for the teaching app:** Our demo uses Anthropic's cloud sandbox (Option A) because the data is synthetic. In production, the Python execution would move to the company's own servers. The user experience is identical — the only difference is where the code runs.
+
+### 7. The Data Exposure Problem — What Does the LLM See?
+
+Even when Python executes on your own servers, the LLM still needs to see results to do its job. If Claude generates a query, your server runs it, and the results include salary figures or customer records — those results must be sent back to Claude (at Anthropic's servers) so it can interpret the data, fix errors, or write a narrative summary. Running code locally doesn't solve the data privacy problem by itself.
+
+**The core tension:** The more the LLM sees, the better the analysis. The less it sees, the safer the data. Four approaches to managing this:
+
+**Approach 1: Aggregated results with guardrails (most common in practice).** The LLM sees aggregated results (total revenue by region, average compensation by level) but not individual records. A data loss prevention (DLP) layer scans what's sent back to the LLM and redacts anything that looks like PII (SSNs, email addresses, individual names). Row limits prevent bulk data extraction. The company's compliance team signs off on which data categories the LLM can see. This is where most real enterprise deployments land.
+
+**Approach 2: The LLM never sees actual data.** Claude generates SQL and Python code, but results are rendered directly to the user's browser without passing through the LLM. Claude writes "blind" templates: "The top region by revenue is {region_1} at {revenue_1}." The server fills in values. The LLM can't adapt its analysis, notice anomalies, or provide insight — it's a code generator, not an analyst. Used in highly regulated environments (banking, healthcare).
+
+**Approach 3: On-premise LLM.** Run an open-source model (Llama, Mistral) on your own hardware. No data ever leaves your network. The tradeoff: dramatically worse quality at SQL generation, multi-step reasoning, and natural language analysis. This gap is closing but still significant.
+
+**Approach 4: Schema-only with sanitized errors.** The LLM only sees database schemas and synthetic sample rows, never real data. It generates all code blind. Results go directly to the user. For the debug loop, error messages are sanitized before being sent back (strip data values from tracebacks, keep only error types and line numbers). A practical middle ground used by some financial services companies.
+
+**The key insight for executives:** This is a policy decision, not a technology problem. The technology to filter, redact, or restrict is straightforward. The hard part is deciding what level of data exposure to the LLM is acceptable for your organization — and that depends on your industry, your regulators, and your risk tolerance.
