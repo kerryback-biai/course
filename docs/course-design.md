@@ -133,3 +133,23 @@ Students use two tools in the course. The **Meridian Corp web app** is the polis
 - Starter templates with blanks for students to fill in
 - Per-user working directories
 - API costs: ~$1-2 per student for the build exercises
+
+### 9. The SaaSpocalypse — AI Disruption of Enterprise Software
+
+Belongs in **Week 4 (Build the Business Case)**. See `docs/saaspocalypse-research.md` for full research.
+
+**The framing:** The tool students have been using for three weeks — querying enterprise systems with natural language, merging data across divisions, generating charts and memos — is what wiped $2 trillion off software stocks in February 2026. Their companies are paying per-seat licenses for tools that do a fraction of this.
+
+**Key points to cover:**
+
+1. **What's vulnerable:** BI dashboards, workflow automation, internal admin tools, Tier 1 support, simple CRM — the interface/task layer. 29-35% of teams are already replacing these with custom builds (Retool 2026 survey).
+
+2. **What's not vulnerable:** Systems of record (ERP, HRIS, financial ledgers), regulatory platforms, complex multi-stakeholder workflows — the data/process layer. AI replaces the interface, not the data store.
+
+3. **The Klarna cautionary tale:** Replaced Salesforce and Workday with AI, then partially reversed when quality dropped. Lesson: replace the right things, keep the systems of record, govern the transition.
+
+4. **Pricing model shift:** Per-seat pricing is structurally broken when AI reduces headcount. Expect outcome-based pricing (Intercom: $0.99/resolution, Zendesk: $1.50-2.00/resolved ticket).
+
+5. **The Meridian Corp connection:** The app students have been using IS the threat. It replaces Tableau (BI), data integration tools (cross-system merging), and reporting headcount — all from a chat interface. The question for executives: will you drive this change or react to it?
+
+6. **Architect agents above applications:** The strategic move is placing AI agents as an orchestration layer across existing systems — exactly what the Meridian Corp app demonstrates. Don't rip out SAP; put an AI agent on top of it.
