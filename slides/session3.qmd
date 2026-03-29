@@ -12,9 +12,6 @@ format:
     height: 1080
     margin: 0.05
     center: true
-    include-after-body:
-      - text: |
-          <script src="https://hypothes.is/embed.js" async></script>
 ---
 
 ## Last Week, You Were the User {.section-divider}
@@ -103,26 +100,19 @@ This is the same pattern a careful analyst follows: write a query, check the out
 
 ::: {.code-box}
 ::: {.box-title}
-agent_loop.py --- The Core Logic
+agent_loop.py --- The Core (~50 Lines)
 :::
 ```
-def agent_loop(user_question, schema, max_retries=3):
+def agent_loop(question, schema):
+    messages = [system_prompt(schema), user_message(question)]
 
-    messages = [
-        system_prompt(schema),    # describe tables & columns
-        user_message(question)    # the business question
-    ]
-
-    for attempt in range(max_retries):
-        response = llm.chat(messages)       # LLM generates SQL/Python
-
+    for attempt in range(3):
+        response = llm.chat(messages)
         if response.has_tool_call:
-            result = execute(response.tool)  # run the code
-            messages.append(result)           # feed result back
+            result = execute(response.tool)
+            messages.append(result)        # feed back
         else:
-            return response.text             # final answer delivered
-
-    return "Unable to answer after retries."
+            return response.text           # done
 ```
 :::
 
@@ -347,10 +337,32 @@ Iceberg
 :::
 :::
 
-## Next Time {.centered-statement}
+## Before Next Session {.shrink}
 
-## Session 4: From Data to Deliverable
+::: {.info-box}
+::: {.box-title}
+Homework
+:::
+
+- **Required:** For the use case you identified in Session 2, what data quality issues would you expect? What pre-work is needed before an agent could query your systems?
+- **Optional (hands-on):** SSH credentials are provided. Try Exercise 1 (hello-world agent) and Exercise 2 (multi-system agent) on the Linux server. Claude Code will help --- you direct it in English.
+- **Optional reading:** [a16z: "How 100 Enterprise CIOs Are Building and Buying Gen AI in 2025"](https://a16z.com/ai-enterprise-2025/) and [DUNNIXER vendor scorecard](https://www.dunnixer.com/insights/articles/the-six-dimensions-of-ai-vendor-evaluation-that-matter-most). Keep both --- you'll use them in Session 5.
+:::
 
 ::: {.explainer}
-Now that you understand how the agent works, we'll chain multiple steps into **automated reporting pipelines** --- from raw data to board-ready memos.
+Wednesday's session: [From Data to Deliverable]{.accent} --- we chain agent steps into automated reporting pipelines.
+:::
+
+---
+
+## Key Takeaway {.section-divider}
+
+---
+
+## 50 lines and a good prompt. {.centered-statement}
+
+## That's the core. The other 3,000 lines are what production requires.
+
+::: {.explainer}
+Knowing the difference is how you evaluate vendors, scope projects, and avoid overpaying.
 :::

@@ -12,9 +12,6 @@ format:
     height: 1080
     margin: 0.05
     center: true
-    include-after-body:
-      - text: |
-          <script src="https://hypothes.is/embed.js" async></script>
 ---
 
 ## Last Session: Trust and Verification {.section-divider}
@@ -146,7 +143,7 @@ These are the same kinds of documents trapped in SharePoint folders, shared driv
 
 ## How RAG Works {.shrink}
 
-::: {.step-flow}
+::: {.step-flow-5}
 ::: {.step-card}
 ::: {.step-icon}
 1
@@ -210,10 +207,16 @@ LLM receives question + retrieved chunks and produces a cited answer
 
 ---
 
-## The Key Insight {.quote-slide}
+## The Key Insight {.section-divider}
 
-::: {.quote-text}
-"The LLM doesn't [read your documents]{.amber}. It reads whatever the retrieval system hands it. RAG quality is retrieval quality."
+---
+
+## The LLM doesn't read your documents. {.centered-statement}
+
+## It reads whatever the [retrieval system hands it]{.accent}.
+
+::: {.explainer}
+RAG quality is retrieval quality. If the retrieval step fails, the answer fails --- no matter how smart the model is.
 :::
 
 ---
@@ -328,7 +331,7 @@ If your question requires context from 50 pages of contracts, the model can only
 ::: {.step-flow}
 ::: {.step-card}
 ::: {.step-icon}
-📄
+1
 :::
 ::: {.step-title}
 Document Ingestion
@@ -339,7 +342,7 @@ PDF parsing, OCR for scans, handling tables and images
 :::
 ::: {.step-card}
 ::: {.step-icon}
-✂️
+2
 :::
 ::: {.step-title}
 Chunking Strategy
@@ -350,7 +353,7 @@ By section for policies, by clause for contracts, by paragraph for memos
 :::
 ::: {.step-card}
 ::: {.step-icon}
-🔄
+3
 :::
 ::: {.step-title}
 Freshness
@@ -361,7 +364,7 @@ Re-index on update, version tracking, retire superseded docs
 :::
 ::: {.step-card}
 ::: {.step-icon}
-🔒
+4
 :::
 ::: {.step-title}
 Access Control
@@ -433,13 +436,12 @@ Report back: your top candidate document collection and the biggest deployment r
 
 ::: {.info-box}
 ::: {.box-title}
-Preparation for Session 8 --- Capstone
+Homework --- Capstone
 :::
 
-- Finalize your AI adoption strategy with your breakout group
-- Prepare a **2-minute pitch** to your "executive team"
-- Your pitch should cover: the use case, the data source, the expected value, and the first 30-day action
-- Think about both database AI and document AI --- where does each fit?
+- **Finalize your strategy document** (1--2 pages) using the capstone template. Cover all 8 sections: problem, solution, deployment, 90-day pilot, success metrics, risks, the ask, and Day 1 action.
+- **Prepare a 5-minute presentation** for Session 8. You will present to your breakout group, and the strongest strategies will advance to the full class.
+- Use the **evaluation rubric** to self-check: Is the pilot scoped tightly? Are success metrics measurable? Is the Day 1 action specific?
 :::
 
 ::: {.explainer}
@@ -448,8 +450,12 @@ Monday's final session: [Your AI Strategy]{.accent} --- you present, we synthesi
 
 ---
 
-## Key Takeaway {.quote-slide}
+## Key Takeaway {.section-divider}
 
-::: {.quote-text}
-"Your company's most valuable knowledge isn't in dashboards --- it's buried in [documents nobody can search]{.amber}. RAG doesn't replace your experts. It makes their expertise accessible to everyone who needs it."
+---
+
+## Your most valuable knowledge is buried in [documents nobody can search]{.accent}. {.centered-statement}
+
+::: {.explainer}
+RAG doesn't replace your experts. It makes their expertise accessible to everyone who needs it.
 :::

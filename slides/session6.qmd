@@ -12,15 +12,18 @@ format:
     height: 1080
     margin: 0.05
     center: true
-    include-after-body:
-      - text: |
-          <script src="https://hypothes.is/embed.js" async></script>
 ---
 
-## The Dangerous Answer {.quote-slide}
+## The Dangerous Answer {.section-divider}
 
-::: {.quote-text}
-"Deployment decisions protect your data. [Verification]{.amber} protects your decisions. The most dangerous AI output isn't the one that's obviously wrong --- it's the one that's **almost right**."
+---
+
+## The most dangerous AI output {.centered-statement}
+
+## isn't the one that's obviously wrong --- it's the one that's [almost right]{.accent}.
+
+::: {.explainer}
+Deployment decisions protect your data. Verification protects your decisions.
 :::
 
 ---
@@ -341,22 +344,28 @@ Each team presents a 3-minute governance framework. Be specific to your industry
 
 ::: {.info-box}
 ::: {.box-title}
-Preparation for Session 7
+Homework
 :::
 
-- Revise your deployment profile to include a governance section
-- Read: pre-reading on change management and AI adoption
-- Reflect: Who in your organization would resist AI data access --- and why?
+- **Read the Atherton Financial case study** (provided). A wealth management firm deployed document AI and hit chunking failures, access control gaps, and stale documents. Come prepared to discuss: what would you have done differently?
+- **Begin drafting your capstone strategy** using the template and evaluation rubric (provided). Cover: problem statement, proposed solution, deployment approach, 90-day pilot plan.
+- For your identified use case: write down the **3 most likely failure modes** and how you'd mitigate each.
 :::
 
 ::: {.explainer}
-Next session: [Making It Stick]{.accent} --- change management, adoption strategies, and building the business case.
+Next session: [Document AI --- Answers from Your Own Files]{.accent} --- we add a second capability: retrieving answers from company documents with citations. The Atherton case shows what can go wrong.
 :::
 
 ---
 
-## Key Takeaway {.quote-slide}
+## Key Takeaway {.section-divider}
 
-::: {.quote-text}
-"The question is not whether AI will make mistakes with your data. It will. The question is whether you have the [systems, skills, and governance]{.amber} to catch those mistakes before they become decisions."
+---
+
+## AI will make mistakes with your data. {.centered-statement}
+
+## The question is whether you have the [governance to catch them]{.accent}.
+
+::: {.explainer}
+Systems, skills, and governance --- that's what separates a demo from a deployment.
 :::

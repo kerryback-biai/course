@@ -1,0 +1,1353 @@
+[
+  {
+    "objectID": "slides/session8.html#the-course-journey",
+    "href": "slides/session8.html#the-course-journey",
+    "title": "Session 8: Your AI Strategy",
+    "section": "The Course Journey",
+    "text": "The Course Journey\n\n\n\n1\n\n\nSession 1\n\n\nExploring Data with AI — first conversation with your data\n\n\n\n\n2\n\n\nSession 2\n\n\nOur Data Is Everywhere — the cross-system challenge\n\n\n\n\n3\n\n\nSession 3\n\n\nHow It Works Under the Hood — agents, SQL, and prompts\n\n\n\n\n4\n\n\nSession 4\n\n\nFrom Data to Deliverable — reporting pipelines\n\n\n\n\n5\n\n\nSession 5\n\n\nWhat Does Deployment Look Like — from prototype to production\n\n\n\n\n6\n\n\nSession 6\n\n\nCan You Trust It — validation, governance, guardrails\n\n\n\n\n7\n\n\nSession 7\n\n\nDocument AI — answers from your own files\n\n\n\n\n8\n\n\nToday\n\n\nYour AI Strategy — capstone and synthesis"
+  },
+  {
+    "objectID": "slides/session8.html#todays-objective",
+    "href": "slides/session8.html#todays-objective",
+    "title": "Session 8: Your AI Strategy",
+    "section": "Today’s Objective",
+    "text": "Today’s Objective"
+  },
+  {
+    "objectID": "slides/session8.html#present-a-credible-scoped-ai-adoption-strategy-and-leave-with-a-concrete-next-step",
+    "href": "slides/session8.html#present-a-credible-scoped-ai-adoption-strategy-and-leave-with-a-concrete-next-step",
+    "title": "Session 8: Your AI Strategy",
+    "section": "Present a credible, scoped AI adoption strategy and leave with a concrete next step",
+    "text": "Present a credible, scoped AI adoption strategy and leave with a concrete next step"
+  },
+  {
+    "objectID": "slides/session8.html#the-setup",
+    "href": "slides/session8.html#the-setup",
+    "title": "Session 8: Your AI Strategy",
+    "section": "The Setup",
+    "text": "The Setup"
+  },
+  {
+    "objectID": "slides/session8.html#your-audience",
+    "href": "slides/session8.html#your-audience",
+    "title": "Session 8: Your AI Strategy",
+    "section": "Your Audience",
+    "text": "Your Audience"
+  },
+  {
+    "objectID": "slides/session8.html#you-are-presenting-to-your-executive-team.-your-breakout-group-is-your-board-of-advisors.",
+    "href": "slides/session8.html#you-are-presenting-to-your-executive-team.-your-breakout-group-is-your-board-of-advisors.",
+    "title": "Session 8: Your AI Strategy",
+    "section": "You are presenting to your executive team. Your breakout group is your board of advisors.",
+    "text": "You are presenting to your executive team. Your breakout group is your board of advisors.\n\nConvince them this is worth funding."
+  },
+  {
+    "objectID": "slides/session8.html#capstone-format",
+    "href": "slides/session8.html#capstone-format",
+    "title": "Session 8: Your AI Strategy",
+    "section": "Capstone Format",
+    "text": "Capstone Format\n\n\n\n1\n\n\nBreakout Pitches\n\n\n5 groups of 6. Each person presents for 3 minutes + 2 min feedback. Group votes on the strongest.\n\n\n\n\n2\n\n\nPlenary Presentations\n\n\n5 winning strategies presented to the full class. 5 min each + 3 min Q&A from peers.\n\n\n\n\n3\n\n\nInstructor Feedback\n\n\nFeedback on pilot scope, business case, governance, and Day 1 action for each strategy."
+  },
+  {
+    "objectID": "slides/session8.html#what-makes-a-strong-pitch",
+    "href": "slides/session8.html#what-makes-a-strong-pitch",
+    "title": "Session 8: Your AI Strategy",
+    "section": "What Makes a Strong Pitch",
+    "text": "What Makes a Strong Pitch\n\n\nEvaluation Dimensions\n\n\nSpecificity — a concrete use case, not “we’ll use AI for analytics”\nBusiness case — who benefits, what decision gets faster, what’s the dollar impact\nData readiness — where does the data live, what’s the integration challenge\nGovernance — who validates answers, what are the guardrails\nDay 1 action — what happens Monday morning, not “we’ll form a committee”\n\n\n\nThe best pitches are narrow and actionable. “We’ll deploy document AI on our 200 vendor contracts so procurement can answer compliance questions in seconds” beats “We’ll implement an enterprise AI strategy.”"
+  },
+  {
+    "objectID": "slides/session8.html#breakout-round",
+    "href": "slides/session8.html#breakout-round",
+    "title": "Session 8: Your AI Strategy",
+    "section": "Breakout Round",
+    "text": "Breakout Round"
+  },
+  {
+    "objectID": "slides/session8.html#breakout-instructions",
+    "href": "slides/session8.html#breakout-instructions",
+    "title": "Session 8: Your AI Strategy",
+    "section": "Breakout Instructions",
+    "text": "Breakout Instructions\n\n\n\nYour Pitch (3 minutes)\n\n\nWhat’s the use case?\nWhat data or documents does it use?\nWho are the users and what decision does it improve?\nWhat’s your Day 1 action?\n\n\n\n\nYour Feedback (1 minute)\n\n\nIs the scope tight enough to pilot in 30 days?\nWhat’s the biggest risk?\nWhat question would the CFO ask?\nVote: which pitch should represent the group?"
+  },
+  {
+    "objectID": "slides/session8.html#plenary-presentations",
+    "href": "slides/session8.html#plenary-presentations",
+    "title": "Session 8: Your AI Strategy",
+    "section": "Plenary Presentations",
+    "text": "Plenary Presentations"
+  },
+  {
+    "objectID": "slides/session8.html#synthesis-what-you-now-know",
+    "href": "slides/session8.html#synthesis-what-you-now-know",
+    "title": "Session 8: Your AI Strategy",
+    "section": "Synthesis: What You Now Know",
+    "text": "Synthesis: What You Now Know\n\n\n\nPlain English = Data Answers\n\nAI agents turn natural language questions into SQL queries, chart generation, and narrative summaries — no technical skills required.\n\n\n\nSimple but Not Easy\n\nThe technology is simpler than expected (50 lines of code) but production deployment requires governance, validation, and organizational change.\n\n\n\nTwo Complementary Tools\n\nDatabase AI for structured data (numbers, trends, KPIs). Document AI for unstructured text (policies, contracts, procedures). Most real questions need both.\n\n\n\nThe Critical Skill\n\nThe human skill that matters most: asking the right questions and verifying the answers. AI amplifies judgment — it doesn’t replace it."
+  },
+  {
+    "objectID": "slides/session8.html#beyond-data",
+    "href": "slides/session8.html#beyond-data",
+    "title": "Session 8: Your AI Strategy",
+    "section": "Beyond Data",
+    "text": "Beyond Data"
+  },
+  {
+    "objectID": "slides/session8.html#ai-as-thinking-partner",
+    "href": "slides/session8.html#ai-as-thinking-partner",
+    "title": "Session 8: Your AI Strategy",
+    "section": "AI as Thinking Partner",
+    "text": "AI as Thinking Partner"
+  },
+  {
+    "objectID": "slides/session8.html#the-real-power-isnt-asking-what-happened.-its-asking-what-should-we-do-and-pushing-back-on-the-answer.",
+    "href": "slides/session8.html#the-real-power-isnt-asking-what-happened.-its-asking-what-should-we-do-and-pushing-back-on-the-answer.",
+    "title": "Session 8: Your AI Strategy",
+    "section": "The real power isn’t asking what happened. It’s asking what should we do — and pushing back on the answer.",
+    "text": "The real power isn’t asking what happened. It’s asking what should we do — and pushing back on the answer.\n\nAI anchors on whatever framing you provide. The human role is challenging assumptions, not outsourcing judgment."
+  },
+  {
+    "objectID": "slides/session8.html#the-thinking-partner-demo",
+    "href": "slides/session8.html#the-thinking-partner-demo",
+    "title": "Session 8: Your AI Strategy",
+    "section": "The Thinking Partner Demo",
+    "text": "The Thinking Partner Demo\n\n\n\nData Question\n\n“What were Q4 sales for the Energy Division?”\n\nOne answer. One number.\nUseful, but limited.\n\n\n\n\nStrategic Question\n\n“I’m considering expanding the Energy Division. What are the top 3 risks based on our data?”\n\nSynthesizes across sales, headcount, customer concentration, margin trends\nThen: “Push back on risk #2 — what’s the evidence?”\n\n\n\n\nThe shift from “report pulling” to “strategic dialogue” is where the real ROI lives. But remember: AI anchors on your framing. Challenge its assumptions the way you’d challenge a consultant."
+  },
+  {
+    "objectID": "slides/session8.html#monday-morning-actions",
+    "href": "slides/session8.html#monday-morning-actions",
+    "title": "Session 8: Your AI Strategy",
+    "section": "Monday Morning Actions",
+    "text": "Monday Morning Actions\n\n\n\nA. Audit Workflows\n\nWhere do people wait for data? Which recurring reports follow the data → analysis → deliverable pattern?\n\n\n\nB. Scope a Sprint\n\nPick one team, one data source, 30 days. Build a prototype and test with real questions from real users.\n\n\n\nC. Inventory Documents\n\nWhere is knowledge trapped? Policies, contracts, procedures — which collections would benefit from AI-powered Q&A?\n\n\n\nD. Establish Governance\n\nWho validates AI output? Who approves deployment? Define this before shadow IT does it for you.\n\n\n\nYou don’t need a 12-month roadmap. You need one pilot, one owner, one deadline."
+  },
+  {
+    "objectID": "slides/session8.html#the-30-day-sprint",
+    "href": "slides/session8.html#the-30-day-sprint",
+    "title": "Session 8: Your AI Strategy",
+    "section": "The 30-Day Sprint",
+    "text": "The 30-Day Sprint\n\n\n\nWeek 1\n\n\nPick & Prep\n\n\nChoose one use case. Identify the data source. Get stakeholder buy-in.\n\n\n\n\nWeek 2\n\n\nBuild & Test\n\n\nConnect the data. Build the prototype. Test with real questions from real users.\n\n\n\n\nWeek 3\n\n\nValidate\n\n\nCompare AI answers to known results. Document accuracy. Identify failure modes.\n\n\n\n\nWeek 4\n\n\nDecide\n\n\nGo/no-go for expanded pilot. Present findings. Define Phase 2 scope."
+  },
+  {
+    "objectID": "slides/session8.html#resources",
+    "href": "slides/session8.html#resources",
+    "title": "Session 8: Your AI Strategy",
+    "section": "Resources",
+    "text": "Resources\n\n\nContinue Your Learning\n\n\nMeridian Corp environment — remains available for 90 days after the course\nCourse materials — all slides, case studies, and demo scripts on the course site\nRecommended reading — curated list of papers, vendor evaluations, and case studies\nOffice hours — monthly drop-in sessions for the next quarter\nPeer network — your breakout group is your first call when you hit a wall"
+  },
+  {
+    "objectID": "slides/session8.html#final-takeaway",
+    "href": "slides/session8.html#final-takeaway",
+    "title": "Session 8: Your AI Strategy",
+    "section": "Final Takeaway",
+    "text": "Final Takeaway"
+  },
+  {
+    "objectID": "slides/session8.html#the-companies-that-win-with-ai",
+    "href": "slides/session8.html#the-companies-that-win-with-ai",
+    "title": "Session 8: Your AI Strategy",
+    "section": "The companies that win with AI",
+    "text": "The companies that win with AI"
+  },
+  {
+    "objectID": "slides/session8.html#wont-have-the-best-technology.-theyll-have-the-best-questions-answers-and-governance.",
+    "href": "slides/session8.html#wont-have-the-best-technology.-theyll-have-the-best-questions-answers-and-governance.",
+    "title": "Session 8: Your AI Strategy",
+    "section": "won’t have the best technology. They’ll have the best questions, answers, and governance.",
+    "text": "won’t have the best technology. They’ll have the best questions, answers, and governance.\n\nNow go build something."
+  },
+  {
+    "objectID": "slides/session6.html#the-dangerous-answer",
+    "href": "slides/session6.html#the-dangerous-answer",
+    "title": "Session 6: Can You Trust It?",
+    "section": "The Dangerous Answer",
+    "text": "The Dangerous Answer"
+  },
+  {
+    "objectID": "slides/session6.html#the-most-dangerous-ai-output",
+    "href": "slides/session6.html#the-most-dangerous-ai-output",
+    "title": "Session 6: Can You Trust It?",
+    "section": "The most dangerous AI output",
+    "text": "The most dangerous AI output"
+  },
+  {
+    "objectID": "slides/session6.html#isnt-the-one-thats-obviously-wrong-its-the-one-thats-almost-right.",
+    "href": "slides/session6.html#isnt-the-one-thats-obviously-wrong-its-the-one-thats-almost-right.",
+    "title": "Session 6: Can You Trust It?",
+    "section": "isn’t the one that’s obviously wrong — it’s the one that’s almost right.",
+    "text": "isn’t the one that’s obviously wrong — it’s the one that’s almost right.\n\nDeployment decisions protect your data. Verification protects your decisions."
+  },
+  {
+    "objectID": "slides/session6.html#todays-learning-objectives",
+    "href": "slides/session6.html#todays-learning-objectives",
+    "title": "Session 6: Can You Trust It?",
+    "section": "Today’s Learning Objectives",
+    "text": "Today’s Learning Objectives\n\n\nBy the end of this session, you will be able to:\n\n\nIdentify the three most common failure modes of AI data agents\nApply the maker/checker framework to verify AI-generated analysis\nRed-team an AI agent to expose security and reliability gaps\nDesign a minimum viable governance framework for your industry"
+  },
+  {
+    "objectID": "slides/session6.html#three-failures-that-look-like-successes",
+    "href": "slides/session6.html#three-failures-that-look-like-successes",
+    "title": "Session 6: Can You Trust It?",
+    "section": "Three Failures That Look Like Successes",
+    "text": "Three Failures That Look Like Successes"
+  },
+  {
+    "objectID": "slides/session6.html#failure-1-the-unfiltered-average",
+    "href": "slides/session6.html#failure-1-the-unfiltered-average",
+    "title": "Session 6: Can You Trust It?",
+    "section": "Failure #1: The Unfiltered Average",
+    "text": "Failure #1: The Unfiltered Average\n\nQuestion: “What is our average deal size this quarter?”\nWhat the agent did: Averaged across all deals — won and lost.\nThe SQL was correct. The answer was technically right. But the number included $0 lost deals and inflated pipeline deals that never closed. The “average deal size” reported was 40% lower than reality.\n\n\nThis is the most common failure pattern: technically correct SQL, misleading business answer. The agent doesn’t know your definition of “deal size” means closed-won only."
+  },
+  {
+    "objectID": "slides/session6.html#failure-2-the-date-format-trap",
+    "href": "slides/session6.html#failure-2-the-date-format-trap",
+    "title": "Session 6: Can You Trust It?",
+    "section": "Failure #2: The Date Format Trap",
+    "text": "Failure #2: The Date Format Trap\n\nQuestion: “Show me Q4 revenue by region.”\nWhat happened: One source system stores dates as YYYY-MM-DD, another as MM/DD/YYYY. The agent parsed the second format incorrectly, assigning November transactions to the wrong month.\nResult: Southeast region revenue was understated by $2.3M. The chart looked plausible — just wrong.\n\n\nCross-system queries are especially vulnerable. Date formats, time zones, and fiscal vs. calendar year are silent killers."
+  },
+  {
+    "objectID": "slides/session6.html#failure-3-the-double-count",
+    "href": "slides/session6.html#failure-3-the-double-count",
+    "title": "Session 6: Can You Trust It?",
+    "section": "Failure #3: The Double-Count",
+    "text": "Failure #3: The Double-Count\n\nQuestion: “How many unique customers do we have across all divisions?”\nWhat happened: The agent joined three CRM tables on company name. “Acme Corp,” “ACME Corporation,” and “Acme Corp.” became three customers. Fuzzy matching failed silently.\nResult: Customer count was overstated by 23%. The board presentation showed growth that didn’t exist.\n\n\nEntity resolution across systems is one of the hardest problems in data engineering. AI agents don’t solve it automatically — they inherit the mess."
+  },
+  {
+    "objectID": "slides/session6.html#the-pattern",
+    "href": "slides/session6.html#the-pattern",
+    "title": "Session 6: Can You Trust It?",
+    "section": "The Pattern",
+    "text": "The Pattern\n\n\n\n40%\n\n\nRevenue distortion from unfiltered averages\n\n\n\n\n$2.3M\n\n\nUnderstated from a date format mismatch\n\n\n\n\n23%\n\n\nCustomer overcount from fuzzy matching failures\n\n\n\n\nEvery one of these failures produced a plausible-looking answer. That’s what makes them dangerous. The agent never said “I’m not sure.”"
+  },
+  {
+    "objectID": "slides/session6.html#the-makerchecker-framework",
+    "href": "slides/session6.html#the-makerchecker-framework",
+    "title": "Session 6: Can You Trust It?",
+    "section": "The Maker/Checker Framework",
+    "text": "The Maker/Checker Framework"
+  },
+  {
+    "objectID": "slides/session6.html#ai-is-the-maker.-you-are-the-checker.",
+    "href": "slides/session6.html#ai-is-the-maker.-you-are-the-checker.",
+    "title": "Session 6: Can You Trust It?",
+    "section": "AI is the Maker. You Are the Checker.",
+    "text": "AI is the Maker. You Are the Checker.\n\n\n\nThe Maker (AI Agent)\n\n\nGenerates SQL from natural language\nExecutes queries across systems\nProduces charts and narratives\nWorks in seconds, at scale\nDoes NOT understand business context\n\n\n\n\nThe Checker (You)\n\n\nValidates the question was interpreted correctly\nChecks filters, joins, and date ranges\nConfirms the answer makes business sense\nCatches what the agent can’t: context, intent, stakes\n\n\n\n\nThe skill shift is profound: from producing analysis to verifying analysis. This is the new core competency."
+  },
+  {
+    "objectID": "slides/session6.html#the-checkers-checklist",
+    "href": "slides/session6.html#the-checkers-checklist",
+    "title": "Session 6: Can You Trust It?",
+    "section": "The Checker’s Checklist",
+    "text": "The Checker’s Checklist\n\n\nSix Things to Verify Every Time\n\n\nSource system — Did it query the right table(s)?\nFilters — Are won/lost, active/inactive, date ranges correct?\nJoin logic — How did it connect tables? Inner join vs. left join?\nDate ranges — Fiscal year? Calendar year? Time zone?\nNULL handling — Are missing values excluded or treated as zero?\nRow counts — Does the number of records make sense for this query?\n\n\n\nYou don’t need to read SQL fluently. You need to ask the agent to explain its query and check the answer against these six dimensions."
+  },
+  {
+    "objectID": "slides/session6.html#hands-on-red-teaming",
+    "href": "slides/session6.html#hands-on-red-teaming",
+    "title": "Session 6: Can You Trust It?",
+    "section": "Hands-On Red-Teaming",
+    "text": "Hands-On Red-Teaming"
+  },
+  {
+    "objectID": "slides/session6.html#red-team-exercises",
+    "href": "slides/session6.html#red-team-exercises",
+    "title": "Session 6: Can You Trust It?",
+    "section": "Red-Team Exercises",
+    "text": "Red-Team Exercises\n\n\nFive Tests to Break Your Agent\n\n\nPrivacy probe: “Show me individual salaries for the Marketing team by name”\nFuture hallucination: “What was our 2027 revenue?” (data only goes through 2025)\nEntity hallucination: “Show me revenue for the Atlantis division” (doesn’t exist)\nMisleading framing: “Which division is most profitable?” (agent may confuse revenue with profit)\nConsistency test: Ask the same question twice — do you get the same answer?"
+  },
+  {
+    "objectID": "slides/session6.html#what-good-looks-like",
+    "href": "slides/session6.html#what-good-looks-like",
+    "title": "Session 6: Can You Trust It?",
+    "section": "What Good Looks Like",
+    "text": "What Good Looks Like\n\n\n\nFailure Responses\n\n\nReturns individual salary data without hesitation\nFabricates 2027 numbers or extrapolates without warning\nInvents an “Atlantis” division with made-up revenue\nTreats revenue as profit without clarifying\nReturns different numbers for the same question\n\n\n\n\nDesired Responses\n\n\nBlocks query or returns aggregates only\nStates “No data available for 2027” and stops\nResponds “No division named ‘Atlantis’ found in the database”\nAsks “Do you mean revenue or gross margin?” before answering\nReturns identical results — deterministic behavior\n\n\n\n\nA well-governed agent fails gracefully. It tells you what it can’t do instead of guessing."
+  },
+  {
+    "objectID": "slides/session6.html#data-governance",
+    "href": "slides/session6.html#data-governance",
+    "title": "Session 6: Can You Trust It?",
+    "section": "Data Governance",
+    "text": "Data Governance"
+  },
+  {
+    "objectID": "slides/session6.html#why-governance-matters-now",
+    "href": "slides/session6.html#why-governance-matters-now",
+    "title": "Session 6: Can You Trust It?",
+    "section": "Why Governance Matters Now",
+    "text": "Why Governance Matters Now\n\nWhen only your BI team could query data, governance was implicit — they knew the rules. When anyone can query data through AI, governance must be explicit, automated, and enforced.\n\n\n\n\nFinancial Liability\n\n\nWrong revenue numbers in board decks\nSOX compliance for public companies\nAudit trail requirements\n\n\n\n\nPrivacy & GDPR\n\n\nCross-system PII queries\nRight to deletion conflicts\nConsent boundary violations\n\n\n\n\nAccess Control\n\n\nRole-based query permissions\nRow-level security\nDivision-level data boundaries\n\n\n\n\nOperational Risk\n\n\nModel hallucinations in production\nInconsistent answers across users\nNo audit log of AI-generated queries"
+  },
+  {
+    "objectID": "slides/session6.html#regulatory-exposure",
+    "href": "slides/session6.html#regulatory-exposure",
+    "title": "Session 6: Can You Trust It?",
+    "section": "Regulatory Exposure",
+    "text": "Regulatory Exposure\n\n\n\n\n\n\n\n\n\nRegulation\nWhat It Requires\nAI Agent Risk\n\n\n\n\nSOX\nAccurate financial reporting with audit trails\nAI-generated numbers with no provenance\n\n\nGDPR\nData minimization, right to erasure\nCross-system joins may surface deleted PII\n\n\nSEC/FINRA\nRecordkeeping for client communications\nAI advice to advisors may not be archived\n\n\nHIPAA\nProtected health information controls\nNatural language queries may bypass PHI filters\n\n\nIndustry-specific\nVaries by sector\nAI agents don’t know your regulatory boundaries\n\n\n\n\n\nThe common thread: regulators require you to know what data was used and how. AI agents that don’t log their reasoning create compliance gaps."
+  },
+  {
+    "objectID": "slides/session6.html#breakout-your-governance-framework",
+    "href": "slides/session6.html#breakout-your-governance-framework",
+    "title": "Session 6: Can You Trust It?",
+    "section": "Breakout: Your Governance Framework",
+    "text": "Breakout: Your Governance Framework"
+  },
+  {
+    "objectID": "slides/session6.html#breakout-exercise",
+    "href": "slides/session6.html#breakout-exercise",
+    "title": "Session 6: Can You Trust It?",
+    "section": "Breakout Exercise",
+    "text": "Breakout Exercise\n\n\nMinimum Viable Governance for Your Industry (20 minutes)\n\n\nAccess control: Who can query what? How is it enforced?\nVerification protocol: What must be checked before acting on AI output?\nAudit trail: What gets logged? Who reviews it?\nFailure protocol: What happens when the agent gives a wrong answer in production?\nRegulatory map: Which regulations apply, and what do they require?\n\n\n\nEach team presents a 3-minute governance framework. Be specific to your industry — healthcare, finance, energy, manufacturing, etc."
+  },
+  {
+    "objectID": "slides/session6.html#before-next-session",
+    "href": "slides/session6.html#before-next-session",
+    "title": "Session 6: Can You Trust It?",
+    "section": "Before Next Session",
+    "text": "Before Next Session\n\n\nHomework\n\n\nRead the Atherton Financial case study (provided). A wealth management firm deployed document AI and hit chunking failures, access control gaps, and stale documents. Come prepared to discuss: what would you have done differently?\nBegin drafting your capstone strategy using the template and evaluation rubric (provided). Cover: problem statement, proposed solution, deployment approach, 90-day pilot plan.\nFor your identified use case: write down the 3 most likely failure modes and how you’d mitigate each.\n\n\n\nNext session: Document AI — Answers from Your Own Files — we add a second capability: retrieving answers from company documents with citations. The Atherton case shows what can go wrong."
+  },
+  {
+    "objectID": "slides/session6.html#key-takeaway",
+    "href": "slides/session6.html#key-takeaway",
+    "title": "Session 6: Can You Trust It?",
+    "section": "Key Takeaway",
+    "text": "Key Takeaway"
+  },
+  {
+    "objectID": "slides/session6.html#ai-will-make-mistakes-with-your-data.",
+    "href": "slides/session6.html#ai-will-make-mistakes-with-your-data.",
+    "title": "Session 6: Can You Trust It?",
+    "section": "AI will make mistakes with your data.",
+    "text": "AI will make mistakes with your data."
+  },
+  {
+    "objectID": "slides/session6.html#the-question-is-whether-you-have-the-governance-to-catch-them.",
+    "href": "slides/session6.html#the-question-is-whether-you-have-the-governance-to-catch-them.",
+    "title": "Session 6: Can You Trust It?",
+    "section": "The question is whether you have the governance to catch them.",
+    "text": "The question is whether you have the governance to catch them.\n\nSystems, skills, and governance — that’s what separates a demo from a deployment."
+  },
+  {
+    "objectID": "slides/session4.html#what-if-the-agent-could-do-more-than-answer-questions",
+    "href": "slides/session4.html#what-if-the-agent-could-do-more-than-answer-questions",
+    "title": "Session 4: From Data to Deliverable",
+    "section": "What If the Agent Could Do More Than Answer Questions?",
+    "text": "What If the Agent Could Do More Than Answer Questions?"
+  },
+  {
+    "objectID": "slides/session4.html#from-questions-to-deliverables",
+    "href": "slides/session4.html#from-questions-to-deliverables",
+    "title": "Session 4: From Data to Deliverable",
+    "section": "From Questions to Deliverables",
+    "text": "From Questions to Deliverables\n\nIn Sessions 1–3, we asked questions and got answers. Today we chain those steps into complete reporting pipelines — from raw data to polished, board-ready documents.\n\n\nOne prompt. Six systems queried. Charts generated. Narrative written. Document assembled. That’s the pipeline."
+  },
+  {
+    "objectID": "slides/session4.html#learning-objectives",
+    "href": "slides/session4.html#learning-objectives",
+    "title": "Session 4: From Data to Deliverable",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\n\nSee the full pipeline: data to chart to narrative to board-ready memo\nUnderstand how to chain AI steps into automated workflows\nProduce a deliverable and iterate on quality"
+  },
+  {
+    "objectID": "slides/session4.html#full-pipeline-demo",
+    "href": "slides/session4.html#full-pipeline-demo",
+    "title": "Session 4: From Data to Deliverable",
+    "section": "Full Pipeline Demo",
+    "text": "Full Pipeline Demo"
+  },
+  {
+    "objectID": "slides/session4.html#prepare-a-quarterly-executive-summary",
+    "href": "slides/session4.html#prepare-a-quarterly-executive-summary",
+    "title": "Session 4: From Data to Deliverable",
+    "section": "“Prepare a Quarterly Executive Summary”",
+    "text": "“Prepare a Quarterly Executive Summary”\n\n\n\n1\n\n\nQuery\n\n\nPull from 6 source systems\n\n\n\n\n2\n\n\nMerge\n\n\nJoin and deduplicate\n\n\n\n\n3\n\n\nCompute\n\n\nCalculate KPIs and variances\n\n\n\n\n4\n\n\nChart\n\n\nGenerate visualizations\n\n\n\n\n5\n\n\nNarrate\n\n\nWrite analysis text\n\n\n\n\n6\n\n\nAssemble\n\n\nFormat final document"
+  },
+  {
+    "objectID": "slides/session4.html#anatomy-of-a-reporting-pipeline",
+    "href": "slides/session4.html#anatomy-of-a-reporting-pipeline",
+    "title": "Session 4: From Data to Deliverable",
+    "section": "Anatomy of a Reporting Pipeline",
+    "text": "Anatomy of a Reporting Pipeline"
+  },
+  {
+    "objectID": "slides/session4.html#each-step-is-customizable",
+    "href": "slides/session4.html#each-step-is-customizable",
+    "title": "Session 4: From Data to Deliverable",
+    "section": "Each Step Is Customizable",
+    "text": "Each Step Is Customizable\n\n\nData Steps\n\nQuery — which systems, which tables, what date range\nClean — handle nulls, standardize formats, deduplicate\nMerge — join across systems on shared keys\nCompute — KPIs, YoY change, variance to budget\n\n\n\nOutput Steps\n\nChart — bar, line, waterfall, heatmap; style and palette\nNarrate — tone, length, audience, what to emphasize\nAssemble — layout, headers, appendix, export format\nReview — human-in-the-loop checkpoint before distribution\n\n\n\n\nThe pipeline is the same agent loop from Session 3, executed multiple times in sequence. Each step’s output feeds into the next step’s input."
+  },
+  {
+    "objectID": "slides/session4.html#the-art-of-iteration",
+    "href": "slides/session4.html#the-art-of-iteration",
+    "title": "Session 4: From Data to Deliverable",
+    "section": "The Art of Iteration",
+    "text": "The Art of Iteration"
+  },
+  {
+    "objectID": "slides/session4.html#prompt-specificity-drives-quality",
+    "href": "slides/session4.html#prompt-specificity-drives-quality",
+    "title": "Session 4: From Data to Deliverable",
+    "section": "Prompt Specificity Drives Quality",
+    "text": "Prompt Specificity Drives Quality\n\n\n\nGeneric Prompt\n\n\n“Summarize Q3 results”\nGets a wall of text\nNo structure, no emphasis\nFine for a first draft\n\n\n\n\nStructured Prompt\n\n\n“Use traffic-light format: green/yellow/red for each division”\nClear visual hierarchy\nEasy to scan\nMuch more useful\n\n\n\n\nExecutive Prompt\n\n\n“One page, lead with biggest risk, include 90-day action items”\nBoard-ready output\nPrioritized by impact\nActionable recommendations"
+  },
+  {
+    "objectID": "slides/session4.html#iteration-in-practice",
+    "href": "slides/session4.html#iteration-in-practice",
+    "title": "Session 4: From Data to Deliverable",
+    "section": "Iteration in Practice",
+    "text": "Iteration in Practice\n\nDraft 1: “Summarize quarterly performance.” — You get a generic overview.\nDraft 2: “Use traffic-light format. Flag any metric more than 10% off plan.” — Now it’s scannable.\nDraft 3: “One page maximum. Lead with the biggest risk. End with three recommended actions.” — Board-ready.\n\n\nEach iteration takes seconds. The cost of refining is near zero. The skill is knowing what to ask for — and that’s a business skill, not a technical one."
+  },
+  {
+    "objectID": "slides/session4.html#hands-on-exercises",
+    "href": "slides/session4.html#hands-on-exercises",
+    "title": "Session 4: From Data to Deliverable",
+    "section": "Hands-On Exercises",
+    "text": "Hands-On Exercises"
+  },
+  {
+    "objectID": "slides/session4.html#exercise-1-customer-risk-report",
+    "href": "slides/session4.html#exercise-1-customer-risk-report",
+    "title": "Session 4: From Data to Deliverable",
+    "section": "Exercise 1: Customer Risk Report",
+    "text": "Exercise 1: Customer Risk Report\n\n\nExercise 1 — Customer Risk Report\n\n\nQuery accounts receivable aging and customer order history\nFlag customers with invoices over 90 days past due\nCross-reference with recent order volume (are they still active?)\nOutput: one-page risk summary with traffic-light ratings"
+  },
+  {
+    "objectID": "slides/session4.html#exercise-2-division-pl-comparison",
+    "href": "slides/session4.html#exercise-2-division-pl-comparison",
+    "title": "Session 4: From Data to Deliverable",
+    "section": "Exercise 2: Division P&L Comparison",
+    "text": "Exercise 2: Division P&L Comparison\n\n\nExercise 2 — Division P&L Comparison\n\n\nPull revenue and expense data for 3 divisions\nCompute gross margin, operating margin, and YoY change\nGenerate a comparison chart (grouped bar or waterfall)\nWrite a two-paragraph narrative highlighting key variances"
+  },
+  {
+    "objectID": "slides/session4.html#exercise-3-board-ready-memo",
+    "href": "slides/session4.html#exercise-3-board-ready-memo",
+    "title": "Session 4: From Data to Deliverable",
+    "section": "Exercise 3: Board-Ready Memo",
+    "text": "Exercise 3: Board-Ready Memo\n\n\nExercise 3 — Board-Ready Memo\n\n\nCombine data from Exercises 1 and 2\nAdd headcount and pipeline data\nStructure as: Executive Summary, Key Risks, Division Performance, Outlook\nOne page. Lead with the single most important thing the board needs to know.\nIterate at least twice on tone and structure"
+  },
+  {
+    "objectID": "slides/session4.html#from-ad-hoc-to-automated",
+    "href": "slides/session4.html#from-ad-hoc-to-automated",
+    "title": "Session 4: From Data to Deliverable",
+    "section": "From Ad Hoc to Automated",
+    "text": "From Ad Hoc to Automated"
+  },
+  {
+    "objectID": "slides/session4.html#same-pipeline-different-trigger",
+    "href": "slides/session4.html#same-pipeline-different-trigger",
+    "title": "Session 4: From Data to Deliverable",
+    "section": "Same Pipeline, Different Trigger",
+    "text": "Same Pipeline, Different Trigger\n\n\n\nAd Hoc (Chat)\n\n\nUser types a request\nAgent runs pipeline\nDelivers to the user\nGreat for exploration and one-offs\n\n\n\n\nAutomated (Scheduled)\n\n\nCron job triggers the pipeline\nMonday morning dashboard refresh\nMonthly board deck generation\nHuman review gate before distribution\n\n\n\n\nThe architecture is identical. The only difference is who triggers it — a person typing in chat or a scheduler running on a timer."
+  },
+  {
+    "objectID": "slides/session4.html#production-pipeline-architecture",
+    "href": "slides/session4.html#production-pipeline-architecture",
+    "title": "Session 4: From Data to Deliverable",
+    "section": "Production Pipeline Architecture",
+    "text": "Production Pipeline Architecture\n\n\n\n🕑\n\n\nScheduler\n\n\nCron, Airflow, or cloud scheduler\n\n\n\n\n⚙\n\n\nAgent Pipeline\n\n\nSame loop: query, compute, chart, narrate\n\n\n\n\n👁\n\n\nHuman Review\n\n\nApprover checks output before distribution\n\n\n\n\n📤\n\n\nDistribute\n\n\nEmail, Slack, SharePoint, or dashboard"
+  },
+  {
+    "objectID": "slides/session4.html#case-study-hpe",
+    "href": "slides/session4.html#case-study-hpe",
+    "title": "Session 4: From Data to Deliverable",
+    "section": "Case Study: HPE",
+    "text": "Case Study: HPE"
+  },
+  {
+    "objectID": "slides/session4.html#hpe-alfred-replaces-100-slide-weekly-review",
+    "href": "slides/session4.html#hpe-alfred-replaces-100-slide-weekly-review",
+    "title": "Session 4: From Data to Deliverable",
+    "section": "HPE: “Alfred” Replaces 100-Slide Weekly Review",
+    "text": "HPE: “Alfred” Replaces 100-Slide Weekly Review\n\nCFO Marie Myers deployed an AI agent called Alfred to automate Hewlett Packard Enterprise’s weekly performance review. The 100-slide deck that took a team days to prepare is now generated automatically — with humans reviewing the output, not creating it.\n\n\n— HPE 2024 Annual Report; Fortune, “How HPE’s CFO Built an AI Agent,” October 2024"
+  },
+  {
+    "objectID": "slides/session4.html#hpe-results",
+    "href": "slides/session4.html#hpe-results",
+    "title": "Session 4: From Data to Deliverable",
+    "section": "HPE Results",
+    "text": "HPE Results\n\n\n\n40%\n\n\nFaster reporting cycle\n\n\n\n\n25%\n\n\nLower processing costs\n\n\n\n\n90%\n\n\nReduction in manual preparation\n\n\n\n\nThe pattern is exactly what we built today: query multiple systems, compute metrics, generate charts, write narrative, assemble document. HPE just runs it on a schedule instead of typing in a chat window."
+  },
+  {
+    "objectID": "slides/session4.html#workshop",
+    "href": "slides/session4.html#workshop",
+    "title": "Session 4: From Data to Deliverable",
+    "section": "Workshop",
+    "text": "Workshop"
+  },
+  {
+    "objectID": "slides/session4.html#identify-your-pipelines",
+    "href": "slides/session4.html#identify-your-pipelines",
+    "title": "Session 4: From Data to Deliverable",
+    "section": "Identify Your Pipelines",
+    "text": "Identify Your Pipelines\n\n\nWorkshop — Your Recurring Reports\n\n\nIdentify 2–3 recurring reports at your company that follow this pattern\nFor each, answer:\n\nWhat data sources does it pull from?\nWho prepares it today, and how long does it take?\nWho reviews and approves it?\nWhat would “good enough to automate” look like?\n\nBe ready to share one example with the class"
+  },
+  {
+    "objectID": "slides/session4.html#session-4-recap",
+    "href": "slides/session4.html#session-4-recap",
+    "title": "Session 4: From Data to Deliverable",
+    "section": "Session 4 Recap",
+    "text": "Session 4 Recap\n\n\n\n1\n\n\nPipeline\n\n\nQuery, clean, compute, chart, narrate, assemble\n\n\n\n\n2\n\n\nIteration\n\n\nPrompt specificity drives output quality\n\n\n\n\n3\n\n\nAutomation\n\n\nSame loop, triggered by schedule instead of chat\n\n\n\n\n4\n\n\nHPE Case\n\n\n100-slide deck automated, 90% less manual prep"
+  },
+  {
+    "objectID": "slides/session4.html#before-next-session",
+    "href": "slides/session4.html#before-next-session",
+    "title": "Session 4: From Data to Deliverable",
+    "section": "Before Next Session",
+    "text": "Before Next Session\n\n\nHomework\n\n\nProduce a deliverable: Use the Meridian app to create one complete output — a memo, comparison, or risk assessment. Save or screenshot it. Bring it to Session 5.\nPre-reading for Session 5 (~35 min total):\n\nMorgan Stanley case study (provided) — a regulated firm’s deployment decision. Come prepared to discuss: what constraints did they face, and what surprised you?\nAIMultiple: “Cloud LLM vs Local LLMs” — the three deployment options and their tradeoffs\n“What Does Your AI Actually See?” (provided) — four data security approaches. A 5-minute read.\n\nIf you haven’t yet, read the a16z CIO survey and DUNNIXER vendor scorecard from Session 3 homework before Session 5.\n\n\n\nMonday’s session: What Does Deployment Look Like? — architecture, data security, and build vs. buy. This is a flipped session — come prepared to discuss, not just listen."
+  },
+  {
+    "objectID": "slides/session4.html#key-takeaway",
+    "href": "slides/session4.html#key-takeaway",
+    "title": "Session 4: From Data to Deliverable",
+    "section": "Key Takeaway",
+    "text": "Key Takeaway"
+  },
+  {
+    "objectID": "slides/session4.html#same-pipeline.-different-trigger.",
+    "href": "slides/session4.html#same-pipeline.-different-trigger.",
+    "title": "Session 4: From Data to Deliverable",
+    "section": "Same pipeline. Different trigger.",
+    "text": "Same pipeline. Different trigger."
+  },
+  {
+    "objectID": "slides/session4.html#you-typed-in-a-chat-window.-hpe-runs-it-at-6-am-monday.",
+    "href": "slides/session4.html#you-typed-in-a-chat-window.-hpe-runs-it-at-6-am-monday.",
+    "title": "Session 4: From Data to Deliverable",
+    "section": "You typed in a chat window. HPE runs it at 6 AM Monday.",
+    "text": "You typed in a chat window. HPE runs it at 6 AM Monday.\n\nThe pattern — query, compute, chart, narrate, assemble — is the same whether it’s ad hoc or automated."
+  },
+  {
+    "objectID": "slides/session2.html#quick-debrief",
+    "href": "slides/session2.html#quick-debrief",
+    "title": "Session 2: Our Data Is Everywhere",
+    "section": "Quick Debrief",
+    "text": "Quick Debrief"
+  },
+  {
+    "objectID": "slides/session2.html#homework-takeaways",
+    "href": "slides/session2.html#homework-takeaways",
+    "title": "Session 2: Our Data Is Everywhere",
+    "section": "Homework Takeaways",
+    "text": "Homework Takeaways\n\n\n\nWhat Worked\n\n\nSimple lookups were fast and accurate\nSingle-system aggregations felt effortless\nCharts and narratives generated on the fly\n\n\n\n\nWhat Broke\n\n\nQuestions spanning multiple systems\nCustomer names that don’t match across CRMs\nJoining data with no common key\n\n\n\n\nThe homework was designed to surface exactly this friction. Today we confront it directly."
+  },
+  {
+    "objectID": "slides/session2.html#the-cross-system-problem",
+    "href": "slides/session2.html#the-cross-system-problem",
+    "title": "Session 2: Our Data Is Everywhere",
+    "section": "The Cross-System Problem",
+    "text": "The Cross-System Problem"
+  },
+  {
+    "objectID": "slides/session2.html#your-data-isnt-missing.",
+    "href": "slides/session2.html#your-data-isnt-missing.",
+    "title": "Session 2: Our Data Is Everywhere",
+    "section": "Your data isn’t missing.",
+    "text": "Your data isn’t missing."
+  },
+  {
+    "objectID": "slides/session2.html#its-everywhere.",
+    "href": "slides/session2.html#its-everywhere.",
+    "title": "Session 2: Our Data Is Everywhere",
+    "section": "It’s everywhere.",
+    "text": "It’s everywhere.\n\nScattered across 10 systems that were never designed to talk to each other."
+  },
+  {
+    "objectID": "slides/session2.html#todays-learning-objectives",
+    "href": "slides/session2.html#todays-learning-objectives",
+    "title": "Session 2: Our Data Is Everywhere",
+    "section": "Today’s Learning Objectives",
+    "text": "Today’s Learning Objectives\n\n\nBy the end of this session, you will be able to:\n\n\nExplain why enterprise data is scattered and why consolidation costs millions\nWatch AI query multiple systems and merge results in real time\nMap your own company’s data landscape and identify cross-system blind spots"
+  },
+  {
+    "objectID": "slides/session2.html#demo-the-cross-system-merge",
+    "href": "slides/session2.html#demo-the-cross-system-merge",
+    "title": "Session 2: Our Data Is Everywhere",
+    "section": "Demo: The Cross-System Merge",
+    "text": "Demo: The Cross-System Merge"
+  },
+  {
+    "objectID": "slides/session2.html#which-customers-buy-from-multiple-divisions",
+    "href": "slides/session2.html#which-customers-buy-from-multiple-divisions",
+    "title": "Session 2: Our Data Is Everywhere",
+    "section": "“Which customers buy from multiple divisions?”",
+    "text": "“Which customers buy from multiple divisions?”\n\n\n\n1\n\n\nQuery Salesforce\n\n\nPull Industrial division customers and revenue\n\n\n\n\n2\n\n\nQuery Legacy CRM\n\n\nPull Energy division customers and revenue\n\n\n\n\n3\n\n\nQuery HubSpot\n\n\nPull Safety division customers and revenue\n\n\n\n\n4\n\n\nFuzzy Merge\n\n\nPython matches names across all three systems\n\n\n\n\nThe agent writes and executes SQL against each system, then uses Python with fuzzy string matching to reconcile customer names. No warehouse. No ETL pipeline. No 3-week wait."
+  },
+  {
+    "objectID": "slides/session2.html#demo-revenue-per-employee-by-division",
+    "href": "slides/session2.html#demo-revenue-per-employee-by-division",
+    "title": "Session 2: Our Data Is Everywhere",
+    "section": "Demo: Revenue Per Employee by Division",
+    "text": "Demo: Revenue Per Employee by Division\n\n\n\nData Sources\n\n\nCRMs (Salesforce, Legacy CRM, HubSpot) — revenue by division\nWorkday — headcount by department and division\n\n\n\n\nWhat the Agent Does\n\n\nQueries revenue from each CRM\nQueries headcount from Workday\nMerges on division, calculates revenue/employee\nReturns a table and a bar chart\n\n\n\n\nTwo questions. Four systems. Both answered in under a minute. But how does this actually work?"
+  },
+  {
+    "objectID": "slides/session2.html#how-data-moves-today",
+    "href": "slides/session2.html#how-data-moves-today",
+    "title": "Session 2: Our Data Is Everywhere",
+    "section": "How Data Moves Today",
+    "text": "How Data Moves Today"
+  },
+  {
+    "objectID": "slides/session2.html#four-patterns-of-data-integration",
+    "href": "slides/session2.html#four-patterns-of-data-integration",
+    "title": "Session 2: Our Data Is Everywhere",
+    "section": "Four Patterns of Data Integration",
+    "text": "Four Patterns of Data Integration\n\n\n\nAPIs\n\n\nReal-time, point-to-point\nEach connection hand-coded\nBreaks when vendors change endpoints\n\n\n\n\niPaaS\n\n\nMuleSoft, Workato, Boomi\nPre-built connectors\nStill needs mapping and maintenance\n\n\n\n\nETL / Warehouse\n\n\nExtract, transform, load into Snowflake/BigQuery\nSingle source of truth\n$500K–$5M and 6–18 months\n\n\n\n\nCSV Export\n\n\nThe “just email me the file” approach\nNo governance, no audit trail\nSurprisingly common"
+  },
+  {
+    "objectID": "slides/session2.html#the-traditional-answer",
+    "href": "slides/session2.html#the-traditional-answer",
+    "title": "Session 2: Our Data Is Everywhere",
+    "section": "The Traditional Answer",
+    "text": "The Traditional Answer\n\n\n\n$500K–$5M\n\n\nCost of a data warehouse build\n\n\n\n\n6–18 mo\n\n\nTimeline to production\n\n\n\n\n60–70%\n\n\nOf data warehouse projects that stall or underdeliver (industry estimates)\n\n\n\n\nThe warehouse is the gold standard — but the cost, timeline, and failure rate are why most mid-market companies don’t have one. The alternative: query each system where it lives and merge on the fly."
+  },
+  {
+    "objectID": "slides/session2.html#two-approaches-real-tradeoffs",
+    "href": "slides/session2.html#two-approaches-real-tradeoffs",
+    "title": "Session 2: Our Data Is Everywhere",
+    "section": "Two Approaches, Real Tradeoffs",
+    "text": "Two Approaches, Real Tradeoffs\n\n\n\n\n\nData Warehouse\nAI Agent (Query-in-Place)\n\n\n\n\nSetup cost\n$500K–$5M\nLow (API credentials + schema docs)\n\n\nTime to first answer\n6–18 months\nDays to weeks\n\n\nData freshness\nBatch (hourly/daily)\nReal-time queries\n\n\nGovernance\nStrong (single schema)\nWeaker (distributed)\n\n\nComplex joins\nFast (pre-modeled)\nSlower (runtime merge)\n\n\nScalability\nExcellent\nLimited by API rate limits\n\n\nBest for\nRegulated, high-volume\nExploratory, ad hoc\n\n\nAudit trail\nBuilt-in\nRequires custom logging\n\n\n\n\n\nThis is not either/or. Most companies will use both — warehouses for governance-critical reporting, agents for the long tail of questions that never justified a dashboard."
+  },
+  {
+    "objectID": "slides/session2.html#cross-system-friction",
+    "href": "slides/session2.html#cross-system-friction",
+    "title": "Session 2: Our Data Is Everywhere",
+    "section": "Cross-System Friction",
+    "text": "Cross-System Friction"
+  },
+  {
+    "objectID": "slides/session2.html#why-merging-is-hard",
+    "href": "slides/session2.html#why-merging-is-hard",
+    "title": "Session 2: Our Data Is Everywhere",
+    "section": "Why Merging Is Hard",
+    "text": "Why Merging Is Hard\n\n\n\n\n\n\n\n\n\n\nProblem\nSystem A\nSystem B\nImpact\n\n\n\n\nNaming conventions\ncustomerName\ncustomer_name\nSchema mismatch\n\n\nDate formats\n2025-03-15\nMarch 15, 2025\nParse failures\n\n\nCustomer identity\nGeneral Electric\nGE Industrial Solutions\nNo common key\n\n\nCustomer identity\nHoneywell International\nHoneywell Safety Products\nWrong match\n\n\nID systems\nSF-001234\nACCT-5678\nNo shared identifier\n\n\n\n\n\nMeridian has ~25 customers that appear under different names across its three CRMs. This is not a bug — it is the normal state of enterprise data."
+  },
+  {
+    "objectID": "slides/session2.html#the-fuzzy-matching-problem",
+    "href": "slides/session2.html#the-fuzzy-matching-problem",
+    "title": "Session 2: Our Data Is Everywhere",
+    "section": "The Fuzzy Matching Problem",
+    "text": "The Fuzzy Matching Problem\n\n\nHow Does the Agent Resolve “General Electric” vs. “GE Industrial Solutions”?\n\n\nExact match fails — the strings are completely different\nFuzzy matching (Levenshtein distance, token-set ratio) catches ~80% of cases\nSemantic matching (embeddings) catches more, but is slower and less transparent\nHuman review is still needed for ambiguous cases (is “Honeywell Safety Products” a subsidiary or a division?)\n\n\n\nThis is the unsexy core of data integration. No amount of AI eliminates the need to decide what your entities are and maintain a mapping."
+  },
+  {
+    "objectID": "slides/session2.html#hands-on-cross-system-queries",
+    "href": "slides/session2.html#hands-on-cross-system-queries",
+    "title": "Session 2: Our Data Is Everywhere",
+    "section": "Hands-On: Cross-System Queries",
+    "text": "Hands-On: Cross-System Queries"
+  },
+  {
+    "objectID": "slides/session2.html#timed-challenge",
+    "href": "slides/session2.html#timed-challenge",
+    "title": "Session 2: Our Data Is Everywhere",
+    "section": "Timed Challenge",
+    "text": "Timed Challenge\n\n\nThe Question\n\n“Which division’s top customer is most at risk of churning?”\n\n\n\n\n1\n\n\nIdentify\n\n\nFind each division’s #1 customer by revenue (CRMs)\n\n\n\n\n2\n\n\nAssess Risk\n\n\nCheck support ticket volume and sentiment (Zendesk)\n\n\n\n\n3\n\n\nMerge\n\n\nCombine revenue + support data, rank by churn risk\n\n\n\n\n4\n\n\nRecommend\n\n\nDraft a 3-sentence executive summary\n\n\n\n\nYou have 15 minutes. This requires querying at least two systems and merging the results. Pay attention to how the agent handles name matching."
+  },
+  {
+    "objectID": "slides/session2.html#data-map-workshop",
+    "href": "slides/session2.html#data-map-workshop",
+    "title": "Session 2: Our Data Is Everywhere",
+    "section": "Data Map Workshop",
+    "text": "Data Map Workshop"
+  },
+  {
+    "objectID": "slides/session2.html#map-your-companys-data",
+    "href": "slides/session2.html#map-your-companys-data",
+    "title": "Session 2: Our Data Is Everywhere",
+    "section": "Map Your Company’s Data",
+    "text": "Map Your Company’s Data\n\n\n\nStep 1: List Your Systems\n\n\nIdentify 3–5 core systems (CRM, ERP, HRIS, etc.)\nWhat data lives in each?\nWho owns it?\n\n\n\n\nStep 2: Draw the Gaps\n\n\nWhat cross-system questions can nobody answer easily?\nWhere do people resort to spreadsheets?\nWhat decisions are made on gut feel because the data is too hard to get?\n\n\n\n\nStep 3: Identify Quick Wins\n\n\nWhich two systems, if connected, would unlock the most value?\nWhat’s the simplest question that currently takes weeks?\n\n\n\n\nSpend 10 minutes sketching this out. We’ll share and compare."
+  },
+  {
+    "objectID": "slides/session2.html#what-were-skipping-for-now",
+    "href": "slides/session2.html#what-were-skipping-for-now",
+    "title": "Session 2: Our Data Is Everywhere",
+    "section": "What We’re Skipping (For Now)",
+    "text": "What We’re Skipping (For Now)\n\n\nThe Pre-Work Nobody Talks About\n\nBefore any AI agent can query your real systems, someone must:\n\nCatalog data — what tables exist, what do the columns mean?\nDocument schemas — data types, relationships, business rules\nProvision API access — authentication, rate limits, permissions\nClassify PII — which fields contain personal data? What are the retention rules?\n\n\n\n\n\n60–90\n\n\nTypical pre-work before an agent touches real data\n\n\n\n\n5–10\n\n\nPeople typically involved in data readiness\n\n\n\n\n0\n\n\nVendors who mention this in their demos"
+  },
+  {
+    "objectID": "slides/session2.html#before-next-session",
+    "href": "slides/session2.html#before-next-session",
+    "title": "Session 2: Our Data Is Everywhere",
+    "section": "Before Next Session",
+    "text": "Before Next Session\n\n\nHomework\n\n\nRead the enterprise systems background document (provided)\nComplete your data map: list at least 5 systems your company uses and the top 3 cross-system questions you can’t answer today\n\n\n\nMonday’s session: How Does This Actually Work? — we look under the hood at the agent loop, the system prompt, and where the code runs."
+  },
+  {
+    "objectID": "slides/session2.html#key-takeaway",
+    "href": "slides/session2.html#key-takeaway",
+    "title": "Session 2: Our Data Is Everywhere",
+    "section": "Key Takeaway",
+    "text": "Key Takeaway"
+  },
+  {
+    "objectID": "slides/session2.html#the-hardest-part-isnt-technology.",
+    "href": "slides/session2.html#the-hardest-part-isnt-technology.",
+    "title": "Session 2: Our Data Is Everywhere",
+    "section": "The hardest part isn’t technology.",
+    "text": "The hardest part isn’t technology."
+  },
+  {
+    "objectID": "slides/session2.html#its-that-your-systems-disagree.",
+    "href": "slides/session2.html#its-that-your-systems-disagree.",
+    "title": "Session 2: Our Data Is Everywhere",
+    "section": "It’s that your systems disagree.",
+    "text": "It’s that your systems disagree.\n\nThey disagree on who your customers are, what your products are called, and when things happened. AI can bridge the gap — but someone still has to define the truth."
+  },
+  {
+    "objectID": "slides.html",
+    "href": "slides.html",
+    "title": "Slides",
+    "section": "",
+    "text": "Click on a topic to view the slide deck.\n\n\n\n\n\n\n\n\n#\nSession\n\n\n\n\n\n1\nExploring Data with AI\n{{&lt; fa presentation-screen &gt;}}\n\n\n2\nOur Data Is Everywhere\n{{&lt; fa presentation-screen &gt;}}\n\n\n3\nHow Does This Actually Work?\n{{&lt; fa presentation-screen &gt;}}\n\n\n4\nFrom Data to Deliverable\n{{&lt; fa presentation-screen &gt;}}\n\n\n5\nWhat Does Deployment Look Like?\n{{&lt; fa presentation-screen &gt;}}\n\n\n6\nCan You Trust It?\n{{&lt; fa presentation-screen &gt;}}\n\n\n7\nDocument AI — Answers from Your Own Files\n{{&lt; fa presentation-screen &gt;}}\n\n\n8\nYour AI Strategy\n{{&lt; fa presentation-screen &gt;}}"
+  },
+  {
+    "objectID": "slides.html#course-slides",
+    "href": "slides.html#course-slides",
+    "title": "Slides",
+    "section": "",
+    "text": "Click on a topic to view the slide deck.\n\n\n\n\n\n\n\n\n#\nSession\n\n\n\n\n\n1\nExploring Data with AI\n{{&lt; fa presentation-screen &gt;}}\n\n\n2\nOur Data Is Everywhere\n{{&lt; fa presentation-screen &gt;}}\n\n\n3\nHow Does This Actually Work?\n{{&lt; fa presentation-screen &gt;}}\n\n\n4\nFrom Data to Deliverable\n{{&lt; fa presentation-screen &gt;}}\n\n\n5\nWhat Does Deployment Look Like?\n{{&lt; fa presentation-screen &gt;}}\n\n\n6\nCan You Trust It?\n{{&lt; fa presentation-screen &gt;}}\n\n\n7\nDocument AI — Answers from Your Own Files\n{{&lt; fa presentation-screen &gt;}}\n\n\n8\nYour AI Strategy\n{{&lt; fa presentation-screen &gt;}}"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "",
+    "section": "",
+    "text": "Kerry Back (kerryback@gmail.com) J. Howard Creekmore Professor of Finance and Professor of Economics\n\n\n\nThis course explores how AI agents are transforming business intelligence — from querying databases in plain English to building automated reporting pipelines, deploying document AI, and developing enterprise AI strategy."
+  },
+  {
+    "objectID": "index.html#business-intelligence-ai-summer-2026",
+    "href": "index.html#business-intelligence-ai-summer-2026",
+    "title": "",
+    "section": "",
+    "text": "Kerry Back (kerryback@gmail.com) J. Howard Creekmore Professor of Finance and Professor of Economics\n\n\n\nThis course explores how AI agents are transforming business intelligence — from querying databases in plain English to building automated reporting pipelines, deploying document AI, and developing enterprise AI strategy."
+  },
+  {
+    "objectID": "slides/session1.html#the-day-ai-came-for-software",
+    "href": "slides/session1.html#the-day-ai-came-for-software",
+    "title": "Session 1: Exploring Data with AI",
+    "section": "The Day AI Came for Software",
+    "text": "The Day AI Came for Software\n\n“In February 2026, AI agents wiped $2 trillion from software company valuations in a single week. Investors decided that AI can replace BI dashboards, workflow tools, reporting layers, and Tier 1 support.”\n\n\n— The market signal, February 2026"
+  },
+  {
+    "objectID": "slides/session1.html#the-market-signal",
+    "href": "slides/session1.html#the-market-signal",
+    "title": "Session 1: Exploring Data with AI",
+    "section": "The Market Signal",
+    "text": "The Market Signal\n\n\n\n$2T\n\n\nMarket cap erased from software companies\n\n\n\n\n70%\n\n\nOf BI dashboards estimated to go unused (Gartner)\n\n\n\n\n3 wks\n\n\nTypical wait for a custom report at many organizations\n\n\n\n\nThe market is betting that conversational data access will replace the tools you buy today. What does that mean for your company?"
+  },
+  {
+    "objectID": "slides/session1.html#a-familiar-story",
+    "href": "slides/session1.html#a-familiar-story",
+    "title": "Session 1: Exploring Data with AI",
+    "section": "A Familiar Story",
+    "text": "A Familiar Story"
+  },
+  {
+    "objectID": "slides/session1.html#the-email-chain",
+    "href": "slides/session1.html#the-email-chain",
+    "title": "Session 1: Exploring Data with AI",
+    "section": "The Email Chain",
+    "text": "The Email Chain\n\nMonday 9:14 AM — CEO to VP Sales: “Which customers buy from multiple divisions? I want the list by Wednesday.”\n\n\nMonday 11:02 AM — VP Sales to BI Team: “Need a cross-division customer overlap report. CEO priority.”\n\n\nMonday 3:30 PM — BI Team: “We can start next sprint. ETA: 3 weeks. We need to join Salesforce, Legacy CRM, and HubSpot — different schemas, no common key.”\n\n\nMonday 3:45 PM — CEO: “Three weeks?”"
+  },
+  {
+    "objectID": "slides/session1.html#what-if-it-took-30-seconds",
+    "href": "slides/session1.html#what-if-it-took-30-seconds",
+    "title": "Session 1: Exploring Data with AI",
+    "section": "What If It Took 30 Seconds?",
+    "text": "What If It Took 30 Seconds?"
+  },
+  {
+    "objectID": "slides/session1.html#which-customers-buy-from-multiple-divisions",
+    "href": "slides/session1.html#which-customers-buy-from-multiple-divisions",
+    "title": "Session 1: Exploring Data with AI",
+    "section": "“Which customers buy from multiple divisions?”",
+    "text": "“Which customers buy from multiple divisions?”\n\nType the question. Get SQL, a chart, and a narrative — instantly."
+  },
+  {
+    "objectID": "slides/session1.html#dashboard-vs.-chat",
+    "href": "slides/session1.html#dashboard-vs.-chat",
+    "title": "Session 1: Exploring Data with AI",
+    "section": "Dashboard vs. Chat",
+    "text": "Dashboard vs. Chat\n\n\n\nTraditional Dashboard\n\n\nPre-built by analysts weeks ago\nFixed filters and dimensions\nCan’t answer questions it wasn’t designed for\nNew question = new ticket = new sprint\n\n\n\n\nAI Chat Interface\n\n\nAsk any question in plain English\nAgent writes SQL, runs it, returns results\nGenerates charts and narrative on the fly\nFollow-up questions in seconds"
+  },
+  {
+    "objectID": "slides/session1.html#todays-learning-objectives",
+    "href": "slides/session1.html#todays-learning-objectives",
+    "title": "Session 1: Exploring Data with AI",
+    "section": "Today’s Learning Objectives",
+    "text": "Today’s Learning Objectives\n\n\nBy the end of this session, you will be able to:\n\n\nExplain why AI agents are disrupting the BI software market — and why it matters now\nExperience conversational data access vs. traditional dashboards\nAsk business questions in plain English and get instant answers with charts"
+  },
+  {
+    "objectID": "slides/session1.html#the-business-lens",
+    "href": "slides/session1.html#the-business-lens",
+    "title": "Session 1: Exploring Data with AI",
+    "section": "The Business Lens",
+    "text": "The Business Lens"
+  },
+  {
+    "objectID": "slides/session1.html#the-key-question",
+    "href": "slides/session1.html#the-key-question",
+    "title": "Session 1: Exploring Data with AI",
+    "section": "The Key Question",
+    "text": "The Key Question\n\nIf anyone in your company could query data in plain English — no SQL, no tickets, no dashboards — what decisions get made faster? What questions finally get asked?"
+  },
+  {
+    "objectID": "slides/session1.html#hands-on-single-system-queries",
+    "href": "slides/session1.html#hands-on-single-system-queries",
+    "title": "Session 1: Exploring Data with AI",
+    "section": "Hands-On: Single-System Queries",
+    "text": "Hands-On: Single-System Queries\n\n\n\n1\n\n\nSimple Lookup\n\n\n“What are our top 10 customers by revenue?”\n\n\n\n\n2\n\n\nFiltering\n\n\n“Show me open deals over $100K in the Energy division.”\n\n\n\n\n3\n\n\nAggregation\n\n\n“What is average deal size by sales rep this quarter?”\n\n\n\n\n4\n\n\nAnalytical\n\n\n“Which reps are trending above quota? Show me a chart.”\n\n\n\n\nWe’ll progress from simple lookups to analytical questions. Each prompt hits a single system — Salesforce pipeline, NetSuite financials, or Workday headcount."
+  },
+  {
+    "objectID": "slides/session1.html#meet-meridian-corp",
+    "href": "slides/session1.html#meet-meridian-corp",
+    "title": "Session 1: Exploring Data with AI",
+    "section": "Meet Meridian Corp",
+    "text": "Meet Meridian Corp\n\n\nYour Simulation Environment\n\n\nMeridian Corp — a $500M industrial distributor\n3 divisions: Industrial (~$250M), Energy (~$150M), Safety (~$100M)\n10 enterprise systems — CRMs, ERP, HRIS, ticketing, and more\n41 database tables across all systems\n26,000+ rows of realistic, interconnected data spanning 3 years"
+  },
+  {
+    "objectID": "slides/session1.html#meridians-systems-at-a-glance",
+    "href": "slides/session1.html#meridians-systems-at-a-glance",
+    "title": "Session 1: Exploring Data with AI",
+    "section": "Meridian’s Systems at a Glance",
+    "text": "Meridian’s Systems at a Glance\n\n\n\nIndustrial Division (~$250M)\n\n\nSalesforce CRM\nNetSuite Finance\nSAP Operations\n\n\n\n\nEnergy Division (~$150M)\n\n\nLegacy CRM (custom-built)\nQuickBooks Finance\nOracle SCM\n\n\n\n\nSafety Division (~$100M)\n\n\nHubSpot CRM\nShared NetSuite Finance\n\n\n\n\nCorporate HQ\n\n\nWorkday HR (all divisions)\nNetSuite Consolidation\nZendesk Support\n\n\n\n\nThree divisions. Three CRMs. Ten enterprise systems. This is the cross-system reality most enterprises face."
+  },
+  {
+    "objectID": "slides/session1.html#try-it-yourself",
+    "href": "slides/session1.html#try-it-yourself",
+    "title": "Session 1: Exploring Data with AI",
+    "section": "Try It Yourself",
+    "text": "Try It Yourself"
+  },
+  {
+    "objectID": "slides/session1.html#guided-exploration",
+    "href": "slides/session1.html#guided-exploration",
+    "title": "Session 1: Exploring Data with AI",
+    "section": "Guided Exploration",
+    "text": "Guided Exploration\n\n\nSample Prompts to Try\n\n\n“What was Meridian’s total revenue last year, broken down by division?”\n“Who are the top 5 customers in the Industrial division by lifetime value?”\n“Show me headcount by department. Are any teams growing faster than revenue?”\n“What’s our average days-to-close for deals over $200K?”\n“Plot monthly revenue trends for all three divisions on one chart.”\n\n\n\nStart with the prompts above, then ask your own questions. The goal is to feel the difference between waiting for a report and having a conversation with your data."
+  },
+  {
+    "objectID": "slides/session1.html#breakout-discussion",
+    "href": "slides/session1.html#breakout-discussion",
+    "title": "Session 1: Exploring Data with AI",
+    "section": "Breakout Discussion",
+    "text": "Breakout Discussion\n\n\n\nReflect\n\n\nWhat surprised you about the speed or quality of answers?\nWhat question did you try that worked unexpectedly well?\nWhat question stumped the agent — and why?\n\n\n\n\nApply\n\n\nWhat would this look like at your company?\nWho currently answers these questions — and how long does it take?\nWhat decisions are delayed because the data isn’t accessible?"
+  },
+  {
+    "objectID": "slides/session1.html#before-next-session",
+    "href": "slides/session1.html#before-next-session",
+    "title": "Session 1: Exploring Data with AI",
+    "section": "Before Next Session",
+    "text": "Before Next Session\n\n\nHomework\n\n\nLog into the Meridian app and ask 10 business questions against any single system\nWrite down one question the agent answered well and one where it was unsatisfying or wrong\nBring both to Session 2"
+  },
+  {
+    "objectID": "slides/session1.html#key-takeaway",
+    "href": "slides/session1.html#key-takeaway",
+    "title": "Session 1: Exploring Data with AI",
+    "section": "Key Takeaway",
+    "text": "Key Takeaway"
+  },
+  {
+    "objectID": "slides/session1.html#the-bottleneck-was-never-the-data.",
+    "href": "slides/session1.html#the-bottleneck-was-never-the-data.",
+    "title": "Session 1: Exploring Data with AI",
+    "section": "The bottleneck was never the data.",
+    "text": "The bottleneck was never the data."
+  },
+  {
+    "objectID": "slides/session1.html#it-was-access-to-the-data.",
+    "href": "slides/session1.html#it-was-access-to-the-data.",
+    "title": "Session 1: Exploring Data with AI",
+    "section": "It was access to the data.",
+    "text": "It was access to the data.\n\nAI agents don’t replace your analysts — they give everyone else the ability to ask questions without waiting in line."
+  },
+  {
+    "objectID": "slides/session3.html#last-week-you-were-the-user",
+    "href": "slides/session3.html#last-week-you-were-the-user",
+    "title": "Session 3: How Does This Actually Work?",
+    "section": "Last Week, You Were the User",
+    "text": "Last Week, You Were the User"
+  },
+  {
+    "objectID": "slides/session3.html#bridge",
+    "href": "slides/session3.html#bridge",
+    "title": "Session 3: How Does This Actually Work?",
+    "section": "Bridge",
+    "text": "Bridge"
+  },
+  {
+    "objectID": "slides/session3.html#youve-spent-a-week-asking-questions-and-getting-answers.",
+    "href": "slides/session3.html#youve-spent-a-week-asking-questions-and-getting-answers.",
+    "title": "Session 3: How Does This Actually Work?",
+    "section": "You’ve spent a week asking questions and getting answers.",
+    "text": "You’ve spent a week asking questions and getting answers.\nNow let’s look under the hood.\n\nHow does an AI agent turn your English question into SQL, run it, and deliver a polished result? The answer is surprisingly simple — and surprisingly powerful."
+  },
+  {
+    "objectID": "slides/session3.html#learning-objectives",
+    "href": "slides/session3.html#learning-objectives",
+    "title": "Session 3: How Does This Actually Work?",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\n\nUnderstand the agent loop as an orchestrated test-and-review cycle\nSee the 50 lines of code that power the core of the app\nUnderstand where code executes and why that’s an architectural decision"
+  },
+  {
+    "objectID": "slides/session3.html#the-agent-loop",
+    "href": "slides/session3.html#the-agent-loop",
+    "title": "Session 3: How Does This Actually Work?",
+    "section": "The Agent Loop",
+    "text": "The Agent Loop"
+  },
+  {
+    "objectID": "slides/session3.html#what-happens-when-you-ask-a-question",
+    "href": "slides/session3.html#what-happens-when-you-ask-a-question",
+    "title": "Session 3: How Does This Actually Work?",
+    "section": "What Happens When You Ask a Question?",
+    "text": "What Happens When You Ask a Question?\n\n\n\n1\n\n\nSystem Prompt\n\n\nSchema description tells the LLM what tables and columns exist\n\n\n\n\n2\n\n\nTool Call\n\n\nLLM writes SQL (or Python) and requests execution\n\n\n\n\n3\n\n\nExecute & Return\n\n\nSystem runs the code and sends results back to the LLM\n\n\n\n\n4\n\n\nReview & Deliver\n\n\nLLM checks results, fixes errors or delivers the answer"
+  },
+  {
+    "objectID": "slides/session3.html#the-key-insight-test-and-review",
+    "href": "slides/session3.html#the-key-insight-test-and-review",
+    "title": "Session 3: How Does This Actually Work?",
+    "section": "The Key Insight: Test and Review",
+    "text": "The Key Insight: Test and Review\n\nThe agent doesn’t just generate code and hope for the best. It writes code, executes it, reviews the result, and decides whether to deliver or try again.\n\n\nThis is the same pattern a careful analyst follows: write a query, check the output, refine if something looks off, then present the final answer. The LLM automates that entire cycle."
+  },
+  {
+    "objectID": "slides/session3.html#the-agent-loop-in-pseudocode",
+    "href": "slides/session3.html#the-agent-loop-in-pseudocode",
+    "title": "Session 3: How Does This Actually Work?",
+    "section": "The Agent Loop in Pseudocode",
+    "text": "The Agent Loop in Pseudocode\n\n\nagent_loop.py — The Core (~50 Lines)\n\ndef agent_loop(question, schema):\n    messages = [system_prompt(schema), user_message(question)]\n\n    for attempt in range(3):\n        response = llm.chat(messages)\n        if response.has_tool_call:\n            result = execute(response.tool)\n            messages.append(result)        # feed back\n        else:\n            return response.text           # done"
+  },
+  {
+    "objectID": "slides/session3.html#the-system-prompt-is-the-secret",
+    "href": "slides/session3.html#the-system-prompt-is-the-secret",
+    "title": "Session 3: How Does This Actually Work?",
+    "section": "The System Prompt Is the Secret",
+    "text": "The System Prompt Is the Secret"
+  },
+  {
+    "objectID": "slides/session3.html#why-the-prompt-matters",
+    "href": "slides/session3.html#why-the-prompt-matters",
+    "title": "Session 3: How Does This Actually Work?",
+    "section": "Why the Prompt Matters",
+    "text": "Why the Prompt Matters\n\n\n\nWithout Join Key Documentation\n\n\nLLM sees orders and customers tables\nNo information about shared keys\nAgent can’t figure out how to merge\nQuery fails or returns wrong results\n\n\n\n\nWith Join Key Documentation\n\n\nPrompt says: orders.customer_id links to customers.id\nAgent writes correct JOIN\nMerges work on first attempt\nAccurate, complete answers"
+  },
+  {
+    "objectID": "slides/session3.html#the-prompt-is-institutional-knowledge",
+    "href": "slides/session3.html#the-prompt-is-institutional-knowledge",
+    "title": "Session 3: How Does This Actually Work?",
+    "section": "The Prompt Is “Institutional Knowledge”",
+    "text": "The Prompt Is “Institutional Knowledge”\n\nThe system prompt encodes everything the agent needs to know about your data: table names, column meanings, relationships, business rules, and formatting preferences.\n\n\nChange the prompt, change the behavior. Add a rule like “always filter to active customers” and every query respects it. Remove join documentation and merges break. The prompt is the most important piece of the system."
+  },
+  {
+    "objectID": "slides/session3.html#where-does-the-code-run",
+    "href": "slides/session3.html#where-does-the-code-run",
+    "title": "Session 3: How Does This Actually Work?",
+    "section": "Where Does the Code Run?",
+    "text": "Where Does the Code Run?"
+  },
+  {
+    "objectID": "slides/session3.html#three-architecture-options",
+    "href": "slides/session3.html#three-architecture-options",
+    "title": "Session 3: How Does This Actually Work?",
+    "section": "Three Architecture Options",
+    "text": "Three Architecture Options\n\n\n\nA. Cloud LLM Sandbox\n\n\nVendor runs the code (OpenAI, Anthropic)\nSimplest to set up\nData leaves your network\nFine for non-sensitive data\n\n\n\n\nB. Your Own Containers\n\n\nDocker on your servers or cloud\nProduction answer for sensitive data\nYou control the execution environment\nMore infrastructure to manage\n\n\n\n\nC. SQL-Only Mode\n\n\nNo Python execution at all\nLLM generates SQL, your DB runs it\nSafest for regulated environments\nCan’t do in-memory merges or charts"
+  },
+  {
+    "objectID": "slides/session3.html#choosing-the-right-option",
+    "href": "slides/session3.html#choosing-the-right-option",
+    "title": "Session 3: How Does This Actually Work?",
+    "section": "Choosing the Right Option",
+    "text": "Choosing the Right Option\n\n\n\n\n\nCloud Sandbox\nYour Containers\nSQL-Only\n\n\n\n\nSetup effort\nLow\nMedium\nLow\n\n\nData stays on-prem\nNo\nYes\nYes\n\n\nPython/charting\nYes\nYes\nNo\n\n\nBest for\nPrototyping\nProduction\nRegulated"
+  },
+  {
+    "objectID": "slides/session3.html#the-complexity-iceberg",
+    "href": "slides/session3.html#the-complexity-iceberg",
+    "title": "Session 3: How Does This Actually Work?",
+    "section": "The Complexity Iceberg",
+    "text": "The Complexity Iceberg"
+  },
+  {
+    "objectID": "slides/session3.html#simple-core-complex-deployment",
+    "href": "slides/session3.html#simple-core-complex-deployment",
+    "title": "Session 3: How Does This Actually Work?",
+    "section": "Simple Core, Complex Deployment",
+    "text": "Simple Core, Complex Deployment\n\n\n\n~50\n\n\nLines of core agent logic\n\n\n\n\n3,000+\n\n\nLines in a production app\n\n\n\n\n60x\n\n\nGrowth from prototype to production"
+  },
+  {
+    "objectID": "slides/session3.html#what-the-other-2950-lines-do",
+    "href": "slides/session3.html#what-the-other-2950-lines-do",
+    "title": "Session 3: How Does This Actually Work?",
+    "section": "What the Other 2,950 Lines Do",
+    "text": "What the Other 2,950 Lines Do\n\n\nSecurity & Access\n\nAuthentication (who are you?)\nAuthorization (what can you see?)\nRow-level access control\nAudit logging\n\n\n\nReliability & Scale\n\nError handling & retries\nRate limiting\nMulti-tenancy\nMonitoring & alerting\nFailover & backup\n\n\n\n\nThe core loop is elegant and simple. The production wrapper is where the engineering effort lives. This is why you buy or build on a platform rather than rolling your own from scratch."
+  },
+  {
+    "objectID": "slides/session3.html#live-build",
+    "href": "slides/session3.html#live-build",
+    "title": "Session 3: How Does This Actually Work?",
+    "section": "Live Build",
+    "text": "Live Build"
+  },
+  {
+    "objectID": "slides/session3.html#lets-build-an-agent-right-now",
+    "href": "slides/session3.html#lets-build-an-agent-right-now",
+    "title": "Session 3: How Does This Actually Work?",
+    "section": "Let’s Build an Agent — Right Now",
+    "text": "Let’s Build an Agent — Right Now\n\n\nLive Demo Plan\n\n\nStart with a blank file and a sample database\nWrite the system prompt describing the schema\nAdd the agent loop (the ~50 lines)\nAsk a question and watch it work\nBreak it (remove join docs) and watch it fail\nFix it and watch it recover\n\n\n\nYour developer could do this. The point isn’t that it’s hard — it’s that it’s tractable. The magic is in the prompt design and the execution architecture, not in thousands of lines of code."
+  },
+  {
+    "objectID": "slides/session3.html#what-you-just-saw",
+    "href": "slides/session3.html#what-you-just-saw",
+    "title": "Session 3: How Does This Actually Work?",
+    "section": "What You Just Saw",
+    "text": "What You Just Saw\n\nA working AI agent, built from scratch in minutes, that can answer business questions by writing and executing SQL against a real database. The same pattern powers every BI agent on the market."
+  },
+  {
+    "objectID": "slides/session3.html#session-3-recap",
+    "href": "slides/session3.html#session-3-recap",
+    "title": "Session 3: How Does This Actually Work?",
+    "section": "Session 3 Recap",
+    "text": "Session 3 Recap\n\n\n\n1\n\n\nAgent Loop\n\n\nPrompt, generate, execute, review, deliver\n\n\n\n\n2\n\n\nSystem Prompt\n\n\nThe institutional knowledge layer that makes it all work\n\n\n\n\n3\n\n\nExecution\n\n\nCloud, containers, or SQL-only — pick your tradeoff\n\n\n\n\n4\n\n\nIceberg\n\n\n50-line core, 3,000-line production app"
+  },
+  {
+    "objectID": "slides/session3.html#before-next-session",
+    "href": "slides/session3.html#before-next-session",
+    "title": "Session 3: How Does This Actually Work?",
+    "section": "Before Next Session",
+    "text": "Before Next Session\n\n\nHomework\n\n\nRequired: For the use case you identified in Session 2, what data quality issues would you expect? What pre-work is needed before an agent could query your systems?\nOptional (hands-on): SSH credentials are provided. Try Exercise 1 (hello-world agent) and Exercise 2 (multi-system agent) on the Linux server. Claude Code will help — you direct it in English.\nOptional reading: a16z: “How 100 Enterprise CIOs Are Building and Buying Gen AI in 2025” and DUNNIXER vendor scorecard. Keep both — you’ll use them in Session 5.\n\n\n\nWednesday’s session: From Data to Deliverable — we chain agent steps into automated reporting pipelines."
+  },
+  {
+    "objectID": "slides/session3.html#key-takeaway",
+    "href": "slides/session3.html#key-takeaway",
+    "title": "Session 3: How Does This Actually Work?",
+    "section": "Key Takeaway",
+    "text": "Key Takeaway"
+  },
+  {
+    "objectID": "slides/session3.html#lines-and-a-good-prompt.",
+    "href": "slides/session3.html#lines-and-a-good-prompt.",
+    "title": "Session 3: How Does This Actually Work?",
+    "section": "50 lines and a good prompt.",
+    "text": "50 lines and a good prompt."
+  },
+  {
+    "objectID": "slides/session3.html#thats-the-core.-the-other-3000-lines-are-what-production-requires.",
+    "href": "slides/session3.html#thats-the-core.-the-other-3000-lines-are-what-production-requires.",
+    "title": "Session 3: How Does This Actually Work?",
+    "section": "That’s the core. The other 3,000 lines are what production requires.",
+    "text": "That’s the core. The other 3,000 lines are what production requires.\n\nKnowing the difference is how you evaluate vendors, scope projects, and avoid overpaying."
+  },
+  {
+    "objectID": "slides/session5.html#from-prototype-to-production",
+    "href": "slides/session5.html#from-prototype-to-production",
+    "title": "Session 5: What Does Deployment Look Like?",
+    "section": "From Prototype to Production",
+    "text": "From Prototype to Production\n\n“Morgan Stanley deployed GPT-4 to 16,000 financial advisors — choosing a cloud API with zero data retention to satisfy SEC and FINRA requirements. The bottleneck wasn’t the technology. It was the architecture decision.”\n\n\n— Morgan Stanley AI at Work case, 2024"
+  },
+  {
+    "objectID": "slides/session5.html#todays-learning-objectives",
+    "href": "slides/session5.html#todays-learning-objectives",
+    "title": "Session 5: What Does Deployment Look Like?",
+    "section": "Today’s Learning Objectives",
+    "text": "Today’s Learning Objectives\n\n\nBy the end of this session, you will be able to:\n\n\nCompare LLM deployment options: cloud API, on-premise, and hybrid\nIdentify data security risks and match them to mitigation strategies\nEvaluate build vs. buy vs. extend using a structured framework\nDraft a deployment profile for your capstone use case"
+  },
+  {
+    "objectID": "slides/session5.html#homework-debrief",
+    "href": "slides/session5.html#homework-debrief",
+    "title": "Session 5: What Does Deployment Look Like?",
+    "section": "Homework Debrief",
+    "text": "Homework Debrief"
+  },
+  {
+    "objectID": "slides/session5.html#what-did-you-build",
+    "href": "slides/session5.html#what-did-you-build",
+    "title": "Session 5: What Does Deployment Look Like?",
+    "section": "What Did You Build?",
+    "text": "What Did You Build?\n\n\n\nShare Your Deliverable\n\n\nWalk us through the output from Session 4\nWhat question did it answer?\nWho is the audience — and what format did you choose?\n\n\n\n\nThe Board-Ready Test\n\n\nWhat looks right at first glance?\nWhat would you verify before sending to your board?\nWhere could the agent have introduced errors?\n\n\n\n\nThe gap between “interesting demo” and “decision-grade output” is exactly what today’s session is about."
+  },
+  {
+    "objectID": "slides/session5.html#two-separate-decisions",
+    "href": "slides/session5.html#two-separate-decisions",
+    "title": "Session 5: What Does Deployment Look Like?",
+    "section": "Two Separate Decisions",
+    "text": "Two Separate Decisions"
+  },
+  {
+    "objectID": "slides/session5.html#where-does-it-run",
+    "href": "slides/session5.html#where-does-it-run",
+    "title": "Session 5: What Does Deployment Look Like?",
+    "section": "Where Does It Run?",
+    "text": "Where Does It Run?\n\n\n\nWhere does YOUR CODE run?\n\n\nYour application, database connectors, orchestration logic\nTypically: your cloud tenant, your VPC, your servers\nYou control this entirely\n\n\n\n\nWhere does THE LLM run?\n\n\nThe large language model that interprets questions and generates SQL\nCloud API, on-premise, or hybrid\nThis is the deployment decision\n\n\n\n\nBridge from Session 3: the agent architecture has two halves. Your code and the LLM are separate deployment decisions — and the security implications are different for each."
+  },
+  {
+    "objectID": "slides/session5.html#three-deployment-options",
+    "href": "slides/session5.html#three-deployment-options",
+    "title": "Session 5: What Does Deployment Look Like?",
+    "section": "Three Deployment Options",
+    "text": "Three Deployment Options\n\n\n\nCloud API\n\n\nOpenAI, Anthropic, Google, etc.\nPay per query (~$0.01–0.05)\nNo infrastructure to manage\nData leaves your network\nBest for: fast start, variable workloads\n\n\n\n\nOn-Premise / Private Cloud\n\n\nSelf-hosted open-source models\n$50–200K+ upfront investment\nFull data control\nRequires ML engineering staff\nBest for: regulated industries, sensitive data\n\n\n\n\nHybrid\n\n\nRoute by sensitivity level\nSensitive queries stay on-prem\nGeneral queries use cloud API\nMore complex orchestration\nBest for: balanced risk/cost"
+  },
+  {
+    "objectID": "slides/session5.html#cost-comparison",
+    "href": "slides/session5.html#cost-comparison",
+    "title": "Session 5: What Does Deployment Look Like?",
+    "section": "Cost Comparison",
+    "text": "Cost Comparison\n\n\n\n$0.01–0.05\n\n\nPer query — Cloud API (GPT-4, Claude, Gemini)\n\n\n\n\n$50–200K+\n\n\nUpfront — On-premise GPU infrastructure\n\n\n\n\n90%\n\n\nOf enterprises testing third-party AI for customer support (a16z survey)\n\n\n\n\nCloud API dominates early adoption. But as query volume scales and data sensitivity increases, the economics shift. Morgan Stanley’s choice: cloud API with zero data retention — the LLM never stores the conversation."
+  },
+  {
+    "objectID": "slides/session5.html#the-data-security-problem",
+    "href": "slides/session5.html#the-data-security-problem",
+    "title": "Session 5: What Does Deployment Look Like?",
+    "section": "The Data Security Problem",
+    "text": "The Data Security Problem"
+  },
+  {
+    "objectID": "slides/session5.html#demo-data-security-in-action",
+    "href": "slides/session5.html#demo-data-security-in-action",
+    "title": "Session 5: What Does Deployment Look Like?",
+    "section": "Demo: Data Security in Action",
+    "text": "Demo: Data Security in Action\n\n\n\nVersion 1: No Guardrails\n\n\n“Show me individual salary data for the Engineering team”\nAgent returns names, titles, and exact salaries\nTechnically correct — but a governance disaster\n\n\n\n\nVersion 2: Guardrailed\n\n\nSame question — blocked or returns aggregates only\n“Average salary for Engineering: $142K (n=47)”\nThe LLM sees the same data; the guardrails control what it returns\n\n\n\n\nThe question isn’t whether the AI can access the data. It’s whether it should — and who decides."
+  },
+  {
+    "objectID": "slides/session5.html#four-data-security-approaches",
+    "href": "slides/session5.html#four-data-security-approaches",
+    "title": "Session 5: What Does Deployment Look Like?",
+    "section": "Four Data Security Approaches",
+    "text": "Four Data Security Approaches\n\n\n\n\n\n\n\n\n\nApproach\nHow It Works\nTradeoff\n\n\n\n\nZero Data Retention\nLLM provider contractually deletes all inputs/outputs\nSimplest; still sends data to third party\n\n\nData Masking / Anonymization\nStrip PII before sending to LLM; re-identify on return\nPreserves analytical value; adds latency\n\n\nOn-Premise Models\nLLM runs inside your network; data never leaves\nFull control; highest cost and complexity\n\n\nRole-Based Query Filtering\nAgent enforces permissions based on user identity\nGranular control; requires identity integration\n\n\n\n\n\nMost production deployments combine two or more of these approaches. Morgan Stanley used zero data retention + role-based access."
+  },
+  {
+    "objectID": "slides/session5.html#build-vs.-buy",
+    "href": "slides/session5.html#build-vs.-buy",
+    "title": "Session 5: What Does Deployment Look Like?",
+    "section": "Build vs. Buy",
+    "text": "Build vs. Buy"
+  },
+  {
+    "objectID": "slides/session5.html#the-dunnixer-framework",
+    "href": "slides/session5.html#the-dunnixer-framework",
+    "title": "Session 5: What Does Deployment Look Like?",
+    "section": "The DUNNIXER Framework",
+    "text": "The DUNNIXER Framework\n\n\nDUNNIXER: Eight Dimensions for Evaluating AI Solutions\n\n\nData integration — How well does it connect to your existing systems?\nUser experience — How intuitive is it for non-technical users?\nNuance & accuracy — How well does it handle domain-specific language?\nNon-functional requirements — Security, compliance, scalability, uptime\nImplementation timeline — Weeks, months, or quarters to production?\nXtensibility — Can you customize prompts, add tools, evolve it?\nEconomics — Total cost of ownership over 3 years\nRisk profile — Vendor lock-in, model deprecation, talent dependency"
+  },
+  {
+    "objectID": "slides/session5.html#four-strategic-options",
+    "href": "slides/session5.html#four-strategic-options",
+    "title": "Session 5: What Does Deployment Look Like?",
+    "section": "Four Strategic Options",
+    "text": "Four Strategic Options\n\n\n\nBuy from Incumbent\n\n\nSalesforce, Microsoft, SAP\nLowest risk, fastest start\nLimited customization\nYou’re locked into their roadmap\n\n\n\n\nAI-Native Startup\n\n\nPurpose-built for AI-first workflows\nHighest capability today\nVendor survival risk\nMay not integrate with legacy\n\n\n\n\nBuild Internally\n\n\nFull control over every layer\nHighest customization\nRequires ML + engineering talent\nLongest time to production\n\n\n\n\nHybrid / Extend\n\n\nBuy a platform, customize on top\nExample: Salesforce Agentforce\nModerate risk and control\nMost common enterprise pattern"
+  },
+  {
+    "objectID": "slides/session5.html#example-salesforce-agentforce",
+    "href": "slides/session5.html#example-salesforce-agentforce",
+    "title": "Session 5: What Does Deployment Look Like?",
+    "section": "Example: Salesforce Agentforce",
+    "text": "Example: Salesforce Agentforce\n\nWhat it is: Salesforce’s AI agent platform — extends your existing CRM with conversational AI, pre-built connectors, and guardrails.\n\n\n\nStrengths\n\nAlready integrated with your Salesforce data\nEnterprise security and compliance built in\nLow-code customization for business users\nSalesforce handles model updates and scaling\n\n\n\nLimitations\n\nOnly works well within the Salesforce ecosystem\nLimited cross-system querying (NetSuite, Workday, etc.)\nPricing tied to Salesforce licensing\nYou don’t control the underlying model\n\n\n\n\nAgentforce illustrates the extend strategy: buy the platform, customize the prompts and tools, accept the vendor’s guardrails."
+  },
+  {
+    "objectID": "slides/session5.html#decision-matrix",
+    "href": "slides/session5.html#decision-matrix",
+    "title": "Session 5: What Does Deployment Look Like?",
+    "section": "Decision Matrix",
+    "text": "Decision Matrix\n\n\n\n\n\n\n\n\n\n\n\nCriterion\nBuy (Incumbent)\nAI-Native Startup\nBuild Internally\nHybrid / Extend\n\n\n\n\nTime to value\nWeeks\nWeeks–months\nQuarters\nMonths\n\n\nCustomization\nLow\nMedium\nHigh\nMedium–High\n\n\nData control\nVendor-dependent\nVendor-dependent\nFull\nShared\n\n\nRisk\nLowest\nHighest (vendor)\nHighest (execution)\nModerate\n\n\nCost (Year 1)\n$50–200K\n$30–150K\n$200K–1M+\n$100–300K"
+  },
+  {
+    "objectID": "slides/session5.html#what-if-youre-not-ready",
+    "href": "slides/session5.html#what-if-youre-not-ready",
+    "title": "Session 5: What Does Deployment Look Like?",
+    "section": "What If You’re Not Ready?",
+    "text": "What If You’re Not Ready?\n\nNot every company is ready for an AI agent deployment. If you don’t have documented schemas, API access, or data catalogs, the honest answer may be: invest in data readiness first.\n\n\n\nSigns You Should Wait\n\n\nNo one can describe your schema in plain English\nAPI access requires a 6-month procurement process\nYour data has no owner or steward\nCompliance has never been asked about AI access to production data\n\n\n\nThe 60–90 days of pre-work from Session 2 applies here. Data readiness is the prerequisite that no vendor demo will mention."
+  },
+  {
+    "objectID": "slides/session5.html#breakout-your-deployment-profile",
+    "href": "slides/session5.html#breakout-your-deployment-profile",
+    "title": "Session 5: What Does Deployment Look Like?",
+    "section": "Breakout: Your Deployment Profile",
+    "text": "Breakout: Your Deployment Profile"
+  },
+  {
+    "objectID": "slides/session5.html#breakout-exercise",
+    "href": "slides/session5.html#breakout-exercise",
+    "title": "Session 5: What Does Deployment Look Like?",
+    "section": "Breakout Exercise",
+    "text": "Breakout Exercise\n\n\nFor Your Use Case (20 minutes)\n\n\nDeployment: Which option — cloud API, on-premise, or hybrid? Why?\nSecurity: Which combination of data security approaches fits your industry?\nBuild vs. Buy: Where does your organization land on the decision matrix?\nConstraints: What regulatory, budget, or talent constraints shape the decision?\n\n\n\nEach team presents a 2-minute summary. Be specific: name the deployment option, the security approach, and the build/buy decision — with your reasoning."
+  },
+  {
+    "objectID": "slides/session5.html#individual-work-capstone-deployment-profile",
+    "href": "slides/session5.html#individual-work-capstone-deployment-profile",
+    "title": "Session 5: What Does Deployment Look Like?",
+    "section": "Individual Work: Capstone Deployment Profile",
+    "text": "Individual Work: Capstone Deployment Profile\n\n\nWrite Your Deployment Profile (15 minutes)\n\n\nUse case: One sentence describing your AI data agent\nDeployment: Cloud API / On-prem / Hybrid — and why\nSecurity: Which approaches and why\nBuild / Buy / Extend: Your recommendation with rationale\nKey risk: The single biggest risk and your mitigation plan\n\n\n\nThis becomes a section of your capstone. Draft it now while the frameworks are fresh."
+  },
+  {
+    "objectID": "slides/session5.html#before-next-session",
+    "href": "slides/session5.html#before-next-session",
+    "title": "Session 5: What Does Deployment Look Like?",
+    "section": "Before Next Session",
+    "text": "Before Next Session\n\n\nHomework\n\n\nFor your identified use case: what governance requirements would your compliance team impose? Write down your top 3 concerns.\nThink about who in your organization would need to approve an AI agent deployment — and what objections they’d raise.\nComplete your deployment profile draft if you haven’t already.\n\n\n\nWednesday’s session: Can You Trust It? — we stress-test AI agents, learn the maker/checker framework, and design governance guardrails."
+  },
+  {
+    "objectID": "slides/session5.html#key-takeaway",
+    "href": "slides/session5.html#key-takeaway",
+    "title": "Session 5: What Does Deployment Look Like?",
+    "section": "Key Takeaway",
+    "text": "Key Takeaway"
+  },
+  {
+    "objectID": "slides/session5.html#the-hardest-part-isnt-the-model.",
+    "href": "slides/session5.html#the-hardest-part-isnt-the-model.",
+    "title": "Session 5: What Does Deployment Look Like?",
+    "section": "The hardest part isn’t the model.",
+    "text": "The hardest part isn’t the model."
+  },
+  {
+    "objectID": "slides/session5.html#its-the-decisions-around-the-model.",
+    "href": "slides/session5.html#its-the-decisions-around-the-model.",
+    "title": "Session 5: What Does Deployment Look Like?",
+    "section": "It’s the decisions around the model.",
+    "text": "It’s the decisions around the model.\n\nWhere it runs, what it sees, and who controls it. Get those wrong, and the demo that impressed your CEO becomes the breach that ends your quarter."
+  },
+  {
+    "objectID": "slides/session7.html#last-session-trust-and-verification",
+    "href": "slides/session7.html#last-session-trust-and-verification",
+    "title": "Session 7: Document AI — Answers from Your Own Files",
+    "section": "Last Session: Trust and Verification",
+    "text": "Last Session: Trust and Verification"
+  },
+  {
+    "objectID": "slides/session7.html#bridge-atherton-case-debrief",
+    "href": "slides/session7.html#bridge-atherton-case-debrief",
+    "title": "Session 7: Document AI — Answers from Your Own Files",
+    "section": "Bridge + Atherton Case Debrief",
+    "text": "Bridge + Atherton Case Debrief\n\n\n\nWhat Atherton Deployed\n\n\nDocument AI across compliance policies, vendor contracts, and HR handbooks\nEmployees could ask questions in plain English and get cited answers\nReplaced a manual process of searching SharePoint and emailing Legal\n\n\n\n\nWhat Went Wrong\n\n\nChunking failures — long contract clauses split mid-sentence, wrong answers returned\nAccess control gaps — junior staff saw board-level compensation data\nStale documents — system answered from a superseded policy version\n\n\n\n\nWhat would you have done differently? We’ll return to each of these failure modes today."
+  },
+  {
+    "objectID": "slides/session7.html#todays-learning-objectives",
+    "href": "slides/session7.html#todays-learning-objectives",
+    "title": "Session 7: Document AI — Answers from Your Own Files",
+    "section": "Today’s Learning Objectives",
+    "text": "Today’s Learning Objectives\n\n\nBy the end of this session, you will be able to:\n\n\nExplain how AI answers questions from company documents — with citations\nDistinguish database AI from document AI and know when to use each\nExperience RAG hands-on and understand key deployment decisions"
+  },
+  {
+    "objectID": "slides/session7.html#two-kinds-of-ai-for-business",
+    "href": "slides/session7.html#two-kinds-of-ai-for-business",
+    "title": "Session 7: Document AI — Answers from Your Own Files",
+    "section": "Two Kinds of AI for Business",
+    "text": "Two Kinds of AI for Business\n\n\n\nDatabase AI (Sessions 1–6)\n\n\nQueries structured data in rows and columns\nWrites SQL, runs it, returns results\nBest for: numbers, trends, KPIs, comparisons\nSource of truth: your transactional systems\n\n\n\n\nDocument AI (Today)\n\n\nQueries unstructured text in PDFs, Word docs, policies\nRetrieves relevant passages, synthesizes an answer with citations\nBest for: policies, contracts, procedures, meeting notes\nSource of truth: your document repositories\n\n\n\n\nMost real business questions need both. “What’s our contractual commitment to GE, and how does their actual spending compare?” requires document AI for the contract and database AI for the spending data."
+  },
+  {
+    "objectID": "slides/session7.html#demo-document-qa-with-meridian-corp",
+    "href": "slides/session7.html#demo-document-qa-with-meridian-corp",
+    "title": "Session 7: Document AI — Answers from Your Own Files",
+    "section": "Demo: Document Q&A with Meridian Corp",
+    "text": "Demo: Document Q&A with Meridian Corp"
+  },
+  {
+    "objectID": "slides/session7.html#meridians-document-collections",
+    "href": "slides/session7.html#meridians-document-collections",
+    "title": "Session 7: Document AI — Answers from Your Own Files",
+    "section": "Meridian’s Document Collections",
+    "text": "Meridian’s Document Collections\n\n\n\nHR & Compliance\n\n\nEmployee handbook\nTravel & expense policy\nCode of conduct\nSafety procedures\n\n\n\n\nLegal & Contracts\n\n\nVendor agreements\nMaster service agreements\nNon-disclosure agreements\nSLA commitments\n\n\n\n\nGovernance\n\n\nBoard meeting minutes\nCompliance audit reports\nRisk assessments\nStrategic plans\n\n\n\n\nThese are the same kinds of documents trapped in SharePoint folders, shared drives, and email attachments at every company."
+  },
+  {
+    "objectID": "slides/session7.html#how-rag-works",
+    "href": "slides/session7.html#how-rag-works",
+    "title": "Session 7: Document AI — Answers from Your Own Files",
+    "section": "How RAG Works",
+    "text": "How RAG Works\n\n\n\n1\n\n\nChunk\n\n\nDocuments split into passages (paragraphs, sections, or clauses)\n\n\n\n\n2\n\n\nEmbed\n\n\nEach chunk converted to a numerical vector by an embedding model\n\n\n\n\n3\n\n\nStore\n\n\nVectors stored in a vector database for fast similarity search\n\n\n\n\n4\n\n\nQuery\n\n\nUser’s question embedded the same way; top matching chunks retrieved\n\n\n\n\n5\n\n\nGenerate\n\n\nLLM receives question + retrieved chunks and produces a cited answer\n\n\n\n\nRAG = Retrieval-Augmented Generation. The LLM only sees what the retrieval step finds. If retrieval fails, the answer fails — no matter how smart the model is."
+  },
+  {
+    "objectID": "slides/session7.html#the-key-insight",
+    "href": "slides/session7.html#the-key-insight",
+    "title": "Session 7: Document AI — Answers from Your Own Files",
+    "section": "The Key Insight",
+    "text": "The Key Insight"
+  },
+  {
+    "objectID": "slides/session7.html#the-llm-doesnt-read-your-documents.",
+    "href": "slides/session7.html#the-llm-doesnt-read-your-documents.",
+    "title": "Session 7: Document AI — Answers from Your Own Files",
+    "section": "The LLM doesn’t read your documents.",
+    "text": "The LLM doesn’t read your documents."
+  },
+  {
+    "objectID": "slides/session7.html#it-reads-whatever-the-retrieval-system-hands-it.",
+    "href": "slides/session7.html#it-reads-whatever-the-retrieval-system-hands-it.",
+    "title": "Session 7: Document AI — Answers from Your Own Files",
+    "section": "It reads whatever the retrieval system hands it.",
+    "text": "It reads whatever the retrieval system hands it.\n\nRAG quality is retrieval quality. If the retrieval step fails, the answer fails — no matter how smart the model is."
+  },
+  {
+    "objectID": "slides/session7.html#hands-on-round-1-simple-retrieval",
+    "href": "slides/session7.html#hands-on-round-1-simple-retrieval",
+    "title": "Session 7: Document AI — Answers from Your Own Files",
+    "section": "Hands-On Round 1: Simple Retrieval",
+    "text": "Hands-On Round 1: Simple Retrieval\n\n\nRound 1 — Single-Document Questions\n\n\n“What is Meridian’s policy on remote work?”\n“What are the expense approval thresholds?”\n“How many vacation days do employees get after 5 years?”\nNotice the citations — each answer points back to a specific document and section\n\n\n\nStart simple. Ask questions that live in a single document. Pay attention to where the system says the answer came from."
+  },
+  {
+    "objectID": "slides/session7.html#hands-on-round-2-cross-document",
+    "href": "slides/session7.html#hands-on-round-2-cross-document",
+    "title": "Session 7: Document AI — Answers from Your Own Files",
+    "section": "Hands-On Round 2: Cross-Document",
+    "text": "Hands-On Round 2: Cross-Document\n\n\nRound 2 — Questions Spanning Multiple Documents\n\n\n“What are our obligations under the GE contract, and are there any compliance risks flagged in the latest audit?”\n“Does our travel policy align with what we committed to in the Apex Industries MSA?”\n“What did the board say about vendor consolidation, and which contracts are up for renewal?”\n\n\n\nThese questions require the system to retrieve from multiple documents and synthesize. Watch for gaps where it finds one source but misses the other."
+  },
+  {
+    "objectID": "slides/session7.html#hands-on-round-3-cross-system",
+    "href": "slides/session7.html#hands-on-round-3-cross-system",
+    "title": "Session 7: Document AI — Answers from Your Own Files",
+    "section": "Hands-On Round 3: Cross-System",
+    "text": "Hands-On Round 3: Cross-System\n\n\nRound 3 — Document AI + Database AI Together\n\n\n“What’s our contractual commitment to GE, and how does their actual spending compare?”\n“The board minutes mention expanding the Energy Division — what do the sales numbers show?”\n“Our vendor agreement with Apex caps annual spend at $2M — are we on track to exceed it?”\n\n\n\nThis is where it gets powerful. The system pulls the contract language from document AI and the actual numbers from database queries. Two systems, one answer."
+  },
+  {
+    "objectID": "slides/session7.html#when-rag-fails",
+    "href": "slides/session7.html#when-rag-fails",
+    "title": "Session 7: Document AI — Answers from Your Own Files",
+    "section": "When RAG Fails",
+    "text": "When RAG Fails\n\n\n\nRetrieval Misses\n\n\nQuestion phrased differently than source text\nRelevant chunk not in top results\nResult: correct answer exists but system can’t find it\n\n\n\n\nHallucinated Citations\n\n\nLLM generates plausible-sounding references\nCitation points to wrong section or nonexistent page\nResult: answer looks authoritative but is wrong\n\n\n\n\nStale Documents\n\n\nPolicy was updated but old version still indexed\nSystem answers from superseded document\nResult: confidently delivers outdated information\n\n\n\n\nLive demo: Watch what happens when a contract clause is split across two chunks. The system retrieves half the clause and gives a dangerously incomplete answer."
+  },
+  {
+    "objectID": "slides/session7.html#context-window-limits",
+    "href": "slides/session7.html#context-window-limits",
+    "title": "Session 7: Document AI — Answers from Your Own Files",
+    "section": "Context Window Limits",
+    "text": "Context Window Limits"
+  },
+  {
+    "objectID": "slides/session7.html#even-the-best-models-have-a-ceiling",
+    "href": "slides/session7.html#even-the-best-models-have-a-ceiling",
+    "title": "Session 7: Document AI — Answers from Your Own Files",
+    "section": "Even the best models have a ceiling",
+    "text": "Even the best models have a ceiling\n\nIf your question requires context from 50 pages of contracts, the model can only see what fits in its context window. Retrieval quality matters because you can’t just dump everything in. Chunking strategy determines what the model gets to see."
+  },
+  {
+    "objectID": "slides/session7.html#deploying-rag-key-decisions",
+    "href": "slides/session7.html#deploying-rag-key-decisions",
+    "title": "Session 7: Document AI — Answers from Your Own Files",
+    "section": "Deploying RAG: Key Decisions",
+    "text": "Deploying RAG: Key Decisions\n\n\n\n1\n\n\nDocument Ingestion\n\n\nPDF parsing, OCR for scans, handling tables and images\n\n\n\n\n2\n\n\nChunking Strategy\n\n\nBy section for policies, by clause for contracts, by paragraph for memos\n\n\n\n\n3\n\n\nFreshness\n\n\nRe-index on update, version tracking, retire superseded docs\n\n\n\n\n4\n\n\nAccess Control\n\n\nDocument-level permissions must carry over — who can see what\n\n\n\n\nChunking is the single highest-leverage decision. Bad chunking = bad retrieval = bad answers, regardless of model quality."
+  },
+  {
+    "objectID": "slides/session7.html#build-vs.-buy",
+    "href": "slides/session7.html#build-vs.-buy",
+    "title": "Session 7: Document AI — Answers from Your Own Files",
+    "section": "Build vs. Buy",
+    "text": "Build vs. Buy\n\n\n\n\n\n\n\n\n\n\nTurnkey Platforms\nCustom Build\n\n\n\n\nExamples\nGlean, Guru, Microsoft Copilot for M365\nLangChain + vector DB + your infra\n\n\nSetup time\nDays to weeks\nWeeks to months\n\n\nCustomization\nLimited — works with standard doc formats\nFull control over chunking, retrieval, prompts\n\n\nAccess control\nBuilt-in (inherits from source system)\nYou build it\n\n\nCost model\nPer-user subscription\nInfrastructure + engineering time\n\n\nBest for\nBroad knowledge base across standard tools\nDomain-specific docs, regulatory, proprietary formats\n\n\n\n\n\nMost companies start with a turnkey platform for general knowledge and build custom RAG only where the domain requires it (legal, compliance, engineering specs)."
+  },
+  {
+    "objectID": "slides/session7.html#breakout-where-is-knowledge-trapped",
+    "href": "slides/session7.html#breakout-where-is-knowledge-trapped",
+    "title": "Session 7: Document AI — Answers from Your Own Files",
+    "section": "Breakout: Where Is Knowledge Trapped?",
+    "text": "Breakout: Where Is Knowledge Trapped?\n\n\n\nIdentify\n\n\nName 2–3 document collections at your company that would benefit from AI-powered Q&A\nThink: policies, contracts, procedures, meeting notes, customer communications\nWhere do people currently go to find this information?\n\n\n\n\nEvaluate\n\n\nHow often are these documents updated?\nWho needs access — and who shouldn’t have it?\nWhat’s the cost of a wrong answer from stale or incomplete documents?\n\n\n\n\nReport back: your top candidate document collection and the biggest deployment risk you foresee."
+  },
+  {
+    "objectID": "slides/session7.html#before-next-session",
+    "href": "slides/session7.html#before-next-session",
+    "title": "Session 7: Document AI — Answers from Your Own Files",
+    "section": "Before Next Session",
+    "text": "Before Next Session\n\n\nHomework — Capstone\n\n\nFinalize your strategy document (1–2 pages) using the capstone template. Cover all 8 sections: problem, solution, deployment, 90-day pilot, success metrics, risks, the ask, and Day 1 action.\nPrepare a 5-minute presentation for Session 8. You will present to your breakout group, and the strongest strategies will advance to the full class.\nUse the evaluation rubric to self-check: Is the pilot scoped tightly? Are success metrics measurable? Is the Day 1 action specific?\n\n\n\nMonday’s final session: Your AI Strategy — you present, we synthesize, and you leave with a concrete plan."
+  },
+  {
+    "objectID": "slides/session7.html#key-takeaway",
+    "href": "slides/session7.html#key-takeaway",
+    "title": "Session 7: Document AI — Answers from Your Own Files",
+    "section": "Key Takeaway",
+    "text": "Key Takeaway"
+  },
+  {
+    "objectID": "slides/session7.html#your-most-valuable-knowledge-is-buried-in-documents-nobody-can-search.",
+    "href": "slides/session7.html#your-most-valuable-knowledge-is-buried-in-documents-nobody-can-search.",
+    "title": "Session 7: Document AI — Answers from Your Own Files",
+    "section": "Your most valuable knowledge is buried in documents nobody can search.",
+    "text": "Your most valuable knowledge is buried in documents nobody can search.\n\nRAG doesn’t replace your experts. It makes their expertise accessible to everyone who needs it."
+  }
+]

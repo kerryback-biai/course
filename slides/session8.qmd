@@ -12,9 +12,6 @@ format:
     height: 1080
     margin: 0.05
     center: true
-    include-after-body:
-      - text: |
-          <script src="https://hypothes.is/embed.js" async></script>
 ---
 
 ## The Course Journey {.shrink}
@@ -61,7 +58,7 @@ How It Works Under the Hood --- agents, SQL, and prompts
 Session 4
 :::
 ::: {.timeline-desc}
-The Competitive Landscape --- what's real, what's hype
+From Data to Deliverable --- reporting pipelines
 :::
 :::
 ::: {.timeline-item}
@@ -118,10 +115,16 @@ Your AI Strategy --- capstone and synthesis
 
 ---
 
-## The Setup {.quote-slide}
+## The Setup {.section-divider}
 
-::: {.quote-text}
-"You are presenting to your [executive team]{.amber}. Your breakout group is your board of advisors. Convince them this is worth funding."
+---
+
+## Your Audience {.centered-statement}
+
+## You are presenting to your executive team. Your breakout group is your board of advisors.
+
+::: {.explainer}
+Convince them this is worth funding.
 :::
 
 ---
@@ -137,7 +140,7 @@ Your AI Strategy --- capstone and synthesis
 Breakout Pitches
 :::
 ::: {.step-desc}
-5 groups of 6. Each person gives a 2-minute pitch + 1 min feedback. Group votes on the strongest.
+5 groups of 6. Each person presents for 3 minutes + 2 min feedback. Group votes on the strongest.
 :::
 :::
 ::: {.step-card}
@@ -195,7 +198,7 @@ The best pitches are [narrow and actionable]{.accent}. "We'll deploy document AI
 ::: {.two-cards}
 ::: {.card .card-dark}
 ::: {.card-title}
-Your Pitch (2 minutes)
+Your Pitch (3 minutes)
 :::
 
 - What's the use case?
@@ -260,10 +263,16 @@ The human skill that matters most: asking the right questions and verifying the 
 
 ---
 
-## Beyond Data: AI as Thinking Partner {.quote-slide}
+## Beyond Data {.section-divider}
 
-::: {.quote-text}
-"The real power isn't [asking what happened]{.amber}. It's saying 'I'm considering expanding the Energy Division --- what are the top 3 risks?' Then pushing back. Then refining. AI anchors on whatever framing you provide."
+---
+
+## AI as Thinking Partner {.centered-statement}
+
+## The real power isn't asking what happened. It's asking [what should we do]{.accent} --- and pushing back on the answer.
+
+::: {.explainer}
+AI anchors on whatever framing you provide. The human role is challenging assumptions, not outsourcing judgment.
 :::
 
 ---
@@ -302,38 +311,37 @@ The shift from "report pulling" to "strategic dialogue" is where the real ROI li
 
 ## Monday Morning Actions {.shrink}
 
-::: {.stat-cards}
-::: {.stat-card}
-::: {.stat-number}
-A
+::: {.four-cards}
+::: {.card .card-dark}
+::: {.card-title}
+A. Audit Workflows
 :::
-::: {.stat-label}
-Audit your reporting workflows --- where do people wait for data?
+
+Where do people wait for data? Which recurring reports follow the data → analysis → deliverable pattern?
 :::
+
+::: {.card .card-light}
+::: {.card-title}
+B. Scope a Sprint
 :::
-::: {.stat-card}
-::: {.stat-number}
-B
+
+Pick one team, one data source, 30 days. Build a prototype and test with real questions from real users.
 :::
-::: {.stat-label}
-Scope a 30-day discovery sprint with one team and one data source
+
+::: {.card .card-light}
+::: {.card-title}
+C. Inventory Documents
 :::
+
+Where is knowledge trapped? Policies, contracts, procedures --- which collections would benefit from AI-powered Q&A?
 :::
-::: {.stat-card}
-::: {.stat-number}
-C
+
+::: {.card .card-dark}
+::: {.card-title}
+D. Establish Governance
 :::
-::: {.stat-label}
-Inventory your document collections --- where is knowledge trapped?
-:::
-:::
-::: {.stat-card}
-::: {.stat-number}
-D
-:::
-::: {.stat-label}
-Establish an AI governance framework --- who validates, who approves
-:::
+
+Who validates AI output? Who approves deployment? Define this before shadow IT does it for you.
 :::
 :::
 
@@ -410,12 +418,14 @@ Continue Your Learning
 
 ---
 
-## Final Takeaway {.quote-slide}
+## Final Takeaway {.section-divider}
 
-::: {.quote-text}
-"The companies that win with AI won't be the ones with the [best technology]{.amber}. They'll be the ones that asked the best questions, validated the answers, and had the governance to act on them."
-:::
+---
 
-::: {.quote-source}
---- Now go build something.
+## The companies that win with AI {.centered-statement}
+
+## won't have the best technology. They'll have the best [questions, answers, and governance]{.accent}.
+
+::: {.explainer}
+Now go build something.
 :::

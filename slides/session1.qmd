@@ -12,9 +12,6 @@ format:
     height: 1080
     margin: 0.05
     center: true
-    include-after-body:
-      - text: |
-          <script src="https://hypothes.is/embed.js" async></script>
 ---
 
 ## The Day AI Came for Software {.quote-slide}
@@ -24,7 +21,7 @@ format:
 :::
 
 ::: {.quote-source}
---- Bloomberg, February 2026
+--- The market signal, February 2026
 :::
 
 ---
@@ -45,7 +42,7 @@ Market cap erased from software companies
 70%
 :::
 ::: {.stat-label}
-Of BI dashboards never viewed after creation
+Of BI dashboards estimated to go unused (Gartner)
 :::
 :::
 ::: {.stat-card}
@@ -53,7 +50,7 @@ Of BI dashboards never viewed after creation
 3 wks
 :::
 ::: {.stat-label}
-Average wait for a custom report from the BI team
+Typical wait for a custom report at many organizations
 :::
 :::
 :::
@@ -140,10 +137,14 @@ By the end of this session, you will be able to:
 
 ---
 
-## The Business Lens {.quote-slide}
+## The Business Lens {.section-divider}
 
-::: {.quote-text}
-"If [anyone in your company]{.amber} could query data in plain English --- no SQL, no tickets, no dashboards --- what decisions get made faster? What questions finally get asked?"
+---
+
+## The Key Question
+
+::: {.highlight-box}
+If **anyone in your company** could query data in plain English --- no SQL, no tickets, no dashboards --- what decisions get made faster? What questions finally get asked?
 :::
 
 ---
@@ -221,39 +222,46 @@ Your Simulation Environment
 
 ## Meridian's Systems at a Glance {.shrink}
 
-::: {.three-cards}
+::: {.four-cards}
 ::: {.card .card-dark}
 ::: {.card-title}
-Sales & CRM
+Industrial Division (~$250M)
 :::
 
-- Salesforce (Industrial)
-- Legacy CRM (Energy)
-- HubSpot (Safety)
+- Salesforce CRM
+- NetSuite Finance
+- SAP Operations
 :::
 ::: {.card .card-light}
 ::: {.card-title}
-Finance & Ops
+Energy Division (~$150M)
 :::
 
-- NetSuite ERP
-- Coupa Procurement
-- SAP Concur Expenses
+- Legacy CRM (custom-built)
+- QuickBooks Finance
+- Oracle SCM
 :::
 ::: {.card .card-light}
 ::: {.card-title}
-People & Support
+Safety Division (~$100M)
 :::
 
-- Workday HRIS
+- HubSpot CRM
+- Shared NetSuite Finance
+:::
+::: {.card .card-dark}
+::: {.card-title}
+Corporate HQ
+:::
+
+- Workday HR (all divisions)
+- NetSuite Consolidation
 - Zendesk Support
-- Jira Projects
-- SharePoint Docs
 :::
 :::
 
 ::: {.explainer}
-Three divisions. Three CRMs. One company. This is the cross-system reality most enterprises face.
+Three divisions. Three CRMs. Ten enterprise systems. This is the cross-system reality most enterprises face.
 :::
 
 ---
@@ -315,21 +323,23 @@ Apply
 Homework
 :::
 
-- Explore Meridian Corp data on your own --- try at least 5 new questions
-- Attempt one question that requires data from **more than one system**
-- Write down: What broke? What was hard? What would you need to make this work for real?
-:::
-
-::: {.explainer}
-Wednesday's session: [Our Data Is Everywhere]{.accent} --- we tackle the cross-system problem head-on.
+- Log into the Meridian app and ask **10 business questions** against any single system
+- Write down one question the agent answered well and one where it was unsatisfying or wrong
+- Bring both to Session 2
 :::
 
 ---
 
-## Key Takeaway {.quote-slide}
+## Key Takeaway {.section-divider}
 
-::: {.quote-text}
-"The bottleneck was never the data. It was [access to the data]{.amber}. AI agents don't replace your analysts --- they give everyone else the ability to ask questions without waiting in line."
+---
+
+## The bottleneck was never the data. {.centered-statement}
+
+## It was [access to the data]{.accent}.
+
+::: {.explainer}
+AI agents don't replace your analysts --- they give everyone else the ability to ask questions without waiting in line.
 :::
 
 

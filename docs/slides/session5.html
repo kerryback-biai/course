@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.42">
+
+  <meta name="author" content="Kerry Back, Rice University">
+  <title>Session 5: What Does Deployment Look Like?</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-60f8ca4f5456388ad8e2cc1ece1f01f3.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <script async="" src="https://hypothes.is/embed.js"></script>
+  <script>
+    window.document.addEventListener("DOMContentLoaded", function (_event) {
+      document.body.classList.add('hypothesis-enabled');
+    });
+  </script>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Session 5: What Does Deployment Look Like?</h1>
+  <p class="subtitle">Business Intelligence &amp; AI</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Kerry Back, Rice University 
+</div>
+</div>
+</div>
+
+</section>
+<section id="from-prototype-to-production" class="slide level2 quote-slide center">
+<h2>From Prototype to Production</h2>
+<div class="quote-text">
+<p>“Morgan Stanley deployed GPT-4 to <span class="amber">16,000 financial advisors</span> — choosing a cloud API with <strong>zero data retention</strong> to satisfy SEC and FINRA requirements. The bottleneck wasn’t the technology. It was the architecture decision.”</p>
+</div>
+<div class="quote-source">
+<p>— Morgan Stanley AI at Work case, 2024</p>
+</div>
+</section>
+<section id="todays-learning-objectives" class="slide level2 center">
+<h2>Today’s Learning Objectives</h2>
+<div class="info-box">
+<div class="box-title">
+<p>By the end of this session, you will be able to:</p>
+</div>
+<ul>
+<li>Compare LLM deployment options: cloud API, on-premise, and hybrid</li>
+<li>Identify data security risks and match them to mitigation strategies</li>
+<li>Evaluate build vs.&nbsp;buy vs.&nbsp;extend using a structured framework</li>
+<li>Draft a deployment profile for your capstone use case</li>
+</ul>
+</div>
+</section>
+<section id="homework-debrief" class="slide level2 section-divider center">
+<h2>Homework Debrief</h2>
+</section>
+<section id="what-did-you-build" class="slide level2 shrink center">
+<h2>What Did You Build?</h2>
+<div class="two-cards">
+<div class="card card-dark">
+<div class="card-title">
+<p>Share Your Deliverable</p>
+</div>
+<ul>
+<li>Walk us through the output from Session 4</li>
+<li>What question did it answer?</li>
+<li>Who is the audience — and what format did you choose?</li>
+</ul>
+</div>
+<div class="card card-light">
+<div class="card-title">
+<p>The Board-Ready Test</p>
+</div>
+<ul>
+<li>What looks right at first glance?</li>
+<li>What would you verify before sending to your board?</li>
+<li>Where could the agent have introduced errors?</li>
+</ul>
+</div>
+</div>
+<div class="explainer">
+<p>The gap between “interesting demo” and “decision-grade output” is exactly what today’s session is about.</p>
+</div>
+</section>
+<section id="two-separate-decisions" class="slide level2 section-divider center">
+<h2>Two Separate Decisions</h2>
+</section>
+<section id="where-does-it-run" class="slide level2 shrink center">
+<h2>Where Does It Run?</h2>
+<div class="two-cards">
+<div class="card card-dark">
+<div class="card-title">
+<p>Where does YOUR CODE run?</p>
+</div>
+<ul>
+<li>Your application, database connectors, orchestration logic</li>
+<li>Typically: your cloud tenant, your VPC, your servers</li>
+<li>You control this entirely</li>
+</ul>
+</div>
+<div class="card card-light">
+<div class="card-title">
+<p>Where does THE LLM run?</p>
+</div>
+<ul>
+<li>The large language model that interprets questions and generates SQL</li>
+<li>Cloud API, on-premise, or hybrid</li>
+<li>This is the deployment decision</li>
+</ul>
+</div>
+</div>
+<div class="explainer">
+<p>Bridge from Session 3: the agent architecture has two halves. Your code and the LLM are <span class="accent">separate deployment decisions</span> — and the security implications are different for each.</p>
+</div>
+</section>
+<section id="three-deployment-options" class="slide level2 shrink center">
+<h2>Three Deployment Options</h2>
+<div class="three-cards">
+<div class="card card-dark">
+<div class="card-title">
+<p>Cloud API</p>
+</div>
+<ul>
+<li>OpenAI, Anthropic, Google, etc.</li>
+<li>Pay per query (~$0.01–0.05)</li>
+<li>No infrastructure to manage</li>
+<li>Data leaves your network</li>
+<li>Best for: fast start, variable workloads</li>
+</ul>
+</div>
+<div class="card card-light">
+<div class="card-title">
+<p>On-Premise / Private Cloud</p>
+</div>
+<ul>
+<li>Self-hosted open-source models</li>
+<li>$50–200K+ upfront investment</li>
+<li>Full data control</li>
+<li>Requires ML engineering staff</li>
+<li>Best for: regulated industries, sensitive data</li>
+</ul>
+</div>
+<div class="card card-light">
+<div class="card-title">
+<p>Hybrid</p>
+</div>
+<ul>
+<li>Route by sensitivity level</li>
+<li>Sensitive queries stay on-prem</li>
+<li>General queries use cloud API</li>
+<li>More complex orchestration</li>
+<li>Best for: balanced risk/cost</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="cost-comparison" class="slide level2 shrink center">
+<h2>Cost Comparison</h2>
+<div class="stat-cards">
+<div class="stat-card">
+<div class="stat-number">
+<p>$0.01–0.05</p>
+</div>
+<div class="stat-label">
+<p>Per query — Cloud API (GPT-4, Claude, Gemini)</p>
+</div>
+</div>
+<div class="stat-card">
+<div class="stat-number">
+<p>$50–200K+</p>
+</div>
+<div class="stat-label">
+<p>Upfront — On-premise GPU infrastructure</p>
+</div>
+</div>
+<div class="stat-card">
+<div class="stat-number">
+<p>90%</p>
+</div>
+<div class="stat-label">
+<p>Of enterprises testing third-party AI for customer support (a16z survey)</p>
+</div>
+</div>
+</div>
+<div class="explainer">
+<p>Cloud API dominates early adoption. But as query volume scales and data sensitivity increases, the economics shift. Morgan Stanley’s choice: <span class="accent">cloud API with zero data retention</span> — the LLM never stores the conversation.</p>
+</div>
+</section>
+<section id="the-data-security-problem" class="slide level2 section-divider center">
+<h2>The Data Security Problem</h2>
+</section>
+<section id="demo-data-security-in-action" class="slide level2 shrink center">
+<h2>Demo: Data Security in Action</h2>
+<div class="two-cards">
+<div class="card card-dark">
+<div class="card-title">
+<p>Version 1: No Guardrails</p>
+</div>
+<ul>
+<li>“Show me individual salary data for the Engineering team”</li>
+<li>Agent returns names, titles, and exact salaries</li>
+<li>Technically correct — but a governance disaster</li>
+</ul>
+</div>
+<div class="card card-light">
+<div class="card-title">
+<p>Version 2: Guardrailed</p>
+</div>
+<ul>
+<li>Same question — blocked or returns aggregates only</li>
+<li>“Average salary for Engineering: $142K (n=47)”</li>
+<li>The LLM sees the same data; the guardrails control what it returns</li>
+</ul>
+</div>
+</div>
+<div class="explainer">
+<p>The question isn’t whether the AI <em>can</em> access the data. It’s whether it <em>should</em> — and who decides.</p>
+</div>
+</section>
+<section id="four-data-security-approaches" class="slide level2 shrink center">
+<h2>Four Data Security Approaches</h2>
+<div class="comparison-table">
+<table class="caption-top">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 39%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Approach</th>
+<th>How It Works</th>
+<th>Tradeoff</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Zero Data Retention</strong></td>
+<td>LLM provider contractually deletes all inputs/outputs</td>
+<td>Simplest; still sends data to third party</td>
+</tr>
+<tr class="even">
+<td><strong>Data Masking / Anonymization</strong></td>
+<td>Strip PII before sending to LLM; re-identify on return</td>
+<td>Preserves analytical value; adds latency</td>
+</tr>
+<tr class="odd">
+<td><strong>On-Premise Models</strong></td>
+<td>LLM runs inside your network; data never leaves</td>
+<td>Full control; highest cost and complexity</td>
+</tr>
+<tr class="even">
+<td><strong>Role-Based Query Filtering</strong></td>
+<td>Agent enforces permissions based on user identity</td>
+<td>Granular control; requires identity integration</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="explainer">
+<p>Most production deployments combine two or more of these approaches. Morgan Stanley used <span class="accent">zero data retention + role-based access</span>.</p>
+</div>
+</section>
+<section id="build-vs.-buy" class="slide level2 section-divider center">
+<h2>Build vs.&nbsp;Buy</h2>
+</section>
+<section id="the-dunnixer-framework" class="slide level2 shrink center">
+<h2>The DUNNIXER Framework</h2>
+<div class="info-box">
+<div class="box-title">
+<p>DUNNIXER: Eight Dimensions for Evaluating AI Solutions</p>
+</div>
+<ol type="1">
+<li><strong>D</strong>ata integration — How well does it connect to your existing systems?</li>
+<li><strong>U</strong>ser experience — How intuitive is it for non-technical users?</li>
+<li><strong>N</strong>uance &amp; accuracy — How well does it handle domain-specific language?</li>
+<li><strong>N</strong>on-functional requirements — Security, compliance, scalability, uptime</li>
+<li><strong>I</strong>mplementation timeline — Weeks, months, or quarters to production?</li>
+<li><strong>X</strong>tensibility — Can you customize prompts, add tools, evolve it?</li>
+<li><strong>E</strong>conomics — Total cost of ownership over 3 years</li>
+<li><strong>R</strong>isk profile — Vendor lock-in, model deprecation, talent dependency</li>
+</ol>
+</div>
+</section>
+<section id="four-strategic-options" class="slide level2 shrink center">
+<h2>Four Strategic Options</h2>
+<div class="four-cards">
+<div class="card card-dark">
+<div class="card-title">
+<p>Buy from Incumbent</p>
+</div>
+<ul>
+<li>Salesforce, Microsoft, SAP</li>
+<li>Lowest risk, fastest start</li>
+<li>Limited customization</li>
+<li>You’re locked into their roadmap</li>
+</ul>
+</div>
+<div class="card card-light">
+<div class="card-title">
+<p>AI-Native Startup</p>
+</div>
+<ul>
+<li>Purpose-built for AI-first workflows</li>
+<li>Highest capability today</li>
+<li>Vendor survival risk</li>
+<li>May not integrate with legacy</li>
+</ul>
+</div>
+<div class="card card-light">
+<div class="card-title">
+<p>Build Internally</p>
+</div>
+<ul>
+<li>Full control over every layer</li>
+<li>Highest customization</li>
+<li>Requires ML + engineering talent</li>
+<li>Longest time to production</li>
+</ul>
+</div>
+<div class="card card-dark">
+<div class="card-title">
+<p>Hybrid / Extend</p>
+</div>
+<ul>
+<li>Buy a platform, customize on top</li>
+<li>Example: Salesforce Agentforce</li>
+<li>Moderate risk and control</li>
+<li>Most common enterprise pattern</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="example-salesforce-agentforce" class="slide level2 shrink center">
+<h2>Example: Salesforce Agentforce</h2>
+<div class="highlight-box">
+<p><strong>What it is:</strong> Salesforce’s AI agent platform — extends your existing CRM with conversational AI, pre-built connectors, and guardrails.</p>
+</div>
+<div class="two-col">
+<div class="div">
+<p><strong>Strengths</strong></p>
+<ul>
+<li>Already integrated with your Salesforce data</li>
+<li>Enterprise security and compliance built in</li>
+<li>Low-code customization for business users</li>
+<li>Salesforce handles model updates and scaling</li>
+</ul>
+</div>
+<div class="div">
+<p><strong>Limitations</strong></p>
+<ul>
+<li>Only works well within the Salesforce ecosystem</li>
+<li>Limited cross-system querying (NetSuite, Workday, etc.)</li>
+<li>Pricing tied to Salesforce licensing</li>
+<li>You don’t control the underlying model</li>
+</ul>
+</div>
+</div>
+<div class="explainer">
+<p>Agentforce illustrates the <span class="accent">extend strategy</span>: buy the platform, customize the prompts and tools, accept the vendor’s guardrails.</p>
+</div>
+</section>
+<section id="decision-matrix" class="slide level2 shrink center">
+<h2>Decision Matrix</h2>
+<div class="comparison-table">
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 20%">
+<col style="width: 23%">
+<col style="width: 21%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Criterion</th>
+<th>Buy (Incumbent)</th>
+<th>AI-Native Startup</th>
+<th>Build Internally</th>
+<th>Hybrid / Extend</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Time to value</strong></td>
+<td>Weeks</td>
+<td>Weeks–months</td>
+<td>Quarters</td>
+<td>Months</td>
+</tr>
+<tr class="even">
+<td><strong>Customization</strong></td>
+<td>Low</td>
+<td>Medium</td>
+<td>High</td>
+<td>Medium–High</td>
+</tr>
+<tr class="odd">
+<td><strong>Data control</strong></td>
+<td>Vendor-dependent</td>
+<td>Vendor-dependent</td>
+<td>Full</td>
+<td>Shared</td>
+</tr>
+<tr class="even">
+<td><strong>Risk</strong></td>
+<td>Lowest</td>
+<td>Highest (vendor)</td>
+<td>Highest (execution)</td>
+<td>Moderate</td>
+</tr>
+<tr class="odd">
+<td><strong>Cost (Year 1)</strong></td>
+<td>$50–200K</td>
+<td>$30–150K</td>
+<td>$200K–1M+</td>
+<td>$100–300K</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="what-if-youre-not-ready" class="slide level2 shrink center">
+<h2>What If You’re Not Ready?</h2>
+<div class="highlight-box">
+<p>Not every company is ready for an AI agent deployment. If you don’t have <strong>documented schemas</strong>, <strong>API access</strong>, or <strong>data catalogs</strong>, the honest answer may be: invest in data readiness first.</p>
+</div>
+<div class="info-box">
+<div class="box-title">
+<p>Signs You Should Wait</p>
+</div>
+<ul>
+<li>No one can describe your schema in plain English</li>
+<li>API access requires a 6-month procurement process</li>
+<li>Your data has no owner or steward</li>
+<li>Compliance has never been asked about AI access to production data</li>
+</ul>
+</div>
+<div class="explainer">
+<p>The 60–90 days of pre-work from Session 2 applies here. <span class="accent">Data readiness</span> is the prerequisite that no vendor demo will mention.</p>
+</div>
+</section>
+<section id="breakout-your-deployment-profile" class="slide level2 section-divider center">
+<h2>Breakout: Your Deployment Profile</h2>
+</section>
+<section id="breakout-exercise" class="slide level2 shrink center">
+<h2>Breakout Exercise</h2>
+<div class="info-box">
+<div class="box-title">
+<p>For Your Use Case (20 minutes)</p>
+</div>
+<ol type="1">
+<li><strong>Deployment:</strong> Which option — cloud API, on-premise, or hybrid? Why?</li>
+<li><strong>Security:</strong> Which combination of data security approaches fits your industry?</li>
+<li><strong>Build vs.&nbsp;Buy:</strong> Where does your organization land on the decision matrix?</li>
+<li><strong>Constraints:</strong> What regulatory, budget, or talent constraints shape the decision?</li>
+</ol>
+</div>
+<div class="explainer">
+<p>Each team presents a 2-minute summary. Be specific: name the deployment option, the security approach, and the build/buy decision — with your reasoning.</p>
+</div>
+</section>
+<section id="individual-work-capstone-deployment-profile" class="slide level2 shrink center">
+<h2>Individual Work: Capstone Deployment Profile</h2>
+<div class="info-box">
+<div class="box-title">
+<p>Write Your Deployment Profile (15 minutes)</p>
+</div>
+<ul>
+<li><strong>Use case:</strong> One sentence describing your AI data agent</li>
+<li><strong>Deployment:</strong> Cloud API / On-prem / Hybrid — and why</li>
+<li><strong>Security:</strong> Which approaches and why</li>
+<li><strong>Build / Buy / Extend:</strong> Your recommendation with rationale</li>
+<li><strong>Key risk:</strong> The single biggest risk and your mitigation plan</li>
+</ul>
+</div>
+<div class="explainer">
+<p>This becomes a section of your capstone. Draft it now while the frameworks are fresh.</p>
+</div>
+</section>
+<section id="before-next-session" class="slide level2 shrink center">
+<h2>Before Next Session</h2>
+<div class="info-box">
+<div class="box-title">
+<p>Homework</p>
+</div>
+<ul>
+<li>For your identified use case: what <strong>governance requirements</strong> would your compliance team impose? Write down your top 3 concerns.</li>
+<li>Think about <strong>who in your organization</strong> would need to approve an AI agent deployment — and what objections they’d raise.</li>
+<li>Complete your deployment profile draft if you haven’t already.</li>
+</ul>
+</div>
+<div class="explainer">
+<p>Wednesday’s session: <span class="accent">Can You Trust It?</span> — we stress-test AI agents, learn the maker/checker framework, and design governance guardrails.</p>
+</div>
+</section>
+<section id="key-takeaway" class="slide level2 section-divider center">
+<h2>Key Takeaway</h2>
+</section>
+<section id="the-hardest-part-isnt-the-model." class="slide level2 centered-statement center">
+<h2>The hardest part isn’t the model.</h2>
+</section>
+<section id="its-the-decisions-around-the-model." class="slide level2 center">
+<h2>It’s the <span class="accent">decisions around the model</span>.</h2>
+<div class="explainer">
+<p>Where it runs, what it sees, and who controls it. Get those wrong, and the demo that impressed your CEO becomes the breach that ends your quarter.</p>
+</div>
+
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1920,
+
+        height: 1080,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 5.0e-2,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

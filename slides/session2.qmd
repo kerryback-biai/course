@@ -12,9 +12,6 @@ format:
     height: 1080
     margin: 0.05
     center: true
-    include-after-body:
-      - text: |
-          <script src="https://hypothes.is/embed.js" async></script>
 ---
 
 ## Quick Debrief {.section-divider}
@@ -51,10 +48,16 @@ The homework was designed to surface exactly this friction. Today we confront it
 
 ---
 
-## The Cross-System Problem {.quote-slide}
+## The Cross-System Problem {.section-divider}
 
-::: {.quote-text}
-"Your data isn't missing. It's [everywhere]{.amber} --- scattered across 10 systems that were never designed to talk to each other."
+---
+
+## Your data isn't missing. {.centered-statement}
+
+## It's [everywhere]{.accent}.
+
+::: {.explainer}
+Scattered across 10 systems that were never designed to talk to each other.
 :::
 
 ---
@@ -233,7 +236,7 @@ Timeline to production
 60--70%
 :::
 ::: {.stat-label}
-Of warehouse projects that stall or fail
+Of data warehouse projects that stall or underdeliver (industry estimates)
 :::
 :::
 :::
@@ -257,11 +260,12 @@ The warehouse is the gold standard --- but the cost, timeline, and failure rate 
 | **Complex joins** | Fast (pre-modeled) | Slower (runtime merge) |
 | **Scalability** | Excellent | Limited by API rate limits |
 | **Best for** | Regulated, high-volume | Exploratory, ad hoc |
+| **Audit trail** | Built-in | Requires custom logging |
 
 :::
 
 ::: {.explainer}
-This is not either/or. Most companies will use both. The agent excels at the [long tail of questions]{.accent} that never justified a dashboard.
+This is not either/or. Most companies will use both --- warehouses for governance-critical reporting, agents for the [long tail of questions]{.accent} that never justified a dashboard.
 :::
 
 ---
@@ -438,7 +442,7 @@ Before any AI agent can query your real systems, someone must:
 60--90
 :::
 ::: {.stat-label}
-Days of pre-work before an agent touches real data
+Typical pre-work before an agent touches real data
 :::
 :::
 ::: {.stat-card}
@@ -468,21 +472,26 @@ Vendors who mention this in their demos
 Homework
 :::
 
-- Complete your data map: 3--5 systems, key entities, cross-system gaps
-- Try at least 3 cross-system queries in Meridian Corp
-- Write down one question your company can't answer today because the data lives in different systems
+- Read the **enterprise systems background document** (provided)
+- Complete your data map: list **at least 5 systems** your company uses and the **top 3 cross-system questions** you can't answer today
 :::
 
 ::: {.explainer}
-Friday's session: [Can I Trust This Answer?]{.accent} --- we stress-test AI reliability, hallucination, and when to trust (and not trust) the output.
+Monday's session: [How Does This Actually Work?]{.accent} --- we look under the hood at the agent loop, the system prompt, and where the code runs.
 :::
 
 ---
 
-## Key Takeaway {.quote-slide}
+## Key Takeaway {.section-divider}
 
-::: {.quote-text}
-"The hardest part of data integration isn't technology. It's that [your systems disagree]{.amber} on who your customers are, what your products are called, and when things happened. AI can bridge the gap --- but someone still has to define the truth."
+---
+
+## The hardest part isn't technology. {.centered-statement}
+
+## It's that your systems [disagree]{.accent}.
+
+::: {.explainer}
+They disagree on who your customers are, what your products are called, and when things happened. AI can bridge the gap --- but someone still has to define the truth.
 :::
 
 

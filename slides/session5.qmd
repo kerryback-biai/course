@@ -12,9 +12,6 @@ format:
     height: 1080
     margin: 0.05
     center: true
-    include-after-body:
-      - text: |
-          <script src="https://hypothes.is/embed.js" async></script>
 ---
 
 ## From Prototype to Production {.quote-slide}
@@ -250,7 +247,7 @@ Most production deployments combine two or more of these approaches. Morgan Stan
 
 ::: {.info-box}
 ::: {.box-title}
-Six Dimensions for Evaluating AI Solutions
+DUNNIXER: Eight Dimensions for Evaluating AI Solutions
 :::
 
 1. **D**ata integration --- How well does it connect to your existing systems?
@@ -363,6 +360,29 @@ Agentforce illustrates the [extend strategy]{.accent}: buy the platform, customi
 
 ---
 
+## What If You're Not Ready? {.shrink}
+
+::: {.highlight-box}
+Not every company is ready for an AI agent deployment. If you don't have **documented schemas**, **API access**, or **data catalogs**, the honest answer may be: invest in data readiness first.
+:::
+
+::: {.info-box}
+::: {.box-title}
+Signs You Should Wait
+:::
+
+- No one can describe your schema in plain English
+- API access requires a 6-month procurement process
+- Your data has no owner or steward
+- Compliance has never been asked about AI access to production data
+:::
+
+::: {.explainer}
+The 60--90 days of pre-work from Session 2 applies here. [Data readiness]{.accent} is the prerequisite that no vendor demo will mention.
+:::
+
+---
+
 ## Breakout: Your Deployment Profile {.section-divider}
 
 ---
@@ -410,22 +430,28 @@ This becomes a section of your capstone. Draft it now while the frameworks are f
 
 ::: {.info-box}
 ::: {.box-title}
-Preparation for Session 6
+Homework
 :::
 
-- Complete your deployment profile draft
-- Read: pre-reading on AI reliability and verification
-- Think about: a time when you received data that looked right but was wrong
+- For your identified use case: what **governance requirements** would your compliance team impose? Write down your top 3 concerns.
+- Think about **who in your organization** would need to approve an AI agent deployment --- and what objections they'd raise.
+- Complete your deployment profile draft if you haven't already.
 :::
 
 ::: {.explainer}
-Wednesday's session: [Can You Trust It?]{.accent} --- we stress-test AI agents and learn to catch the failures that look like successes.
+Wednesday's session: [Can You Trust It?]{.accent} --- we stress-test AI agents, learn the maker/checker framework, and design governance guardrails.
 :::
 
 ---
 
-## Key Takeaway {.quote-slide}
+## Key Takeaway {.section-divider}
 
-::: {.quote-text}
-"The hardest part of deploying AI isn't the model. It's the [decisions around the model]{.amber} --- where it runs, what it sees, and who controls it. Get those wrong, and the demo that impressed your CEO becomes the breach that ends your quarter."
+---
+
+## The hardest part isn't the model. {.centered-statement}
+
+## It's the [decisions around the model]{.accent}.
+
+::: {.explainer}
+Where it runs, what it sees, and who controls it. Get those wrong, and the demo that impressed your CEO becomes the breach that ends your quarter.
 :::

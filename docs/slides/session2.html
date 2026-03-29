@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.42">
+
+  <meta name="author" content="Kerry Back, Rice University">
+  <title>Session 2: Our Data Is Everywhere</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-60f8ca4f5456388ad8e2cc1ece1f01f3.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <script async="" src="https://hypothes.is/embed.js"></script>
+  <script>
+    window.document.addEventListener("DOMContentLoaded", function (_event) {
+      document.body.classList.add('hypothesis-enabled');
+    });
+  </script>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Session 2: Our Data Is Everywhere</h1>
+  <p class="subtitle">Business Intelligence &amp; AI</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Kerry Back, Rice University 
+</div>
+</div>
+</div>
+
+</section>
+<section id="quick-debrief" class="slide level2 section-divider center">
+<h2>Quick Debrief</h2>
+</section>
+<section id="homework-takeaways" class="slide level2 shrink center">
+<h2>Homework Takeaways</h2>
+<div class="two-cards">
+<div class="card card-dark">
+<div class="card-title">
+<p>What Worked</p>
+</div>
+<ul>
+<li>Simple lookups were fast and accurate</li>
+<li>Single-system aggregations felt effortless</li>
+<li>Charts and narratives generated on the fly</li>
+</ul>
+</div>
+<div class="card card-light">
+<div class="card-title">
+<p>What Broke</p>
+</div>
+<ul>
+<li>Questions spanning multiple systems</li>
+<li>Customer names that don’t match across CRMs</li>
+<li>Joining data with no common key</li>
+</ul>
+</div>
+</div>
+<div class="explainer">
+<p>The homework was designed to surface exactly this friction. Today we confront it directly.</p>
+</div>
+</section>
+<section id="the-cross-system-problem" class="slide level2 section-divider center">
+<h2>The Cross-System Problem</h2>
+</section>
+<section id="your-data-isnt-missing." class="slide level2 centered-statement center">
+<h2>Your data isn’t missing.</h2>
+</section>
+<section id="its-everywhere." class="slide level2 center">
+<h2>It’s <span class="accent">everywhere</span>.</h2>
+<div class="explainer">
+<p>Scattered across 10 systems that were never designed to talk to each other.</p>
+</div>
+</section>
+<section id="todays-learning-objectives" class="slide level2 center">
+<h2>Today’s Learning Objectives</h2>
+<div class="info-box">
+<div class="box-title">
+<p>By the end of this session, you will be able to:</p>
+</div>
+<ul>
+<li>Explain why enterprise data is scattered and why consolidation costs millions</li>
+<li>Watch AI query multiple systems and merge results in real time</li>
+<li>Map your own company’s data landscape and identify cross-system blind spots</li>
+</ul>
+</div>
+</section>
+<section id="demo-the-cross-system-merge" class="slide level2 section-divider center">
+<h2>Demo: The Cross-System Merge</h2>
+</section>
+<section id="which-customers-buy-from-multiple-divisions" class="slide level2 shrink center">
+<h2>“Which customers buy from multiple divisions?”</h2>
+<div class="step-flow">
+<div class="step-card">
+<div class="step-icon">
+<p>1</p>
+</div>
+<div class="step-title">
+<p>Query Salesforce</p>
+</div>
+<div class="step-desc">
+<p>Pull Industrial division customers and revenue</p>
+</div>
+</div>
+<div class="step-card">
+<div class="step-icon">
+<p>2</p>
+</div>
+<div class="step-title">
+<p>Query Legacy CRM</p>
+</div>
+<div class="step-desc">
+<p>Pull Energy division customers and revenue</p>
+</div>
+</div>
+<div class="step-card">
+<div class="step-icon">
+<p>3</p>
+</div>
+<div class="step-title">
+<p>Query HubSpot</p>
+</div>
+<div class="step-desc">
+<p>Pull Safety division customers and revenue</p>
+</div>
+</div>
+<div class="step-card">
+<div class="step-icon">
+<p>4</p>
+</div>
+<div class="step-title">
+<p>Fuzzy Merge</p>
+</div>
+<div class="step-desc">
+<p>Python matches names across all three systems</p>
+</div>
+</div>
+</div>
+<div class="explainer">
+<p>The agent writes and executes SQL against each system, then uses Python with fuzzy string matching to reconcile customer names. No warehouse. No ETL pipeline. No 3-week wait.</p>
+</div>
+</section>
+<section id="demo-revenue-per-employee-by-division" class="slide level2 shrink center">
+<h2>Demo: Revenue Per Employee by Division</h2>
+<div class="two-cards">
+<div class="card card-dark">
+<div class="card-title">
+<p>Data Sources</p>
+</div>
+<ul>
+<li><strong>CRMs</strong> (Salesforce, Legacy CRM, HubSpot) — revenue by division</li>
+<li><strong>Workday</strong> — headcount by department and division</li>
+</ul>
+</div>
+<div class="card card-light">
+<div class="card-title">
+<p>What the Agent Does</p>
+</div>
+<ul>
+<li>Queries revenue from each CRM</li>
+<li>Queries headcount from Workday</li>
+<li>Merges on division, calculates revenue/employee</li>
+<li>Returns a table and a bar chart</li>
+</ul>
+</div>
+</div>
+<div class="explainer">
+<p>Two questions. Four systems. Both answered in under a minute. But how does this actually work?</p>
+</div>
+</section>
+<section id="how-data-moves-today" class="slide level2 section-divider center">
+<h2>How Data Moves Today</h2>
+</section>
+<section id="four-patterns-of-data-integration" class="slide level2 shrink center">
+<h2>Four Patterns of Data Integration</h2>
+<div class="four-cards">
+<div class="card card-dark">
+<div class="card-title">
+<p>APIs</p>
+</div>
+<ul>
+<li>Real-time, point-to-point</li>
+<li>Each connection hand-coded</li>
+<li>Breaks when vendors change endpoints</li>
+</ul>
+</div>
+<div class="card card-light">
+<div class="card-title">
+<p>iPaaS</p>
+</div>
+<ul>
+<li>MuleSoft, Workato, Boomi</li>
+<li>Pre-built connectors</li>
+<li>Still needs mapping and maintenance</li>
+</ul>
+</div>
+<div class="card card-light">
+<div class="card-title">
+<p>ETL / Warehouse</p>
+</div>
+<ul>
+<li>Extract, transform, load into Snowflake/BigQuery</li>
+<li>Single source of truth</li>
+<li>$500K–$5M and 6–18 months</li>
+</ul>
+</div>
+<div class="card card-dark">
+<div class="card-title">
+<p>CSV Export</p>
+</div>
+<ul>
+<li>The “just email me the file” approach</li>
+<li>No governance, no audit trail</li>
+<li>Surprisingly common</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="the-traditional-answer" class="slide level2 shrink center">
+<h2>The Traditional Answer</h2>
+<div class="stat-cards">
+<div class="stat-card">
+<div class="stat-number">
+<p>$500K–$5M</p>
+</div>
+<div class="stat-label">
+<p>Cost of a data warehouse build</p>
+</div>
+</div>
+<div class="stat-card">
+<div class="stat-number">
+<p>6–18 mo</p>
+</div>
+<div class="stat-label">
+<p>Timeline to production</p>
+</div>
+</div>
+<div class="stat-card">
+<div class="stat-number">
+<p>60–70%</p>
+</div>
+<div class="stat-label">
+<p>Of data warehouse projects that stall or underdeliver (industry estimates)</p>
+</div>
+</div>
+</div>
+<div class="explainer">
+<p>The warehouse is the gold standard — but the cost, timeline, and failure rate are why most mid-market companies don’t have one. The alternative: <span class="accent">query each system where it lives</span> and merge on the fly.</p>
+</div>
+</section>
+<section id="two-approaches-real-tradeoffs" class="slide level2 shrink center">
+<h2>Two Approaches, Real Tradeoffs</h2>
+<div class="comparison-table">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th></th>
+<th>Data Warehouse</th>
+<th>AI Agent (Query-in-Place)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Setup cost</strong></td>
+<td>$500K–$5M</td>
+<td>Low (API credentials + schema docs)</td>
+</tr>
+<tr class="even">
+<td><strong>Time to first answer</strong></td>
+<td>6–18 months</td>
+<td>Days to weeks</td>
+</tr>
+<tr class="odd">
+<td><strong>Data freshness</strong></td>
+<td>Batch (hourly/daily)</td>
+<td>Real-time queries</td>
+</tr>
+<tr class="even">
+<td><strong>Governance</strong></td>
+<td>Strong (single schema)</td>
+<td>Weaker (distributed)</td>
+</tr>
+<tr class="odd">
+<td><strong>Complex joins</strong></td>
+<td>Fast (pre-modeled)</td>
+<td>Slower (runtime merge)</td>
+</tr>
+<tr class="even">
+<td><strong>Scalability</strong></td>
+<td>Excellent</td>
+<td>Limited by API rate limits</td>
+</tr>
+<tr class="odd">
+<td><strong>Best for</strong></td>
+<td>Regulated, high-volume</td>
+<td>Exploratory, ad hoc</td>
+</tr>
+<tr class="even">
+<td><strong>Audit trail</strong></td>
+<td>Built-in</td>
+<td>Requires custom logging</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="explainer">
+<p>This is not either/or. Most companies will use both — warehouses for governance-critical reporting, agents for the <span class="accent">long tail of questions</span> that never justified a dashboard.</p>
+</div>
+</section>
+<section id="cross-system-friction" class="slide level2 section-divider center">
+<h2>Cross-System Friction</h2>
+</section>
+<section id="why-merging-is-hard" class="slide level2 shrink center">
+<h2>Why Merging Is Hard</h2>
+<div class="comparison-table">
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Problem</th>
+<th>System A</th>
+<th>System B</th>
+<th>Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Naming conventions</strong></td>
+<td><code>customerName</code></td>
+<td><code>customer_name</code></td>
+<td>Schema mismatch</td>
+</tr>
+<tr class="even">
+<td><strong>Date formats</strong></td>
+<td><code>2025-03-15</code></td>
+<td><code>March 15, 2025</code></td>
+<td>Parse failures</td>
+</tr>
+<tr class="odd">
+<td><strong>Customer identity</strong></td>
+<td>General Electric</td>
+<td>GE Industrial Solutions</td>
+<td>No common key</td>
+</tr>
+<tr class="even">
+<td><strong>Customer identity</strong></td>
+<td>Honeywell International</td>
+<td>Honeywell Safety Products</td>
+<td>Wrong match</td>
+</tr>
+<tr class="odd">
+<td><strong>ID systems</strong></td>
+<td><code>SF-001234</code></td>
+<td><code>ACCT-5678</code></td>
+<td>No shared identifier</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="explainer">
+<p>Meridian has ~25 customers that appear under different names across its three CRMs. This is not a bug — it is the normal state of enterprise data.</p>
+</div>
+</section>
+<section id="the-fuzzy-matching-problem" class="slide level2 shrink center">
+<h2>The Fuzzy Matching Problem</h2>
+<div class="info-box">
+<div class="box-title">
+<p>How Does the Agent Resolve “General Electric” vs.&nbsp;“GE Industrial Solutions”?</p>
+</div>
+<ul>
+<li><strong>Exact match</strong> fails — the strings are completely different</li>
+<li><strong>Fuzzy matching</strong> (Levenshtein distance, token-set ratio) catches ~80% of cases</li>
+<li><strong>Semantic matching</strong> (embeddings) catches more, but is slower and less transparent</li>
+<li><strong>Human review</strong> is still needed for ambiguous cases (is “Honeywell Safety Products” a subsidiary or a division?)</li>
+</ul>
+</div>
+<div class="highlight-box">
+<p>This is the unsexy core of data integration. No amount of AI eliminates the need to <span class="accent">decide what your entities are</span> and maintain a mapping.</p>
+</div>
+</section>
+<section id="hands-on-cross-system-queries" class="slide level2 section-divider center">
+<h2>Hands-On: Cross-System Queries</h2>
+</section>
+<section id="timed-challenge" class="slide level2 shrink center">
+<h2>Timed Challenge</h2>
+<div class="info-box">
+<div class="box-title">
+<p>The Question</p>
+</div>
+<p>“Which division’s top customer is most at risk of churning?”</p>
+</div>
+<div class="step-flow">
+<div class="step-card">
+<div class="step-icon">
+<p>1</p>
+</div>
+<div class="step-title">
+<p>Identify</p>
+</div>
+<div class="step-desc">
+<p>Find each division’s #1 customer by revenue (CRMs)</p>
+</div>
+</div>
+<div class="step-card">
+<div class="step-icon">
+<p>2</p>
+</div>
+<div class="step-title">
+<p>Assess Risk</p>
+</div>
+<div class="step-desc">
+<p>Check support ticket volume and sentiment (Zendesk)</p>
+</div>
+</div>
+<div class="step-card">
+<div class="step-icon">
+<p>3</p>
+</div>
+<div class="step-title">
+<p>Merge</p>
+</div>
+<div class="step-desc">
+<p>Combine revenue + support data, rank by churn risk</p>
+</div>
+</div>
+<div class="step-card">
+<div class="step-icon">
+<p>4</p>
+</div>
+<div class="step-title">
+<p>Recommend</p>
+</div>
+<div class="step-desc">
+<p>Draft a 3-sentence executive summary</p>
+</div>
+</div>
+</div>
+<div class="explainer">
+<p>You have 15 minutes. This requires querying at least two systems and merging the results. Pay attention to how the agent handles name matching.</p>
+</div>
+</section>
+<section id="data-map-workshop" class="slide level2 section-divider center">
+<h2>Data Map Workshop</h2>
+</section>
+<section id="map-your-companys-data" class="slide level2 shrink center">
+<h2>Map Your Company’s Data</h2>
+<div class="three-cards">
+<div class="card card-dark">
+<div class="card-title">
+<p>Step 1: List Your Systems</p>
+</div>
+<ul>
+<li>Identify 3–5 core systems (CRM, ERP, HRIS, etc.)</li>
+<li>What data lives in each?</li>
+<li>Who owns it?</li>
+</ul>
+</div>
+<div class="card card-light">
+<div class="card-title">
+<p>Step 2: Draw the Gaps</p>
+</div>
+<ul>
+<li>What cross-system questions can nobody answer easily?</li>
+<li>Where do people resort to spreadsheets?</li>
+<li>What decisions are made on gut feel because the data is too hard to get?</li>
+</ul>
+</div>
+<div class="card card-light">
+<div class="card-title">
+<p>Step 3: Identify Quick Wins</p>
+</div>
+<ul>
+<li>Which two systems, if connected, would unlock the most value?</li>
+<li>What’s the simplest question that currently takes weeks?</li>
+</ul>
+</div>
+</div>
+<div class="explainer">
+<p>Spend 10 minutes sketching this out. We’ll share and compare.</p>
+</div>
+</section>
+<section id="what-were-skipping-for-now" class="slide level2 shrink center">
+<h2>What We’re Skipping (For Now)</h2>
+<div class="info-box">
+<div class="box-title">
+<p>The Pre-Work Nobody Talks About</p>
+</div>
+<p>Before any AI agent can query your real systems, someone must:</p>
+<ul>
+<li><strong>Catalog data</strong> — what tables exist, what do the columns mean?</li>
+<li><strong>Document schemas</strong> — data types, relationships, business rules</li>
+<li><strong>Provision API access</strong> — authentication, rate limits, permissions</li>
+<li><strong>Classify PII</strong> — which fields contain personal data? What are the retention rules?</li>
+</ul>
+</div>
+<div class="stat-cards">
+<div class="stat-card">
+<div class="stat-number">
+<p>60–90</p>
+</div>
+<div class="stat-label">
+<p>Typical pre-work before an agent touches real data</p>
+</div>
+</div>
+<div class="stat-card">
+<div class="stat-number">
+<p>5–10</p>
+</div>
+<div class="stat-label">
+<p>People typically involved in data readiness</p>
+</div>
+</div>
+<div class="stat-card">
+<div class="stat-number">
+<p>0</p>
+</div>
+<div class="stat-label">
+<p>Vendors who mention this in their demos</p>
+</div>
+</div>
+</div>
+</section>
+<section id="before-next-session" class="slide level2 shrink center">
+<h2>Before Next Session</h2>
+<div class="info-box">
+<div class="box-title">
+<p>Homework</p>
+</div>
+<ul>
+<li>Read the <strong>enterprise systems background document</strong> (provided)</li>
+<li>Complete your data map: list <strong>at least 5 systems</strong> your company uses and the <strong>top 3 cross-system questions</strong> you can’t answer today</li>
+</ul>
+</div>
+<div class="explainer">
+<p>Monday’s session: <span class="accent">How Does This Actually Work?</span> — we look under the hood at the agent loop, the system prompt, and where the code runs.</p>
+</div>
+</section>
+<section id="key-takeaway" class="slide level2 section-divider center">
+<h2>Key Takeaway</h2>
+</section>
+<section id="the-hardest-part-isnt-technology." class="slide level2 centered-statement center">
+<h2>The hardest part isn’t technology.</h2>
+</section>
+<section id="its-that-your-systems-disagree." class="slide level2 center">
+<h2>It’s that your systems <span class="accent">disagree</span>.</h2>
+<div class="explainer">
+<p>They disagree on who your customers are, what your products are called, and when things happened. AI can bridge the gap — but someone still has to define the truth.</p>
+</div>
+
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1920,
+
+        height: 1080,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 5.0e-2,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

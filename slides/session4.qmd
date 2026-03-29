@@ -12,9 +12,6 @@ format:
     height: 1080
     margin: 0.05
     center: true
-    include-after-body:
-      - text: |
-          <script src="https://hypothes.is/embed.js" async></script>
 ---
 
 ## What If the Agent Could Do More Than Answer Questions? {.centered-statement}
@@ -321,7 +318,7 @@ CFO Marie Myers deployed an AI agent called [Alfred]{.amber} to automate Hewlett
 :::
 
 ::: {.quote-source}
---- Hewlett Packard Enterprise, AI in Finance case study
+--- HPE 2024 Annual Report; Fortune, "How HPE's CFO Built an AI Agent," October 2024
 :::
 
 ## HPE Results
@@ -428,10 +425,35 @@ HPE Case
 :::
 :::
 
-## Next Time {.centered-statement}
+## Before Next Session {.shrink}
 
-## Session 5: When AI Gets It Wrong
+::: {.info-box}
+::: {.box-title}
+Homework
+:::
+
+- **Produce a deliverable:** Use the Meridian app to create one complete output --- a memo, comparison, or risk assessment. Save or screenshot it. Bring it to Session 5.
+- **Pre-reading for Session 5** (~35 min total):
+  1. **Morgan Stanley case study** (provided) --- a regulated firm's deployment decision. Come prepared to discuss: what constraints did they face, and what surprised you?
+  2. **AIMultiple: "Cloud LLM vs Local LLMs"** --- the three deployment options and their tradeoffs
+  3. **"What Does Your AI Actually See?"** (provided) --- four data security approaches. A 5-minute read.
+- If you haven't yet, read the **a16z CIO survey** and **DUNNIXER vendor scorecard** from Session 3 homework before Session 5.
+:::
 
 ::: {.explainer}
-Pipelines are powerful, but what happens when the agent hallucinates, misjoins tables, or produces a confidently wrong number? Next session: **validation, guardrails, and trust**.
+Monday's session: [What Does Deployment Look Like?]{.accent} --- architecture, data security, and build vs. buy. This is a flipped session --- come prepared to discuss, not just listen.
+:::
+
+---
+
+## Key Takeaway {.section-divider}
+
+---
+
+## Same pipeline. Different trigger. {.centered-statement}
+
+## You typed in a chat window. HPE runs it at [6 AM Monday]{.accent}.
+
+::: {.explainer}
+The pattern --- query, compute, chart, narrate, assemble --- is the same whether it's ad hoc or automated.
 :::
