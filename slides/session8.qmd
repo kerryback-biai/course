@@ -17,6 +17,405 @@ format:
           <script src="https://hypothes.is/embed.js" async></script>
 ---
 
-## Placeholder
+## The Course Journey {.shrink}
 
-Content coming soon.
+::: {.timeline}
+::: {.timeline-item}
+::: {.timeline-dot}
+1
+:::
+::: {.timeline-label}
+Session 1
+:::
+::: {.timeline-desc}
+Exploring Data with AI --- first conversation with your data
+:::
+:::
+::: {.timeline-item}
+::: {.timeline-dot}
+2
+:::
+::: {.timeline-label}
+Session 2
+:::
+::: {.timeline-desc}
+Our Data Is Everywhere --- the cross-system challenge
+:::
+:::
+::: {.timeline-item}
+::: {.timeline-dot}
+3
+:::
+::: {.timeline-label}
+Session 3
+:::
+::: {.timeline-desc}
+How It Works Under the Hood --- agents, SQL, and prompts
+:::
+:::
+::: {.timeline-item}
+::: {.timeline-dot}
+4
+:::
+::: {.timeline-label}
+Session 4
+:::
+::: {.timeline-desc}
+The Competitive Landscape --- what's real, what's hype
+:::
+:::
+::: {.timeline-item}
+::: {.timeline-dot}
+5
+:::
+::: {.timeline-label}
+Session 5
+:::
+::: {.timeline-desc}
+What Does Deployment Look Like --- from prototype to production
+:::
+:::
+::: {.timeline-item}
+::: {.timeline-dot}
+6
+:::
+::: {.timeline-label}
+Session 6
+:::
+::: {.timeline-desc}
+Can You Trust It --- validation, governance, guardrails
+:::
+:::
+::: {.timeline-item}
+::: {.timeline-dot}
+7
+:::
+::: {.timeline-label}
+Session 7
+:::
+::: {.timeline-desc}
+Document AI --- answers from your own files
+:::
+:::
+::: {.timeline-item}
+::: {.timeline-dot}
+8
+:::
+::: {.timeline-label}
+Today
+:::
+::: {.timeline-desc}
+Your AI Strategy --- capstone and synthesis
+:::
+:::
+:::
+
+---
+
+## Today's Objective {.centered-statement}
+
+## Present a credible, scoped AI adoption strategy and leave with a concrete next step
+
+---
+
+## The Setup {.quote-slide}
+
+::: {.quote-text}
+"You are presenting to your [executive team]{.amber}. Your breakout group is your board of advisors. Convince them this is worth funding."
+:::
+
+---
+
+## Capstone Format {.shrink}
+
+::: {.step-flow}
+::: {.step-card}
+::: {.step-icon}
+1
+:::
+::: {.step-title}
+Breakout Pitches
+:::
+::: {.step-desc}
+5 groups of 6. Each person gives a 2-minute pitch + 1 min feedback. Group votes on the strongest.
+:::
+:::
+::: {.step-card}
+::: {.step-icon}
+2
+:::
+::: {.step-title}
+Plenary Presentations
+:::
+::: {.step-desc}
+5 winning strategies presented to the full class. 5 min each + 3 min Q&A from peers.
+:::
+:::
+::: {.step-card}
+::: {.step-icon}
+3
+:::
+::: {.step-title}
+Instructor Feedback
+:::
+::: {.step-desc}
+Feedback on pilot scope, business case, governance, and Day 1 action for each strategy.
+:::
+:::
+:::
+
+---
+
+## What Makes a Strong Pitch {.shrink}
+
+::: {.info-box}
+::: {.box-title}
+Evaluation Dimensions
+:::
+
+- **Specificity** --- a concrete use case, not "we'll use AI for analytics"
+- **Business case** --- who benefits, what decision gets faster, what's the dollar impact
+- **Data readiness** --- where does the data live, what's the integration challenge
+- **Governance** --- who validates answers, what are the guardrails
+- **Day 1 action** --- what happens Monday morning, not "we'll form a committee"
+:::
+
+::: {.explainer}
+The best pitches are [narrow and actionable]{.accent}. "We'll deploy document AI on our 200 vendor contracts so procurement can answer compliance questions in seconds" beats "We'll implement an enterprise AI strategy."
+:::
+
+---
+
+## Breakout Round {.section-divider}
+
+---
+
+## Breakout Instructions {.shrink}
+
+::: {.two-cards}
+::: {.card .card-dark}
+::: {.card-title}
+Your Pitch (2 minutes)
+:::
+
+- What's the use case?
+- What data or documents does it use?
+- Who are the users and what decision does it improve?
+- What's your Day 1 action?
+:::
+
+::: {.card .card-light}
+::: {.card-title}
+Your Feedback (1 minute)
+:::
+
+- Is the scope tight enough to pilot in 30 days?
+- What's the biggest risk?
+- What question would the CFO ask?
+- Vote: which pitch should represent the group?
+:::
+:::
+
+---
+
+## Plenary Presentations {.section-divider}
+
+---
+
+## Synthesis: What You Now Know {.shrink}
+
+::: {.four-cards}
+::: {.card .card-dark}
+::: {.card-title}
+Plain English = Data Answers
+:::
+
+AI agents turn natural language questions into SQL queries, chart generation, and narrative summaries --- no technical skills required.
+:::
+
+::: {.card .card-light}
+::: {.card-title}
+Simple but Not Easy
+:::
+
+The technology is simpler than expected (50 lines of code) but production deployment requires governance, validation, and organizational change.
+:::
+
+::: {.card .card-light}
+::: {.card-title}
+Two Complementary Tools
+:::
+
+Database AI for structured data (numbers, trends, KPIs). Document AI for unstructured text (policies, contracts, procedures). Most real questions need both.
+:::
+
+::: {.card .card-dark}
+::: {.card-title}
+The Critical Skill
+:::
+
+The human skill that matters most: asking the right questions and verifying the answers. AI amplifies judgment --- it doesn't replace it.
+:::
+:::
+
+---
+
+## Beyond Data: AI as Thinking Partner {.quote-slide}
+
+::: {.quote-text}
+"The real power isn't [asking what happened]{.amber}. It's saying 'I'm considering expanding the Energy Division --- what are the top 3 risks?' Then pushing back. Then refining. AI anchors on whatever framing you provide."
+:::
+
+---
+
+## The Thinking Partner Demo {.shrink}
+
+::: {.two-cards}
+::: {.card .card-dark}
+::: {.card-title}
+Data Question
+:::
+
+"What were Q4 sales for the Energy Division?"
+
+- One answer. One number.
+- Useful, but limited.
+:::
+
+::: {.card .card-light}
+::: {.card-title}
+Strategic Question
+:::
+
+"I'm considering expanding the Energy Division. What are the top 3 risks based on our data?"
+
+- Synthesizes across sales, headcount, customer concentration, margin trends
+- Then: "Push back on risk #2 --- what's the evidence?"
+:::
+:::
+
+::: {.explainer}
+The shift from "report pulling" to "strategic dialogue" is where the real ROI lives. But remember: AI anchors on your framing. [Challenge its assumptions]{.accent} the way you'd challenge a consultant.
+:::
+
+---
+
+## Monday Morning Actions {.shrink}
+
+::: {.stat-cards}
+::: {.stat-card}
+::: {.stat-number}
+A
+:::
+::: {.stat-label}
+Audit your reporting workflows --- where do people wait for data?
+:::
+:::
+::: {.stat-card}
+::: {.stat-number}
+B
+:::
+::: {.stat-label}
+Scope a 30-day discovery sprint with one team and one data source
+:::
+:::
+::: {.stat-card}
+::: {.stat-number}
+C
+:::
+::: {.stat-label}
+Inventory your document collections --- where is knowledge trapped?
+:::
+:::
+::: {.stat-card}
+::: {.stat-number}
+D
+:::
+::: {.stat-label}
+Establish an AI governance framework --- who validates, who approves
+:::
+:::
+:::
+
+::: {.explainer}
+You don't need a 12-month roadmap. You need [one pilot, one owner, one deadline]{.accent}.
+:::
+
+---
+
+## The 30-Day Sprint {.shrink}
+
+::: {.step-flow}
+::: {.step-card}
+::: {.step-icon}
+Week 1
+:::
+::: {.step-title}
+Pick & Prep
+:::
+::: {.step-desc}
+Choose one use case. Identify the data source. Get stakeholder buy-in.
+:::
+:::
+::: {.step-card}
+::: {.step-icon}
+Week 2
+:::
+::: {.step-title}
+Build & Test
+:::
+::: {.step-desc}
+Connect the data. Build the prototype. Test with real questions from real users.
+:::
+:::
+::: {.step-card}
+::: {.step-icon}
+Week 3
+:::
+::: {.step-title}
+Validate
+:::
+::: {.step-desc}
+Compare AI answers to known results. Document accuracy. Identify failure modes.
+:::
+:::
+::: {.step-card}
+::: {.step-icon}
+Week 4
+:::
+::: {.step-title}
+Decide
+:::
+::: {.step-desc}
+Go/no-go for expanded pilot. Present findings. Define Phase 2 scope.
+:::
+:::
+:::
+
+---
+
+## Resources {.shrink}
+
+::: {.info-box}
+::: {.box-title}
+Continue Your Learning
+:::
+
+- **Meridian Corp environment** --- remains available for 90 days after the course
+- **Course materials** --- all slides, case studies, and demo scripts on the course site
+- **Recommended reading** --- curated list of papers, vendor evaluations, and case studies
+- **Office hours** --- monthly drop-in sessions for the next quarter
+- **Peer network** --- your breakout group is your first call when you hit a wall
+:::
+
+---
+
+## Final Takeaway {.quote-slide}
+
+::: {.quote-text}
+"The companies that win with AI won't be the ones with the [best technology]{.amber}. They'll be the ones that asked the best questions, validated the answers, and had the governance to act on them."
+:::
+
+::: {.quote-source}
+--- Now go build something.
+:::

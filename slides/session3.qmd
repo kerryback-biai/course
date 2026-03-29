@@ -17,6 +17,340 @@ format:
           <script src="https://hypothes.is/embed.js" async></script>
 ---
 
-## Placeholder
+## Last Week, You Were the User {.section-divider}
 
-Content coming soon.
+## Bridge {.centered-statement}
+
+## You've spent a week asking questions and getting answers.
+
+Now let's look under the hood.
+
+::: {.explainer}
+How does an AI agent turn your English question into SQL, run it, and deliver a polished result? The answer is surprisingly simple --- and surprisingly powerful.
+:::
+
+## Learning Objectives
+
+- Understand the **agent loop** as an orchestrated test-and-review cycle
+- See the **50 lines of code** that power the core of the app
+- Understand **where code executes** and why that's an architectural decision
+
+## The Agent Loop {.section-divider}
+
+## What Happens When You Ask a Question?
+
+::: {.step-flow}
+::: {.step-card}
+::: {.step-icon}
+1
+:::
+::: {.step-title}
+System Prompt
+:::
+::: {.step-desc}
+Schema description tells the LLM what tables and columns exist
+:::
+:::
+
+::: {.step-card}
+::: {.step-icon}
+2
+:::
+::: {.step-title}
+Tool Call
+:::
+::: {.step-desc}
+LLM writes SQL (or Python) and requests execution
+:::
+:::
+
+::: {.step-card}
+::: {.step-icon}
+3
+:::
+::: {.step-title}
+Execute & Return
+:::
+::: {.step-desc}
+System runs the code and sends results back to the LLM
+:::
+:::
+
+::: {.step-card}
+::: {.step-icon}
+4
+:::
+::: {.step-title}
+Review & Deliver
+:::
+::: {.step-desc}
+LLM checks results, fixes errors or delivers the answer
+:::
+:::
+:::
+
+## The Key Insight: Test and Review
+
+::: {.highlight-box}
+The agent doesn't just generate code and hope for the best. It **writes code, executes it, reviews the result**, and decides whether to **deliver or try again**.
+:::
+
+::: {.explainer}
+This is the same pattern a careful analyst follows: write a query, check the output, refine if something looks off, then present the final answer. The LLM automates that entire cycle.
+:::
+
+## The Agent Loop in Pseudocode {.shrink}
+
+::: {.code-box}
+::: {.box-title}
+agent_loop.py --- The Core Logic
+:::
+```
+def agent_loop(user_question, schema, max_retries=3):
+
+    messages = [
+        system_prompt(schema),    # describe tables & columns
+        user_message(question)    # the business question
+    ]
+
+    for attempt in range(max_retries):
+        response = llm.chat(messages)       # LLM generates SQL/Python
+
+        if response.has_tool_call:
+            result = execute(response.tool)  # run the code
+            messages.append(result)           # feed result back
+        else:
+            return response.text             # final answer delivered
+
+    return "Unable to answer after retries."
+```
+:::
+
+## The System Prompt Is the Secret {.section-divider}
+
+## Why the Prompt Matters
+
+::: {.two-cards}
+::: {.card .card-dark}
+::: {.card-title}
+Without Join Key Documentation
+:::
+- LLM sees `orders` and `customers` tables
+- No information about shared keys
+- Agent can't figure out how to merge
+- Query fails or returns wrong results
+:::
+
+::: {.card .card-light}
+::: {.card-title}
+With Join Key Documentation
+:::
+- Prompt says: `orders.customer_id` links to `customers.id`
+- Agent writes correct JOIN
+- Merges work on first attempt
+- Accurate, complete answers
+:::
+:::
+
+## The Prompt Is "Institutional Knowledge"
+
+::: {.explainer}
+The system prompt encodes everything the agent needs to know about your data: table names, column meanings, relationships, business rules, and formatting preferences.
+:::
+
+::: {.highlight-box}
+**Change the prompt, change the behavior.** Add a rule like "always filter to active customers" and every query respects it. Remove join documentation and merges break. The prompt is the most important piece of the system.
+:::
+
+## Where Does the Code Run? {.section-divider}
+
+## Three Architecture Options
+
+::: {.three-cards}
+::: {.card .card-dark}
+::: {.card-title}
+A. Cloud LLM Sandbox
+:::
+- Vendor runs the code (OpenAI, Anthropic)
+- Simplest to set up
+- Data leaves your network
+- Fine for non-sensitive data
+:::
+
+::: {.card .card-light}
+::: {.card-title}
+B. Your Own Containers
+:::
+- Docker on your servers or cloud
+- Production answer for sensitive data
+- You control the execution environment
+- More infrastructure to manage
+:::
+
+::: {.card .card-light}
+::: {.card-title}
+C. SQL-Only Mode
+:::
+- No Python execution at all
+- LLM generates SQL, your DB runs it
+- Safest for regulated environments
+- Can't do in-memory merges or charts
+:::
+:::
+
+## Choosing the Right Option
+
+::: {.comparison-table}
+|  | Cloud Sandbox | Your Containers | SQL-Only |
+|--|:---:|:---:|:---:|
+| **Setup effort** | Low | Medium | Low |
+| **Data stays on-prem** | No | Yes | Yes |
+| **Python/charting** | Yes | Yes | No |
+| **Best for** | Prototyping | Production | Regulated |
+:::
+
+## The Complexity Iceberg {.section-divider}
+
+## Simple Core, Complex Deployment
+
+::: {.stat-cards}
+::: {.stat-card}
+::: {.stat-number}
+~50
+:::
+::: {.stat-label}
+Lines of core agent logic
+:::
+:::
+
+::: {.stat-card}
+::: {.stat-number}
+3,000+
+:::
+::: {.stat-label}
+Lines in a production app
+:::
+:::
+
+::: {.stat-card}
+::: {.stat-number}
+60x
+:::
+::: {.stat-label}
+Growth from prototype to production
+:::
+:::
+:::
+
+## What the Other 2,950 Lines Do
+
+::: {.two-col}
+::: div
+**Security & Access**
+
+- Authentication (who are you?)
+- Authorization (what can you see?)
+- Row-level access control
+- Audit logging
+:::
+
+::: div
+**Reliability & Scale**
+
+- Error handling & retries
+- Rate limiting
+- Multi-tenancy
+- Monitoring & alerting
+- Failover & backup
+:::
+:::
+
+::: {.explainer}
+The core loop is elegant and simple. The production wrapper is where the engineering effort lives. This is why you **buy or build on a platform** rather than rolling your own from scratch.
+:::
+
+## Live Build {.section-divider}
+
+## Let's Build an Agent --- Right Now
+
+::: {.info-box}
+::: {.box-title}
+Live Demo Plan
+:::
+1. Start with a blank file and a sample database
+2. Write the system prompt describing the schema
+3. Add the agent loop (the ~50 lines)
+4. Ask a question and watch it work
+5. Break it (remove join docs) and watch it fail
+6. Fix it and watch it recover
+:::
+
+::: {.explainer}
+Your developer could do this. The point isn't that it's hard --- it's that it's *tractable*. The magic is in the prompt design and the execution architecture, not in thousands of lines of code.
+:::
+
+## What You Just Saw
+
+::: {.highlight-box}
+A working AI agent, built from scratch in minutes, that can answer business questions by writing and executing SQL against a real database. **The same pattern powers every BI agent on the market.**
+:::
+
+## Session 3 Recap
+
+::: {.step-flow}
+::: {.step-card}
+::: {.step-icon}
+1
+:::
+::: {.step-title}
+Agent Loop
+:::
+::: {.step-desc}
+Prompt, generate, execute, review, deliver
+:::
+:::
+
+::: {.step-card}
+::: {.step-icon}
+2
+:::
+::: {.step-title}
+System Prompt
+:::
+::: {.step-desc}
+The institutional knowledge layer that makes it all work
+:::
+:::
+
+::: {.step-card}
+::: {.step-icon}
+3
+:::
+::: {.step-title}
+Execution
+:::
+::: {.step-desc}
+Cloud, containers, or SQL-only --- pick your tradeoff
+:::
+:::
+
+::: {.step-card}
+::: {.step-icon}
+4
+:::
+::: {.step-title}
+Iceberg
+:::
+::: {.step-desc}
+50-line core, 3,000-line production app
+:::
+:::
+:::
+
+## Next Time {.centered-statement}
+
+## Session 4: From Data to Deliverable
+
+::: {.explainer}
+Now that you understand how the agent works, we'll chain multiple steps into **automated reporting pipelines** --- from raw data to board-ready memos.
+:::

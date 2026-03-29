@@ -17,6 +17,472 @@ format:
           <script src="https://hypothes.is/embed.js" async></script>
 ---
 
-## Placeholder
+## Quick Debrief {.section-divider}
 
-Content coming soon.
+---
+
+## Homework Takeaways {.shrink}
+
+::: {.two-cards}
+::: {.card .card-dark}
+::: {.card-title}
+What Worked
+:::
+
+- Simple lookups were fast and accurate
+- Single-system aggregations felt effortless
+- Charts and narratives generated on the fly
+:::
+
+::: {.card .card-light}
+::: {.card-title}
+What Broke
+:::
+
+- Questions spanning multiple systems
+- Customer names that don't match across CRMs
+- Joining data with no common key
+:::
+:::
+
+::: {.explainer}
+The homework was designed to surface exactly this friction. Today we confront it directly.
+:::
+
+---
+
+## The Cross-System Problem {.quote-slide}
+
+::: {.quote-text}
+"Your data isn't missing. It's [everywhere]{.amber} --- scattered across 10 systems that were never designed to talk to each other."
+:::
+
+---
+
+## Today's Learning Objectives
+
+::: {.info-box}
+::: {.box-title}
+By the end of this session, you will be able to:
+:::
+
+- Explain why enterprise data is scattered and why consolidation costs millions
+- Watch AI query multiple systems and merge results in real time
+- Map your own company's data landscape and identify cross-system blind spots
+:::
+
+---
+
+## Demo: The Cross-System Merge {.section-divider}
+
+---
+
+## "Which customers buy from multiple divisions?" {.shrink}
+
+::: {.step-flow}
+::: {.step-card}
+::: {.step-icon}
+1
+:::
+::: {.step-title}
+Query Salesforce
+:::
+::: {.step-desc}
+Pull Industrial division customers and revenue
+:::
+:::
+::: {.step-card}
+::: {.step-icon}
+2
+:::
+::: {.step-title}
+Query Legacy CRM
+:::
+::: {.step-desc}
+Pull Energy division customers and revenue
+:::
+:::
+::: {.step-card}
+::: {.step-icon}
+3
+:::
+::: {.step-title}
+Query HubSpot
+:::
+::: {.step-desc}
+Pull Safety division customers and revenue
+:::
+:::
+::: {.step-card}
+::: {.step-icon}
+4
+:::
+::: {.step-title}
+Fuzzy Merge
+:::
+::: {.step-desc}
+Python matches names across all three systems
+:::
+:::
+:::
+
+::: {.explainer}
+The agent writes and executes SQL against each system, then uses Python with fuzzy string matching to reconcile customer names. No warehouse. No ETL pipeline. No 3-week wait.
+:::
+
+---
+
+## Demo: Revenue Per Employee by Division {.shrink}
+
+::: {.two-cards}
+::: {.card .card-dark}
+::: {.card-title}
+Data Sources
+:::
+
+- **CRMs** (Salesforce, Legacy CRM, HubSpot) --- revenue by division
+- **Workday** --- headcount by department and division
+:::
+
+::: {.card .card-light}
+::: {.card-title}
+What the Agent Does
+:::
+
+- Queries revenue from each CRM
+- Queries headcount from Workday
+- Merges on division, calculates revenue/employee
+- Returns a table and a bar chart
+:::
+:::
+
+::: {.explainer}
+Two questions. Four systems. Both answered in under a minute. But how does this actually work?
+:::
+
+---
+
+## How Data Moves Today {.section-divider}
+
+---
+
+## Four Patterns of Data Integration {.shrink}
+
+::: {.four-cards}
+::: {.card .card-dark}
+::: {.card-title}
+APIs
+:::
+
+- Real-time, point-to-point
+- Each connection hand-coded
+- Breaks when vendors change endpoints
+:::
+::: {.card .card-light}
+::: {.card-title}
+iPaaS
+:::
+
+- MuleSoft, Workato, Boomi
+- Pre-built connectors
+- Still needs mapping and maintenance
+:::
+::: {.card .card-light}
+::: {.card-title}
+ETL / Warehouse
+:::
+
+- Extract, transform, load into Snowflake/BigQuery
+- Single source of truth
+- $500K--$5M and 6--18 months
+:::
+::: {.card .card-dark}
+::: {.card-title}
+CSV Export
+:::
+
+- The "just email me the file" approach
+- No governance, no audit trail
+- Surprisingly common
+:::
+:::
+
+---
+
+## The Traditional Answer {.shrink}
+
+::: {.stat-cards}
+::: {.stat-card}
+::: {.stat-number}
+$500K--$5M
+:::
+::: {.stat-label}
+Cost of a data warehouse build
+:::
+:::
+::: {.stat-card}
+::: {.stat-number}
+6--18 mo
+:::
+::: {.stat-label}
+Timeline to production
+:::
+:::
+::: {.stat-card}
+::: {.stat-number}
+60--70%
+:::
+::: {.stat-label}
+Of warehouse projects that stall or fail
+:::
+:::
+:::
+
+::: {.explainer}
+The warehouse is the gold standard --- but the cost, timeline, and failure rate are why most mid-market companies don't have one. The alternative: [query each system where it lives]{.accent} and merge on the fly.
+:::
+
+---
+
+## Two Approaches, Real Tradeoffs {.shrink}
+
+::: {.comparison-table}
+
+| | Data Warehouse | AI Agent (Query-in-Place) |
+|---|---|---|
+| **Setup cost** | $500K--$5M | Low (API credentials + schema docs) |
+| **Time to first answer** | 6--18 months | Days to weeks |
+| **Data freshness** | Batch (hourly/daily) | Real-time queries |
+| **Governance** | Strong (single schema) | Weaker (distributed) |
+| **Complex joins** | Fast (pre-modeled) | Slower (runtime merge) |
+| **Scalability** | Excellent | Limited by API rate limits |
+| **Best for** | Regulated, high-volume | Exploratory, ad hoc |
+
+:::
+
+::: {.explainer}
+This is not either/or. Most companies will use both. The agent excels at the [long tail of questions]{.accent} that never justified a dashboard.
+:::
+
+---
+
+## Cross-System Friction {.section-divider}
+
+---
+
+## Why Merging Is Hard {.shrink}
+
+::: {.comparison-table}
+
+| Problem | System A | System B | Impact |
+|---|---|---|---|
+| **Naming conventions** | `customerName` | `customer_name` | Schema mismatch |
+| **Date formats** | `2025-03-15` | `March 15, 2025` | Parse failures |
+| **Customer identity** | General Electric | GE Industrial Solutions | No common key |
+| **Customer identity** | Honeywell International | Honeywell Safety Products | Wrong match |
+| **ID systems** | `SF-001234` | `ACCT-5678` | No shared identifier |
+
+:::
+
+::: {.explainer}
+Meridian has ~25 customers that appear under different names across its three CRMs. This is not a bug --- it is the normal state of enterprise data.
+:::
+
+---
+
+## The Fuzzy Matching Problem {.shrink}
+
+::: {.info-box}
+::: {.box-title}
+How Does the Agent Resolve "General Electric" vs. "GE Industrial Solutions"?
+:::
+
+- **Exact match** fails --- the strings are completely different
+- **Fuzzy matching** (Levenshtein distance, token-set ratio) catches ~80% of cases
+- **Semantic matching** (embeddings) catches more, but is slower and less transparent
+- **Human review** is still needed for ambiguous cases (is "Honeywell Safety Products" a subsidiary or a division?)
+:::
+
+::: {.highlight-box}
+This is the unsexy core of data integration. No amount of AI eliminates the need to [decide what your entities are]{.accent} and maintain a mapping.
+:::
+
+---
+
+## Hands-On: Cross-System Queries {.section-divider}
+
+---
+
+## Timed Challenge {.shrink}
+
+::: {.info-box}
+::: {.box-title}
+The Question
+:::
+
+"Which division's top customer is most at risk of churning?"
+:::
+
+::: {.step-flow}
+::: {.step-card}
+::: {.step-icon}
+1
+:::
+::: {.step-title}
+Identify
+:::
+::: {.step-desc}
+Find each division's #1 customer by revenue (CRMs)
+:::
+:::
+::: {.step-card}
+::: {.step-icon}
+2
+:::
+::: {.step-title}
+Assess Risk
+:::
+::: {.step-desc}
+Check support ticket volume and sentiment (Zendesk)
+:::
+:::
+::: {.step-card}
+::: {.step-icon}
+3
+:::
+::: {.step-title}
+Merge
+:::
+::: {.step-desc}
+Combine revenue + support data, rank by churn risk
+:::
+:::
+::: {.step-card}
+::: {.step-icon}
+4
+:::
+::: {.step-title}
+Recommend
+:::
+::: {.step-desc}
+Draft a 3-sentence executive summary
+:::
+:::
+:::
+
+::: {.explainer}
+You have 15 minutes. This requires querying at least two systems and merging the results. Pay attention to how the agent handles name matching.
+:::
+
+---
+
+## Data Map Workshop {.section-divider}
+
+---
+
+## Map Your Company's Data {.shrink}
+
+::: {.three-cards}
+::: {.card .card-dark}
+::: {.card-title}
+Step 1: List Your Systems
+:::
+
+- Identify 3--5 core systems (CRM, ERP, HRIS, etc.)
+- What data lives in each?
+- Who owns it?
+:::
+::: {.card .card-light}
+::: {.card-title}
+Step 2: Draw the Gaps
+:::
+
+- What cross-system questions can nobody answer easily?
+- Where do people resort to spreadsheets?
+- What decisions are made on gut feel because the data is too hard to get?
+:::
+::: {.card .card-light}
+::: {.card-title}
+Step 3: Identify Quick Wins
+:::
+
+- Which two systems, if connected, would unlock the most value?
+- What's the simplest question that currently takes weeks?
+:::
+:::
+
+::: {.explainer}
+Spend 10 minutes sketching this out. We'll share and compare.
+:::
+
+---
+
+## What We're Skipping (For Now) {.shrink}
+
+::: {.info-box}
+::: {.box-title}
+The Pre-Work Nobody Talks About
+:::
+
+Before any AI agent can query your real systems, someone must:
+
+- **Catalog data** --- what tables exist, what do the columns mean?
+- **Document schemas** --- data types, relationships, business rules
+- **Provision API access** --- authentication, rate limits, permissions
+- **Classify PII** --- which fields contain personal data? What are the retention rules?
+:::
+
+::: {.stat-cards}
+::: {.stat-card}
+::: {.stat-number}
+60--90
+:::
+::: {.stat-label}
+Days of pre-work before an agent touches real data
+:::
+:::
+::: {.stat-card}
+::: {.stat-number}
+5--10
+:::
+::: {.stat-label}
+People typically involved in data readiness
+:::
+:::
+::: {.stat-card}
+::: {.stat-number}
+0
+:::
+::: {.stat-label}
+Vendors who mention this in their demos
+:::
+:::
+:::
+
+---
+
+## Before Next Session {.shrink}
+
+::: {.info-box}
+::: {.box-title}
+Homework
+:::
+
+- Complete your data map: 3--5 systems, key entities, cross-system gaps
+- Try at least 3 cross-system queries in Meridian Corp
+- Write down one question your company can't answer today because the data lives in different systems
+:::
+
+::: {.explainer}
+Friday's session: [Can I Trust This Answer?]{.accent} --- we stress-test AI reliability, hallucination, and when to trust (and not trust) the output.
+:::
+
+---
+
+## Key Takeaway {.quote-slide}
+
+::: {.quote-text}
+"The hardest part of data integration isn't technology. It's that [your systems disagree]{.amber} on who your customers are, what your products are called, and when things happened. AI can bridge the gap --- but someone still has to define the truth."
+:::
+
+

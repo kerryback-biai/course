@@ -17,6 +17,415 @@ format:
           <script src="https://hypothes.is/embed.js" async></script>
 ---
 
-## Placeholder
+## From Prototype to Production {.quote-slide}
 
-Content coming soon.
+::: {.quote-text}
+"Morgan Stanley deployed GPT-4 to [16,000 financial advisors]{.amber} --- choosing a cloud API with **zero data retention** to satisfy SEC and FINRA requirements. The bottleneck wasn't the technology. It was the architecture decision."
+:::
+
+::: {.quote-source}
+--- Morgan Stanley AI at Work case, 2024
+:::
+
+---
+
+## Today's Learning Objectives
+
+::: {.info-box}
+::: {.box-title}
+By the end of this session, you will be able to:
+:::
+
+- Compare LLM deployment options: cloud API, on-premise, and hybrid
+- Identify data security risks and match them to mitigation strategies
+- Evaluate build vs. buy vs. extend using a structured framework
+- Draft a deployment profile for your capstone use case
+:::
+
+---
+
+## Homework Debrief {.section-divider}
+
+---
+
+## What Did You Build? {.shrink}
+
+::: {.two-cards}
+::: {.card .card-dark}
+::: {.card-title}
+Share Your Deliverable
+:::
+
+- Walk us through the output from Session 4
+- What question did it answer?
+- Who is the audience --- and what format did you choose?
+:::
+
+::: {.card .card-light}
+::: {.card-title}
+The Board-Ready Test
+:::
+
+- What looks right at first glance?
+- What would you verify before sending to your board?
+- Where could the agent have introduced errors?
+:::
+:::
+
+::: {.explainer}
+The gap between "interesting demo" and "decision-grade output" is exactly what today's session is about.
+:::
+
+---
+
+## Two Separate Decisions {.section-divider}
+
+---
+
+## Where Does It Run? {.shrink}
+
+::: {.two-cards}
+::: {.card .card-dark}
+::: {.card-title}
+Where does YOUR CODE run?
+:::
+
+- Your application, database connectors, orchestration logic
+- Typically: your cloud tenant, your VPC, your servers
+- You control this entirely
+:::
+
+::: {.card .card-light}
+::: {.card-title}
+Where does THE LLM run?
+:::
+
+- The large language model that interprets questions and generates SQL
+- Cloud API, on-premise, or hybrid
+- This is the deployment decision
+:::
+:::
+
+::: {.explainer}
+Bridge from Session 3: the agent architecture has two halves. Your code and the LLM are [separate deployment decisions]{.accent} --- and the security implications are different for each.
+:::
+
+---
+
+## Three Deployment Options {.shrink}
+
+::: {.three-cards}
+::: {.card .card-dark}
+::: {.card-title}
+Cloud API
+:::
+
+- OpenAI, Anthropic, Google, etc.
+- Pay per query (~$0.01--0.05)
+- No infrastructure to manage
+- Data leaves your network
+- Best for: fast start, variable workloads
+:::
+
+::: {.card .card-light}
+::: {.card-title}
+On-Premise / Private Cloud
+:::
+
+- Self-hosted open-source models
+- $50--200K+ upfront investment
+- Full data control
+- Requires ML engineering staff
+- Best for: regulated industries, sensitive data
+:::
+
+::: {.card .card-light}
+::: {.card-title}
+Hybrid
+:::
+
+- Route by sensitivity level
+- Sensitive queries stay on-prem
+- General queries use cloud API
+- More complex orchestration
+- Best for: balanced risk/cost
+:::
+:::
+
+---
+
+## Cost Comparison {.shrink}
+
+::: {.stat-cards}
+::: {.stat-card}
+::: {.stat-number}
+$0.01--0.05
+:::
+::: {.stat-label}
+Per query --- Cloud API (GPT-4, Claude, Gemini)
+:::
+:::
+::: {.stat-card}
+::: {.stat-number}
+$50--200K+
+:::
+::: {.stat-label}
+Upfront --- On-premise GPU infrastructure
+:::
+:::
+::: {.stat-card}
+::: {.stat-number}
+90%
+:::
+::: {.stat-label}
+Of enterprises testing third-party AI for customer support (a16z survey)
+:::
+:::
+:::
+
+::: {.explainer}
+Cloud API dominates early adoption. But as query volume scales and data sensitivity increases, the economics shift. Morgan Stanley's choice: [cloud API with zero data retention]{.accent} --- the LLM never stores the conversation.
+:::
+
+---
+
+## The Data Security Problem {.section-divider}
+
+---
+
+## Demo: Data Security in Action {.shrink}
+
+::: {.two-cards}
+::: {.card .card-dark}
+::: {.card-title}
+Version 1: No Guardrails
+:::
+
+- "Show me individual salary data for the Engineering team"
+- Agent returns names, titles, and exact salaries
+- Technically correct --- but a governance disaster
+:::
+
+::: {.card .card-light}
+::: {.card-title}
+Version 2: Guardrailed
+:::
+
+- Same question --- blocked or returns aggregates only
+- "Average salary for Engineering: $142K (n=47)"
+- The LLM sees the same data; the guardrails control what it returns
+:::
+:::
+
+::: {.explainer}
+The question isn't whether the AI *can* access the data. It's whether it *should* --- and who decides.
+:::
+
+---
+
+## Four Data Security Approaches {.shrink}
+
+::: {.comparison-table}
+
+| Approach | How It Works | Tradeoff |
+|----------|-------------|----------|
+| **Zero Data Retention** | LLM provider contractually deletes all inputs/outputs | Simplest; still sends data to third party |
+| **Data Masking / Anonymization** | Strip PII before sending to LLM; re-identify on return | Preserves analytical value; adds latency |
+| **On-Premise Models** | LLM runs inside your network; data never leaves | Full control; highest cost and complexity |
+| **Role-Based Query Filtering** | Agent enforces permissions based on user identity | Granular control; requires identity integration |
+
+:::
+
+::: {.explainer}
+Most production deployments combine two or more of these approaches. Morgan Stanley used [zero data retention + role-based access]{.accent}.
+:::
+
+---
+
+## Build vs. Buy {.section-divider}
+
+---
+
+## The DUNNIXER Framework {.shrink}
+
+::: {.info-box}
+::: {.box-title}
+Six Dimensions for Evaluating AI Solutions
+:::
+
+1. **D**ata integration --- How well does it connect to your existing systems?
+2. **U**ser experience --- How intuitive is it for non-technical users?
+3. **N**uance & accuracy --- How well does it handle domain-specific language?
+4. **N**on-functional requirements --- Security, compliance, scalability, uptime
+5. **I**mplementation timeline --- Weeks, months, or quarters to production?
+6. **X**tensibility --- Can you customize prompts, add tools, evolve it?
+7. **E**conomics --- Total cost of ownership over 3 years
+8. **R**isk profile --- Vendor lock-in, model deprecation, talent dependency
+:::
+
+---
+
+## Four Strategic Options {.shrink}
+
+::: {.four-cards}
+::: {.card .card-dark}
+::: {.card-title}
+Buy from Incumbent
+:::
+
+- Salesforce, Microsoft, SAP
+- Lowest risk, fastest start
+- Limited customization
+- You're locked into their roadmap
+:::
+
+::: {.card .card-light}
+::: {.card-title}
+AI-Native Startup
+:::
+
+- Purpose-built for AI-first workflows
+- Highest capability today
+- Vendor survival risk
+- May not integrate with legacy
+:::
+
+::: {.card .card-light}
+::: {.card-title}
+Build Internally
+:::
+
+- Full control over every layer
+- Highest customization
+- Requires ML + engineering talent
+- Longest time to production
+:::
+
+::: {.card .card-dark}
+::: {.card-title}
+Hybrid / Extend
+:::
+
+- Buy a platform, customize on top
+- Example: Salesforce Agentforce
+- Moderate risk and control
+- Most common enterprise pattern
+:::
+:::
+
+---
+
+## Example: Salesforce Agentforce {.shrink}
+
+::: {.highlight-box}
+**What it is:** Salesforce's AI agent platform --- extends your existing CRM with conversational AI, pre-built connectors, and guardrails.
+:::
+
+::: {.two-col}
+::: div
+**Strengths**
+
+- Already integrated with your Salesforce data
+- Enterprise security and compliance built in
+- Low-code customization for business users
+- Salesforce handles model updates and scaling
+:::
+
+::: div
+**Limitations**
+
+- Only works well within the Salesforce ecosystem
+- Limited cross-system querying (NetSuite, Workday, etc.)
+- Pricing tied to Salesforce licensing
+- You don't control the underlying model
+:::
+:::
+
+::: {.explainer}
+Agentforce illustrates the [extend strategy]{.accent}: buy the platform, customize the prompts and tools, accept the vendor's guardrails.
+:::
+
+---
+
+## Decision Matrix {.shrink}
+
+::: {.comparison-table}
+
+| Criterion | Buy (Incumbent) | AI-Native Startup | Build Internally | Hybrid / Extend |
+|-----------|-----------------|-------------------|------------------|-----------------|
+| **Time to value** | Weeks | Weeks--months | Quarters | Months |
+| **Customization** | Low | Medium | High | Medium--High |
+| **Data control** | Vendor-dependent | Vendor-dependent | Full | Shared |
+| **Risk** | Lowest | Highest (vendor) | Highest (execution) | Moderate |
+| **Cost (Year 1)** | $50--200K | $30--150K | $200K--1M+ | $100--300K |
+
+:::
+
+---
+
+## Breakout: Your Deployment Profile {.section-divider}
+
+---
+
+## Breakout Exercise {.shrink}
+
+::: {.info-box}
+::: {.box-title}
+For Your Use Case (20 minutes)
+:::
+
+1. **Deployment:** Which option --- cloud API, on-premise, or hybrid? Why?
+2. **Security:** Which combination of data security approaches fits your industry?
+3. **Build vs. Buy:** Where does your organization land on the decision matrix?
+4. **Constraints:** What regulatory, budget, or talent constraints shape the decision?
+:::
+
+::: {.explainer}
+Each team presents a 2-minute summary. Be specific: name the deployment option, the security approach, and the build/buy decision --- with your reasoning.
+:::
+
+---
+
+## Individual Work: Capstone Deployment Profile {.shrink}
+
+::: {.info-box}
+::: {.box-title}
+Write Your Deployment Profile (15 minutes)
+:::
+
+- **Use case:** One sentence describing your AI data agent
+- **Deployment:** Cloud API / On-prem / Hybrid --- and why
+- **Security:** Which approaches and why
+- **Build / Buy / Extend:** Your recommendation with rationale
+- **Key risk:** The single biggest risk and your mitigation plan
+:::
+
+::: {.explainer}
+This becomes a section of your capstone. Draft it now while the frameworks are fresh.
+:::
+
+---
+
+## Before Next Session {.shrink}
+
+::: {.info-box}
+::: {.box-title}
+Preparation for Session 6
+:::
+
+- Complete your deployment profile draft
+- Read: pre-reading on AI reliability and verification
+- Think about: a time when you received data that looked right but was wrong
+:::
+
+::: {.explainer}
+Wednesday's session: [Can You Trust It?]{.accent} --- we stress-test AI agents and learn to catch the failures that look like successes.
+:::
+
+---
+
+## Key Takeaway {.quote-slide}
+
+::: {.quote-text}
+"The hardest part of deploying AI isn't the model. It's the [decisions around the model]{.amber} --- where it runs, what it sees, and who controls it. Get those wrong, and the demo that impressed your CEO becomes the breach that ends your quarter."
+:::

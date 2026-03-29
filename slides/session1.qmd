@@ -17,6 +17,319 @@ format:
           <script src="https://hypothes.is/embed.js" async></script>
 ---
 
-## Placeholder
+## The Day AI Came for Software {.quote-slide}
 
-Content coming soon.
+::: {.quote-text}
+"In February 2026, [AI agents]{.amber} wiped **$2 trillion** from software company valuations in a single week. Investors decided that AI can replace BI dashboards, workflow tools, reporting layers, and Tier 1 support."
+:::
+
+::: {.quote-source}
+--- Bloomberg, February 2026
+:::
+
+---
+
+## The Market Signal {.shrink}
+
+::: {.stat-cards}
+::: {.stat-card}
+::: {.stat-number}
+$2T
+:::
+::: {.stat-label}
+Market cap erased from software companies
+:::
+:::
+::: {.stat-card}
+::: {.stat-number}
+70%
+:::
+::: {.stat-label}
+Of BI dashboards never viewed after creation
+:::
+:::
+::: {.stat-card}
+::: {.stat-number}
+3 wks
+:::
+::: {.stat-label}
+Average wait for a custom report from the BI team
+:::
+:::
+:::
+
+::: {.explainer}
+The market is betting that [conversational data access]{.accent} will replace the tools you buy today. What does that mean for your company?
+:::
+
+---
+
+## A Familiar Story {.section-divider}
+
+---
+
+## The Email Chain {.shrink}
+
+::: {.highlight-box}
+**Monday 9:14 AM** --- CEO to VP Sales: "Which customers buy from multiple divisions? I want the list by Wednesday."
+:::
+
+::: {.highlight-box}
+**Monday 11:02 AM** --- VP Sales to BI Team: "Need a cross-division customer overlap report. CEO priority."
+:::
+
+::: {.highlight-box}
+**Monday 3:30 PM** --- BI Team: "We can start next sprint. ETA: 3 weeks. We need to join Salesforce, Legacy CRM, and HubSpot --- different schemas, no common key."
+:::
+
+::: {.highlight-box}
+**Monday 3:45 PM** --- CEO: "Three *weeks*?"
+:::
+
+---
+
+## What If It Took 30 Seconds? {.centered-statement}
+
+## "Which customers buy from multiple divisions?"
+
+::: {.explainer}
+Type the question. Get SQL, a chart, and a narrative --- instantly.
+:::
+
+---
+
+## Dashboard vs. Chat {.shrink}
+
+::: {.two-cards}
+::: {.card .card-dark}
+::: {.card-title}
+Traditional Dashboard
+:::
+
+- Pre-built by analysts weeks ago
+- Fixed filters and dimensions
+- Can't answer questions it wasn't designed for
+- New question = new ticket = new sprint
+:::
+
+::: {.card .card-light}
+::: {.card-title}
+AI Chat Interface
+:::
+
+- Ask any question in plain English
+- Agent writes SQL, runs it, returns results
+- Generates charts and narrative on the fly
+- Follow-up questions in seconds
+:::
+:::
+
+---
+
+## Today's Learning Objectives
+
+::: {.info-box}
+::: {.box-title}
+By the end of this session, you will be able to:
+:::
+
+- Explain why AI agents are disrupting the BI software market --- and why it matters now
+- Experience conversational data access vs. traditional dashboards
+- Ask business questions in plain English and get instant answers with charts
+:::
+
+---
+
+## The Business Lens {.quote-slide}
+
+::: {.quote-text}
+"If [anyone in your company]{.amber} could query data in plain English --- no SQL, no tickets, no dashboards --- what decisions get made faster? What questions finally get asked?"
+:::
+
+---
+
+## Hands-On: Single-System Queries {.shrink}
+
+::: {.step-flow}
+::: {.step-card}
+::: {.step-icon}
+1
+:::
+::: {.step-title}
+Simple Lookup
+:::
+::: {.step-desc}
+"What are our top 10 customers by revenue?"
+:::
+:::
+::: {.step-card}
+::: {.step-icon}
+2
+:::
+::: {.step-title}
+Filtering
+:::
+::: {.step-desc}
+"Show me open deals over $100K in the Energy division."
+:::
+:::
+::: {.step-card}
+::: {.step-icon}
+3
+:::
+::: {.step-title}
+Aggregation
+:::
+::: {.step-desc}
+"What is average deal size by sales rep this quarter?"
+:::
+:::
+::: {.step-card}
+::: {.step-icon}
+4
+:::
+::: {.step-title}
+Analytical
+:::
+::: {.step-desc}
+"Which reps are trending above quota? Show me a chart."
+:::
+:::
+:::
+
+::: {.explainer}
+We'll progress from simple lookups to analytical questions. Each prompt hits a single system --- Salesforce pipeline, NetSuite financials, or Workday headcount.
+:::
+
+---
+
+## Meet Meridian Corp {.shrink}
+
+::: {.info-box}
+::: {.box-title}
+Your Simulation Environment
+:::
+
+- **Meridian Corp** --- a $500M industrial distributor
+- **3 divisions:** Industrial (~$250M), Energy (~$150M), Safety (~$100M)
+- **10 enterprise systems** --- CRMs, ERP, HRIS, ticketing, and more
+- **41 database tables** across all systems
+- **26,000+ rows** of realistic, interconnected data spanning 3 years
+:::
+
+---
+
+## Meridian's Systems at a Glance {.shrink}
+
+::: {.three-cards}
+::: {.card .card-dark}
+::: {.card-title}
+Sales & CRM
+:::
+
+- Salesforce (Industrial)
+- Legacy CRM (Energy)
+- HubSpot (Safety)
+:::
+::: {.card .card-light}
+::: {.card-title}
+Finance & Ops
+:::
+
+- NetSuite ERP
+- Coupa Procurement
+- SAP Concur Expenses
+:::
+::: {.card .card-light}
+::: {.card-title}
+People & Support
+:::
+
+- Workday HRIS
+- Zendesk Support
+- Jira Projects
+- SharePoint Docs
+:::
+:::
+
+::: {.explainer}
+Three divisions. Three CRMs. One company. This is the cross-system reality most enterprises face.
+:::
+
+---
+
+## Try It Yourself {.section-divider}
+
+---
+
+## Guided Exploration {.shrink}
+
+::: {.info-box}
+::: {.box-title}
+Sample Prompts to Try
+:::
+
+- "What was Meridian's total revenue last year, broken down by division?"
+- "Who are the top 5 customers in the Industrial division by lifetime value?"
+- "Show me headcount by department. Are any teams growing faster than revenue?"
+- "What's our average days-to-close for deals over $200K?"
+- "Plot monthly revenue trends for all three divisions on one chart."
+:::
+
+::: {.explainer}
+Start with the prompts above, then ask your own questions. The goal is to feel the difference between *waiting for a report* and *having a conversation with your data*.
+:::
+
+---
+
+## Breakout Discussion {.shrink}
+
+::: {.two-cards}
+::: {.card .card-dark}
+::: {.card-title}
+Reflect
+:::
+
+- What surprised you about the speed or quality of answers?
+- What question did you try that worked unexpectedly well?
+- What question stumped the agent --- and why?
+:::
+
+::: {.card .card-light}
+::: {.card-title}
+Apply
+:::
+
+- What would this look like at your company?
+- Who currently answers these questions --- and how long does it take?
+- What decisions are delayed because the data isn't accessible?
+:::
+:::
+
+---
+
+## Before Next Session {.shrink}
+
+::: {.info-box}
+::: {.box-title}
+Homework
+:::
+
+- Explore Meridian Corp data on your own --- try at least 5 new questions
+- Attempt one question that requires data from **more than one system**
+- Write down: What broke? What was hard? What would you need to make this work for real?
+:::
+
+::: {.explainer}
+Wednesday's session: [Our Data Is Everywhere]{.accent} --- we tackle the cross-system problem head-on.
+:::
+
+---
+
+## Key Takeaway {.quote-slide}
+
+::: {.quote-text}
+"The bottleneck was never the data. It was [access to the data]{.amber}. AI agents don't replace your analysts --- they give everyone else the ability to ask questions without waiting in line."
+:::
+
+

@@ -17,6 +17,421 @@ format:
           <script src="https://hypothes.is/embed.js" async></script>
 ---
 
-## Placeholder
+## What If the Agent Could Do More Than Answer Questions? {.centered-statement}
 
-Content coming soon.
+## From Questions to Deliverables
+
+::: {.explainer}
+In Sessions 1--3, we asked questions and got answers. Today we chain those steps into **complete reporting pipelines** --- from raw data to polished, board-ready documents.
+:::
+
+::: {.highlight-box}
+One prompt. Six systems queried. Charts generated. Narrative written. Document assembled. **That's the pipeline.**
+:::
+
+## Learning Objectives
+
+- See the full pipeline: data to chart to narrative to board-ready memo
+- Understand how to **chain AI steps** into automated workflows
+- Produce a deliverable and **iterate on quality**
+
+## Full Pipeline Demo {.section-divider}
+
+## "Prepare a Quarterly Executive Summary"
+
+::: {.step-flow-6}
+::: {.step-card}
+::: {.step-icon}
+1
+:::
+::: {.step-title}
+Query
+:::
+::: {.step-desc}
+Pull from 6 source systems
+:::
+:::
+
+::: {.step-card}
+::: {.step-icon}
+2
+:::
+::: {.step-title}
+Merge
+:::
+::: {.step-desc}
+Join and deduplicate
+:::
+:::
+
+::: {.step-card}
+::: {.step-icon}
+3
+:::
+::: {.step-title}
+Compute
+:::
+::: {.step-desc}
+Calculate KPIs and variances
+:::
+:::
+
+::: {.step-card}
+::: {.step-icon}
+4
+:::
+::: {.step-title}
+Chart
+:::
+::: {.step-desc}
+Generate visualizations
+:::
+:::
+
+::: {.step-card}
+::: {.step-icon}
+5
+:::
+::: {.step-title}
+Narrate
+:::
+::: {.step-desc}
+Write analysis text
+:::
+:::
+
+::: {.step-card}
+::: {.step-icon}
+6
+:::
+::: {.step-title}
+Assemble
+:::
+::: {.step-desc}
+Format final document
+:::
+:::
+:::
+
+## Anatomy of a Reporting Pipeline {.section-divider}
+
+## Each Step Is Customizable
+
+::: {.two-col}
+::: div
+**Data Steps**
+
+- **Query** --- which systems, which tables, what date range
+- **Clean** --- handle nulls, standardize formats, deduplicate
+- **Merge** --- join across systems on shared keys
+- **Compute** --- KPIs, YoY change, variance to budget
+:::
+
+::: div
+**Output Steps**
+
+- **Chart** --- bar, line, waterfall, heatmap; style and palette
+- **Narrate** --- tone, length, audience, what to emphasize
+- **Assemble** --- layout, headers, appendix, export format
+- **Review** --- human-in-the-loop checkpoint before distribution
+:::
+:::
+
+::: {.explainer}
+The pipeline is the same agent loop from Session 3, executed multiple times in sequence. Each step's output feeds into the next step's input.
+:::
+
+## The Art of Iteration {.section-divider}
+
+## Prompt Specificity Drives Quality
+
+::: {.three-cards}
+::: {.card .card-dark}
+::: {.card-title}
+Generic Prompt
+:::
+- "Summarize Q3 results"
+- Gets a wall of text
+- No structure, no emphasis
+- Fine for a first draft
+:::
+
+::: {.card .card-light}
+::: {.card-title}
+Structured Prompt
+:::
+- "Use traffic-light format: green/yellow/red for each division"
+- Clear visual hierarchy
+- Easy to scan
+- Much more useful
+:::
+
+::: {.card .card-light}
+::: {.card-title}
+Executive Prompt
+:::
+- "One page, lead with biggest risk, include 90-day action items"
+- Board-ready output
+- Prioritized by impact
+- Actionable recommendations
+:::
+:::
+
+## Iteration in Practice
+
+::: {.highlight-box}
+**Draft 1:** "Summarize quarterly performance." --- You get a generic overview.
+
+**Draft 2:** "Use traffic-light format. Flag any metric more than 10% off plan." --- Now it's scannable.
+
+**Draft 3:** "One page maximum. Lead with the biggest risk. End with three recommended actions." --- Board-ready.
+:::
+
+::: {.explainer}
+Each iteration takes seconds. The cost of refining is near zero. The skill is knowing *what to ask for* --- and that's a business skill, not a technical one.
+:::
+
+## Hands-On Exercises {.section-divider}
+
+## Exercise 1: Customer Risk Report {.shrink}
+
+::: {.info-box}
+::: {.box-title}
+Exercise 1 --- Customer Risk Report
+:::
+- Query accounts receivable aging and customer order history
+- Flag customers with invoices over 90 days past due
+- Cross-reference with recent order volume (are they still active?)
+- Output: one-page risk summary with traffic-light ratings
+:::
+
+## Exercise 2: Division P&L Comparison {.shrink}
+
+::: {.info-box}
+::: {.box-title}
+Exercise 2 --- Division P&L Comparison
+:::
+- Pull revenue and expense data for 3 divisions
+- Compute gross margin, operating margin, and YoY change
+- Generate a comparison chart (grouped bar or waterfall)
+- Write a two-paragraph narrative highlighting key variances
+:::
+
+## Exercise 3: Board-Ready Memo {.shrink}
+
+::: {.info-box}
+::: {.box-title}
+Exercise 3 --- Board-Ready Memo
+:::
+- Combine data from Exercises 1 and 2
+- Add headcount and pipeline data
+- Structure as: Executive Summary, Key Risks, Division Performance, Outlook
+- One page. Lead with the single most important thing the board needs to know.
+- Iterate at least twice on tone and structure
+:::
+
+## From Ad Hoc to Automated {.section-divider}
+
+## Same Pipeline, Different Trigger
+
+::: {.two-cards}
+::: {.card .card-dark}
+::: {.card-title}
+Ad Hoc (Chat)
+:::
+- User types a request
+- Agent runs pipeline
+- Delivers to the user
+- Great for exploration and one-offs
+:::
+
+::: {.card .card-light}
+::: {.card-title}
+Automated (Scheduled)
+:::
+- Cron job triggers the pipeline
+- Monday morning dashboard refresh
+- Monthly board deck generation
+- Human review gate before distribution
+:::
+:::
+
+::: {.explainer}
+The architecture is identical. The only difference is *who triggers it* --- a person typing in chat or a scheduler running on a timer.
+:::
+
+## Production Pipeline Architecture
+
+::: {.step-flow}
+::: {.step-card}
+::: {.step-icon}
+&#128337;
+:::
+::: {.step-title}
+Scheduler
+:::
+::: {.step-desc}
+Cron, Airflow, or cloud scheduler
+:::
+:::
+
+::: {.step-card}
+::: {.step-icon}
+&#9881;
+:::
+::: {.step-title}
+Agent Pipeline
+:::
+::: {.step-desc}
+Same loop: query, compute, chart, narrate
+:::
+:::
+
+::: {.step-card}
+::: {.step-icon}
+&#128065;
+:::
+::: {.step-title}
+Human Review
+:::
+::: {.step-desc}
+Approver checks output before distribution
+:::
+:::
+
+::: {.step-card}
+::: {.step-icon}
+&#128228;
+:::
+::: {.step-title}
+Distribute
+:::
+::: {.step-desc}
+Email, Slack, SharePoint, or dashboard
+:::
+:::
+:::
+
+## Case Study: HPE {.section-divider}
+
+## HPE: "Alfred" Replaces 100-Slide Weekly Review {.quote-slide}
+
+::: {.quote-text}
+CFO Marie Myers deployed an AI agent called [Alfred]{.amber} to automate Hewlett Packard Enterprise's weekly performance review. The 100-slide deck that took a team days to prepare is now generated automatically --- with humans reviewing the output, not creating it.
+:::
+
+::: {.quote-source}
+--- Hewlett Packard Enterprise, AI in Finance case study
+:::
+
+## HPE Results
+
+::: {.stat-cards}
+::: {.stat-card}
+::: {.stat-number}
+40%
+:::
+::: {.stat-label}
+Faster reporting cycle
+:::
+:::
+
+::: {.stat-card}
+::: {.stat-number}
+25%
+:::
+::: {.stat-label}
+Lower processing costs
+:::
+:::
+
+::: {.stat-card}
+::: {.stat-number}
+90%
+:::
+::: {.stat-label}
+Reduction in manual preparation
+:::
+:::
+:::
+
+::: {.explainer}
+The pattern is exactly what we built today: query multiple systems, compute metrics, generate charts, write narrative, assemble document. HPE just runs it on a schedule instead of typing in a chat window.
+:::
+
+## Workshop {.section-divider}
+
+## Identify Your Pipelines
+
+::: {.info-box}
+::: {.box-title}
+Workshop --- Your Recurring Reports
+:::
+- Identify **2--3 recurring reports** at your company that follow this pattern
+- For each, answer:
+  1. What data sources does it pull from?
+  2. Who prepares it today, and how long does it take?
+  3. Who reviews and approves it?
+  4. What would "good enough to automate" look like?
+- Be ready to share one example with the class
+:::
+
+## Session 4 Recap
+
+::: {.step-flow}
+::: {.step-card}
+::: {.step-icon}
+1
+:::
+::: {.step-title}
+Pipeline
+:::
+::: {.step-desc}
+Query, clean, compute, chart, narrate, assemble
+:::
+:::
+
+::: {.step-card}
+::: {.step-icon}
+2
+:::
+::: {.step-title}
+Iteration
+:::
+::: {.step-desc}
+Prompt specificity drives output quality
+:::
+:::
+
+::: {.step-card}
+::: {.step-icon}
+3
+:::
+::: {.step-title}
+Automation
+:::
+::: {.step-desc}
+Same loop, triggered by schedule instead of chat
+:::
+:::
+
+::: {.step-card}
+::: {.step-icon}
+4
+:::
+::: {.step-title}
+HPE Case
+:::
+::: {.step-desc}
+100-slide deck automated, 90% less manual prep
+:::
+:::
+:::
+
+## Next Time {.centered-statement}
+
+## Session 5: When AI Gets It Wrong
+
+::: {.explainer}
+Pipelines are powerful, but what happens when the agent hallucinates, misjoins tables, or produces a confidently wrong number? Next session: **validation, guardrails, and trust**.
+:::

@@ -17,6 +17,439 @@ format:
           <script src="https://hypothes.is/embed.js" async></script>
 ---
 
-## Placeholder
+## Last Session: Trust and Verification {.section-divider}
 
-Content coming soon.
+---
+
+## Bridge + Atherton Case Debrief {.shrink}
+
+::: {.two-cards}
+::: {.card .card-dark}
+::: {.card-title}
+What Atherton Deployed
+:::
+
+- Document AI across compliance policies, vendor contracts, and HR handbooks
+- Employees could ask questions in plain English and get cited answers
+- Replaced a manual process of searching SharePoint and emailing Legal
+:::
+
+::: {.card .card-light}
+::: {.card-title}
+What Went Wrong
+:::
+
+- **Chunking failures** --- long contract clauses split mid-sentence, wrong answers returned
+- **Access control gaps** --- junior staff saw board-level compensation data
+- **Stale documents** --- system answered from a superseded policy version
+:::
+:::
+
+::: {.explainer}
+What would you have done differently? We'll return to each of these failure modes today.
+:::
+
+---
+
+## Today's Learning Objectives
+
+::: {.info-box}
+::: {.box-title}
+By the end of this session, you will be able to:
+:::
+
+- Explain how AI answers questions from company documents --- with citations
+- Distinguish database AI from document AI and know when to use each
+- Experience RAG hands-on and understand key deployment decisions
+:::
+
+---
+
+## Two Kinds of AI for Business {.shrink}
+
+::: {.two-cards}
+::: {.card .card-dark}
+::: {.card-title}
+Database AI (Sessions 1--6)
+:::
+
+- Queries **structured data** in rows and columns
+- Writes SQL, runs it, returns results
+- Best for: numbers, trends, KPIs, comparisons
+- Source of truth: your transactional systems
+:::
+
+::: {.card .card-light}
+::: {.card-title}
+Document AI (Today)
+:::
+
+- Queries **unstructured text** in PDFs, Word docs, policies
+- Retrieves relevant passages, synthesizes an answer with citations
+- Best for: policies, contracts, procedures, meeting notes
+- Source of truth: your document repositories
+:::
+:::
+
+::: {.explainer}
+Most real business questions need [both]{.accent}. "What's our contractual commitment to GE, and how does their actual spending compare?" requires document AI for the contract and database AI for the spending data.
+:::
+
+---
+
+## Demo: Document Q&A with Meridian Corp {.section-divider}
+
+---
+
+## Meridian's Document Collections {.shrink}
+
+::: {.three-cards}
+::: {.card .card-dark}
+::: {.card-title}
+HR & Compliance
+:::
+
+- Employee handbook
+- Travel & expense policy
+- Code of conduct
+- Safety procedures
+:::
+
+::: {.card .card-light}
+::: {.card-title}
+Legal & Contracts
+:::
+
+- Vendor agreements
+- Master service agreements
+- Non-disclosure agreements
+- SLA commitments
+:::
+
+::: {.card .card-light}
+::: {.card-title}
+Governance
+:::
+
+- Board meeting minutes
+- Compliance audit reports
+- Risk assessments
+- Strategic plans
+:::
+:::
+
+::: {.explainer}
+These are the same kinds of documents trapped in SharePoint folders, shared drives, and email attachments at every company.
+:::
+
+---
+
+## How RAG Works {.shrink}
+
+::: {.step-flow}
+::: {.step-card}
+::: {.step-icon}
+1
+:::
+::: {.step-title}
+Chunk
+:::
+::: {.step-desc}
+Documents split into passages (paragraphs, sections, or clauses)
+:::
+:::
+::: {.step-card}
+::: {.step-icon}
+2
+:::
+::: {.step-title}
+Embed
+:::
+::: {.step-desc}
+Each chunk converted to a numerical vector by an embedding model
+:::
+:::
+::: {.step-card}
+::: {.step-icon}
+3
+:::
+::: {.step-title}
+Store
+:::
+::: {.step-desc}
+Vectors stored in a vector database for fast similarity search
+:::
+:::
+::: {.step-card}
+::: {.step-icon}
+4
+:::
+::: {.step-title}
+Query
+:::
+::: {.step-desc}
+User's question embedded the same way; top matching chunks retrieved
+:::
+:::
+::: {.step-card}
+::: {.step-icon}
+5
+:::
+::: {.step-title}
+Generate
+:::
+::: {.step-desc}
+LLM receives question + retrieved chunks and produces a cited answer
+:::
+:::
+:::
+
+::: {.explainer}
+**RAG = Retrieval-Augmented Generation.** The LLM only sees what the retrieval step finds. If retrieval fails, the answer fails --- no matter how smart the model is.
+:::
+
+---
+
+## The Key Insight {.quote-slide}
+
+::: {.quote-text}
+"The LLM doesn't [read your documents]{.amber}. It reads whatever the retrieval system hands it. RAG quality is retrieval quality."
+:::
+
+---
+
+## Hands-On Round 1: Simple Retrieval {.shrink}
+
+::: {.info-box}
+::: {.box-title}
+Round 1 --- Single-Document Questions
+:::
+
+- "What is Meridian's policy on remote work?"
+- "What are the expense approval thresholds?"
+- "How many vacation days do employees get after 5 years?"
+- Notice the **citations** --- each answer points back to a specific document and section
+:::
+
+::: {.explainer}
+Start simple. Ask questions that live in a single document. Pay attention to where the system says the answer came from.
+:::
+
+---
+
+## Hands-On Round 2: Cross-Document {.shrink}
+
+::: {.info-box}
+::: {.box-title}
+Round 2 --- Questions Spanning Multiple Documents
+:::
+
+- "What are our obligations under the GE contract, and are there any compliance risks flagged in the latest audit?"
+- "Does our travel policy align with what we committed to in the Apex Industries MSA?"
+- "What did the board say about vendor consolidation, and which contracts are up for renewal?"
+:::
+
+::: {.explainer}
+These questions require the system to retrieve from [multiple documents]{.accent} and synthesize. Watch for gaps where it finds one source but misses the other.
+:::
+
+---
+
+## Hands-On Round 3: Cross-System {.shrink}
+
+::: {.info-box}
+::: {.box-title}
+Round 3 --- Document AI + Database AI Together
+:::
+
+- "What's our contractual commitment to GE, and how does their actual spending compare?"
+- "The board minutes mention expanding the Energy Division --- what do the sales numbers show?"
+- "Our vendor agreement with Apex caps annual spend at $2M --- are we on track to exceed it?"
+:::
+
+::: {.explainer}
+This is where it gets powerful. The system pulls the **contract language** from document AI and the **actual numbers** from database queries. Two systems, one answer.
+:::
+
+---
+
+## When RAG Fails {.shrink}
+
+::: {.three-cards}
+::: {.card .card-dark}
+::: {.card-title}
+Retrieval Misses
+:::
+
+- Question phrased differently than source text
+- Relevant chunk not in top results
+- Result: correct answer exists but system can't find it
+:::
+
+::: {.card .card-light}
+::: {.card-title}
+Hallucinated Citations
+:::
+
+- LLM generates plausible-sounding references
+- Citation points to wrong section or nonexistent page
+- Result: answer looks authoritative but is wrong
+:::
+
+::: {.card .card-light}
+::: {.card-title}
+Stale Documents
+:::
+
+- Policy was updated but old version still indexed
+- System answers from superseded document
+- Result: confidently delivers outdated information
+:::
+:::
+
+::: {.explainer}
+**Live demo:** Watch what happens when a contract clause is split across two chunks. The system retrieves half the clause and gives a dangerously incomplete answer.
+:::
+
+---
+
+## Context Window Limits {.centered-statement}
+
+## Even the best models have a ceiling
+
+::: {.explainer}
+If your question requires context from 50 pages of contracts, the model can only see what fits in its context window. Retrieval quality matters because you can't just dump everything in. Chunking strategy determines what the model gets to see.
+:::
+
+---
+
+## Deploying RAG: Key Decisions {.shrink}
+
+::: {.step-flow}
+::: {.step-card}
+::: {.step-icon}
+📄
+:::
+::: {.step-title}
+Document Ingestion
+:::
+::: {.step-desc}
+PDF parsing, OCR for scans, handling tables and images
+:::
+:::
+::: {.step-card}
+::: {.step-icon}
+✂️
+:::
+::: {.step-title}
+Chunking Strategy
+:::
+::: {.step-desc}
+By section for policies, by clause for contracts, by paragraph for memos
+:::
+:::
+::: {.step-card}
+::: {.step-icon}
+🔄
+:::
+::: {.step-title}
+Freshness
+:::
+::: {.step-desc}
+Re-index on update, version tracking, retire superseded docs
+:::
+:::
+::: {.step-card}
+::: {.step-icon}
+🔒
+:::
+::: {.step-title}
+Access Control
+:::
+::: {.step-desc}
+Document-level permissions must carry over --- who can see what
+:::
+:::
+:::
+
+::: {.explainer}
+Chunking is the single highest-leverage decision. Bad chunking = bad retrieval = bad answers, regardless of model quality.
+:::
+
+---
+
+## Build vs. Buy {.shrink}
+
+::: {.comparison-table}
+
+| | Turnkey Platforms | Custom Build |
+|---|---|---|
+| **Examples** | Glean, Guru, Microsoft Copilot for M365 | LangChain + vector DB + your infra |
+| **Setup time** | Days to weeks | Weeks to months |
+| **Customization** | Limited --- works with standard doc formats | Full control over chunking, retrieval, prompts |
+| **Access control** | Built-in (inherits from source system) | You build it |
+| **Cost model** | Per-user subscription | Infrastructure + engineering time |
+| **Best for** | Broad knowledge base across standard tools | Domain-specific docs, regulatory, proprietary formats |
+
+:::
+
+::: {.explainer}
+Most companies start with a turnkey platform for general knowledge and build custom RAG only where the domain requires it (legal, compliance, engineering specs).
+:::
+
+---
+
+## Breakout: Where Is Knowledge Trapped? {.shrink}
+
+::: {.two-cards}
+::: {.card .card-dark}
+::: {.card-title}
+Identify
+:::
+
+- Name 2--3 document collections at your company that would benefit from AI-powered Q&A
+- Think: policies, contracts, procedures, meeting notes, customer communications
+- Where do people currently go to find this information?
+:::
+
+::: {.card .card-light}
+::: {.card-title}
+Evaluate
+:::
+
+- How often are these documents updated?
+- Who needs access --- and who shouldn't have it?
+- What's the cost of a wrong answer from stale or incomplete documents?
+:::
+:::
+
+::: {.explainer}
+Report back: your top candidate document collection and the biggest deployment risk you foresee.
+:::
+
+---
+
+## Before Next Session {.shrink}
+
+::: {.info-box}
+::: {.box-title}
+Preparation for Session 8 --- Capstone
+:::
+
+- Finalize your AI adoption strategy with your breakout group
+- Prepare a **2-minute pitch** to your "executive team"
+- Your pitch should cover: the use case, the data source, the expected value, and the first 30-day action
+- Think about both database AI and document AI --- where does each fit?
+:::
+
+::: {.explainer}
+Monday's final session: [Your AI Strategy]{.accent} --- you present, we synthesize, and you leave with a concrete plan.
+:::
+
+---
+
+## Key Takeaway {.quote-slide}
+
+::: {.quote-text}
+"Your company's most valuable knowledge isn't in dashboards --- it's buried in [documents nobody can search]{.amber}. RAG doesn't replace your experts. It makes their expertise accessible to everyone who needs it."
+:::
