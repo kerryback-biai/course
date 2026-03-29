@@ -16,7 +16,11 @@ format:
 
 ## Last Week, You Were the User {.section-divider}
 
+---
+
 ## Bridge {.centered-statement}
+
+---
 
 ## You've spent a week asking questions and getting answers.
 
@@ -26,13 +30,19 @@ Now let's look under the hood.
 How does an AI agent turn your English question into SQL, run it, and deliver a polished result? The answer is surprisingly simple --- and surprisingly powerful.
 :::
 
+---
+
 ## Learning Objectives
 
 - Understand the **agent loop** as an orchestrated test-and-review cycle
 - See the **50 lines of code** that power the core of the app
 - Understand **where code executes** and why that's an architectural decision
 
+---
+
 ## The Agent Loop {.section-divider}
+
+---
 
 ## What Happens When You Ask a Question?
 
@@ -86,6 +96,8 @@ LLM checks results, fixes errors or delivers the answer
 :::
 :::
 
+---
+
 ## The Key Insight: Test and Review
 
 ::: {.highlight-box}
@@ -95,6 +107,8 @@ The agent doesn't just generate code and hope for the best. It **writes code, ex
 ::: {.explainer}
 This is the same pattern a careful analyst follows: write a query, check the output, refine if something looks off, then present the final answer. The LLM automates that entire cycle.
 :::
+
+---
 
 ## The Agent Loop in Pseudocode {.shrink}
 
@@ -116,7 +130,11 @@ def agent_loop(question, schema):
 ```
 :::
 
+---
+
 ## The System Prompt Is the Secret {.section-divider}
+
+---
 
 ## Why the Prompt Matters
 
@@ -142,6 +160,8 @@ With Join Key Documentation
 :::
 :::
 
+---
+
 ## The Prompt Is "Institutional Knowledge"
 
 ::: {.explainer}
@@ -152,7 +172,11 @@ The system prompt encodes everything the agent needs to know about your data: ta
 **Change the prompt, change the behavior.** Add a rule like "always filter to active customers" and every query respects it. Remove join documentation and merges break. The prompt is the most important piece of the system.
 :::
 
+---
+
 ## Where Does the Code Run? {.section-divider}
+
+---
 
 ## Three Architecture Options
 
@@ -188,6 +212,8 @@ C. SQL-Only Mode
 :::
 :::
 
+---
+
 ## Choosing the Right Option
 
 ::: {.comparison-table}
@@ -199,7 +225,11 @@ C. SQL-Only Mode
 | **Best for** | Prototyping | Production | Regulated |
 :::
 
+---
+
 ## The Complexity Iceberg {.section-divider}
+
+---
 
 ## Simple Core, Complex Deployment
 
@@ -232,6 +262,8 @@ Growth from prototype to production
 :::
 :::
 
+---
+
 ## What the Other 2,950 Lines Do
 
 ::: {.two-col}
@@ -259,7 +291,11 @@ Growth from prototype to production
 The core loop is elegant and simple. The production wrapper is where the engineering effort lives. This is why you **buy or build on a platform** rather than rolling your own from scratch.
 :::
 
+---
+
 ## Live Build {.section-divider}
+
+---
 
 ## Let's Build an Agent --- Right Now
 
@@ -279,11 +315,15 @@ Live Demo Plan
 Your developer could do this. The point isn't that it's hard --- it's that it's *tractable*. The magic is in the prompt design and the execution architecture, not in thousands of lines of code.
 :::
 
+---
+
 ## What You Just Saw
 
 ::: {.highlight-box}
 A working AI agent, built from scratch in minutes, that can answer business questions by writing and executing SQL against a real database. **The same pattern powers every BI agent on the market.**
 :::
+
+---
 
 ## Session 3 Recap
 
@@ -337,6 +377,8 @@ Iceberg
 :::
 :::
 
+---
+
 ## Before Next Session {.shrink}
 
 ::: {.info-box}
@@ -360,6 +402,8 @@ Wednesday's session: [From Data to Deliverable]{.accent} --- we chain agent step
 ---
 
 ## 50 lines and a good prompt. {.centered-statement}
+
+---
 
 ## That's the core. The other 3,000 lines are what production requires.
 

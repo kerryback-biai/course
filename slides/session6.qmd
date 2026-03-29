@@ -353,7 +353,7 @@ Homework
 :::
 
 ::: {.explainer}
-Next session: [Document AI --- Answers from Your Own Files]{.accent} --- we add a second capability: retrieving answers from company documents with citations. The Atherton case shows what can go wrong.
+Wednesday's session: [Document AI --- Answers from Your Own Files]{.accent} --- we add a second capability: retrieving answers from company documents with citations. The Atherton case shows what can go wrong.
 :::
 
 ---

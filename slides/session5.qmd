@@ -21,7 +21,7 @@ format:
 :::
 
 ::: {.quote-source}
---- Morgan Stanley AI at Work case, 2024
+--- Morgan Stanley case study (provided as pre-reading)
 :::
 
 ---
@@ -247,7 +247,7 @@ Most production deployments combine two or more of these approaches. Morgan Stan
 
 ::: {.info-box}
 ::: {.box-title}
-DUNNIXER: Eight Dimensions for Evaluating AI Solutions
+Six Dimensions for Evaluating AI Solutions
 :::
 
 1. **D**ata integration --- How well does it connect to your existing systems?
@@ -256,8 +256,6 @@ DUNNIXER: Eight Dimensions for Evaluating AI Solutions
 4. **N**on-functional requirements --- Security, compliance, scalability, uptime
 5. **I**mplementation timeline --- Weeks, months, or quarters to production?
 6. **X**tensibility --- Can you customize prompts, add tools, evolve it?
-7. **E**conomics --- Total cost of ownership over 3 years
-8. **R**isk profile --- Vendor lock-in, model deprecation, talent dependency
 :::
 
 ---

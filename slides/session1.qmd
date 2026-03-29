@@ -42,7 +42,7 @@ Market cap erased from software companies
 70%
 :::
 ::: {.stat-label}
-Of BI dashboards estimated to go unused (Gartner)
+Of BI dashboards estimated to go unused
 :::
 :::
 ::: {.stat-card}

@@ -298,7 +298,7 @@
     "href": "slides/session6.html#before-next-session",
     "title": "Session 6: Can You Trust It?",
     "section": "Before Next Session",
-    "text": "Before Next Session\n\n\nHomework\n\n\nRead the Atherton Financial case study (provided). A wealth management firm deployed document AI and hit chunking failures, access control gaps, and stale documents. Come prepared to discuss: what would you have done differently?\nBegin drafting your capstone strategy using the template and evaluation rubric (provided). Cover: problem statement, proposed solution, deployment approach, 90-day pilot plan.\nFor your identified use case: write down the 3 most likely failure modes and how you’d mitigate each.\n\n\n\nNext session: Document AI — Answers from Your Own Files — we add a second capability: retrieving answers from company documents with citations. The Atherton case shows what can go wrong."
+    "text": "Before Next Session\n\n\nHomework\n\n\nRead the Atherton Financial case study (provided). A wealth management firm deployed document AI and hit chunking failures, access control gaps, and stale documents. Come prepared to discuss: what would you have done differently?\nBegin drafting your capstone strategy using the template and evaluation rubric (provided). Cover: problem statement, proposed solution, deployment approach, 90-day pilot plan.\nFor your identified use case: write down the 3 most likely failure modes and how you’d mitigate each.\n\n\n\nWednesday’s session: Document AI — Answers from Your Own Files — we add a second capability: retrieving answers from company documents with citations. The Atherton case shows what can go wrong."
   },
   {
     "objectID": "slides/session6.html#key-takeaway",
@@ -438,7 +438,7 @@
     "href": "slides/session4.html#production-pipeline-architecture",
     "title": "Session 4: From Data to Deliverable",
     "section": "Production Pipeline Architecture",
-    "text": "Production Pipeline Architecture\n\n\n\n🕑\n\n\nScheduler\n\n\nCron, Airflow, or cloud scheduler\n\n\n\n\n⚙\n\n\nAgent Pipeline\n\n\nSame loop: query, compute, chart, narrate\n\n\n\n\n👁\n\n\nHuman Review\n\n\nApprover checks output before distribution\n\n\n\n\n📤\n\n\nDistribute\n\n\nEmail, Slack, SharePoint, or dashboard"
+    "text": "Production Pipeline Architecture\n\n\n\n1\n\n\nScheduler\n\n\nCron, Airflow, or cloud scheduler\n\n\n\n\n2\n\n\nAgent Pipeline\n\n\nSame loop: query, compute, chart, narrate\n\n\n\n\n3\n\n\nHuman Review\n\n\nApprover checks output before distribution\n\n\n\n\n4\n\n\nDistribute\n\n\nEmail, Slack, SharePoint, or dashboard"
   },
   {
     "objectID": "slides/session4.html#case-study-hpe",
@@ -452,7 +452,7 @@
     "href": "slides/session4.html#hpe-alfred-replaces-100-slide-weekly-review",
     "title": "Session 4: From Data to Deliverable",
     "section": "HPE: “Alfred” Replaces 100-Slide Weekly Review",
-    "text": "HPE: “Alfred” Replaces 100-Slide Weekly Review\n\nCFO Marie Myers deployed an AI agent called Alfred to automate Hewlett Packard Enterprise’s weekly performance review. The 100-slide deck that took a team days to prepare is now generated automatically — with humans reviewing the output, not creating it.\n\n\n— HPE 2024 Annual Report; Fortune, “How HPE’s CFO Built an AI Agent,” October 2024"
+    "text": "HPE: “Alfred” Replaces 100-Slide Weekly Review\n\nCFO Marie Myers deployed an AI agent called Alfred to automate Hewlett Packard Enterprise’s weekly performance review. The 100-slide deck that took a team days to prepare is now generated automatically — with humans reviewing the output, not creating it.\n\n\n— HPE executive communications, 2025–2026; reported by Fortune and CFO Dive"
   },
   {
     "objectID": "slides/session4.html#hpe-results",
@@ -725,7 +725,7 @@
     "href": "slides/session1.html#the-market-signal",
     "title": "Session 1: Exploring Data with AI",
     "section": "The Market Signal",
-    "text": "The Market Signal\n\n\n\n$2T\n\n\nMarket cap erased from software companies\n\n\n\n\n70%\n\n\nOf BI dashboards estimated to go unused (Gartner)\n\n\n\n\n3 wks\n\n\nTypical wait for a custom report at many organizations\n\n\n\n\nThe market is betting that conversational data access will replace the tools you buy today. What does that mean for your company?"
+    "text": "The Market Signal\n\n\n\n$2T\n\n\nMarket cap erased from software companies\n\n\n\n\n70%\n\n\nOf BI dashboards estimated to go unused\n\n\n\n\n3 wks\n\n\nTypical wait for a custom report at many organizations\n\n\n\n\nThe market is betting that conversational data access will replace the tools you buy today. What does that mean for your company?"
   },
   {
     "objectID": "slides/session1.html#a-familiar-story",
@@ -1033,7 +1033,7 @@
     "href": "slides/session5.html#from-prototype-to-production",
     "title": "Session 5: What Does Deployment Look Like?",
     "section": "From Prototype to Production",
-    "text": "From Prototype to Production\n\n“Morgan Stanley deployed GPT-4 to 16,000 financial advisors — choosing a cloud API with zero data retention to satisfy SEC and FINRA requirements. The bottleneck wasn’t the technology. It was the architecture decision.”\n\n\n— Morgan Stanley AI at Work case, 2024"
+    "text": "From Prototype to Production\n\n“Morgan Stanley deployed GPT-4 to 16,000 financial advisors — choosing a cloud API with zero data retention to satisfy SEC and FINRA requirements. The bottleneck wasn’t the technology. It was the architecture decision.”\n\n\n— Morgan Stanley case study (provided as pre-reading)"
   },
   {
     "objectID": "slides/session5.html#todays-learning-objectives",
@@ -1117,7 +1117,7 @@
     "href": "slides/session5.html#the-dunnixer-framework",
     "title": "Session 5: What Does Deployment Look Like?",
     "section": "The DUNNIXER Framework",
-    "text": "The DUNNIXER Framework\n\n\nDUNNIXER: Eight Dimensions for Evaluating AI Solutions\n\n\nData integration — How well does it connect to your existing systems?\nUser experience — How intuitive is it for non-technical users?\nNuance & accuracy — How well does it handle domain-specific language?\nNon-functional requirements — Security, compliance, scalability, uptime\nImplementation timeline — Weeks, months, or quarters to production?\nXtensibility — Can you customize prompts, add tools, evolve it?\nEconomics — Total cost of ownership over 3 years\nRisk profile — Vendor lock-in, model deprecation, talent dependency"
+    "text": "The DUNNIXER Framework\n\n\nSix Dimensions for Evaluating AI Solutions\n\n\nData integration — How well does it connect to your existing systems?\nUser experience — How intuitive is it for non-technical users?\nNuance & accuracy — How well does it handle domain-specific language?\nNon-functional requirements — Security, compliance, scalability, uptime\nImplementation timeline — Weeks, months, or quarters to production?\nXtensibility — Can you customize prompts, add tools, evolve it?"
   },
   {
     "objectID": "slides/session5.html#four-strategic-options",

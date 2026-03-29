@@ -16,6 +16,8 @@ format:
 
 ## What If the Agent Could Do More Than Answer Questions? {.centered-statement}
 
+---
+
 ## From Questions to Deliverables
 
 ::: {.explainer}
@@ -26,13 +28,19 @@ In Sessions 1--3, we asked questions and got answers. Today we chain those steps
 One prompt. Six systems queried. Charts generated. Narrative written. Document assembled. **That's the pipeline.**
 :::
 
+---
+
 ## Learning Objectives
 
 - See the full pipeline: data to chart to narrative to board-ready memo
 - Understand how to **chain AI steps** into automated workflows
 - Produce a deliverable and **iterate on quality**
 
+---
+
 ## Full Pipeline Demo {.section-divider}
+
+---
 
 ## "Prepare a Quarterly Executive Summary"
 
@@ -110,7 +118,11 @@ Format final document
 :::
 :::
 
+---
+
 ## Anatomy of a Reporting Pipeline {.section-divider}
+
+---
 
 ## Each Step Is Customizable
 
@@ -138,7 +150,11 @@ Format final document
 The pipeline is the same agent loop from Session 3, executed multiple times in sequence. Each step's output feeds into the next step's input.
 :::
 
+---
+
 ## The Art of Iteration {.section-divider}
+
+---
 
 ## Prompt Specificity Drives Quality
 
@@ -174,6 +190,8 @@ Executive Prompt
 :::
 :::
 
+---
+
 ## Iteration in Practice
 
 ::: {.highlight-box}
@@ -188,7 +206,11 @@ Executive Prompt
 Each iteration takes seconds. The cost of refining is near zero. The skill is knowing *what to ask for* --- and that's a business skill, not a technical one.
 :::
 
+---
+
 ## Hands-On Exercises {.section-divider}
+
+---
 
 ## Exercise 1: Customer Risk Report {.shrink}
 
@@ -202,6 +224,8 @@ Exercise 1 --- Customer Risk Report
 - Output: one-page risk summary with traffic-light ratings
 :::
 
+---
+
 ## Exercise 2: Division P&L Comparison {.shrink}
 
 ::: {.info-box}
@@ -213,6 +237,8 @@ Exercise 2 --- Division P&L Comparison
 - Generate a comparison chart (grouped bar or waterfall)
 - Write a two-paragraph narrative highlighting key variances
 :::
+
+---
 
 ## Exercise 3: Board-Ready Memo {.shrink}
 
@@ -227,7 +253,11 @@ Exercise 3 --- Board-Ready Memo
 - Iterate at least twice on tone and structure
 :::
 
+---
+
 ## From Ad Hoc to Automated {.section-divider}
+
+---
 
 ## Same Pipeline, Different Trigger
 
@@ -257,12 +287,14 @@ Automated (Scheduled)
 The architecture is identical. The only difference is *who triggers it* --- a person typing in chat or a scheduler running on a timer.
 :::
 
+---
+
 ## Production Pipeline Architecture
 
 ::: {.step-flow}
 ::: {.step-card}
 ::: {.step-icon}
-&#128337;
+1
 :::
 ::: {.step-title}
 Scheduler
@@ -274,7 +306,7 @@ Cron, Airflow, or cloud scheduler
 
 ::: {.step-card}
 ::: {.step-icon}
-&#9881;
+2
 :::
 ::: {.step-title}
 Agent Pipeline
@@ -286,7 +318,7 @@ Same loop: query, compute, chart, narrate
 
 ::: {.step-card}
 ::: {.step-icon}
-&#128065;
+3
 :::
 ::: {.step-title}
 Human Review
@@ -298,7 +330,7 @@ Approver checks output before distribution
 
 ::: {.step-card}
 ::: {.step-icon}
-&#128228;
+4
 :::
 ::: {.step-title}
 Distribute
@@ -309,7 +341,11 @@ Email, Slack, SharePoint, or dashboard
 :::
 :::
 
+---
+
 ## Case Study: HPE {.section-divider}
+
+---
 
 ## HPE: "Alfred" Replaces 100-Slide Weekly Review {.quote-slide}
 
@@ -318,8 +354,10 @@ CFO Marie Myers deployed an AI agent called [Alfred]{.amber} to automate Hewlett
 :::
 
 ::: {.quote-source}
---- HPE 2024 Annual Report; Fortune, "How HPE's CFO Built an AI Agent," October 2024
+--- HPE executive communications, 2025--2026; reported by Fortune and CFO Dive
 :::
+
+---
 
 ## HPE Results
 
@@ -356,7 +394,11 @@ Reduction in manual preparation
 The pattern is exactly what we built today: query multiple systems, compute metrics, generate charts, write narrative, assemble document. HPE just runs it on a schedule instead of typing in a chat window.
 :::
 
+---
+
 ## Workshop {.section-divider}
+
+---
 
 ## Identify Your Pipelines
 
@@ -372,6 +414,8 @@ Workshop --- Your Recurring Reports
   4. What would "good enough to automate" look like?
 - Be ready to share one example with the class
 :::
+
+---
 
 ## Session 4 Recap
 
@@ -425,6 +469,8 @@ HPE Case
 :::
 :::
 
+---
+
 ## Before Next Session {.shrink}
 
 ::: {.info-box}
@@ -451,6 +497,8 @@ Monday's session: [What Does Deployment Look Like?]{.accent} --- architecture, d
 ---
 
 ## Same pipeline. Different trigger. {.centered-statement}
+
+---
 
 ## You typed in a chat window. HPE runs it at [6 AM Monday]{.accent}.
 
