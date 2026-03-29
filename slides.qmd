@@ -1,0 +1,18 @@
+---
+title: Slides
+---
+
+## Course Slides
+
+Click on a topic to view the slide deck.
+
+| # | Session | |
+|--:|---------|:-:|
+| 1 | <a href="slides/session1.html" target="_blank">Exploring Data with AI</a> | <a href="slides/session1.html" target="_blank">{{< fa presentation-screen >}}</a> |
+| 2 | <a href="slides/session2.html" target="_blank">Our Data Is Everywhere</a> | <a href="slides/session2.html" target="_blank">{{< fa presentation-screen >}}</a> |
+| 3 | <a href="slides/session3.html" target="_blank">How Does This Actually Work?</a> | <a href="slides/session3.html" target="_blank">{{< fa presentation-screen >}}</a> |
+| 4 | <a href="slides/session4.html" target="_blank">From Data to Deliverable</a> | <a href="slides/session4.html" target="_blank">{{< fa presentation-screen >}}</a> |
+| 5 | <a href="slides/session5.html" target="_blank">What Does Deployment Look Like?</a> | <a href="slides/session5.html" target="_blank">{{< fa presentation-screen >}}</a> |
+| 6 | <a href="slides/session6.html" target="_blank">Can You Trust It?</a> | <a href="slides/session6.html" target="_blank">{{< fa presentation-screen >}}</a> |
+| 7 | <a href="slides/session7.html" target="_blank">Document AI — Answers from Your Own Files</a> | <a href="slides/session7.html" target="_blank">{{< fa presentation-screen >}}</a> |
+| 8 | <a href="slides/session8.html" target="_blank">Your AI Strategy</a> | <a href="slides/session8.html" target="_blank">{{< fa presentation-screen >}}</a> |

@@ -1,0 +1,39 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - index.qmd
+    - slides.qmd
+    - slides/session1.qmd
+    - slides/session2.qmd
+    - slides/session3.qmd
+    - slides/session4.qmd
+    - slides/session5.qmd
+    - slides/session6.qmd
+    - slides/session7.qmd
+    - slides/session8.qmd
+  resources:
+    - CNAME
+    - .nojekyll
+
+website:
+  title: ""
+  search: false
+  navbar:
+    search: false
+    title: Business Intelligence & AI
+    left:
+      - href: index.qmd
+        text: Home
+      - href: slides.qmd
+        text: Slides
+
+format:
+  html:
+    theme:
+      light: flatly
+      dark: superhero
+    link-external-newwindow: true
+
+comments:
+  hypothesis: true

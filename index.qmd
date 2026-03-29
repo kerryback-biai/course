@@ -1,0 +1,12 @@
+
+## Business Intelligence & AI<br>Summer 2026<br><br>![](RiceBusiness-transparent-logo-sm.png){width=40%}
+
+
+### Instructor
+
+[Kerry Back](https://kerryback.com)<br> (<a href="mailto:kerryback@gmail.com">kerryback@gmail.com)</a><br>
+J. Howard Creekmore Professor of Finance and Professor of Economics
+
+### Course Description
+
+This course explores how AI agents are transforming business intelligence — from querying databases in plain English to building automated reporting pipelines, deploying document AI, and developing enterprise AI strategy.
