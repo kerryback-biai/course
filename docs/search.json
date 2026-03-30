@@ -46,7 +46,7 @@
     "href": "slides/session8.html#capstone-format",
     "title": "Session 8: Your AI Strategy",
     "section": "Capstone Format",
-    "text": "Capstone Format\n\n\n\n1\n\n\nBreakout Pitches\n\n\n5 groups of 6. Each person presents for 3 minutes + 2 min feedback. Group votes on the strongest.\n\n\n\n\n2\n\n\nPlenary Presentations\n\n\n5 winning strategies presented to the full class. 5 min each + 3 min Q&A from peers.\n\n\n\n\n3\n\n\nInstructor Feedback\n\n\nFeedback on pilot scope, business case, governance, and Day 1 action for each strategy."
+    "text": "Capstone Format\n\n\n\n1\n\n\nBreakout Pitches\n\n\n5 groups of 6. Each person gives a 2-minute pitch + 1 min feedback. Group votes on the strongest.\n\n\n\n\n2\n\n\nPlenary Presentations\n\n\n5 winning strategies presented to the full class. 5 min each + 3 min Q&A from peers.\n\n\n\n\n3\n\n\nInstructor Feedback\n\n\nFeedback on pilot scope, business case, governance, and Day 1 action for each strategy."
   },
   {
     "objectID": "slides/session8.html#what-makes-a-strong-pitch",
@@ -67,7 +67,7 @@
     "href": "slides/session8.html#breakout-instructions",
     "title": "Session 8: Your AI Strategy",
     "section": "Breakout Instructions",
-    "text": "Breakout Instructions\n\n\n\nYour Pitch (3 minutes)\n\n\nWhat’s the use case?\nWhat data or documents does it use?\nWho are the users and what decision does it improve?\nWhat’s your Day 1 action?\n\n\n\n\nYour Feedback (1 minute)\n\n\nIs the scope tight enough to pilot in 30 days?\nWhat’s the biggest risk?\nWhat question would the CFO ask?\nVote: which pitch should represent the group?"
+    "text": "Breakout Instructions\n\n\n\nYour Pitch (2 minutes)\n\n\nWhat’s the use case?\nWhat data or documents does it use?\nWho are the users and what decision does it improve?\nWhat’s your Day 1 action?\n\n\n\n\nYour Feedback (1 minute)\n\n\nIs the scope tight enough to pilot in 30 days?\nWhat’s the biggest risk?\nWhat question would the CFO ask?\nVote: which pitch should represent the group?"
   },
   {
     "objectID": "slides/session8.html#plenary-presentations",
@@ -214,7 +214,7 @@
     "href": "slides/session6.html#the-pattern",
     "title": "Session 6: Can You Trust It?",
     "section": "The Pattern",
-    "text": "The Pattern\n\n\n\n40%\n\n\nRevenue distortion from unfiltered averages\n\n\n\n\n$2.3M\n\n\nUnderstated from a date format mismatch\n\n\n\n\n23%\n\n\nCustomer overcount from fuzzy matching failures\n\n\n\n\nEvery one of these failures produced a plausible-looking answer. That’s what makes them dangerous. The agent never said “I’m not sure.”"
+    "text": "The Pattern\n\n\n\n40%\n\n\nRevenue distortion from unfiltered averages\n\n\n\n\n$2.3M\n\n\nUnderstated from a date format mismatch\n\n\n\n\n23%\n\n\nCustomer overcount from fuzzy matching failures\n\n\n\n\nEvery one of these failures — drawn from our Meridian Corp scenarios — produced a plausible-looking answer. That’s what makes them dangerous. The agent never said “I’m not sure.”"
   },
   {
     "objectID": "slides/session6.html#the-makerchecker-framework",
@@ -718,7 +718,7 @@
     "href": "slides/session1.html#the-day-ai-came-for-software",
     "title": "Session 1: Exploring Data with AI",
     "section": "The Day AI Came for Software",
-    "text": "The Day AI Came for Software\n\n“In February 2026, AI agents wiped $2 trillion from software company valuations in a single week. Investors decided that AI can replace BI dashboards, workflow tools, reporting layers, and Tier 1 support.”\n\n\n— The market signal, February 2026"
+    "text": "The Day AI Came for Software\n\n“In February 2026, AI agents wiped $2 trillion from software company valuations in a single week. Investors began betting that AI could replace BI dashboards, workflow tools, reporting layers, and Tier 1 support.”\n\n\n— The market signal, February 2026"
   },
   {
     "objectID": "slides/session1.html#the-market-signal",
@@ -991,7 +991,7 @@
     "href": "slides/session3.html#what-you-just-saw",
     "title": "Session 3: How Does This Actually Work?",
     "section": "What You Just Saw",
-    "text": "What You Just Saw\n\nA working AI agent, built from scratch in minutes, that can answer business questions by writing and executing SQL against a real database. The same pattern powers every BI agent on the market."
+    "text": "What You Just Saw\n\nA working AI agent, built from scratch in minutes, that can answer business questions by writing and executing SQL against a real database. This pattern is at the core of most BI agents on the market."
   },
   {
     "objectID": "slides/session3.html#session-3-recap",
@@ -1015,18 +1015,18 @@
     "text": "Key Takeaway"
   },
   {
-    "objectID": "slides/session3.html#lines-and-a-good-prompt.",
-    "href": "slides/session3.html#lines-and-a-good-prompt.",
+    "objectID": "slides/session3.html#lines-and-a-good-prompt.-thats-the-core.",
+    "href": "slides/session3.html#lines-and-a-good-prompt.-thats-the-core.",
     "title": "Session 3: How Does This Actually Work?",
-    "section": "50 lines and a good prompt.",
-    "text": "50 lines and a good prompt."
+    "section": "50 lines and a good prompt. That’s the core.",
+    "text": "50 lines and a good prompt. That’s the core."
   },
   {
-    "objectID": "slides/session3.html#thats-the-core.-the-other-3000-lines-are-what-production-requires.",
-    "href": "slides/session3.html#thats-the-core.-the-other-3000-lines-are-what-production-requires.",
+    "objectID": "slides/session3.html#the-other-3000-lines-are-what-production-requires.",
+    "href": "slides/session3.html#the-other-3000-lines-are-what-production-requires.",
     "title": "Session 3: How Does This Actually Work?",
-    "section": "That’s the core. The other 3,000 lines are what production requires.",
-    "text": "That’s the core. The other 3,000 lines are what production requires.\n\nKnowing the difference is how you evaluate vendors, scope projects, and avoid overpaying."
+    "section": "The other 3,000 lines are what production requires.",
+    "text": "The other 3,000 lines are what production requires.\n\nKnowing the difference is how you evaluate vendors, scope projects, and avoid overpaying."
   },
   {
     "objectID": "slides/session5.html#from-prototype-to-production",
@@ -1082,7 +1082,7 @@
     "href": "slides/session5.html#cost-comparison",
     "title": "Session 5: What Does Deployment Look Like?",
     "section": "Cost Comparison",
-    "text": "Cost Comparison\n\n\n\n$0.01–0.05\n\n\nPer query — Cloud API (GPT-4, Claude, Gemini)\n\n\n\n\n$50–200K+\n\n\nUpfront — On-premise GPU infrastructure\n\n\n\n\n90%\n\n\nOf enterprises testing third-party AI for customer support (a16z survey)\n\n\n\n\nCloud API dominates early adoption. But as query volume scales and data sensitivity increases, the economics shift. Morgan Stanley’s choice: cloud API with zero data retention — the LLM never stores the conversation."
+    "text": "Cost Comparison\n\n\n\n$0.01–0.05\n\n\nPer simple query — Cloud API (multi-step queries cost more)\n\n\n\n\n$50–200K+\n\n\nUpfront — On-premise GPU infrastructure\n\n\n\n\n90%\n\n\nOf enterprises testing third-party AI tools (a16z 2025 CIO survey)\n\n\n\n\nCloud API dominates early adoption. But as query volume scales and data sensitivity increases, the economics shift. Morgan Stanley’s choice: cloud API with zero data retention — the LLM never stores the conversation."
   },
   {
     "objectID": "slides/session5.html#the-data-security-problem",
@@ -1208,7 +1208,7 @@
     "href": "slides/session7.html#bridge-atherton-case-debrief",
     "title": "Session 7: Document AI — Answers from Your Own Files",
     "section": "Bridge + Atherton Case Debrief",
-    "text": "Bridge + Atherton Case Debrief\n\n\n\nWhat Atherton Deployed\n\n\nDocument AI across compliance policies, vendor contracts, and HR handbooks\nEmployees could ask questions in plain English and get cited answers\nReplaced a manual process of searching SharePoint and emailing Legal\n\n\n\n\nWhat Went Wrong\n\n\nChunking failures — long contract clauses split mid-sentence, wrong answers returned\nAccess control gaps — junior staff saw board-level compensation data\nStale documents — system answered from a superseded policy version\n\n\n\n\nWhat would you have done differently? We’ll return to each of these failure modes today."
+    "text": "Bridge + Atherton Case Debrief\n\n\n\nWhat Atherton Deployed (composite case)\n\n\nDocument AI across compliance policies, vendor contracts, and HR handbooks\nEmployees could ask questions in plain English and get cited answers\nReplaced a manual process of searching SharePoint and emailing Legal\n\n\n\n\nWhat Went Wrong\n\n\nChunking failures — long contract clauses split mid-sentence, wrong answers returned\nAccess control gaps — junior staff saw board-level compensation data\nStale documents — system answered from a superseded policy version\n\n\n\n\nWhat would you have done differently? We’ll return to each of these failure modes today."
   },
   {
     "objectID": "slides/session7.html#todays-learning-objectives",

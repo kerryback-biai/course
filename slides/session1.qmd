@@ -17,7 +17,7 @@ format:
 ## The Day AI Came for Software {.quote-slide}
 
 ::: {.quote-text}
-"In February 2026, [AI agents]{.amber} wiped **$2 trillion** from software company valuations in a single week. Investors decided that AI can replace BI dashboards, workflow tools, reporting layers, and Tier 1 support."
+"In February 2026, [AI agents]{.amber} wiped **$2 trillion** from software company valuations in a single week. Investors began betting that AI could replace BI dashboards, workflow tools, reporting layers, and Tier 1 support."
 :::
 
 ::: {.quote-source}

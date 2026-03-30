@@ -23,7 +23,7 @@ format:
 ::: {.two-cards}
 ::: {.card .card-dark}
 ::: {.card-title}
-What Atherton Deployed
+What Atherton Deployed (composite case)
 :::
 
 - Document AI across compliance policies, vendor contracts, and HR handbooks

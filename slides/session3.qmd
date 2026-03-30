@@ -320,7 +320,7 @@ Your developer could do this. The point isn't that it's hard --- it's that it's 
 ## What You Just Saw
 
 ::: {.highlight-box}
-A working AI agent, built from scratch in minutes, that can answer business questions by writing and executing SQL against a real database. **The same pattern powers every BI agent on the market.**
+A working AI agent, built from scratch in minutes, that can answer business questions by writing and executing SQL against a real database. **This pattern is at the core of most BI agents on the market.**
 :::
 
 ---
@@ -401,11 +401,9 @@ Wednesday's session: [From Data to Deliverable]{.accent} --- we chain agent step
 
 ---
 
-## 50 lines and a good prompt. {.centered-statement}
+## 50 lines and a good prompt. That's the core. {.centered-statement}
 
----
-
-## That's the core. The other 3,000 lines are what production requires.
+## The other 3,000 lines are what [production]{.accent} requires.
 
 ::: {.explainer}
 Knowing the difference is how you evaluate vendors, scope projects, and avoid overpaying.

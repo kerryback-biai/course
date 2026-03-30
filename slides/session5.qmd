@@ -159,7 +159,7 @@ Hybrid
 $0.01--0.05
 :::
 ::: {.stat-label}
-Per query --- Cloud API (GPT-4, Claude, Gemini)
+Per simple query --- Cloud API (multi-step queries cost more)
 :::
 :::
 ::: {.stat-card}
@@ -175,7 +175,7 @@ Upfront --- On-premise GPU infrastructure
 90%
 :::
 ::: {.stat-label}
-Of enterprises testing third-party AI for customer support (a16z survey)
+Of enterprises testing third-party AI tools (a16z 2025 CIO survey)
 :::
 :::
 :::

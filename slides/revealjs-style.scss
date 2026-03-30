@@ -750,16 +750,3 @@ $body-bg: $off-white;
     }
   }
 }
-
-// ── Section divider ──
-.section-divider {
-  background: $dark-navy !important;
-  text-align: center !important;
-  align-items: center !important;
-
-  h2 {
-    color: #fff !important;
-    font-size: 2.2em !important;
-    border-bottom-color: $amber !important;
-  }
-}

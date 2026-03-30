@@ -498,8 +498,6 @@ Monday's session: [What Does Deployment Look Like?]{.accent} --- architecture, d
 
 ## Same pipeline. Different trigger. {.centered-statement}
 
----
-
 ## You typed in a chat window. HPE runs it at [6 AM Monday]{.accent}.
 
 ::: {.explainer}

@@ -125,7 +125,7 @@ Customer overcount from fuzzy matching failures
 :::
 
 ::: {.explainer}
-Every one of these failures produced a [plausible-looking answer]{.accent}. That's what makes them dangerous. The agent never said "I'm not sure."
+Every one of these failures --- drawn from our Meridian Corp scenarios --- produced a [plausible-looking answer]{.accent}. That's what makes them dangerous. The agent never said "I'm not sure."
 :::
 
 ---

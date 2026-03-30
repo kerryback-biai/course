@@ -140,7 +140,7 @@ Convince them this is worth funding.
 Breakout Pitches
 :::
 ::: {.step-desc}
-5 groups of 6. Each person presents for 3 minutes + 2 min feedback. Group votes on the strongest.
+5 groups of 6. Each person gives a 2-minute pitch + 1 min feedback. Group votes on the strongest.
 :::
 :::
 ::: {.step-card}
@@ -198,7 +198,7 @@ The best pitches are [narrow and actionable]{.accent}. "We'll deploy document AI
 ::: {.two-cards}
 ::: {.card .card-dark}
 ::: {.card-title}
-Your Pitch (3 minutes)
+Your Pitch (2 minutes)
 :::
 
 - What's the use case?
