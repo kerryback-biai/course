@@ -16,6 +16,12 @@ format:
 
 ## Quick Debrief {.section-divider}
 
+::: {.notes}
+Welcome back, everyone. Before we dive into new material, let's debrief the homework. I asked you to log into the Meridian app, ask ten business questions, and bring your best answer and your worst answer. I want to hear from three or four of you.
+
+This debrief should take about 10 minutes. The goal is to surface the friction that sets up today's topic. Most of the "worst answers" will involve questions that span multiple systems — that is exactly where we are headed.
+:::
+
 ---
 
 ## Homework Takeaways {.shrink}
@@ -46,9 +52,23 @@ What Broke
 The homework was designed to surface exactly this friction. Today we confront it directly.
 :::
 
+::: {.notes}
+Let me summarize what I expect you found. On the "what worked" side: simple lookups were fast and accurate, single-system aggregations felt effortless, and the charts and narratives that the agent generated on the fly were genuinely useful. That is the promise of Session 1 delivered.
+
+But on the "what broke" side — and this is the important part — questions that spanned multiple systems hit a wall. If you asked "How does revenue compare to headcount growth by division?" the agent had trouble because revenue lives in the CRMs and headcount lives in Workday. Customer names that appear differently across CRMs — "General Electric" in one system and "GE Industrial Solutions" in another — made cross-system questions unreliable. And joining data with no common key was simply impossible for single-system queries.
+
+The homework was designed to surface exactly this friction. If single-system queries are the easy win, cross-system queries are the hard problem — and it is the problem most enterprises actually face. Today we confront it directly.
+
+Ask the room: who had a question that broke because it needed data from more than one system? Let two or three people share their specific examples.
+:::
+
 ---
 
 ## The Cross-System Problem {.section-divider}
+
+::: {.notes}
+Now let's name the problem we are solving today. This is the cross-system problem, and it is the central challenge of enterprise data.
+:::
 
 ---
 
@@ -58,6 +78,12 @@ The homework was designed to surface exactly this friction. Today we confront it
 
 ::: {.explainer}
 Scattered across 10 systems that were never designed to talk to each other.
+:::
+
+::: {.notes}
+Your data is not missing. Nobody deleted it. Nobody forgot to collect it. It is everywhere — scattered across ten systems that were never designed to talk to each other. Salesforce knows about Industrial division customers. The Legacy CRM knows about Energy division customers. HubSpot knows about Safety. Workday knows about employees. NetSuite knows about finances. Zendesk knows about support tickets. Each system is doing its job perfectly well in isolation. The problem is that the most valuable business questions require data from more than one of them.
+
+This is not a Meridian Corp problem. This is an every-company problem. If your company has been around more than a few years, you have this exact situation — maybe with different system names, but the same fundamental challenge.
 :::
 
 ---
@@ -74,9 +100,21 @@ By the end of this session, you will be able to:
 - Map your own company's data landscape and identify cross-system blind spots
 :::
 
+::: {.notes}
+Here are our learning objectives for today. By the end of this session, you will understand why enterprise data is scattered and why traditional consolidation costs millions. You will watch an AI agent query multiple systems and merge the results in real time — something that would normally take weeks of engineering work. And you will map your own company's data landscape and identify the cross-system blind spots where valuable questions go unanswered.
+
+Let's start with a demo that picks up right where Session 1's email chain left off.
+:::
+
 ---
 
 ## Demo: The Cross-System Merge {.section-divider}
+
+::: {.notes}
+Now let's see the cross-system merge in action. This is the centerpiece demo of today's session. Open the Meridian app now. We are going to ask the exact question from Session 1's email chain — the one that the BI team said would take three weeks.
+
+This demo segment should take about 20 minutes total, covering two cross-system queries.
+:::
 
 ---
 
@@ -133,6 +171,18 @@ Python matches names across all three systems
 The agent writes and executes SQL against each system, then uses Python with fuzzy string matching to reconcile customer names. No warehouse. No ETL pipeline. No 3-week wait.
 :::
 
+::: {.notes}
+Open the Meridian app and type: "Which customers buy from multiple divisions?" Watch what happens. Narrate each step as the agent works through it.
+
+Step one: the agent queries Salesforce to pull Industrial division customers and their revenue. Step two: it queries the Legacy CRM for Energy division customers. Step three: it queries HubSpot for Safety division customers. And here is the critical part — step four: it uses Python with fuzzy string matching to reconcile customer names across all three systems. "General Electric" in Salesforce, "GE Industrial Solutions" in the Legacy CRM, "GE Safety Division" in HubSpot — the agent figures out these are the same company and merges the data.
+
+No data warehouse. No ETL pipeline. No three-week wait. The agent queried three separate systems, pulled the data into Python, matched customer names using fuzzy logic, and gave us a unified answer. Point out the SQL the agent generated for each system — it is visible in the response. Point out the matching logic. This transparency is important because it lets you verify the answer.
+
+Now, I want to be honest about what just happened. The fuzzy matching is not perfect. It catches about 80 percent of cases. Some matches might be wrong — is "Honeywell Safety Products" the same entity as "Honeywell International"? That is a business judgment call. We will talk more about this kind of friction later in the session.
+
+If the Meridian app is down or slow, switch to the pre-recorded fallback demo and narrate over it.
+:::
+
 ---
 
 ## Demo: Revenue Per Employee by Division {.shrink}
@@ -163,9 +213,27 @@ What the Agent Does
 Two questions. Four systems. Both answered in under a minute. But how does this actually work?
 :::
 
+::: {.notes}
+Now let's ask a second cross-system question. Type into the Meridian app: "What is the revenue per employee by division?" This one is interesting because it requires data from two completely different kinds of systems.
+
+On the left, we need revenue data, which lives in the CRMs — Salesforce, the Legacy CRM, and HubSpot. On the right, we need headcount data, which lives in Workday. The agent queries revenue from each CRM, queries headcount from Workday, merges on division, calculates revenue per employee, and returns a table and a bar chart.
+
+Two questions. Four systems. Both answered in under a minute. Compare that to what it would take to get these answers through traditional channels at most organizations. Someone would need to pull reports from each system, manually reconcile the data in a spreadsheet, and deliver it — probably in a few days if it is a priority, longer if it is not.
+
+Now, the question you should be asking is: how does this actually work? What is happening behind the scenes? We will get deep into that in Session 3. But for today, I want to focus on the business implications and the data integration landscape.
+
+The reason I am showing you these two demos is that they represent the most common cross-system question patterns in enterprises: customer overlap across business units, and efficiency metrics that combine financial and operational data.
+:::
+
 ---
 
 ## How Data Moves Today {.section-divider}
+
+::: {.notes}
+Now let's step back and understand the landscape. What you just saw — an AI agent querying multiple systems and merging results on the fly — is one approach to data integration. But it is not the only one, and it is not always the right one. Let me walk you through how data moves in enterprises today so you can understand where this new approach fits.
+
+This lecture segment should take about 12 minutes.
+:::
 
 ---
 
@@ -210,6 +278,14 @@ CSV Export
 :::
 :::
 
+::: {.notes}
+There are four main patterns for how data moves between systems in enterprises today. First, APIs — real-time, point-to-point connections. Each one is hand-coded, and they break when vendors change their endpoints. Second, integration platforms like MuleSoft, Workato, or Boomi — these offer pre-built connectors, which is better, but you still need to map fields and maintain the connections over time.
+
+Third, the ETL and data warehouse approach — extract, transform, load into something like Snowflake or BigQuery. This gives you a single source of truth, which is the gold standard. But the cost is 500K to 5 million dollars and 6 to 18 months to build. And fourth — and I hesitate to even call this a "pattern" — the CSV export. The "just email me the file" approach. No governance, no audit trail. And it is surprisingly common. If you are honest with yourself, how much of your company's cross-system data integration happens in Excel spreadsheets that get emailed around?
+
+Ask the room: which of these four patterns does your company rely on most? I bet the answer is some combination of all four, depending on which systems and which teams are involved.
+:::
+
 ---
 
 ## The Traditional Answer {.shrink}
@@ -245,6 +321,14 @@ Of data warehouse projects that stall or underdeliver (industry estimates)
 The warehouse is the gold standard --- but the cost, timeline, and failure rate are why most mid-market companies don't have one. The alternative: [query each system where it lives]{.accent} and merge on the fly.
 :::
 
+::: {.notes}
+Let these numbers land. 500K to 5 million dollars to build a data warehouse. Six to eighteen months before it is in production. And 60 to 70 percent of data warehouse projects stall or underdeliver — that is an industry estimate, not something I am making up.
+
+The data warehouse is the gold standard for a reason. It gives you a single schema, a single source of truth, strong governance, and fast queries because the data is pre-modeled. But the cost, the timeline, and the failure rate are exactly why most mid-market companies do not have one. If you are a 500-million-dollar distributor like Meridian — or even a billion-dollar company — spending 5 million and 18 months on a warehouse that has a better-than-coin-flip chance of stalling is a hard sell to the board.
+
+The alternative is what you just saw: query each system where it lives and merge on the fly. No warehouse. No ETL. No 18-month timeline. But there are real tradeoffs, and I want to be honest about them.
+:::
+
 ---
 
 ## Two Approaches, Real Tradeoffs {.shrink}
@@ -268,9 +352,21 @@ The warehouse is the gold standard --- but the cost, timeline, and failure rate 
 This is not either/or. Most companies will use both --- warehouses for governance-critical reporting, agents for the [long tail of questions]{.accent} that never justified a dashboard.
 :::
 
+::: {.notes}
+Take a minute to read through this comparison table. The data warehouse wins on governance, complex joins, scalability, and audit trail. It is the right answer for regulated reporting, for metrics you run every day, for anything that goes to the board or to a regulator. The AI agent wins on setup cost, time to first answer, and data freshness. It queries systems in real time — no batch lag.
+
+The key insight is at the bottom of the slide: this is not either/or. Most companies will use both. Warehouses for governance-critical reporting — the numbers that go in your 10-K, the metrics your regulators audit. And AI agents for the long tail of questions that never justified building a dashboard or a data pipeline. The ad hoc questions. The "I wonder if..." questions. The CEO's Monday morning question that the BI team says will take three weeks.
+
+Think of the agent as the complement to the warehouse, not the replacement. The warehouse handles the 20 percent of questions that account for 80 percent of regulatory and operational importance. The agent handles the other 80 percent of questions that nobody was asking because the cost was too high.
+:::
+
 ---
 
 ## Cross-System Friction {.section-divider}
+
+::: {.notes}
+Now let's look at the unsexy but critical part of cross-system data: the friction. This is what makes merging hard, whether you are building a warehouse or using an AI agent. The technology changes; the friction does not.
+:::
 
 ---
 
@@ -292,6 +388,16 @@ This is not either/or. Most companies will use both --- warehouses for governanc
 Meridian has ~25 customers that appear under different names across its three CRMs. This is not a bug --- it is the normal state of enterprise data.
 :::
 
+::: {.notes}
+Let me walk through the specific problems that make cross-system merging hard. Look at this table. Naming conventions: one system uses camelCase for column names, another uses snake_case. Same data, different labels — the agent has to know that "customerName" and "customer_name" refer to the same thing.
+
+Date formats: one system stores dates as "2025-03-15" and another stores them as "March 15, 2025" — or even worse, as a text string in MM/DD/YYYY format. If you are doing date-based aggregations, this causes parse failures and wrong results.
+
+But the hardest problem is customer identity. "General Electric" in Salesforce and "GE Industrial Solutions" in the Legacy CRM — these are the same company, but there is no common key linking them. No shared customer ID. Just a name that is spelled differently in every system. And it gets worse: "Honeywell International" and "Honeywell Safety Products" — are those the same entity? Or is one a subsidiary? That is a business judgment call, not a technical one.
+
+Meridian has about 25 customers that appear under different names across its three CRMs. This is not a bug in our simulation. This is the normal state of enterprise data. Every company I have worked with has this problem. If you have grown through acquisition or have divisions with autonomy over their CRM, you have this problem.
+:::
+
 ---
 
 ## The Fuzzy Matching Problem {.shrink}
@@ -311,9 +417,23 @@ How Does the Agent Resolve "General Electric" vs. "GE Industrial Solutions"?
 This is the unsexy core of data integration. No amount of AI eliminates the need to [decide what your entities are]{.accent} and maintain a mapping.
 :::
 
+::: {.notes}
+So how does the agent resolve "General Electric" versus "GE Industrial Solutions"? Exact string matching fails completely — the strings are totally different. Fuzzy matching — techniques like Levenshtein distance and token-set ratio — catches about 80 percent of cases. It is looking for strings that are similar enough to be plausible matches. Semantic matching using embeddings can catch more, but it is slower and less transparent. And for ambiguous cases, you still need human review.
+
+Here is the honest truth, and I want to underline the text at the bottom of this slide: this is the unsexy core of data integration. No amount of AI eliminates the need to decide what your entities are and maintain a mapping. Someone in your organization needs to define: is "Honeywell Safety Products" the same as "Honeywell International" for reporting purposes? That is a business decision. The AI can suggest matches, but a human needs to confirm them and maintain the mapping over time.
+
+This is often where the excitement about AI data tools meets the reality of enterprise data management. The technology is impressive, but the hard work is still defining your master data. Keep this in mind as we move into the hands-on portion.
+:::
+
 ---
 
 ## Hands-On: Cross-System Queries {.section-divider}
+
+::: {.notes}
+All right, time to get hands-on again. This time, you are going to tackle cross-system queries — the hard stuff. We are going to start with a timed challenge to add a little competitive energy, and then open it up for exploration.
+
+This hands-on segment should take about 16 minutes total.
+:::
 
 ---
 
@@ -378,9 +498,25 @@ Draft a 3-sentence executive summary
 You have 15 minutes. This requires querying at least two systems and merging the results. Pay attention to how the agent handles name matching.
 :::
 
+::: {.notes}
+Here is your timed challenge. The question is: "Which division's top customer is most at risk of churning?" This is a genuinely hard question because it requires data from at least two systems.
+
+Let me walk through the steps. First, you need to identify each division's number one customer by revenue — that requires querying the three CRMs. Second, you need to assess churn risk — and for that, check support ticket volume and sentiment in Zendesk. Third, you need to merge the revenue data with the support data. And fourth, draft a three-sentence executive summary with your recommendation.
+
+You have 15 minutes. Pay close attention to how the agent handles the name matching between the CRM data and the Zendesk data. Does it get the right customer? Does it flag any uncertainty? If the agent struggles, try breaking it into smaller steps — ask for the top customer by division first, then separately ask about their support tickets, and then ask the agent to combine the two.
+
+I will give you a five-minute warning and a one-minute warning. If you finish early, try a different cross-system question of your own design. Drop interesting findings in the Zoom chat.
+:::
+
 ---
 
 ## Data Map Workshop {.section-divider}
+
+::: {.notes}
+Now we are going to shift from Meridian's data to your data. This workshop is one of the most important activities in the entire course, because what you produce here carries forward all the way to your capstone strategy in Session 8. Take this seriously — it is the foundation for everything that follows.
+
+This workshop and the subsequent breakout should take about 25 minutes total.
+:::
 
 ---
 
@@ -417,6 +553,20 @@ Step 3: Identify Quick Wins
 
 ::: {.explainer}
 Spend 10 minutes sketching this out. We'll share and compare.
+:::
+
+::: {.notes}
+I want you to spend the next 10 minutes sketching out your company's data map. There are three steps.
+
+Step one: list your core systems. Think about three to five systems your company runs on — your CRM, your ERP, your HRIS, your ticketing system, whatever they are. What data lives in each? Who owns it?
+
+Step two: draw the gaps. What cross-system questions can nobody answer easily today? Where do people resort to spreadsheets to bridge the gap between systems? What decisions are being made on gut feel because the data is too hard to assemble?
+
+Step three: identify the quick wins. If you could connect any two systems, which two would unlock the most value? What is the simplest question that currently takes weeks to answer?
+
+You do not need a polished document — a sketch on paper or a few bullet points in a notes app is fine. The point is to start thinking concretely about your own data landscape. This map becomes the foundation for your capstone strategy, so take a few minutes to think it through carefully.
+
+I will be available in the main room if you have questions. We will go to breakout rooms after this for comparison.
 :::
 
 ---
@@ -463,6 +613,16 @@ Vendors who mention this in their demos
 :::
 :::
 
+::: {.notes}
+Before we wrap up, I want to name something important that the demos do not show. Before any AI agent can query your real systems — not the Meridian simulation, but your actual production systems — someone has to do a significant amount of pre-work.
+
+You need to catalog the data: what tables exist, what do the columns mean? You need to document the schemas: data types, relationships, business rules. You need to provision API access: authentication, rate limits, permissions. And you need to classify PII: which fields contain personal data, and what are the retention rules?
+
+Look at these numbers. Sixty to ninety days of typical pre-work before an agent touches real data. Five to ten people typically involved in data readiness. And zero — zero — vendors who mention this in their demos. I am naming this now because I want to calibrate your expectations. The demos make this look easy — and the technology part genuinely is easier than it used to be. But the organizational pre-work is real, and no vendor will mention it in their sales pitch. When you evaluate vendors in Session 5, remember this slide.
+
+This segment should take about 6 minutes.
+:::
+
 ---
 
 ## Before Next Session {.shrink}
@@ -480,9 +640,23 @@ Homework
 Monday's session: [How Does This Actually Work?]{.accent} --- we look under the hood at the agent loop, the system prompt, and where the code runs.
 :::
 
+::: {.notes}
+Here is your homework for before Monday's session. First, read the enterprise systems background document — it will be emailed to you. This gives you context on how enterprise systems are structured and why they end up the way they do.
+
+Second, and this is the more important one: complete your data map. Take the sketch you started today and expand it. List at least five systems your company uses and identify the top three cross-system questions you cannot answer today. Be specific. "Our CRM and ERP don't talk to each other" is a start, but "We cannot answer what our customer acquisition cost is by segment because marketing spend is in HubSpot and revenue is in NetSuite" is what I am looking for.
+
+This data map is not just homework — it is the foundation for your capstone strategy. The more specific you are now, the better your capstone will be.
+
+On Monday, we look under the hood. You have spent two sessions as the user. Now we are going to answer the question: how does this actually work? We will look at the agent loop, the system prompt, and where the code runs. See you then.
+:::
+
 ---
 
 ## Key Takeaway {.section-divider}
+
+::: {.notes}
+Let me leave you with the key takeaway from today.
+:::
 
 ---
 
@@ -492,6 +666,16 @@ Monday's session: [How Does This Actually Work?]{.accent} --- we look under the 
 
 ::: {.explainer}
 They disagree on who your customers are, what your products are called, and when things happened. AI can bridge the gap --- but someone still has to define the truth.
+:::
+
+::: {.notes}
+The hardest part of cross-system data is not the technology. It is that your systems disagree. They disagree on who your customers are — "General Electric" versus "GE Industrial Solutions" versus "GE Safety Division." They disagree on what your products are called. They disagree on when things happened because of different date formats and different fiscal calendars.
+
+AI can bridge the gap. You saw it today — fuzzy matching, cross-system merges, intelligent reconciliation. But someone still has to define the truth. Someone has to say: yes, these three names are the same customer. Someone has to maintain that mapping over time. Someone has to decide what "revenue" means when each system calculates it slightly differently.
+
+That is the organizational work that makes the technology work. And it is why your data map homework matters — you are starting to identify where those disagreements exist at your company, which is the first step toward resolving them.
+
+Thank you for a great session. See you Monday.
 :::
 
 

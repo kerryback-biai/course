@@ -147,6 +147,20 @@ Kerry Back, Rice University
 </section>
 <section id="quick-debrief" class="slide level2 section-divider center">
 <h2>Quick Debrief</h2>
+<aside class="notes">
+<p>Welcome back, everyone. Before we dive into new material, let’s debrief the homework. I asked you to log into the Meridian app, ask ten business questions, and bring your best answer and your worst answer. I want to hear from three or four of you.</p>
+<p>This debrief should take about 10 minutes. The goal is to surface the friction that sets up today’s topic. Most of the “worst answers” will involve questions that span multiple systems — that is exactly where we are headed.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="homework-takeaways" class="slide level2 shrink center">
 <h2>Homework Takeaways</h2>
@@ -175,9 +189,38 @@ Kerry Back, Rice University
 <div class="explainer">
 <p>The homework was designed to surface exactly this friction. Today we confront it directly.</p>
 </div>
+<aside class="notes">
+<p>Let me summarize what I expect you found. On the “what worked” side: simple lookups were fast and accurate, single-system aggregations felt effortless, and the charts and narratives that the agent generated on the fly were genuinely useful. That is the promise of Session 1 delivered.</p>
+<p>But on the “what broke” side — and this is the important part — questions that spanned multiple systems hit a wall. If you asked “How does revenue compare to headcount growth by division?” the agent had trouble because revenue lives in the CRMs and headcount lives in Workday. Customer names that appear differently across CRMs — “General Electric” in one system and “GE Industrial Solutions” in another — made cross-system questions unreliable. And joining data with no common key was simply impossible for single-system queries.</p>
+<p>The homework was designed to surface exactly this friction. If single-system queries are the easy win, cross-system queries are the hard problem — and it is the problem most enterprises actually face. Today we confront it directly.</p>
+<p>Ask the room: who had a question that broke because it needed data from more than one system? Let two or three people share their specific examples.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="the-cross-system-problem" class="slide level2 section-divider center">
 <h2>The Cross-System Problem</h2>
+<aside class="notes">
+<p>Now let’s name the problem we are solving today. This is the cross-system problem, and it is the central challenge of enterprise data.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="your-data-isnt-missing." class="slide level2 centered-statement center">
 <h2>Your data isn’t missing.</h2>
@@ -187,6 +230,20 @@ Kerry Back, Rice University
 <div class="explainer">
 <p>Scattered across 10 systems that were never designed to talk to each other.</p>
 </div>
+<aside class="notes">
+<p>Your data is not missing. Nobody deleted it. Nobody forgot to collect it. It is everywhere — scattered across ten systems that were never designed to talk to each other. Salesforce knows about Industrial division customers. The Legacy CRM knows about Energy division customers. HubSpot knows about Safety. Workday knows about employees. NetSuite knows about finances. Zendesk knows about support tickets. Each system is doing its job perfectly well in isolation. The problem is that the most valuable business questions require data from more than one of them.</p>
+<p>This is not a Meridian Corp problem. This is an every-company problem. If your company has been around more than a few years, you have this exact situation — maybe with different system names, but the same fundamental challenge.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="todays-learning-objectives" class="slide level2 center">
 <h2>Today’s Learning Objectives</h2>
@@ -200,9 +257,37 @@ Kerry Back, Rice University
 <li>Map your own company’s data landscape and identify cross-system blind spots</li>
 </ul>
 </div>
+<aside class="notes">
+<p>Here are our learning objectives for today. By the end of this session, you will understand why enterprise data is scattered and why traditional consolidation costs millions. You will watch an AI agent query multiple systems and merge the results in real time — something that would normally take weeks of engineering work. And you will map your own company’s data landscape and identify the cross-system blind spots where valuable questions go unanswered.</p>
+<p>Let’s start with a demo that picks up right where Session 1’s email chain left off.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="demo-the-cross-system-merge" class="slide level2 section-divider center">
 <h2>Demo: The Cross-System Merge</h2>
+<aside class="notes">
+<p>Now let’s see the cross-system merge in action. This is the centerpiece demo of today’s session. Open the Meridian app now. We are going to ask the exact question from Session 1’s email chain — the one that the BI team said would take three weeks.</p>
+<p>This demo segment should take about 20 minutes total, covering two cross-system queries.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="which-customers-buy-from-multiple-divisions" class="slide level2 shrink center">
 <h2>“Which customers buy from multiple divisions?”</h2>
@@ -255,6 +340,23 @@ Kerry Back, Rice University
 <div class="explainer">
 <p>The agent writes and executes SQL against each system, then uses Python with fuzzy string matching to reconcile customer names. No warehouse. No ETL pipeline. No 3-week wait.</p>
 </div>
+<aside class="notes">
+<p>Open the Meridian app and type: “Which customers buy from multiple divisions?” Watch what happens. Narrate each step as the agent works through it.</p>
+<p>Step one: the agent queries Salesforce to pull Industrial division customers and their revenue. Step two: it queries the Legacy CRM for Energy division customers. Step three: it queries HubSpot for Safety division customers. And here is the critical part — step four: it uses Python with fuzzy string matching to reconcile customer names across all three systems. “General Electric” in Salesforce, “GE Industrial Solutions” in the Legacy CRM, “GE Safety Division” in HubSpot — the agent figures out these are the same company and merges the data.</p>
+<p>No data warehouse. No ETL pipeline. No three-week wait. The agent queried three separate systems, pulled the data into Python, matched customer names using fuzzy logic, and gave us a unified answer. Point out the SQL the agent generated for each system — it is visible in the response. Point out the matching logic. This transparency is important because it lets you verify the answer.</p>
+<p>Now, I want to be honest about what just happened. The fuzzy matching is not perfect. It catches about 80 percent of cases. Some matches might be wrong — is “Honeywell Safety Products” the same entity as “Honeywell International”? That is a business judgment call. We will talk more about this kind of friction later in the session.</p>
+<p>If the Meridian app is down or slow, switch to the pre-recorded fallback demo and narrate over it.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="demo-revenue-per-employee-by-division" class="slide level2 shrink center">
 <h2>Demo: Revenue Per Employee by Division</h2>
@@ -283,9 +385,40 @@ Kerry Back, Rice University
 <div class="explainer">
 <p>Two questions. Four systems. Both answered in under a minute. But how does this actually work?</p>
 </div>
+<aside class="notes">
+<p>Now let’s ask a second cross-system question. Type into the Meridian app: “What is the revenue per employee by division?” This one is interesting because it requires data from two completely different kinds of systems.</p>
+<p>On the left, we need revenue data, which lives in the CRMs — Salesforce, the Legacy CRM, and HubSpot. On the right, we need headcount data, which lives in Workday. The agent queries revenue from each CRM, queries headcount from Workday, merges on division, calculates revenue per employee, and returns a table and a bar chart.</p>
+<p>Two questions. Four systems. Both answered in under a minute. Compare that to what it would take to get these answers through traditional channels at most organizations. Someone would need to pull reports from each system, manually reconcile the data in a spreadsheet, and deliver it — probably in a few days if it is a priority, longer if it is not.</p>
+<p>Now, the question you should be asking is: how does this actually work? What is happening behind the scenes? We will get deep into that in Session 3. But for today, I want to focus on the business implications and the data integration landscape.</p>
+<p>The reason I am showing you these two demos is that they represent the most common cross-system question patterns in enterprises: customer overlap across business units, and efficiency metrics that combine financial and operational data.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="how-data-moves-today" class="slide level2 section-divider center">
 <h2>How Data Moves Today</h2>
+<aside class="notes">
+<p>Now let’s step back and understand the landscape. What you just saw — an AI agent querying multiple systems and merging results on the fly — is one approach to data integration. But it is not the only one, and it is not always the right one. Let me walk you through how data moves in enterprises today so you can understand where this new approach fits.</p>
+<p>This lecture segment should take about 12 minutes.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="four-patterns-of-data-integration" class="slide level2 shrink center">
 <h2>Four Patterns of Data Integration</h2>
@@ -331,6 +464,21 @@ Kerry Back, Rice University
 </ul>
 </div>
 </div>
+<aside class="notes">
+<p>There are four main patterns for how data moves between systems in enterprises today. First, APIs — real-time, point-to-point connections. Each one is hand-coded, and they break when vendors change their endpoints. Second, integration platforms like MuleSoft, Workato, or Boomi — these offer pre-built connectors, which is better, but you still need to map fields and maintain the connections over time.</p>
+<p>Third, the ETL and data warehouse approach — extract, transform, load into something like Snowflake or BigQuery. This gives you a single source of truth, which is the gold standard. But the cost is 500K to 5 million dollars and 6 to 18 months to build. And fourth — and I hesitate to even call this a “pattern” — the CSV export. The “just email me the file” approach. No governance, no audit trail. And it is surprisingly common. If you are honest with yourself, how much of your company’s cross-system data integration happens in Excel spreadsheets that get emailed around?</p>
+<p>Ask the room: which of these four patterns does your company rely on most? I bet the answer is some combination of all four, depending on which systems and which teams are involved.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="the-traditional-answer" class="slide level2 shrink center">
 <h2>The Traditional Answer</h2>
@@ -363,6 +511,21 @@ Kerry Back, Rice University
 <div class="explainer">
 <p>The warehouse is the gold standard — but the cost, timeline, and failure rate are why most mid-market companies don’t have one. The alternative: <span class="accent">query each system where it lives</span> and merge on the fly.</p>
 </div>
+<aside class="notes">
+<p>Let these numbers land. 500K to 5 million dollars to build a data warehouse. Six to eighteen months before it is in production. And 60 to 70 percent of data warehouse projects stall or underdeliver — that is an industry estimate, not something I am making up.</p>
+<p>The data warehouse is the gold standard for a reason. It gives you a single schema, a single source of truth, strong governance, and fast queries because the data is pre-modeled. But the cost, the timeline, and the failure rate are exactly why most mid-market companies do not have one. If you are a 500-million-dollar distributor like Meridian — or even a billion-dollar company — spending 5 million and 18 months on a warehouse that has a better-than-coin-flip chance of stalling is a hard sell to the board.</p>
+<p>The alternative is what you just saw: query each system where it lives and merge on the fly. No warehouse. No ETL. No 18-month timeline. But there are real tradeoffs, and I want to be honest about them.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="two-approaches-real-tradeoffs" class="slide level2 shrink center">
 <h2>Two Approaches, Real Tradeoffs</h2>
@@ -422,9 +585,37 @@ Kerry Back, Rice University
 <div class="explainer">
 <p>This is not either/or. Most companies will use both — warehouses for governance-critical reporting, agents for the <span class="accent">long tail of questions</span> that never justified a dashboard.</p>
 </div>
+<aside class="notes">
+<p>Take a minute to read through this comparison table. The data warehouse wins on governance, complex joins, scalability, and audit trail. It is the right answer for regulated reporting, for metrics you run every day, for anything that goes to the board or to a regulator. The AI agent wins on setup cost, time to first answer, and data freshness. It queries systems in real time — no batch lag.</p>
+<p>The key insight is at the bottom of the slide: this is not either/or. Most companies will use both. Warehouses for governance-critical reporting — the numbers that go in your 10-K, the metrics your regulators audit. And AI agents for the long tail of questions that never justified building a dashboard or a data pipeline. The ad hoc questions. The “I wonder if…” questions. The CEO’s Monday morning question that the BI team says will take three weeks.</p>
+<p>Think of the agent as the complement to the warehouse, not the replacement. The warehouse handles the 20 percent of questions that account for 80 percent of regulatory and operational importance. The agent handles the other 80 percent of questions that nobody was asking because the cost was too high.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="cross-system-friction" class="slide level2 section-divider center">
 <h2>Cross-System Friction</h2>
+<aside class="notes">
+<p>Now let’s look at the unsexy but critical part of cross-system data: the friction. This is what makes merging hard, whether you are building a warehouse or using an AI agent. The technology changes; the friction does not.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="why-merging-is-hard" class="slide level2 shrink center">
 <h2>Why Merging Is Hard</h2>
@@ -481,6 +672,22 @@ Kerry Back, Rice University
 <div class="explainer">
 <p>Meridian has ~25 customers that appear under different names across its three CRMs. This is not a bug — it is the normal state of enterprise data.</p>
 </div>
+<aside class="notes">
+<p>Let me walk through the specific problems that make cross-system merging hard. Look at this table. Naming conventions: one system uses camelCase for column names, another uses snake_case. Same data, different labels — the agent has to know that “customerName” and “customer_name” refer to the same thing.</p>
+<p>Date formats: one system stores dates as “2025-03-15” and another stores them as “March 15, 2025” — or even worse, as a text string in MM/DD/YYYY format. If you are doing date-based aggregations, this causes parse failures and wrong results.</p>
+<p>But the hardest problem is customer identity. “General Electric” in Salesforce and “GE Industrial Solutions” in the Legacy CRM — these are the same company, but there is no common key linking them. No shared customer ID. Just a name that is spelled differently in every system. And it gets worse: “Honeywell International” and “Honeywell Safety Products” — are those the same entity? Or is one a subsidiary? That is a business judgment call, not a technical one.</p>
+<p>Meridian has about 25 customers that appear under different names across its three CRMs. This is not a bug in our simulation. This is the normal state of enterprise data. Every company I have worked with has this problem. If you have grown through acquisition or have divisions with autonomy over their CRM, you have this problem.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="the-fuzzy-matching-problem" class="slide level2 shrink center">
 <h2>The Fuzzy Matching Problem</h2>
@@ -498,9 +705,38 @@ Kerry Back, Rice University
 <div class="highlight-box">
 <p>This is the unsexy core of data integration. No amount of AI eliminates the need to <span class="accent">decide what your entities are</span> and maintain a mapping.</p>
 </div>
+<aside class="notes">
+<p>So how does the agent resolve “General Electric” versus “GE Industrial Solutions”? Exact string matching fails completely — the strings are totally different. Fuzzy matching — techniques like Levenshtein distance and token-set ratio — catches about 80 percent of cases. It is looking for strings that are similar enough to be plausible matches. Semantic matching using embeddings can catch more, but it is slower and less transparent. And for ambiguous cases, you still need human review.</p>
+<p>Here is the honest truth, and I want to underline the text at the bottom of this slide: this is the unsexy core of data integration. No amount of AI eliminates the need to decide what your entities are and maintain a mapping. Someone in your organization needs to define: is “Honeywell Safety Products” the same as “Honeywell International” for reporting purposes? That is a business decision. The AI can suggest matches, but a human needs to confirm them and maintain the mapping over time.</p>
+<p>This is often where the excitement about AI data tools meets the reality of enterprise data management. The technology is impressive, but the hard work is still defining your master data. Keep this in mind as we move into the hands-on portion.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="hands-on-cross-system-queries" class="slide level2 section-divider center">
 <h2>Hands-On: Cross-System Queries</h2>
+<aside class="notes">
+<p>All right, time to get hands-on again. This time, you are going to tackle cross-system queries — the hard stuff. We are going to start with a timed challenge to add a little competitive energy, and then open it up for exploration.</p>
+<p>This hands-on segment should take about 16 minutes total.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="timed-challenge" class="slide level2 shrink center">
 <h2>Timed Challenge</h2>
@@ -559,9 +795,39 @@ Kerry Back, Rice University
 <div class="explainer">
 <p>You have 15 minutes. This requires querying at least two systems and merging the results. Pay attention to how the agent handles name matching.</p>
 </div>
+<aside class="notes">
+<p>Here is your timed challenge. The question is: “Which division’s top customer is most at risk of churning?” This is a genuinely hard question because it requires data from at least two systems.</p>
+<p>Let me walk through the steps. First, you need to identify each division’s number one customer by revenue — that requires querying the three CRMs. Second, you need to assess churn risk — and for that, check support ticket volume and sentiment in Zendesk. Third, you need to merge the revenue data with the support data. And fourth, draft a three-sentence executive summary with your recommendation.</p>
+<p>You have 15 minutes. Pay close attention to how the agent handles the name matching between the CRM data and the Zendesk data. Does it get the right customer? Does it flag any uncertainty? If the agent struggles, try breaking it into smaller steps — ask for the top customer by division first, then separately ask about their support tickets, and then ask the agent to combine the two.</p>
+<p>I will give you a five-minute warning and a one-minute warning. If you finish early, try a different cross-system question of your own design. Drop interesting findings in the Zoom chat.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="data-map-workshop" class="slide level2 section-divider center">
 <h2>Data Map Workshop</h2>
+<aside class="notes">
+<p>Now we are going to shift from Meridian’s data to your data. This workshop is one of the most important activities in the entire course, because what you produce here carries forward all the way to your capstone strategy in Session 8. Take this seriously — it is the foundation for everything that follows.</p>
+<p>This workshop and the subsequent breakout should take about 25 minutes total.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="map-your-companys-data" class="slide level2 shrink center">
 <h2>Map Your Company’s Data</h2>
@@ -599,6 +865,24 @@ Kerry Back, Rice University
 <div class="explainer">
 <p>Spend 10 minutes sketching this out. We’ll share and compare.</p>
 </div>
+<aside class="notes">
+<p>I want you to spend the next 10 minutes sketching out your company’s data map. There are three steps.</p>
+<p>Step one: list your core systems. Think about three to five systems your company runs on — your CRM, your ERP, your HRIS, your ticketing system, whatever they are. What data lives in each? Who owns it?</p>
+<p>Step two: draw the gaps. What cross-system questions can nobody answer easily today? Where do people resort to spreadsheets to bridge the gap between systems? What decisions are being made on gut feel because the data is too hard to assemble?</p>
+<p>Step three: identify the quick wins. If you could connect any two systems, which two would unlock the most value? What is the simplest question that currently takes weeks to answer?</p>
+<p>You do not need a polished document — a sketch on paper or a few bullet points in a notes app is fine. The point is to start thinking concretely about your own data landscape. This map becomes the foundation for your capstone strategy, so take a few minutes to think it through carefully.</p>
+<p>I will be available in the main room if you have questions. We will go to breakout rooms after this for comparison.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="what-were-skipping-for-now" class="slide level2 shrink center">
 <h2>What We’re Skipping (For Now)</h2>
@@ -640,6 +924,22 @@ Kerry Back, Rice University
 </div>
 </div>
 </div>
+<aside class="notes">
+<p>Before we wrap up, I want to name something important that the demos do not show. Before any AI agent can query your real systems — not the Meridian simulation, but your actual production systems — someone has to do a significant amount of pre-work.</p>
+<p>You need to catalog the data: what tables exist, what do the columns mean? You need to document the schemas: data types, relationships, business rules. You need to provision API access: authentication, rate limits, permissions. And you need to classify PII: which fields contain personal data, and what are the retention rules?</p>
+<p>Look at these numbers. Sixty to ninety days of typical pre-work before an agent touches real data. Five to ten people typically involved in data readiness. And zero — zero — vendors who mention this in their demos. I am naming this now because I want to calibrate your expectations. The demos make this look easy — and the technology part genuinely is easier than it used to be. But the organizational pre-work is real, and no vendor will mention it in their sales pitch. When you evaluate vendors in Session 5, remember this slide.</p>
+<p>This segment should take about 6 minutes.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="before-next-session" class="slide level2 shrink center">
 <h2>Before Next Session</h2>
@@ -655,9 +955,38 @@ Kerry Back, Rice University
 <div class="explainer">
 <p>Monday’s session: <span class="accent">How Does This Actually Work?</span> — we look under the hood at the agent loop, the system prompt, and where the code runs.</p>
 </div>
+<aside class="notes">
+<p>Here is your homework for before Monday’s session. First, read the enterprise systems background document — it will be emailed to you. This gives you context on how enterprise systems are structured and why they end up the way they do.</p>
+<p>Second, and this is the more important one: complete your data map. Take the sketch you started today and expand it. List at least five systems your company uses and identify the top three cross-system questions you cannot answer today. Be specific. “Our CRM and ERP don’t talk to each other” is a start, but “We cannot answer what our customer acquisition cost is by segment because marketing spend is in HubSpot and revenue is in NetSuite” is what I am looking for.</p>
+<p>This data map is not just homework — it is the foundation for your capstone strategy. The more specific you are now, the better your capstone will be.</p>
+<p>On Monday, we look under the hood. You have spent two sessions as the user. Now we are going to answer the question: how does this actually work? We will look at the agent loop, the system prompt, and where the code runs. See you then.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="key-takeaway" class="slide level2 section-divider center">
 <h2>Key Takeaway</h2>
+<aside class="notes">
+<p>Let me leave you with the key takeaway from today.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="the-hardest-part-isnt-technology." class="slide level2 centered-statement center">
 <h2>The hardest part isn’t technology.</h2>
@@ -667,6 +996,22 @@ Kerry Back, Rice University
 <div class="explainer">
 <p>They disagree on who your customers are, what your products are called, and when things happened. AI can bridge the gap — but someone still has to define the truth.</p>
 </div>
+<aside class="notes">
+<p>The hardest part of cross-system data is not the technology. It is that your systems disagree. They disagree on who your customers are — “General Electric” versus “GE Industrial Solutions” versus “GE Safety Division.” They disagree on what your products are called. They disagree on when things happened because of different date formats and different fiscal calendars.</p>
+<p>AI can bridge the gap. You saw it today — fuzzy matching, cross-system merges, intelligent reconciliation. But someone still has to define the truth. Someone has to say: yes, these three names are the same customer. Someone has to maintain that mapping over time. Someone has to decide what “revenue” means when each system calculates it slightly differently.</p>
+<p>That is the organizational work that makes the technology work. And it is why your data map homework matters — you are starting to identify where those disagreements exist at your company, which is the first step toward resolving them.</p>
+<p>Thank you for a great session. See you Monday.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 
 
 </section>

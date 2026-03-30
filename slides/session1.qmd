@@ -24,6 +24,16 @@ format:
 --- The market signal, February 2026
 :::
 
+::: {.notes}
+Welcome, everyone. Let me start with a story that sets the stage for everything we are going to do over the next four weeks. In February 2026, AI agents wiped two trillion dollars from software company valuations in a single week. Two trillion. That is not a typo. Investors decided, almost overnight, that AI could replace large categories of enterprise software — BI dashboards, workflow tools, reporting layers, even Tier 1 support.
+
+Now, whether or not you agree with the market's verdict, the technology behind that bet is real, and it is what we are going to be working with for the next four weeks. This course teaches you to use it, understand how it works, evaluate its reliability, and build a strategy for deploying it at your organization.
+
+Before we dive in, a quick reminder of what the pre-program video covered: we have the Meridian Corp simulation, which is a realistic enterprise data environment with ten systems, and for those who want to go deeper, the Linux VM for hands-on building. Today, we start as users. We will get our hands dirty with data right away. Any questions about the course arc or logistics before we begin?
+
+This opening segment should take about 10-12 minutes. Keep the energy high — this is the hook for the entire course.
+:::
+
 ---
 
 ## The Market Signal {.shrink}
@@ -59,9 +69,21 @@ Typical wait for a custom report at many organizations
 The market is betting that [conversational data access]{.accent} will replace the tools you buy today. What does that mean for your company?
 :::
 
+::: {.notes}
+Let these numbers sink in for a moment. Two trillion dollars in market cap erased from software companies. Seventy percent of BI dashboards estimated to go unused — that is not my number, that is industry research. And three weeks is a typical wait for a custom report at many organizations. Three weeks to answer a question your CEO has right now.
+
+The market is making a very specific bet: that conversational data access — asking questions in plain English and getting instant answers — will replace the tools companies buy today. Dashboards, reporting layers, even some of the analyst headcount that supports them. Whether that bet is right or wrong, the technology is here, and it is what we are going to experience firsthand today. So the question for each of you is: what does this mean for your company? We will come back to that question throughout the session.
+:::
+
 ---
 
 ## A Familiar Story {.section-divider}
+
+::: {.notes}
+Now let me tell you a story that I suspect will sound very familiar. This is the cold open — it is designed to be a little provocative. I want you to think about whether something like this has happened at your company.
+
+This segment should take about 5 minutes including discussion.
+:::
 
 ---
 
@@ -83,6 +105,14 @@ The market is betting that [conversational data access]{.accent} will replace th
 **Monday 3:45 PM** --- CEO: "Three *weeks*?"
 :::
 
+::: {.notes}
+Read through this email chain with the class. Monday morning, 9:14 AM — the CEO fires off a simple question: which of our customers buy from multiple divisions? Seems straightforward, right? By 11 AM it has landed on the BI team's desk as a priority request. And by 3:30 PM, the BI team responds: three weeks. They need to join Salesforce, the Legacy CRM, and HubSpot — different schemas, no common key. The CEO's reaction at 3:45 says it all: three weeks?
+
+Now, ask the room: has this happened to you? Not this exact scenario, but the pattern — a senior leader asks what feels like a simple question, and the answer is weeks away because the data lives in different systems that were never designed to talk to each other. I want to hear a couple of examples. Let two or three people share briefly before moving on.
+
+The reason I am showing you this is that it sets up the core promise of what we are about to see. What if this question did not take three weeks? What if it took thirty seconds?
+:::
+
 ---
 
 ## What If It Took 30 Seconds? {.centered-statement}
@@ -91,6 +121,14 @@ The market is betting that [conversational data access]{.accent} will replace th
 
 ::: {.explainer}
 Type the question. Get SQL, a chart, and a narrative --- instantly.
+:::
+
+::: {.notes}
+This is the transition to the live demo. Open the Meridian Corp app now. Type exactly this question into the chat: "Which customers buy from multiple divisions?" Let the class watch as the agent processes the query, generates SQL, runs it against multiple systems, and returns an answer with a chart and narrative — all in about thirty seconds.
+
+As the results come back, narrate what is happening: "Notice it is querying Salesforce for the Industrial division, the Legacy CRM for Energy, and HubSpot for Safety. It is pulling customer lists from each, then using Python to match names across systems and find the overlaps." Ask a follow-up question the class suggests — something a dashboard could never handle because it was not pre-built for it.
+
+This demo should take about 8 minutes. The goal is visceral impact — the class just heard about a three-week wait, and now they are watching the same question answered in real time. If the app is slow or down, switch to the pre-recorded fallback demo and narrate over it.
 :::
 
 ---
@@ -121,6 +159,14 @@ AI Chat Interface
 :::
 :::
 
+::: {.notes}
+Now let's connect what you just saw back to the broader picture. On the left, you have the traditional dashboard — pre-built by analysts weeks ago, with fixed filters and fixed dimensions. It can only answer the questions it was designed for. If you have a new question, that is a new ticket, a new sprint, a new wait.
+
+On the right, the AI chat interface. You ask any question in plain English. The agent writes SQL, runs it, returns results. It generates charts and narratives on the fly. And follow-up questions take seconds, not weeks. The key difference is not speed — it is flexibility. The dashboard answers the questions someone anticipated. The chat interface answers the questions you actually have, right now, in the moment.
+
+I want to be clear: dashboards are not going away. They are still the right tool for operational monitoring — metrics you check every day. But for the long tail of ad hoc questions that never justified building a dashboard? That is where this technology changes everything.
+:::
+
 ---
 
 ## Today's Learning Objectives
@@ -135,9 +181,21 @@ By the end of this session, you will be able to:
 - Ask business questions in plain English and get instant answers with charts
 :::
 
+::: {.notes}
+Here are our learning objectives for today. By the end of this session, you will be able to explain why AI agents are disrupting the BI software market and why this matters right now — not in five years, right now. You will have experienced conversational data access firsthand, contrasted it with traditional dashboards, and you will have asked your own business questions in plain English and gotten instant answers with charts.
+
+We are about to shift gears into the business implications of what you just saw, and then we are going to get hands-on with the Meridian app for the rest of the session. Let's talk about what this means strategically.
+:::
+
 ---
 
 ## The Business Lens {.section-divider}
+
+::: {.notes}
+Now let's step back from the technology and put on our business hats. The technology you just saw — querying enterprise data in plain English, getting instant charts and narratives — is what the market believes will displace dashboards, reporting teams, and data integration tools. That is a big claim. Let's think about what it actually means for your organizations.
+
+This business lens segment should take about 10 minutes, including the discussion on the next slide.
+:::
 
 ---
 
@@ -145,6 +203,16 @@ By the end of this session, you will be able to:
 
 ::: {.highlight-box}
 If **anyone in your company** could query data in plain English --- no SQL, no tickets, no dashboards --- what decisions get made faster? What questions finally get asked?
+:::
+
+::: {.notes}
+This is the key question I want you to sit with. If anyone in your company — not just the analysts, not just the people who know SQL — could query data in plain English, what changes? Think about it in two dimensions.
+
+First, what decisions get made faster? The decisions that are already being made, but slowly, because someone has to pull the data, build the report, and route it through the right people. Those decisions get compressed from days or weeks to minutes.
+
+But the second dimension is more interesting: what questions finally get asked? There are questions in every organization that nobody bothers asking because the cost of getting the answer is too high. It would take three weeks and a dedicated analyst, so people just go with their gut. When the cost of asking drops to zero, those questions start getting asked. And that is where the real value is.
+
+Ask the room: can anyone give me an example of a question at your company that nobody asks because it is too hard to get the data? Let two or three people respond. This discussion is important — it makes the abstract concrete for each participant.
 :::
 
 ---
@@ -202,6 +270,14 @@ Analytical
 We'll progress from simple lookups to analytical questions. Each prompt hits a single system --- Salesforce pipeline, NetSuite financials, or Workday headcount.
 :::
 
+::: {.notes}
+Now we are going to get hands-on. For the next twenty minutes, you are going to work through a progression of queries against the Meridian app. We start simple and build up. Step one is a simple lookup — "What are our top 10 customers by revenue?" This is the equivalent of a basic database query. Step two adds a filter — "Show me open deals over 100K in the Energy division." Step three introduces aggregation — "What is average deal size by sales rep this quarter?" And step four is analytical — "Which reps are trending above quota? Show me a chart."
+
+Each of these prompts hits a single system. We are not crossing systems yet — that comes in Session 2. The point here is to get comfortable with the conversational interface and to feel the difference between waiting for a report and having a conversation with your data.
+
+If you get stuck or the app gives you something unexpected, that is fine — note it and keep going. We will debrief as a group afterward. This hands-on segment should take about 20 minutes.
+:::
+
 ---
 
 ## Meet Meridian Corp {.shrink}
@@ -216,6 +292,12 @@ Your Simulation Environment
 - **10 enterprise systems** --- CRMs, ERP, HRIS, ticketing, and more
 - **41 database tables** across all systems
 - **26,000+ rows** of realistic, interconnected data spanning 3 years
+:::
+
+::: {.notes}
+Before you start querying, let me tell you about the company you are going to be working with. Meridian Corp is a fictional 500-million-dollar industrial distributor. It has three operating divisions: Industrial at about 250 million, Energy at about 150 million, and Safety at about 100 million. The company runs on ten enterprise systems — CRMs, ERP, HRIS, ticketing, and more — with 41 database tables and over 26,000 rows of realistic, interconnected data spanning three years.
+
+This is not a toy dataset. It has the same kind of cross-system friction you deal with in real life: different naming conventions, different date formats, customers that appear under different names in different systems. We built it to feel real because the lessons only land if the data feels real.
 :::
 
 ---
@@ -264,9 +346,23 @@ Corporate HQ
 Three divisions. Three CRMs. Ten enterprise systems. This is the cross-system reality most enterprises face.
 :::
 
+::: {.notes}
+Take a moment to look at this layout. Three divisions, each with their own CRM and financial systems. Industrial uses Salesforce and NetSuite. Energy uses a legacy custom-built CRM and QuickBooks. Safety uses HubSpot and shares NetSuite with Industrial. Then corporate has Workday for HR across all divisions, NetSuite for consolidation, and Zendesk for support.
+
+Notice the pattern: three CRMs. Three different data models. Three different ways of storing customer information. This is not bad IT management — this is what happens when companies grow through acquisition, when divisions have autonomy, when different teams picked the best tool for their needs at different times. It is the normal state of enterprise data, and it is exactly why that CEO's question about cross-division customers took three weeks.
+
+For today, you will be querying individual systems. Next session, we tackle the hard problem of querying across them.
+:::
+
 ---
 
 ## Try It Yourself {.section-divider}
+
+::: {.notes}
+All right, it is time to get your hands on the keyboard. Everyone should have the Meridian app open in your browser. If you have not logged in yet, do that now — the URL and credentials were in the pre-session email. I will give you a moment to get set up.
+
+This is the transition into the hands-on portion. You will have about 30 minutes total — first with guided prompts, then open exploration. Let's go.
+:::
 
 ---
 
@@ -286,6 +382,16 @@ Sample Prompts to Try
 
 ::: {.explainer}
 Start with the prompts above, then ask your own questions. The goal is to feel the difference between *waiting for a report* and *having a conversation with your data*.
+:::
+
+::: {.notes}
+Here are some sample prompts to get you started. You can type these in exactly as written or riff on them. "What was Meridian's total revenue last year, broken down by division?" is a good warmup — it hits the financial systems. "Who are the top 5 customers in the Industrial division by lifetime value?" goes into the CRM. "Show me headcount by department — are any teams growing faster than revenue?" pulls from Workday and requires the agent to do some analysis. "What is our average days-to-close for deals over 200K?" is a more analytical CRM query. And "Plot monthly revenue trends for all three divisions on one chart" tests the charting capability.
+
+Start with these, then branch out. Ask questions you would actually want to know about a company like this. The goal is not to test the app's limits — we will do that in Session 6. The goal right now is to feel the difference between waiting for a report and having a conversation with your data. Notice how quickly you can iterate: ask a question, see the answer, ask a follow-up, refine.
+
+I will be monitoring the chat and highlighting interesting discoveries as they happen. If you find something surprising, drop it in the Zoom chat so everyone can see.
+
+This guided exploration should take about 12 minutes, then we will open it up for free exploration.
 :::
 
 ---
@@ -314,6 +420,18 @@ Apply
 :::
 :::
 
+::: {.notes}
+Time for breakout discussions. I am going to put you into groups of three or four. You will have about 15 minutes. There are two sets of questions to work through.
+
+First, reflect on what you just experienced. What surprised you about the speed or quality of answers? What question did you try that worked unexpectedly well? And importantly, what question stumped the agent — and why did it fail? Understanding the failure modes is just as valuable as seeing the successes.
+
+Second, apply it to your world. What would this look like at your company? Who currently answers these kinds of questions — is it a BI team, an analyst, someone in finance? How long does it take? And what decisions are being delayed or not made at all because the data is not accessible?
+
+Each group should be ready to share one key insight when we come back together. I will give you a two-minute warning before we reconvene.
+
+This breakout should take about 15 minutes. When groups report back, listen for patterns — if multiple groups mention the same pain point, highlight it.
+:::
+
 ---
 
 ## Before Next Session {.shrink}
@@ -328,9 +446,21 @@ Homework
 - Bring both to Session 2
 :::
 
+::: {.notes}
+Here is your homework for before our next session on Wednesday. I want you to log into the Meridian app and ask ten business questions against any single system. Ten is the minimum — ask more if you like. The point is to build fluency with conversational data access.
+
+But here is the important part: write down one question the agent answered well — really nailed it — and one question where the answer was unsatisfying or outright wrong. Bring both to Session 2. I am going to ask three or four of you to share your best and worst answers, and those examples will set up exactly what we cover next time.
+
+A hint: if you ask questions that span multiple systems — like comparing CRM data with financial data — you may start running into some interesting friction. That is by design. It is exactly what Session 2 is about.
+:::
+
 ---
 
 ## Key Takeaway {.section-divider}
+
+::: {.notes}
+Let me leave you with the key takeaway from today's session.
+:::
 
 ---
 
@@ -340,6 +470,14 @@ Homework
 
 ::: {.explainer}
 AI agents don't replace your analysts --- they give everyone else the ability to ask questions without waiting in line.
+:::
+
+::: {.notes}
+The bottleneck was never the data. Your company has plenty of data — in Salesforce, in NetSuite, in Workday, in a dozen other systems. The bottleneck was access to the data. It was the three-week wait for a custom report. It was the dashboard that could not answer the question you actually had. It was the analyst who was busy with someone else's priority.
+
+AI agents do not replace your analysts. Your analysts are still the people who understand the business context, who know what questions to ask, who can verify whether an answer makes sense. What AI agents do is give everyone else the ability to ask questions without waiting in line. That is the shift. The cost of asking a question drops to zero, and when that happens, the questions start flowing.
+
+Thank you for today. Do your homework, play with the app, and come ready on Wednesday to talk about what happens when the data you need is not in one system — it is everywhere. See you then.
 :::
 
 

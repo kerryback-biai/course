@@ -16,9 +16,21 @@ format:
 
 ## Last Week, You Were the User {.section-divider}
 
+::: {.notes}
+This is the section divider that opens the bridge segment. Take a breath here and let the title land. You are transitioning the class from "user mode" --- where they have spent the last week asking questions and getting answers from the Meridian app --- into "builder mode," where they will understand what is happening behind the scenes. This bridge segment should take about 10 minutes total, covering this slide and the next two.
+
+Set the tone: "For the past week, you have been the user. You typed questions in plain English, you got charts and narratives back, and hopefully a few of you found something genuinely surprising in the data. Today we flip perspectives. We are going to look under the hood and understand how the technology actually works. By the end of this session, you will know exactly what happens between the moment you press Enter and the moment the answer appears."
+:::
+
 ---
 
 ## Bridge {.centered-statement}
+
+::: {.notes}
+This is a brief transitional slide. Simply say: "Bridge. We are crossing from user to builder. Everything you have done so far --- the queries, the cross-system merges, the charts --- all of that was powered by a surprisingly small amount of code. Today you will see it."
+
+Pause for a beat and advance. Do not linger on this slide.
+:::
 
 ---
 
@@ -30,6 +42,14 @@ Now let's look under the hood.
 How does an AI agent turn your English question into SQL, run it, and deliver a polished result? The answer is surprisingly simple --- and surprisingly powerful.
 :::
 
+::: {.notes}
+This is the main bridge slide. Spend about two minutes here setting up the session arc. Say something like: "You have spent a week asking questions and getting answers. Some of those answers were great. Some were not. But in every case, something was happening behind the scenes --- your English question was being translated into SQL, that SQL was being executed against a real database, and the results were being interpreted and formatted for you."
+
+"Today we are going to demystify that entire process. The answer to 'how does this work?' is surprisingly simple at the core. The agent loop that powers the Meridian app --- and most BI agents on the market --- is about 50 lines of code. We will see those 50 lines today. We will also see why going from 50 lines to a production application takes 3,000 lines, and what all that extra code does. That gap --- between prototype and production --- is one of the most important things you need to understand as an executive evaluating AI tools."
+
+Transition: "Let me start with our learning objectives for today."
+:::
+
 ---
 
 ## Learning Objectives
@@ -38,9 +58,23 @@ How does an AI agent turn your English question into SQL, run it, and deliver a 
 - See the **50 lines of code** that power the core of the app
 - Understand **where code executes** and why that's an architectural decision
 
+::: {.notes}
+Walk through the three objectives briefly. Say: "Three things we are going to cover. First, the agent loop --- the core pattern that every AI data agent uses. It is a test-and-review cycle, not a one-shot generation. Second, we will see the actual code --- about 50 lines --- that powers the core of the app you have been using. And third, we will talk about where that code runs, because that is an architectural decision with real security implications."
+
+"These three concepts will give you the vocabulary to have informed conversations with your technical teams and with vendors. You will understand what is simple, what is hard, and where the real engineering effort lives."
+
+This slide should take about one minute. Then transition: "Let us start with the agent loop."
+:::
+
 ---
 
 ## The Agent Loop {.section-divider}
+
+::: {.notes}
+This section divider opens the agent loop demo segment, which runs from roughly minute 10 to minute 30. Say: "The Agent Loop. This is the core pattern." Then advance.
+
+Before you advance, make sure the Meridian app is open in another window and ready for the demo. You will be showing a cross-system question and walking through what happens behind the scenes --- the system prompt, the tool call, the SQL execution, the merge, and the final response.
+:::
 
 ---
 
@@ -96,6 +130,22 @@ LLM checks results, fixes errors or delivers the answer
 :::
 :::
 
+::: {.notes}
+This is the first conceptual slide of the agent loop segment. This segment should take about 20 minutes total (minutes 10-30), including the live demo. Walk through each step deliberately, pointing to each card as you go.
+
+Say: "When you type a question into the Meridian app --- or any AI data agent --- four things happen. Step one: the system prompt. Before your question even reaches the LLM, a system prompt has already been loaded that describes the database schema --- what tables exist, what columns they have, what the relationships are. Think of this as giving the LLM a map of your data before asking it to navigate."
+
+"Step two: the tool call. The LLM reads your question, reads the schema, and writes SQL --- or sometimes Python --- to answer it. But here is the key: it does not just return the SQL to you. It makes a tool call, which is a request to the system to actually execute that code."
+
+"Step three: execute and return. The orchestration layer --- the code that sits between you and the LLM --- takes that SQL, runs it against the database, and sends the results back to the LLM. The LLM never touches the database directly. It writes code, and the system executes it."
+
+"Step four: review and deliver. The LLM looks at the results. If something looks wrong --- an empty result set, an error message, numbers that do not make sense --- it can try again. It might rewrite the SQL, change a filter, fix a join. If the results look good, it formats them into a natural language response with charts and delivers the answer."
+
+Transition: "Let me show you this in action. I am going to switch to the Meridian app and ask a cross-system question, but this time I want you to watch what happens behind the scenes."
+
+DEMO INSTRUCTIONS: Switch to the Meridian app. Ask a cross-system question like "Which customers buy from multiple divisions and what is their total revenue?" Walk through the system prompt, show the SQL that was generated, show the results coming back, show the Python merge step, and show the final formatted response. Narrate each step as it maps to the four cards on this slide.
+:::
+
 ---
 
 ## The Key Insight: Test and Review
@@ -106,6 +156,16 @@ The agent doesn't just generate code and hope for the best. It **writes code, ex
 
 ::: {.explainer}
 This is the same pattern a careful analyst follows: write a query, check the output, refine if something looks off, then present the final answer. The LLM automates that entire cycle.
+:::
+
+::: {.notes}
+After the demo, come back to this slide to reinforce the key insight. Say: "Here is what I want you to take away from what you just saw. The agent does not just generate code and hope for the best. It writes code, executes it, reviews the result, and decides whether to deliver or try again. That loop --- write, execute, review, decide --- is the fundamental pattern."
+
+"Think about how a careful analyst works. They write a query, look at the output, notice something is off, rewrite the query, check again, and only then present the results. The LLM automates that entire cycle. It is not magic --- it is a structured test-and-review process."
+
+"This is also why the agent sometimes takes a few seconds longer than you might expect. It is not slow --- it is reviewing its own work. And sometimes it runs through the loop two or three times before delivering an answer, because the first attempt did not look right."
+
+Ask the room: "Did anyone notice during Sessions 1 or 2 that the agent sometimes seemed to pause or take a moment before answering? That was the review step. It was checking its own work."
 :::
 
 ---
@@ -130,9 +190,29 @@ def agent_loop(question, schema):
 ```
 :::
 
+::: {.notes}
+This slide shows the pseudocode for the core agent loop. Walk through it line by line. Say: "Here is the agent loop in pseudocode. This is a simplified version of what the Meridian app runs at its core. Let me walk through it."
+
+"First, we set up the messages list. It starts with two things: the system prompt, which contains the schema description, and the user's question. That is all the LLM needs to get started."
+
+"Then we enter a loop --- up to three attempts. On each pass, we send the messages to the LLM and get a response. If the response contains a tool call --- meaning the LLM wants to run some SQL or Python --- we execute it, take the result, and append it to the messages list. Now the LLM can see what happened. On the next iteration, it will either make another tool call or, if it is satisfied with the results, return a text response."
+
+"If the response does not contain a tool call, we are done --- the LLM is delivering its final answer."
+
+"That is it. That is the core. The real code has error handling, logging, and some other details, but the logic is this simple. About 50 lines of Python."
+
+Pause and let that sink in. Then say: "Now, the obvious question is: if it is this simple, why does deployment take months? We will get to that. But first, let me show you the piece that makes this whole thing work --- the system prompt."
+:::
+
 ---
 
 ## The System Prompt Is the Secret {.section-divider}
+
+::: {.notes}
+This section divider opens the system prompt segment, which runs from roughly minute 30 to minute 45. Say: "The System Prompt Is the Secret." Then advance.
+
+This is a critical segment because it connects the technical architecture to something executives can directly influence. The system prompt is where business knowledge meets technology, and getting it right is the difference between an agent that works and one that does not.
+:::
 
 ---
 
@@ -160,6 +240,20 @@ With Join Key Documentation
 :::
 :::
 
+::: {.notes}
+This slide sets up the live demo of prompt manipulation. This segment should take about 15 minutes total (minutes 30-45). Say: "The system prompt is the most important piece of the entire system. Let me show you why with a simple example."
+
+"On the left: without join key documentation. The LLM can see that there are two tables --- orders and customers --- but it has no information about how they relate. It does not know that orders.customer_id links to customers.id. Without that, it cannot write a correct JOIN, and either the query fails or it returns garbage."
+
+"On the right: with join key documentation. We add one line to the system prompt --- 'orders.customer_id links to customers.id' --- and suddenly the agent writes correct JOINs on the first attempt. Merges work. Answers are accurate."
+
+"This is not a hypothetical. Let me show you."
+
+DEMO INSTRUCTIONS: Switch to the demo environment. Show the system prompt with join key documentation. Ask a question that requires a join. Show it working. Then remove the join key documentation from the prompt. Ask the same question. Show it failing or returning wrong results. Add the documentation back. Show it working again. This is the "break it and fix it" demo described in the course design for minutes 30-45.
+
+After the demo, say: "That single line in the prompt made the difference between a working agent and a broken one. This is why I say the prompt is the secret."
+:::
+
 ---
 
 ## The Prompt Is "Institutional Knowledge"
@@ -172,9 +266,25 @@ The system prompt encodes everything the agent needs to know about your data: ta
 **Change the prompt, change the behavior.** Add a rule like "always filter to active customers" and every query respects it. Remove join documentation and merges break. The prompt is the most important piece of the system.
 :::
 
+::: {.notes}
+Say: "The system prompt is institutional knowledge. It is everything your agent needs to know about your data, encoded in plain English. Table names, column meanings, relationships between tables, business rules, formatting preferences --- all of it lives in the prompt."
+
+"And here is the powerful implication: change the prompt, change the behavior. Add a rule that says 'always filter to active customers' and every query the agent writes will respect that rule. Add a formatting preference that says 'always show dollar amounts with commas and two decimal places' and every response will follow it. Remove the join documentation and merges break."
+
+"This means that the people who write and maintain the system prompt are effectively the people who control the agent's behavior. In most organizations, that should be a collaboration between your data team --- who knows the schemas --- and your business leaders --- who know the rules and preferences. It is not a one-time setup. As your data changes, as business rules evolve, the prompt needs to evolve with it."
+
+Ask the room: "Think about your own organization for a moment. Who has the institutional knowledge about your data --- what tables exist, how they relate, what the business rules are? Is that knowledge documented anywhere, or does it live in people's heads?" Let a few people respond. Then transition: "That documentation problem is exactly what the system prompt forces you to solve. And that brings us to our next question: once the LLM has written the code, where does it actually run?"
+:::
+
 ---
 
 ## Where Does the Code Run? {.section-divider}
+
+::: {.notes}
+This section divider opens the execution architecture segment, which runs from roughly minute 45 to minute 60. Say: "Where Does the Code Run?" Then advance.
+
+This is a lecture segment, not a demo. The key point is that the LLM generates code but something else has to execute it, and that "something else" is an architectural decision with security implications. This is the first of several deployment decisions executives need to understand --- it sets the stage for Session 5.
+:::
 
 ---
 
@@ -212,6 +322,18 @@ C. SQL-Only Mode
 :::
 :::
 
+::: {.notes}
+Walk through each option. Say: "The LLM generates SQL and Python. Something has to execute it. There are three main options, and each involves a different tradeoff."
+
+"Option A: Cloud LLM Sandbox. This is the simplest. The vendor --- OpenAI, Anthropic, whoever --- runs the code on their servers. You send the query, they execute it, they send back the results. The advantage is simplicity: nothing to set up, nothing to maintain. The disadvantage is that your data leaves your network. The query results pass through the vendor's servers. For non-sensitive data or for prototyping, this is fine. That is what our Meridian demo uses --- synthetic data running through a cloud API."
+
+"Option B: Your Own Containers. This is the production answer for sensitive data. You run Docker containers on your own servers or in your own cloud environment. The LLM still generates the code, but the execution happens inside your infrastructure. Data never leaves your network. The tradeoff is more infrastructure to manage --- you need container orchestration, monitoring, security patching."
+
+"Option C: SQL-Only Mode. The LLM generates SQL queries, but it never runs Python at all. The SQL goes directly to your database, and the database executes it. This is the safest option for highly regulated environments because the only code that runs is SQL against your own database. The tradeoff is that you lose the ability to do in-memory merges, data transformations, and chart generation. Remember those cross-system merges from Session 2? Those required Python. In SQL-only mode, you cannot do them."
+
+Ask the room: "Which of these three options do you think would fit your organization? Think about your data sensitivity, your IT infrastructure, and your compliance requirements." Let a few people share quick thoughts, but do not let this become a long discussion --- save the deeper deployment conversation for Session 5.
+:::
+
 ---
 
 ## Choosing the Right Option
@@ -225,9 +347,25 @@ C. SQL-Only Mode
 | **Best for** | Prototyping | Production | Regulated |
 :::
 
+::: {.notes}
+Say: "Here is the summary table. Cloud sandbox is low effort but data leaves your network. Your own containers keep data on-prem and support Python, but require more setup. SQL-only is low effort and keeps data on-prem, but you lose charting and in-memory processing."
+
+"For most organizations, the answer ends up being Option B for production --- your own containers. You prototype with Option A, prove the concept, and then move to containers when you are ready to connect to real data. Some regulated industries --- banking, healthcare --- might start and stay with Option C."
+
+"We will revisit this in much more depth in Session 5, when we talk about deployment architecture and data security. For now, the important thing is that you understand this is a decision that needs to be made, and it has real implications for what the agent can and cannot do."
+
+Transition: "Now let me address the elephant in the room. If the core is only 50 lines, why is this hard? Why does deployment take months? Why do vendors charge what they charge?"
+:::
+
 ---
 
 ## The Complexity Iceberg {.section-divider}
+
+::: {.notes}
+This section divider opens the complexity iceberg segment, which runs from roughly minute 60 to minute 72. Say: "The Complexity Iceberg." Then advance.
+
+This is a lecture and discussion segment. The goal is to calibrate expectations: the core is simple, but production is hard. This is the key insight that helps executives evaluate vendors and scope projects realistically.
+:::
 
 ---
 
@@ -262,6 +400,16 @@ Growth from prototype to production
 :::
 :::
 
+::: {.notes}
+Let the numbers speak for themselves for a moment. Say: "Fifty lines of core agent logic. Three thousand lines in a production app. A sixty-times growth factor from prototype to production."
+
+"The 50 lines are the agent loop we just looked at. The 3,000-plus lines are the actual Meridian app you have been using for the past week. Same core pattern, but wrapped in everything you need to run it reliably, securely, and at scale."
+
+"This ratio --- roughly 60 to 1 --- is not unusual. It is typical of most software systems. The core logic of most applications is a small fraction of the total codebase. The rest is infrastructure, security, error handling, and operational tooling."
+
+"Why does this matter to you as executives? Because when a vendor tells you their AI agent product costs half a million dollars, you need to understand what you are paying for. You are not paying for the 50 lines. You are paying for the other 2,950 lines --- and the team that maintains them."
+:::
+
 ---
 
 ## What the Other 2,950 Lines Do
@@ -291,9 +439,31 @@ Growth from prototype to production
 The core loop is elegant and simple. The production wrapper is where the engineering effort lives. This is why you **buy or build on a platform** rather than rolling your own from scratch.
 :::
 
+::: {.notes}
+Walk through both columns. Say: "Let me break down what those other 2,950 lines do. On the left: security and access. Authentication --- who are you? Authorization --- what are you allowed to see? Row-level access control --- the VP of Sales should see sales data but not HR compensation data, even though the agent can query both systems. And audit logging --- every query, every result, every access, recorded for compliance."
+
+"On the right: reliability and scale. Error handling and retries --- what happens when the database is slow or the LLM API times out? Rate limiting --- making sure one heavy user does not consume all the resources. Multi-tenancy --- supporting multiple users with different permissions. Monitoring and alerting --- knowing when something breaks before your users tell you. Failover and backup --- what happens when a server goes down."
+
+"None of this is glamorous. None of it is AI. It is all plain old software engineering. But it is absolutely essential for production, and it is where 95 percent of the effort goes."
+
+"This is why the advice for most organizations is: buy or build on a platform. Do not try to roll your own from scratch. The 50-line core is easy. The 3,000-line production wrapper is where the real investment lives."
+
+Discussion prompt: "For those of you who have IT teams: where does your organization's capability fit on this spectrum? Could your team build the 50-line core? Could they build the 3,000-line production wrapper? That gap is the build-versus-buy decision we will dig into in Session 5."
+
+Let a few people respond, then transition: "Now, let me prove to you just how simple the core really is. We are going to build an agent from scratch, right now, live."
+:::
+
 ---
 
 ## Live Build {.section-divider}
+
+::: {.notes}
+This section divider opens the live build segment, which runs from roughly minute 72 to minute 85. Say: "Live Build." Then advance.
+
+Make sure the Linux server is ready. You should have a terminal open with SSH to the server, Claude Code running, and a sample database ready. This is the "your developer could do this" moment. The goal is demystification, not intimidation.
+
+If the live demo environment is not available, switch to the pre-recorded fallback and narrate over it.
+:::
 
 ---
 
@@ -315,12 +485,36 @@ Live Demo Plan
 Your developer could do this. The point isn't that it's hard --- it's that it's *tractable*. The magic is in the prompt design and the execution architecture, not in thousands of lines of code.
 :::
 
+::: {.notes}
+This is the live build segment. It should take about 13 minutes (minutes 72-85). Walk through the demo plan on screen before switching to the terminal.
+
+Say: "We are going to build an agent from scratch, right now. I have a blank file and a sample database on the Linux server. I am going to use Claude Code --- the same AI coding assistant that is available on your server accounts --- and direct it in plain English. Here is the plan."
+
+Walk through the six steps on screen, then say: "The point of this demo is not to impress you with coding. The point is to show you that the core of these systems is tractable. Your developer could do this. The hard part is not the 50 lines --- it is everything else we just talked about. But the core? It is this simple."
+
+DEMO INSTRUCTIONS: Switch to the terminal. Start with a blank Python file. Tell Claude Code in English to build a simple agent: "Build a Python script that takes a question as input, sends it to Claude with a schema description of our sample database, gets back SQL, runs it, and returns the answer." Narrate each step as Claude Code writes the code. Once it is working, ask a question that requires a join. Show it working. Then remove the join key documentation from the system prompt. Ask the same question. Show it failing. Add the documentation back. Show it recovering.
+
+Key narration points during the demo: (1) "Notice that we are directing the AI in English, and it is writing the Python for us." (2) "Here is the system prompt --- this is the schema description we talked about." (3) "Here is the agent loop --- the same pattern we saw in the pseudocode." (4) "Now watch --- I am removing the join key documentation. Same question, but now the agent does not know how the tables relate." (5) "And now I add it back. Same question, correct answer. The prompt is the secret."
+
+If the live demo fails or the environment is not responsive, say: "Let me switch to the recorded version --- same demo, same steps, but pre-recorded so we do not lose time to connectivity issues." Play the fallback recording and narrate over it.
+:::
+
 ---
 
 ## What You Just Saw
 
 ::: {.highlight-box}
 A working AI agent, built from scratch in minutes, that can answer business questions by writing and executing SQL against a real database. **This pattern is at the core of most BI agents on the market.**
+:::
+
+::: {.notes}
+After the live build demo, come back to this slide to land the point. Say: "What you just saw was a working AI agent, built from scratch in minutes. It takes a question in English, writes SQL, runs it against a real database, and delivers the answer. That is it. That is the core pattern."
+
+"And here is the important part: this pattern is at the core of most BI agents on the market. Whether you are looking at Salesforce Agentforce, Microsoft Copilot, or any of the AI-native startups, they all use some version of this loop. The differences are in the production wrapper --- the security, the scale, the reliability, the user interface --- but the core is the same."
+
+"So when a vendor shows you a demo, you now know what is happening behind the scenes. And when they quote you a price, you know what you are paying for: not the 50 lines, but the 3,000 lines around them."
+
+Transition: "Let me recap what we covered today."
 :::
 
 ---
@@ -377,6 +571,12 @@ Iceberg
 :::
 :::
 
+::: {.notes}
+Walk through the recap quickly. Say: "Four things from today. First, the agent loop: prompt, generate, execute, review, deliver. It is a test-and-review cycle, not a one-shot generation. Second, the system prompt: the institutional knowledge layer that tells the agent about your data, your rules, and your preferences. Change the prompt, change the behavior. Third, execution: the code the LLM generates has to run somewhere, and you have three options --- cloud sandbox, your own containers, or SQL-only. Each has tradeoffs. Fourth, the iceberg: 50 lines of core logic, 3,000 lines in production. The core is simple. The production wrapper is where the effort lives."
+
+"These four concepts give you the vocabulary to evaluate any AI data agent on the market. You understand the pattern, you understand what the prompt does, you understand the deployment options, and you understand the gap between demo and production."
+:::
+
 ---
 
 ## Before Next Session {.shrink}
@@ -395,9 +595,23 @@ Homework
 Wednesday's session: [From Data to Deliverable]{.accent} --- we chain agent steps into automated reporting pipelines.
 :::
 
+::: {.notes}
+Walk through the homework. Say: "For next session, one required item and two optional. The required item: go back to the use case you identified in Session 2 --- the cross-system question you want to answer. Now think about data quality. What issues would you expect? Are there duplicate records? Inconsistent naming? Missing fields? What pre-work would be needed before an agent could query your systems? This is the reality check on the demo we just saw."
+
+"Optional but recommended: the SSH credentials for the Linux server are in your course materials. Exercise 1 walks you through building the exact 50-line agent we just built. Exercise 2 extends it to query two systems and merge results. You do not need to know how to code --- Claude Code will write the Python for you. You just direct it in English, the same way I did in the demo. If you want to get your hands dirty, this is your chance."
+
+"Also optional: two readings for Session 5. The a16z survey on how enterprise CIOs are building and buying AI, and the DUNNIXER vendor evaluation scorecard. Keep both of these --- you will use the scorecard in Session 5 to evaluate vendors."
+
+"Wednesday we move from data to deliverable. Instead of just answering questions, we will chain agent steps into complete reporting pipelines --- from raw data to polished, board-ready documents. See you then."
+:::
+
 ---
 
 ## Key Takeaway {.section-divider}
+
+::: {.notes}
+This is the final section divider. Say: "Key Takeaway." Then advance to the closing slide.
+:::
 
 ---
 
@@ -407,4 +621,12 @@ Wednesday's session: [From Data to Deliverable]{.accent} --- we chain agent step
 
 ::: {.explainer}
 Knowing the difference is how you evaluate vendors, scope projects, and avoid overpaying.
+:::
+
+::: {.notes}
+Let the slide speak for a moment, then close with: "Fifty lines and a good prompt. That is the core. The other 3,000 lines are what production requires. Knowing the difference between these two things is how you evaluate vendors, scope projects, and avoid overpaying."
+
+"When someone tells you AI is magic, you now know it is not. It is a loop: prompt, generate, execute, review, deliver. When someone tells you AI is easy, you now know the core is easy but production is hard. And when someone quotes you a price, you can ask: what am I paying for? The 50 lines, or the 3,000?"
+
+"Have a good evening, and I will see you Wednesday."
 :::

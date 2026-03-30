@@ -24,6 +24,14 @@ format:
 --- Morgan Stanley case study (provided as pre-reading)
 :::
 
+::: {.notes}
+Welcome back everyone. This is Session 5 and today we are shifting gears from using AI agents to deploying them. Let this quote from the Morgan Stanley case sit with you for a moment. Sixteen thousand financial advisors, SEC and FINRA breathing down their neck, and the hardest part was not getting the model to work. It was deciding where the model would run and what data it would be allowed to see. That is exactly what today is about.
+
+You arrived having read three things: the Morgan Stanley case study, the AIMultiple article on cloud versus local LLMs, and the data security primer. So today is not a lecture day. Today is a discussion day. I am going to push you to apply what you read to your own companies, your own regulatory environments, your own data. By the end of the session, you will have a written deployment profile for your capstone use case.
+
+[TIMING: Spend about 2 minutes on this opening slide. Let the quote land, then transition to objectives.]
+:::
+
 ---
 
 ## Today's Learning Objectives
@@ -39,9 +47,23 @@ By the end of this session, you will be able to:
 - Draft a deployment profile for your capstone use case
 :::
 
+::: {.notes}
+Let me orient you to where we are headed in the next 85 minutes. Four objectives, all of them practical. By the time you leave today, you will have compared deployment options, matched security approaches to your industry, worked through a build-versus-buy framework, and drafted an actual deployment profile that becomes a section of your capstone.
+
+Notice the arc: the first three objectives give you the frameworks. The fourth objective is where you apply them. Everything we do in the first hour is in service of that deployment profile at the end.
+
+[TIMING: 1 minute. Move quickly to the homework debrief.]
+:::
+
 ---
 
 ## Homework Debrief {.section-divider}
+
+::: {.notes}
+Alright, let us start with where we left off. You were asked to produce a complete deliverable using the Meridian app --- a memo, a comparison, a risk assessment. I want to hear what you built and, more importantly, whether you would trust it enough to send it upstairs.
+
+[TIMING: This section divider is a brief transition. Move immediately to the next slide.]
+:::
 
 ---
 
@@ -73,9 +95,25 @@ The Board-Ready Test
 The gap between "interesting demo" and "decision-grade output" is exactly what today's session is about.
 :::
 
+::: {.notes}
+I would like three or four volunteers to walk us through what they produced. Keep it to about a minute each. Tell us: what question did you ask, who was the intended audience, and what format did you choose --- a memo, a dashboard summary, a comparison table?
+
+After each share, I want the rest of the room to apply the board-ready test. Look at it with fresh eyes. What looks polished and credible at first glance? And then the harder question: what would you want to verify before you put your name on it and sent it to your board of directors? Where might the agent have introduced errors --- wrong date ranges, double-counted customers, averages that include data they should not?
+
+This is the perfect bridge into today's topic. The gap between an interesting demo output and something you would stake your reputation on is exactly the gap that deployment decisions, data security, and governance are designed to close. That gap is what the rest of this session addresses.
+
+[TIMING: 8 minutes total for this segment. Call on 3-4 students, about 1.5 minutes each, with brief reactions from the room. If participation is slow, share your own example from the Meridian app to get things started. Transition: "Those verification instincts you just described? They are exactly the right instincts. Now let us talk about the Morgan Stanley case, because they faced the same questions at massive scale."]
+:::
+
 ---
 
 ## Two Separate Decisions {.section-divider}
+
+::: {.notes}
+Before we get into the Morgan Stanley discussion, I want to plant one important idea that connects back to Session 3.
+
+[TIMING: Brief transition slide. Move to the next slide immediately.]
+:::
 
 ---
 
@@ -105,6 +143,18 @@ Where does THE LLM run?
 
 ::: {.explainer}
 Bridge from Session 3: the agent architecture has two halves. Your code and the LLM are [separate deployment decisions]{.accent} --- and the security implications are different for each.
+:::
+
+::: {.notes}
+Remember in Session 3 when we looked under the hood of the agent? We talked about where the code executes --- the orchestration logic, the database connectors, the application layer. That code runs on your servers. You control it entirely. But there is a second piece: the large language model itself, the thing that interprets the natural language question and generates SQL. Where does that run? That is a completely separate decision, and it is the deployment decision we are focused on today.
+
+Here is why this distinction matters. You can run your application code on your own servers, inside your own VPC, fully locked down --- and still be sending your query results to OpenAI's servers for interpretation. Or you can keep everything local, but then you are running a smaller, less capable model. These are different tradeoffs with different security implications. The Morgan Stanley case you read is a perfect illustration of how a real company navigated this exact decision.
+
+Let me turn it over to the room. You read the Morgan Stanley case. What struck you?
+
+[TIMING: About 5 minutes for this slide. Spend 2 minutes on the bridge explanation, then open it up to the Morgan Stanley case discussion which continues for the next 7-8 minutes. Key discussion questions: Was cloud API with zero data retention the right call for Morgan Stanley? What would your company have done differently? The a16z survey says 90% of enterprises are testing third-party AI --- does that match your experience?]
+
+[DISCUSSION FACILITATION: If the room is quiet, start with a direct question: "Who here works in an industry with regulatory constraints similar to Morgan Stanley's? What would your compliance team have said about sending data to a cloud API?" Let 3-4 people respond. Push back gently: "But Morgan Stanley did use the cloud API --- they just negotiated zero data retention. Is that enough for your industry?"]
 :::
 
 ---
@@ -149,6 +199,20 @@ Hybrid
 :::
 :::
 
+::: {.notes}
+You read about these three options in the AIMultiple article, so I am not going to lecture through them. Instead, let me add the context the article did not cover and then I want your reactions.
+
+Cloud API is where almost everyone starts. You saw the a16z number: 90% of enterprises are testing third-party AI tools. The economics are compelling --- pennies per query, no infrastructure, no ML engineers on staff. The catch is that your data leaves your network. For some of you, that is a non-starter. For others, with the right contractual protections, it is perfectly acceptable.
+
+On-premise is the other end of the spectrum. You are running open-source models like Llama or Mistral on your own GPUs. Full data control, nothing leaves your building. But you are looking at fifty to two hundred thousand dollars in GPU infrastructure, plus you need people who know how to run these models. The quality gap between open-source models and the frontier cloud models is shrinking, but it is still real.
+
+Hybrid is where most sophisticated enterprises are heading. You route queries by sensitivity level. Someone asks about public revenue data? Send it to the cloud API, get the best model. Someone asks about individual compensation or pre-announcement financials? Route that to the on-premise model. The orchestration is more complex, but you get the best of both worlds.
+
+Quick show of hands: based on what you read and what you know about your company, which of these three feels like the right starting point for you? Cloud API? On-premise? Hybrid?
+
+[TIMING: 4 minutes. Use the show of hands to gauge where the room is and transition to the cost slide. If most people say cloud API, note that and say "Let us look at the economics of that choice."]
+:::
+
 ---
 
 ## Cost Comparison {.shrink}
@@ -184,9 +248,25 @@ Of enterprises testing third-party AI tools (a16z 2025 CIO survey)
 Cloud API dominates early adoption. But as query volume scales and data sensitivity increases, the economics shift. Morgan Stanley's choice: [cloud API with zero data retention]{.accent} --- the LLM never stores the conversation.
 :::
 
+::: {.notes}
+Let me put some numbers on this. A simple cloud API query costs one to five cents. That sounds trivial, but do the math: if you have a thousand users running twenty queries a day, that is two hundred to a thousand dollars a day just in API costs. And multi-step queries --- the kind we have been running in the Meridian app, where the agent queries multiple systems and merges results --- those can cost ten to fifty cents each because they involve multiple LLM calls.
+
+On-premise, you are paying fifty to two hundred thousand dollars upfront for GPU infrastructure, plus ongoing costs for electricity, cooling, and the engineering staff to maintain it. But after that, your marginal cost per query approaches zero.
+
+The crossover point depends on volume and sensitivity. For a pilot with a hundred users, cloud API wins every time. For an enterprise-wide deployment with sensitive data, the math changes. Morgan Stanley made an interesting choice: they went with cloud API but negotiated zero data retention. The LLM processes the query and immediately forgets it. No conversation history is stored on the vendor's servers. That was how they satisfied SEC and FINRA requirements while still getting access to the best model.
+
+[TIMING: 3 minutes. Transition: "Now let us see the data security problem in action. I want to show you something that should make you uncomfortable."]
+:::
+
 ---
 
 ## The Data Security Problem {.section-divider}
+
+::: {.notes}
+We have been talking about deployment options in the abstract. Now I want to make the data security problem concrete. You read about the four approaches in the primer. Let me show you why they matter.
+
+[TIMING: Brief transition. Move immediately to the demo slide.]
+:::
 
 ---
 
@@ -218,6 +298,20 @@ Version 2: Guardrailed
 The question isn't whether the AI *can* access the data. It's whether it *should* --- and who decides.
 :::
 
+::: {.notes}
+[DEMO INSTRUCTIONS: Open the Meridian app. First, with guardrails disabled or in the ungoverned version, type: "Show me individual salary data for the Engineering team." Let the agent return names, titles, and exact salaries. Let the room see it. Pause for a beat. Then switch to the guardrailed version and ask the same question. Show that it either blocks the query entirely or returns only aggregates: "Average salary for Engineering: $142K, n=47."]
+
+Look at that first result. The agent did exactly what you asked. The SQL was correct. The data is accurate. And if anyone in your company could run this query, you have a governance disaster on your hands. Individual salary data, by name, returned in seconds to anyone with access to the chat interface.
+
+Now look at the second version. Same question, same underlying data, but the guardrails intercept the query and return only the aggregate. The LLM has the same access to the data --- the difference is what the system allows it to return.
+
+This is the core insight from your pre-reading: the question is not whether the AI can access the data. It is whether it should, and who makes that decision. Let me ask the room: which of the four data security approaches from the primer would have prevented that first result?
+
+[TIMING: 8 minutes total for this demo section. Spend 3-4 minutes on the live demo, then 4-5 minutes on the discussion that follows. If the demo has technical issues, describe the scenario verbally using the slide content --- the point lands either way.]
+
+[DISCUSSION PROMPT: "Which of the four approaches from the primer --- zero data retention, data masking, on-premise models, or role-based filtering --- would have prevented that first result?" Answer: role-based query filtering is the direct answer, but zero data retention alone would not have helped here because the problem is not where the data goes, it is who can ask for it.]
+:::
+
 ---
 
 ## Four Data Security Approaches {.shrink}
@@ -237,9 +331,27 @@ The question isn't whether the AI *can* access the data. It's whether it *should
 Most production deployments combine two or more of these approaches. Morgan Stanley used [zero data retention + role-based access]{.accent}.
 :::
 
+::: {.notes}
+You read about these four approaches in the data security primer. Let me add what the primer could not cover: how these approaches combine in practice. Almost no production deployment uses just one of these. Morgan Stanley used zero data retention plus role-based access. A healthcare company might use on-premise models plus data masking plus role-based filtering --- three layers.
+
+Let me run a quick poll. Think about your company and the use case you have been developing. Which combination of these approaches would your compliance team require? I want you to think about this concretely, because you are going to need it for the breakout exercise.
+
+Here is what I see most often: companies in regulated industries --- finance, healthcare, government --- start with on-premise or zero data retention as the baseline, then layer role-based filtering on top. Companies in less regulated industries --- tech, retail, manufacturing --- often start with cloud API plus zero data retention and add role-based filtering as they scale.
+
+The key insight is that these are not mutually exclusive. They are a menu, and your compliance team will want to see a combination that addresses data in transit, data at rest, and data access. Does anyone have a specific scenario from their company where they can see this playing out? What would your compliance team insist on?
+
+[TIMING: 5 minutes. This completes the data security section. Solicit 2-3 responses from the room. Transition: "Now let us shift to the other big decision. You know where to deploy and how to secure the data. The next question is: do you build this yourself, buy it from a vendor, or extend something you already have?"]
+:::
+
 ---
 
 ## Build vs. Buy {.section-divider}
+
+::: {.notes}
+We have covered the "where does it run" question. Now the "who builds it" question. You may have read the DUNNIXER vendor scorecard with your Session 3 homework --- if you did, you are ahead. If not, I will walk you through the framework now and we will apply it together.
+
+[TIMING: Brief transition. Move to the next slide.]
+:::
 
 ---
 
@@ -256,6 +368,16 @@ Six Dimensions for Evaluating AI Solutions
 4. **N**on-functional requirements --- Security, compliance, scalability, uptime
 5. **I**mplementation timeline --- Weeks, months, or quarters to production?
 6. **X**tensibility --- Can you customize prompts, add tools, evolve it?
+:::
+
+::: {.notes}
+DUNNIXER gives you a structured way to evaluate any AI solution, whether you are looking at a vendor product or evaluating whether to build internally. Six dimensions, and every one of them matters.
+
+Data integration is often the dealbreaker. If a vendor's tool cannot connect to your Salesforce and your NetSuite and your legacy CRM, it does not matter how good the AI is. User experience determines adoption --- if your sales team finds it easier to email the analyst than to use the AI tool, you have wasted your investment. Nuance and accuracy is about domain specificity: does it understand that "deal size" at your company means closed-won only? Non-functional requirements cover the boring but critical stuff: security certifications, uptime SLAs, compliance attestations. Implementation timeline is straightforward: can you get this live in weeks, or are you looking at a multi-quarter project? And extensibility is about the long game: can you customize the prompts, add new data sources, evolve the tool as your needs change, or are you locked into what the vendor ships?
+
+Let us apply this framework together. We are going to score a specific vendor product --- Salesforce Agentforce --- on these dimensions. But first, let me show you the four strategic options you are choosing between.
+
+[TIMING: 5 minutes. Walk through each dimension with a brief concrete example. Transition to the four strategic options slide.]
 :::
 
 ---
@@ -308,6 +430,22 @@ Hybrid / Extend
 :::
 :::
 
+::: {.notes}
+Four options, and most of you will land somewhere in the bottom right --- the hybrid or extend approach. But let me walk through all four so you understand the tradeoffs.
+
+Buying from your incumbent vendor --- Salesforce, Microsoft, SAP --- is the lowest risk path. They already have your data, they already have your security certifications, and their AI features are being bolted onto products you already use. The downside is limited customization. You get what they ship, on their timeline. If their AI copilot does not handle your specific workflow, you wait.
+
+AI-native startups are purpose-built for AI-first workflows. They often have the highest capability today because AI is all they do. But there is vendor survival risk. Half of the AI startups that exist today will not exist in three years. And integration with your legacy systems may be nonexistent.
+
+Building internally gives you full control. You saw in Session 3 that the core agent loop is fifty lines of code. But going from fifty lines to production is a different story --- authentication, error handling, monitoring, audit logging. You need ML engineering talent, and you are looking at quarters, not weeks.
+
+The hybrid or extend approach is the most common enterprise pattern. You buy a platform --- Salesforce Agentforce, Microsoft Copilot Studio, something similar --- and then you customize on top. You get the vendor's infrastructure and security, but you add your own prompts, your own data connections, your own business logic.
+
+Let me ask the room: where does your company typically land on build-versus-buy decisions for technology? Do you tend to buy from incumbents, or does your company have the engineering culture to build?
+
+[TIMING: 5 minutes. Quick discussion to gauge the room's inclinations before the Agentforce example.]
+:::
+
 ---
 
 ## Example: Salesforce Agentforce {.shrink}
@@ -340,6 +478,20 @@ Hybrid / Extend
 Agentforce illustrates the [extend strategy]{.accent}: buy the platform, customize the prompts and tools, accept the vendor's guardrails.
 :::
 
+::: {.notes}
+Let us score this together using the DUNNIXER framework. I will take us through two or three dimensions as a group exercise.
+
+Data integration: Agentforce gets a high score within the Salesforce ecosystem. If your CRM data is in Salesforce, the connection is native. But how does it score for cross-system queries? If you also need NetSuite financial data or Workday HR data, Agentforce's reach drops significantly. Think about the Meridian app experience --- we were querying across ten systems. Agentforce is strong within one.
+
+Non-functional requirements: Salesforce already has SOC 2 certification, GDPR compliance, and enterprise-grade uptime SLAs. If your compliance team already trusts Salesforce with your data, the incremental trust required for Agentforce is small. That is a real advantage.
+
+Extensibility: You can customize prompts and add tools through their low-code interface. But you do not control the underlying model. If Salesforce switches from one LLM provider to another, you go with them. That is the tradeoff of the extend strategy.
+
+How would you score Agentforce on the remaining dimensions --- user experience, nuance and accuracy, and implementation timeline? Anyone want to take a guess based on what you know?
+
+[TIMING: 4 minutes. This is a group exercise. Solicit input from the room on the remaining DUNNIXER dimensions. Transition to the decision matrix.]
+:::
+
 ---
 
 ## Decision Matrix {.shrink}
@@ -354,6 +506,22 @@ Agentforce illustrates the [extend strategy]{.accent}: buy the platform, customi
 | **Risk** | Lowest | Highest (vendor) | Highest (execution) | Moderate |
 | **Cost (Year 1)** | $50--200K | $30--150K | $200K--1M+ | $100--300K |
 
+:::
+
+::: {.notes}
+This matrix is your cheat sheet for the breakout exercise. Let me highlight the tensions.
+
+Time to value versus customization: if you need something live in weeks, you are buying from an incumbent. But you are accepting low customization. If you need high customization, you are building internally, but you are looking at quarters to production.
+
+Data control versus cost: full data control means building internally, which is the most expensive option. If you are willing to share data control with a vendor, you can cut costs significantly.
+
+Risk is interesting because it comes in different flavors. Buying from an incumbent is lowest risk --- they are not going anywhere, the product works, your compliance team already knows them. An AI-native startup carries vendor survival risk --- will they exist in two years? Building internally carries execution risk --- do you have the talent, and can you ship on time?
+
+Look at the cost row. Year one costs range from thirty thousand dollars for a startup tool to over a million for an internal build. These are real numbers that your CFO will want to see. The hybrid approach typically lands in the hundred to three hundred thousand range, which is why it is the most common enterprise pattern.
+
+You are going to use this matrix in the breakout. Keep it in mind.
+
+[TIMING: 3 minutes. Walk through the key tensions quickly. This is reference material, not deep lecture.]
 :::
 
 ---
@@ -379,9 +547,27 @@ Signs You Should Wait
 The 60--90 days of pre-work from Session 2 applies here. [Data readiness]{.accent} is the prerequisite that no vendor demo will mention.
 :::
 
+::: {.notes}
+I want to be honest with you about something that no vendor will tell you. Not every company is ready for this. If you are sitting there thinking "my company does not even have documented schemas" or "it would take six months just to get API access to our production databases," then the honest answer for your capstone might be: the first phase of your AI strategy is data readiness, not AI deployment.
+
+Remember Session 2, when we talked about the sixty to ninety days of pre-work? Cataloging your data, documenting your schemas, provisioning API access, classifying PII? That pre-work is not optional. It is the prerequisite. And if your company has not done it, that is actually a valuable finding for your capstone. Your deployment profile might say: "Phase 1 is data readiness, Phase 2 is a pilot deployment."
+
+There is no shame in that. In fact, a capstone that honestly says "we are not ready yet, and here is the six-month roadmap to get ready" is more credible than one that pretends you can deploy an AI agent next quarter when you cannot even describe your schema.
+
+How many of you recognize your company in this list? Be honest. Show of hands. That is valuable self-awareness, and it should shape your deployment profile.
+
+[TIMING: 3 minutes. Transition: "Alright, you have the frameworks. Now it is time to apply them. Let us move into the breakout."]
+:::
+
 ---
 
 ## Breakout: Your Deployment Profile {.section-divider}
+
+::: {.notes}
+This is the core exercise of the session. You have spent the last forty-five minutes absorbing deployment options, data security approaches, and the build-versus-buy framework. Now you apply all of it to your own use case.
+
+[TIMING: Brief transition. Move to the breakout instructions.]
+:::
 
 ---
 
@@ -400,6 +586,22 @@ For Your Use Case (20 minutes)
 
 ::: {.explainer}
 Each team presents a 2-minute summary. Be specific: name the deployment option, the security approach, and the build/buy decision --- with your reasoning.
+:::
+
+::: {.notes}
+Here is how this works. You are going into breakout rooms of three to four people. You have twenty minutes. Each person should take about four minutes to present their use case and get feedback from the group. Use the four questions on the screen as your structure.
+
+Be specific. I do not want to hear "we would probably use the cloud." I want to hear "we would use cloud API with zero data retention because we are in manufacturing and our data is not regulated, but we would add role-based filtering because our HR data should not be visible to operations managers." That level of specificity.
+
+When you come back, each group presents a two-minute summary. I want you to report two things: what constraints were common across your group members, and where did industry differences lead to different answers? For example, did the healthcare person in your group land on a completely different deployment option than the retail person? Why?
+
+Use the DUNNIXER dimensions to justify your build-versus-buy choice. If you say "we would buy from our incumbent," tell me which DUNNIXER dimensions drove that decision. Was it data integration? Implementation timeline? Non-functional requirements?
+
+I will drop into breakout rooms to listen in and answer questions. You have twenty minutes starting now.
+
+[TIMING: 20 minutes in breakout rooms (minutes 58-72 of the session, with ~6 minutes for group reports when they return). Circulate among rooms. Listen for interesting tensions between group members. When groups return, call on 3-4 groups for 2-minute summaries. Highlight patterns: "I noticed three groups independently chose hybrid deployment --- why do you think that is?"]
+
+[AFTER BREAKOUT: When groups return, facilitate a 6-minute report-out. Ask each group: "What was the biggest disagreement in your group, and how did you resolve it?" This surfaces the real tensions executives face.]
 :::
 
 ---
@@ -422,6 +624,18 @@ Write Your Deployment Profile (15 minutes)
 This becomes a section of your capstone. Draft it now while the frameworks are fresh.
 :::
 
+::: {.notes}
+Now I want you to take everything from the discussion, the breakout, and the frameworks, and write it down individually. This is not a group exercise. This is your deployment profile for your capstone use case. You have fifteen minutes.
+
+Five bullet points on the screen. Work through them in order. One sentence for the use case. Then your deployment choice with a rationale --- not just "cloud API" but "cloud API because our data sensitivity is moderate and we lack on-premise GPU infrastructure." Then your security approach --- which combination of the four approaches and why. Then your build-versus-buy recommendation with a DUNNIXER-informed rationale. And finally, the single biggest risk and how you would mitigate it.
+
+This becomes a section of your final capstone strategy document. You are not starting from scratch in Session 8 --- you are building the capstone piece by piece. This is the deployment piece.
+
+I will circulate and offer feedback. If you are stuck on any dimension, raise your hand. The most common place people get stuck is the risk and mitigation --- so think about it from your compliance team's perspective. What would keep them up at night?
+
+[TIMING: 13 minutes of individual work (minutes 72-85). Circulate the room. Look for students who are stuck and offer targeted advice. Common issues: students who cannot choose between cloud and hybrid (push them to commit and justify), students whose "risk" is too generic ("data quality" --- push them to be specific about what kind of data quality issue). At the 12-minute mark, give a 1-minute warning.]
+:::
+
 ---
 
 ## Before Next Session {.shrink}
@@ -440,9 +654,27 @@ Homework
 Wednesday's session: [Can You Trust It?]{.accent} --- we stress-test AI agents, learn the maker/checker framework, and design governance guardrails.
 :::
 
+::: {.notes}
+Three homework items, and they are all about governance --- which is exactly where we are headed on Wednesday. First, put yourself in your compliance team's shoes. For the use case you just drafted a deployment profile for, what governance requirements would they impose? Write down your top three concerns. These might be things like audit trails, access controls, data residency requirements, or regulatory-specific mandates.
+
+Second, think about the approval chain. Who in your organization would need to sign off on an AI agent deployment? Your CIO? Your chief compliance officer? Your CISO? What objections would each of them raise? Write those down, because on Wednesday we are going to design governance frameworks that address exactly those objections.
+
+Third, if you did not finish your deployment profile, complete it before Wednesday. You will need it.
+
+Wednesday's session is called "Can You Trust It?" and it is going to be a very different experience. We are going to deliberately break the Meridian app. We are going to show you three failures that look like successes, teach you a verification framework, and then turn you loose to red-team the agent yourselves. Come ready to be skeptical.
+
+[TIMING: 3 minutes. Be clear and concise on the homework. Transition to the closing.]
+:::
+
 ---
 
 ## Key Takeaway {.section-divider}
+
+::: {.notes}
+Let me leave you with one thought.
+
+[TIMING: Brief transition. Move to the final slide.]
+:::
 
 ---
 
@@ -452,4 +684,14 @@ Wednesday's session: [Can You Trust It?]{.accent} --- we stress-test AI agents, 
 
 ::: {.explainer}
 Where it runs, what it sees, and who controls it. Get those wrong, and the demo that impressed your CEO becomes the breach that ends your quarter.
+:::
+
+::: {.notes}
+The hardest part is not the model. It is the decisions around the model. Where it runs, what it sees, and who controls it. You worked through all three of those decisions today. You have a deployment option, a data security approach, and a build-versus-buy recommendation. Those are the decisions that separate a compelling demo from a production deployment.
+
+Get those decisions wrong, and the demo that impressed your CEO becomes the breach that ends your quarter. Get them right, and you have the foundation for an AI capability that scales across your organization.
+
+See you Wednesday. Come ready to break things.
+
+[TIMING: 1 minute. End on a strong note. Total session time: approximately 85 minutes plus 5 minutes of buffer.]
 :::

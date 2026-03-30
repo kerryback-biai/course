@@ -147,6 +147,21 @@ Kerry Back, Rice University
 </section>
 <section id="last-session-trust-and-verification" class="slide level2 section-divider center">
 <h2>Last Session: Trust and Verification</h2>
+<aside class="notes">
+<p>Welcome back everyone. Last session we spent a full ninety minutes on trust and verification — red-teaming agents, seeing how they fail, and building governance frameworks. That was all about structured data, databases, and SQL. Today we pivot to a different kind of company knowledge entirely. Over the past six sessions, you have learned to query databases, build reporting pipelines, and evaluate reliability. All of that was structured data — rows and columns. But think about where the bulk of your company’s knowledge actually lives. It is not in databases. It is in policies, contracts, board minutes, emails, and slide decks buried in SharePoint folders nobody can search. Today we add a second capability — document AI — and by the end of the session, you will have used it hands-on.</p>
+<p>Before we dive in, let me set the stage with a case study you read for homework. The Atherton case shows exactly what can go wrong when document AI is deployed without the right guardrails. Let’s debrief that case first, and then everything we do today will be informed by those failure modes.</p>
+<p>[TIMING: This section divider is your opening. Spend about 1 minute here, then advance to the Atherton debrief. Total for bridge plus debrief is 10 minutes.]</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="bridge-atherton-case-debrief" class="slide level2 shrink center">
 <h2>Bridge + Atherton Case Debrief</h2>
@@ -175,6 +190,23 @@ Kerry Back, Rice University
 <div class="explainer">
 <p>What would you have done differently? We’ll return to each of these failure modes today.</p>
 </div>
+<aside class="notes">
+<p>So Atherton Financial is a composite case, but every one of these failures comes from real deployments. Let me walk through the left card first. Atherton built a document AI system that covered compliance policies, vendor contracts, and HR handbooks. The promise was compelling — employees could ask questions in plain English and get answers with citations, replacing a manual process where people searched SharePoint, gave up, and emailed the Legal department. Sound familiar? I bet most of you have some version of this at your companies.</p>
+<p>Now look at the right card — what went wrong. Three distinct failure modes. First, chunking failures. The system split long contract clauses mid-sentence. So when someone asked about indemnification terms, the system returned half the clause and gave an incomplete, actually dangerous answer. Second, access control gaps. Junior staff could suddenly see board-level compensation data because the RAG system did not inherit the document permissions from the file server. And third, stale documents. A policy was updated, but the old version was still in the index, so the system confidently delivered outdated information.</p>
+<p>Here is my question for you, and I want three or four quick reactions. If you had been advising Atherton before they deployed, what would you have done differently? Think about what we covered in Session 6 on governance. Drop your thoughts in the chat or unmute.</p>
+<p>[TIMING: Spend about 2 minutes presenting the case, then 3-4 minutes on discussion. Aim to get 3-4 responses. Listen for themes around testing, access controls, and document management. When you hear good points, connect them forward: “Great — we are going to see exactly that failure mode in our hands-on today.” Wrap the debrief by minute 10.]</p>
+<p>Transition: Good. Those three failure modes — chunking, access control, and freshness — are the exact issues we will dig into today. But first, let me show you what document AI looks like when it works well.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="todays-learning-objectives" class="slide level2 center">
 <h2>Today’s Learning Objectives</h2>
@@ -188,6 +220,20 @@ Kerry Back, Rice University
 <li>Experience RAG hands-on and understand key deployment decisions</li>
 </ul>
 </div>
+<aside class="notes">
+<p>Three objectives for today. First, you will understand the mechanics of how AI answers questions grounded in company documents, complete with citations pointing back to specific pages and sections. This is not the AI making things up — it is retrieving actual passages from your files and synthesizing an answer. Second, you will be able to clearly distinguish database AI, which is everything we have done in Sessions 1 through 6, from document AI, which is today’s focus. Knowing when to use each — and when you need both — is a critical skill. Third, you will experience this hands-on. You are going to query a real document collection and see for yourselves where it excels and where it breaks down.</p>
+<p>[TIMING: About 30 seconds on this slide. It is a signpost, not a lecture. Move on quickly.]</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="two-kinds-of-ai-for-business" class="slide level2 shrink center">
 <h2>Two Kinds of AI for Business</h2>
@@ -218,9 +264,40 @@ Kerry Back, Rice University
 <div class="explainer">
 <p>Most real business questions need <span class="accent">both</span>. “What’s our contractual commitment to GE, and how does their actual spending compare?” requires document AI for the contract and database AI for the spending data.</p>
 </div>
+<aside class="notes">
+<p>Let me frame what we are adding today. On the left is everything you already know — database AI. It queries structured data in rows and columns, writes SQL, runs it, and returns numbers, charts, and narratives. That is Sessions 1 through 6 in a nutshell. On the right is document AI, which is today’s focus. Instead of structured data, it works with unstructured text — PDFs, Word documents, policies, contracts, meeting notes. Instead of writing SQL, it retrieves relevant passages from those documents and synthesizes an answer with citations.</p>
+<p>The key distinction is the source of truth. Database AI pulls from your transactional systems — your CRM, your ERP, your financial systems. Document AI pulls from your document repositories — SharePoint, shared drives, contract management systems. The data types are fundamentally different, and the retrieval mechanisms are fundamentally different. But here is the important point at the bottom of the slide. Most real business questions need both. Read that example in the explainer: “What is our contractual commitment to GE, and how does their actual spending compare?” The contract terms live in a PDF. The actual spending lives in a database. You need document AI for the first part and database AI for the second. We are going to see exactly that kind of combined question in our hands-on today.</p>
+<p>[TIMING: About 2 minutes on this slide. This completes the bridge segment. Transition to the demo next.]</p>
+<p>Transition: Alright, let me show you document AI in action. I am going to switch to the Meridian app and start asking questions of a real document collection.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="demo-document-qa-with-meridian-corp" class="slide level2 section-divider center">
 <h2>Demo: Document Q&amp;A with Meridian Corp</h2>
+<aside class="notes">
+<p>[DEMO INSTRUCTIONS: Switch to the Meridian Corp app in your browser. You should have the document Q&amp;A interface ready. This is a 12-minute demo from minute 10 to minute 22. Have your fallback recording cued up in case the app or API is down.]</p>
+<p>We are going to query the same Meridian Corp environment you have been using all course, but now we are going to ask it about documents instead of databases. Meridian has a pre-loaded document collection that mirrors what you would find at any mid-size company — employee handbooks, vendor contracts, compliance policies, board minutes. Let me show you the collection first, and then we will start asking questions.</p>
+<p>[TIMING: Spend about 30 seconds on this divider slide, then advance to show the document collections.]</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="meridians-document-collections" class="slide level2 shrink center">
 <h2>Meridian’s Document Collections</h2>
@@ -262,6 +339,31 @@ Kerry Back, Rice University
 <div class="explainer">
 <p>These are the same kinds of documents trapped in SharePoint folders, shared drives, and email attachments at every company.</p>
 </div>
+<aside class="notes">
+<p>Before I start the live demo, let me orient you to what is in the document collection. Three categories. On the left, HR and Compliance — employee handbook, travel and expense policy, code of conduct, safety procedures. In the middle, Legal and Contracts — vendor agreements, master service agreements, NDAs, SLA commitments. On the right, Governance — board meeting minutes, compliance audit reports, risk assessments, strategic plans.</p>
+<p>Now, think about this for a moment. These are the same kinds of documents trapped in SharePoint folders, shared drives, and email attachments at every single company. How do people find information in these documents today? They search SharePoint, maybe get lucky with a keyword match, probably give up and email someone in Legal or HR or Compliance. That email sits in a queue for two days. That is the status quo we are about to replace.</p>
+<p>[DEMO INSTRUCTIONS: Now switch to the live app. Ask these questions in sequence, pausing to point out the citations after each answer:</p>
+<ol type="1">
+<li><p>“What is Meridian’s policy on remote work for the Energy Division?” — Point out the citation with page number and quoted passage. Emphasize that this is not the AI making something up; it is retrieving and quoting from the actual document.</p></li>
+<li><p>“Which vendor contracts are up for renewal in Q2?” — Show how it pulls from multiple contracts and synthesizes a list. Note the citations for each contract mentioned.</p></li>
+<li><p>“What did the board approve regarding the Safety Division expansion?” — Show it pulling from board minutes. Point out that this information would normally require someone to read through pages of minutes.</p></li>
+<li><p>The combined question: “What is our contractual commitment to GE, and how does their actual spending compare?” — This is the key demo moment. Show that RAG retrieves the contract terms while the database agent pulls the spending data. Two different retrieval paths, one synthesized answer.</p></li>
+</ol>
+<p>If the app is down, switch to the pre-recorded fallback and narrate over it.]</p>
+<p>Let me ask the first question. “What is Meridian’s policy on remote work for the Energy Division?” Watch the answer — and pay attention to the citations.</p>
+<p>[TIMING: This demo runs from minute 10 to minute 22. Spend about 2 minutes per question, with time for brief reactions between questions. The GE combined question should be the climax — spend an extra minute showing how the two systems work together. If you are running long, you can skip question 3 about board minutes.]</p>
+<p>Transition: So you have seen document AI in action — retrieval, synthesis, citations. Now let me explain how it actually works under the hood.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="how-rag-works" class="slide level2 shrink center">
 <h2>How RAG Works</h2>
@@ -325,9 +427,39 @@ Kerry Back, Rice University
 <div class="explainer">
 <p><strong>RAG = Retrieval-Augmented Generation.</strong> The LLM only sees what the retrieval step finds. If retrieval fails, the answer fails — no matter how smart the model is.</p>
 </div>
+<aside class="notes">
+<p>RAG stands for Retrieval-Augmented Generation. Let me walk you through the five steps. You do not need to memorize these, but understanding the pipeline will help you evaluate vendors and diagnose problems.</p>
+<p>Step 1: Chunk. Your documents are split into passages — paragraphs, sections, or clauses depending on the document type. This is where the Atherton chunking failure came from. If you split a contract clause in the middle of a sentence, you have already lost. Step 2: Embed. Each chunk is converted into a numerical vector by an embedding model. Think of this as translating text into a position in a high-dimensional space where similar meanings end up near each other. “Remote work policy” and “work from home guidelines” would end up close together even though they use different words. Step 3: Store. Those vectors go into a specialized database — a vector database — that is optimized for finding similar vectors quickly. Step 4: Query. When a user asks a question, that question goes through the same embedding process, and the vector database finds the stored chunks that are closest in meaning to the question. Step 5: Generate. The LLM receives the user’s question plus the top matching chunks as context, and it produces an answer using only that retrieved context, with citations pointing back to the source documents.</p>
+<p>Here is the critical insight, and I want you to underline this in your mental model. Read the explainer at the bottom. The LLM only sees what the retrieval step finds. If retrieval fails, the answer fails — no matter how smart the model is. You could have the most advanced language model in the world, and if step 4 hands it the wrong chunks, the answer will be wrong. RAG quality is retrieval quality. That is why chunking strategy, which we will discuss later, is the single highest-leverage decision in any document AI deployment.</p>
+<p>[TIMING: Spend about 5 minutes on this slide, walking through each step. This is the conceptual heart of the session. Make sure people understand the pipeline before moving to hands-on. You should be at about minute 27.]</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="the-key-insight" class="slide level2 section-divider center">
 <h2>The Key Insight</h2>
+<aside class="notes">
+<p>Let me make this point as starkly as possible. This is the single most important thing to understand about document AI.</p>
+<p>[TIMING: Pause on this divider for just a beat, then advance to the statement slide. The dramatic pause is intentional.]</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="the-llm-doesnt-read-your-documents." class="slide level2 centered-statement center">
 <h2>The LLM doesn’t read your documents.</h2>
@@ -337,6 +469,22 @@ Kerry Back, Rice University
 <div class="explainer">
 <p>RAG quality is retrieval quality. If the retrieval step fails, the answer fails — no matter how smart the model is.</p>
 </div>
+<aside class="notes">
+<p>I want you to internalize this. The LLM does not read your documents. It reads whatever the retrieval system hands it. This means that when you are evaluating a document AI vendor, or scoping a build, the question is not “which LLM are you using?” The question is “how good is your retrieval?” How do you chunk? How do you embed? How do you handle documents that span multiple topics? How do you handle updates? The retrieval pipeline is where the quality lives or dies.</p>
+<p>Think back to Atherton. Their LLM was fine. Their retrieval was broken. Contract clauses split mid-sentence, so the model got half a clause and produced a confident, dangerously incomplete answer. The model did exactly what it was supposed to do — it answered based on the context it was given. The problem was upstream, in the chunking.</p>
+<p>[TIMING: About 1-2 minutes on this slide. Let it sink in. You should be at about minute 30. Transition to the hands-on rounds next.]</p>
+<p>Transition: Now it is your turn. You are going to query the Meridian document collection yourselves. We will do three rounds, each one more challenging than the last.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="hands-on-round-1-simple-retrieval" class="slide level2 shrink center">
 <h2>Hands-On Round 1: Simple Retrieval</h2>
@@ -354,6 +502,23 @@ Kerry Back, Rice University
 <div class="explainer">
 <p>Start simple. Ask questions that live in a single document. Pay attention to where the system says the answer came from.</p>
 </div>
+<aside class="notes">
+<p>Alright, Round 1. Open the Meridian app and switch to the document Q&amp;A mode. I have three starter questions on the screen, but feel free to ask your own as well. “What is Meridian’s policy on remote work?” “What are the expense approval thresholds?” “How many vacation days do employees get after 5 years?”</p>
+<p>These are intentionally simple — each answer lives in a single document. The goal of this round is to get comfortable with the interface and, more importantly, to start noticing the citations. Every answer should point back to a specific document and section. When you get your answer, check the citation. Does it actually say what the AI claims it says? This is the verification habit we talked about in Session 6, applied to documents instead of data.</p>
+<p>You have about five minutes. Go ahead and start asking questions. I will be watching the chat for anything interesting.</p>
+<p>[TIMING: 5 minutes of hands-on time, from about minute 32 to minute 37. Monitor the chat. If someone finds an interesting result or a surprising answer, call it out to the group. Common things to watch for: questions where the citation is spot-on, questions where the phrasing matters (e.g., “PTO” vs.&nbsp;“vacation days”), and questions that return multiple citations from the same document.]</p>
+<p>After about 4 minutes: Alright, let me pull you back. Quick show of hands or reactions in chat — did everyone get cited answers? Did anyone find a case where the citation did not quite match the answer? Good. Let’s make it harder.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="hands-on-round-2-cross-document" class="slide level2 shrink center">
 <h2>Hands-On Round 2: Cross-Document</h2>
@@ -370,6 +535,24 @@ Kerry Back, Rice University
 <div class="explainer">
 <p>These questions require the system to retrieve from <span class="accent">multiple documents</span> and synthesize. Watch for gaps where it finds one source but misses the other.</p>
 </div>
+<aside class="notes">
+<p>Round 2 gets more interesting. These questions deliberately span multiple documents. Look at the first one: “What are our obligations under the GE contract, and are there any compliance risks flagged in the latest audit?” That requires the system to retrieve from the GE vendor agreement and from the compliance audit report, then synthesize both into a coherent answer.</p>
+<p>The second question asks whether the travel policy aligns with what was committed in a vendor MSA. The third asks about board discussion on vendor consolidation cross-referenced with actual contract renewal dates. These are the kinds of questions that, in a normal company, would require someone to pull up three or four documents and read through them manually. That is a multi-hour task. Here, it should take seconds.</p>
+<p>But watch for gaps. The system might find one source and miss the other. It might retrieve the GE contract terms but fail to find the relevant section of the audit report. When that happens, you are seeing a retrieval miss in real time — and that is exactly the failure mode we discussed. Pay attention to which citations appear and which are absent.</p>
+<p>You have about seven minutes. Try these questions and also try your own cross-document questions.</p>
+<p>[TIMING: 7 minutes of hands-on time, from about minute 37 to minute 44. This round often generates more discussion because students start seeing gaps and inconsistencies. Watch for: answers that only cite one document when two are needed, answers where the synthesis is good but shallow, and the inevitable question about why the system missed something obvious.]</p>
+<p>After about 6 minutes: Let me hear some reactions. Did anyone find a case where the system found one document but missed the other? That is a classic retrieval miss — the answer exists in the collection, but the retrieval step did not surface it. This is why we said RAG quality is retrieval quality. One more round, and this one is the most powerful.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="hands-on-round-3-cross-system" class="slide level2 shrink center">
 <h2>Hands-On Round 3: Cross-System</h2>
@@ -386,6 +569,23 @@ Kerry Back, Rice University
 <div class="explainer">
 <p>This is where it gets powerful. The system pulls the <strong>contract language</strong> from document AI and the <strong>actual numbers</strong> from database queries. Two systems, one answer.</p>
 </div>
+<aside class="notes">
+<p>This is where it all comes together. Round 3 combines document AI with database AI — the same database querying you have been doing since Session 1. Look at the first question: “What is our contractual commitment to GE, and how does their actual spending compare?” The contractual commitment lives in a PDF — that is document AI. The actual spending lives in the transactional database — that is database AI. The system needs to use both retrieval paths and synthesize the results.</p>
+<p>The second question references board minutes about expanding the Energy Division and asks what the sales numbers show. The third checks whether actual vendor spending is on track to exceed a contractual cap. In each case, you need the document for the qualitative context and the database for the quantitative evidence. This is the full vision — structured and unstructured company knowledge, accessible through one interface, answering questions that previously would have required multiple people, multiple systems, and multiple days.</p>
+<p>You have about eight minutes. Try these and see how the system handles the combination. Pay attention to whether both sources are cited — the document and the database query.</p>
+<p>[TIMING: 8 minutes of hands-on time, from about minute 44 to minute 52. This is the climax of the hands-on portion. Students are often impressed by the combined answers. Watch for: moments where the combination works beautifully (call these out), moments where one path succeeds and the other fails, and students who start asking their own creative cross-system questions. Encourage experimentation.]</p>
+<p>After about 7 minutes: Let me bring everyone back. This is the vision we have been building toward across all eight sessions. Database AI for the numbers. Document AI for the context. Combined into answers that would have taken days to assemble manually. But — and this is important — it is not magic. Let me show you where it breaks down.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="when-rag-fails" class="slide level2 shrink center">
 <h2>When RAG Fails</h2>
@@ -424,6 +624,26 @@ Kerry Back, Rice University
 <div class="explainer">
 <p><strong>Live demo:</strong> Watch what happens when a contract clause is split across two chunks. The system retrieves half the clause and gives a dangerously incomplete answer.</p>
 </div>
+<aside class="notes">
+<p>Now let me show you the failure modes. Three categories, and each one maps back to the Atherton case we discussed at the opening.</p>
+<p>First, retrieval misses. The answer exists in the document collection, but the retrieval step does not find it. This happens when the question is phrased differently than the source text, or when the relevant chunk does not rank high enough to make the top results. The answer is there — the system just cannot find it. Some of you may have seen this in Round 2 when the system found one document but missed the other.</p>
+<p>Second, hallucinated citations. This is the most dangerous failure mode. The LLM generates a plausible-sounding reference — it cites a specific page number, quotes what looks like a passage — but when you go check, that passage does not actually say what the AI claims, or it does not exist at all. The answer looks authoritative, which makes it harder to catch. This is why we said in Session 6: always check the cited passage, not just the summary.</p>
+<p>Third, stale documents. A policy was updated, but the old version is still in the index. The system answers from the superseded document and confidently delivers outdated information. This was one of Atherton’s failures, and it is incredibly common in real deployments because document management is one of those things nobody wants to own.</p>
+<p>[DEMO INSTRUCTIONS: Now run the chunking failure demo. Ask a question where you know a contract clause was split across two chunks. Show the partial answer. Explain that the system retrieved half the clause and gave a dangerously incomplete answer. This is the Atherton failure mode made visible. If the live demo is not cooperating, describe the failure mode verbally and reference what students may have seen in their own hands-on rounds.]</p>
+<p>Let me show you this live. I am going to ask a question where I know the relevant contract clause was split across two chunks during ingestion. Watch what happens.</p>
+<p>[TIMING: About 5 minutes total on this slide, from minute 52 to about minute 57. Spend 2 minutes on the three failure modes, then 3 minutes on the live chunking failure demo. The demo is the most impactful part — students seeing a confident but incomplete answer in real time drives the point home.]</p>
+<p>Transition: So chunking failures, hallucinated citations, and stale documents. These are the risks. But there is one more constraint you need to understand before we talk about deployment.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="context-window-limits" class="slide level2 centered-statement center">
 <h2>Context Window Limits</h2>
@@ -433,6 +653,22 @@ Kerry Back, Rice University
 <div class="explainer">
 <p>If your question requires context from 50 pages of contracts, the model can only see what fits in its context window. Retrieval quality matters because you can’t just dump everything in. Chunking strategy determines what the model gets to see.</p>
 </div>
+<aside class="notes">
+<p>One more technical constraint that is important for your mental model. Even the best language models have a context window — a limit on how much text they can process at once. Today’s frontier models can handle very long contexts, but there is still a ceiling. If your question requires context from fifty pages of contracts, the model cannot see all fifty pages at once. The retrieval step has to select which passages to include.</p>
+<p>This is why you cannot just dump all your documents into the LLM and skip the retrieval step. Some people ask, “Why not just send the entire contract to the model?” For a single short document, you can. But for a collection of hundreds of documents, or even for a single hundred-page contract, you need retrieval to select the relevant passages. Chunking strategy determines what the model gets to see, which means chunking strategy determines the quality of the answer. We keep coming back to the same point: retrieval quality is everything.</p>
+<p>[TIMING: About 2 minutes on this slide. You should be at about minute 59. Quick conceptual point, then move to deployment.]</p>
+<p>Transition: So now you understand how RAG works, you have used it hands-on, and you have seen where it fails. Let’s talk about what it takes to deploy this in your organization.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="deploying-rag-key-decisions" class="slide level2 shrink center">
 <h2>Deploying RAG: Key Decisions</h2>
@@ -485,6 +721,24 @@ Kerry Back, Rice University
 <div class="explainer">
 <p>Chunking is the single highest-leverage decision. Bad chunking = bad retrieval = bad answers, regardless of model quality.</p>
 </div>
+<aside class="notes">
+<p>The deployment framework from Session 5 — cloud versus on-premise, build versus buy — still applies here, so we are not going to repeat those general principles. What is new for document AI are these four specific decisions.</p>
+<p>First, document ingestion. How do documents get into the system? You need PDF parsing that handles different formats. You need OCR for scanned documents. You need to handle tables and images, which are notoriously difficult for text extraction. If your company has contracts that are scanned PDFs of faxes from 2003, that is an ingestion challenge you need to plan for.</p>
+<p>Second, chunking strategy, and I have been hammering this point because it is the single highest-leverage decision. The right chunking strategy depends on the document type. Policies should be chunked by section. Contracts should be chunked by clause — you never want to split a clause across two chunks, which is exactly what happened at Atherton. Memos and meeting notes should be chunked by paragraph or topic. One size does not fit all, and the vendor that tells you otherwise is selling you something.</p>
+<p>Third, freshness. When a policy is updated, the old version must be replaced, not duplicated. You need re-indexing on update, version tracking so you know which version the system is answering from, and a process to retire superseded documents. Atherton’s stale document problem came from having no freshness management at all. The old policy and the new policy were both in the index, and the system returned whichever the retrieval step happened to find first.</p>
+<p>Fourth, access control. The RAG system must enforce the same document permissions as your file server. If board minutes are restricted to senior leadership, the RAG system cannot show those passages to everyone. If HR policies are scoped by division, the system needs to respect those boundaries. Atherton’s access control gap — junior staff seeing board-level compensation data — is the cautionary tale here.</p>
+<p>[TIMING: About 5 minutes on this slide, from about minute 62 to minute 67. Walk through each decision with enough detail that people understand the implications. Connect each one back to the Atherton case. This is lecture plus Q&amp;A, so take a question or two if hands go up.]</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="build-vs.-buy" class="slide level2 shrink center">
 <h2>Build vs.&nbsp;Buy</h2>
@@ -539,6 +793,24 @@ Kerry Back, Rice University
 <div class="explainer">
 <p>Most companies start with a turnkey platform for general knowledge and build custom RAG only where the domain requires it (legal, compliance, engineering specs).</p>
 </div>
+<aside class="notes">
+<p>For document AI specifically, the build-versus-buy landscape looks like this. On the left, turnkey platforms — Glean, Guru, Microsoft Copilot for M365. These handle ingestion and permissions out of the box. They connect to your existing document sources — SharePoint, Google Drive, Confluence — and they inherit the access controls from those systems. Setup time is days to weeks, and the cost model is typically per-user subscription. The tradeoff is limited customization. You get their chunking strategy, their retrieval approach, their prompts.</p>
+<p>On the right, custom builds using tools like LangChain with a vector database on your own infrastructure. This gives you full control over chunking, retrieval, and prompts. You can implement domain-specific chunking — by clause for contracts, by regulation for compliance documents. But you build the access control yourself, and the setup time is weeks to months rather than days.</p>
+<p>The practical pattern I see most often is what the explainer describes. Companies start with a turnkey platform for general knowledge — the employee handbook, standard policies, IT documentation. Then they build custom RAG only where the domain demands it — legal contracts with specific clause structures, regulatory filings with complex cross-references, engineering specifications with tables and diagrams that standard chunking cannot handle.</p>
+<p>For your capstone strategies, think about where your company falls on this spectrum. Do you have standard documents that a turnkey platform could handle? Or do you have domain-specific documents that require custom chunking and retrieval?</p>
+<p>[TIMING: About 5 minutes on this slide, from about minute 67 to minute 72. Walk through the comparison table row by row. Take a question or two. Students often ask about Microsoft Copilot specifically — have a brief answer ready about its strengths (tight Office 365 integration, built-in access controls) and limitations (less customization, dependent on Microsoft ecosystem).]</p>
+<p>Transition: Alright, you have seen document AI work, you understand the pipeline, you know the failure modes and deployment decisions. Now I want you to apply this to your own companies. Time for a breakout.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="breakout-where-is-knowledge-trapped" class="slide level2 shrink center">
 <h2>Breakout: Where Is Knowledge Trapped?</h2>
@@ -567,6 +839,26 @@ Kerry Back, Rice University
 <div class="explainer">
 <p>Report back: your top candidate document collection and the biggest deployment risk you foresee.</p>
 </div>
+<aside class="notes">
+<p>[BREAKOUT INSTRUCTIONS: This is a 12-minute breakout from minute 75 to minute 87. Groups of 3-4. Assign breakout rooms in Zoom. Visit each room briefly during the breakout to listen and prompt discussion.]</p>
+<p>Alright, breakout time. I am going to put you into groups of three or four. You have twelve minutes for this exercise. Here is what I want you to do.</p>
+<p>First, the Identify card on the left. Each person in the group should name two or three document collections at your company that would benefit from AI-powered Q&amp;A. Think broadly — policies, contracts, procedures, meeting notes, customer communications, regulatory filings, engineering specs. And for each one, talk about where people currently go to find this information. Is it a SharePoint search? An email to someone? A phone call? A folder that only one person knows about?</p>
+<p>Second, the Evaluate card on the right. For your top candidates, assess three things. How often are these documents updated? This tells you about the freshness challenge. Who needs access and who should not have it? This tells you about the access control challenge. And what is the cost of a wrong answer from stale or incomplete documents? If the cost is low — someone gets the wrong lunch menu — maybe it is fine. If the cost is high — someone gives a wrong answer about indemnification terms to a client — that is a deployment risk you need to plan for.</p>
+<p>When you come back, each group should be ready to report: your top candidate document collection and the biggest deployment obstacle you foresee. I will be visiting your rooms to listen in. Off you go.</p>
+<p>[TIMING: 12 minutes in breakout rooms. Visit 2-3 rooms during the breakout. Listen for patterns — the same types of documents come up repeatedly (vendor contracts, internal policies, client communications). When groups return, spend about 3-5 minutes on report-backs. Call on 3-4 groups. Listen for: which document types came up most often, what access control challenges were identified, and whether groups leaned toward turnkey or custom solutions. Connect the themes back to the deployment framework.]</p>
+<p>Welcome back. Let me hear from a few groups. What was your top candidate document collection, and what is the biggest deployment obstacle? Let me start with Group 1.</p>
+<p>[After report-backs:] Great. I am hearing some common patterns. Vendor contracts and internal policies came up in almost every group. Access control is a universal concern. And most of you are thinking turnkey first, custom only where the domain demands it. Those are exactly the right instincts. Keep these ideas warm — they may feed directly into your capstone strategy for next session.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="before-next-session" class="slide level2 shrink center">
 <h2>Before Next Session</h2>
@@ -583,15 +875,63 @@ Kerry Back, Rice University
 <div class="explainer">
 <p>Monday’s final session: <span class="accent">Your AI Strategy</span> — you present, we synthesize, and you leave with a concrete plan.</p>
 </div>
+<aside class="notes">
+<p>Let me walk you through what is due for our final session on Monday. Three things.</p>
+<p>First, finalize your strategy document. One to two pages using the capstone template I shared with the Session 6 homework. It has eight sections: the problem, the solution, the deployment approach, a 90-day pilot plan, success metrics, risks and mitigations, the ask — what you need in terms of budget and headcount — and the Day 1 action. Every section matters, but let me highlight three that trip people up. The pilot should be scoped tightly — one use case, one to three systems, a clear success metric. The success metrics should be measurable, not vague. “Reduce forecast time from 3 days to 2 hours” is strong. “Improve efficiency” is not. And the Day 1 action should be something that actually happens on Day 1 — a specific person, a specific task, a specific date. Not “we should explore options.”</p>
+<p>Second, prepare a five-minute presentation. On Monday, you will present to your breakout group first. Each group will vote on the strongest strategy, and those winning strategies will present to the full class. Everyone presents; five advance to the plenary.</p>
+<p>Third, use the evaluation rubric to self-check before you finalize. The rubric was included with the template. Run your strategy through each dimension and ask yourself honestly: would I fund this?</p>
+<p>If you want to go deeper on the technical side, the optional Demos 6 and 7 show building a RAG system from scratch and combining it with a database agent. They are linked in the homework materials.</p>
+<p>[TIMING: About 2 minutes on this slide. Be clear about expectations for Monday. You should be wrapping up at about minute 88.]</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="key-takeaway" class="slide level2 section-divider center">
 <h2>Key Takeaway</h2>
+<aside class="notes">
+<p>Let me close with one final thought. This is the through-line for everything we covered today.</p>
+<p>[TIMING: Brief pause on the divider, then advance to the closing statement.]</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="your-most-valuable-knowledge-is-buried-in-documents-nobody-can-search." class="slide level2 centered-statement center">
 <h2>Your most valuable knowledge is buried in <span class="accent">documents nobody can search</span>.</h2>
 <div class="explainer">
 <p>RAG doesn’t replace your experts. It makes their expertise accessible to everyone who needs it.</p>
 </div>
+<aside class="notes">
+<p>Your most valuable knowledge is buried in documents nobody can search. The policies that guide decisions, the contracts that define obligations, the board minutes that record strategy — all of it sitting in folders that require you to know exactly where to look and exactly what to search for. Document AI changes that. It does not replace your experts. Your legal team still needs to interpret contract terms. Your compliance team still needs to make judgment calls. What document AI does is make their expertise accessible to everyone who needs it, on demand, with citations.</p>
+<p>Think about what that means for your organization. The new hire who needs to understand the travel policy does not email HR and wait two days. The procurement manager who needs to check vendor contract terms does not call Legal and wait a week. The board member who wants to know what was decided six months ago does not search through email threads. The knowledge is there. It just becomes findable.</p>
+<p>That is the promise. The Atherton case shows the risks. Today you have experienced both. On Monday, you bring it all together in your capstone strategy. See you then.</p>
+<p>[TIMING: About 1-2 minutes to close. End at minute 90. You are done.]</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 
 
 </section>
