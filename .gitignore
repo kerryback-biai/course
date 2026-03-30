@@ -5,3 +5,5 @@ app.db
 *.parquet
 .venv/
 venv/
+
+/.quarto/

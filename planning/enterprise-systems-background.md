@@ -1,6 +1,6 @@
 # Enterprise Systems Background
 
-Context for teaching executives about the enterprise software landscape simulated in the Meridian Corp app.
+Context for teaching executives about the enterprise software landscape simulated in the XYZ Corp app.
 
 ## The shift: on-premise to cloud
 

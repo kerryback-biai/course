@@ -3,7 +3,7 @@
 **User:**
 > Show me Q4 2025 revenue by division
 
-**Meridian Data Assistant:**
+**XYZ Data Assistant:**
 
 I'll pull revenue data from each division's system for Q4 2025 (October–December).
 

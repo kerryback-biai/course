@@ -97,7 +97,7 @@ Even when Python executes on your own servers, the LLM still needs to see result
 
 ### 8. Hands-On Building: The Linux Server + Claude Code
 
-Students use two tools in the course. The **Meridian Corp web app** is the polished end-user experience (Weeks 1-2). A **Linux server with Claude Code** is the builder experience (Weeks 3-4), where students create small working agents themselves — with AI assistance.
+Students use two tools in the course. The **XYZ Corp web app** is the polished end-user experience (Weeks 1-2). A **Linux server with Claude Code** is the builder experience (Weeks 3-4), where students create small working agents themselves — with AI assistance.
 
 **Why this matters:** When executives see that the core agent loop is ~50 lines of Python, they stop thinking "we need to hire a team of AI consultants" and start thinking "our internal developer could build this." They also experience being the "checker" while AI is the "maker" — the central skill shift the course teaches.
 
@@ -105,7 +105,7 @@ Students use two tools in the course. The **Meridian Corp web app** is the polis
 
 | Tool | Used in | Purpose |
 |---|---|---|
-| Meridian Corp web app | Weeks 1-2 | The end-user experience. "This is what your employees would use." |
+| XYZ Corp web app | Weeks 1-2 | The end-user experience. "This is what your employees would use." |
 | Linux server + Claude Code | Weeks 3-4 | The builder experience. "Here's how you'd create this." |
 
 #### Build Exercises (scaffolded, AI-assisted)
@@ -150,6 +150,6 @@ Belongs in **Week 4 (Build the Business Case)**. See `docs/saaspocalypse-researc
 
 4. **Pricing model shift:** Per-seat pricing is structurally broken when AI reduces headcount. Expect outcome-based pricing (Intercom: $0.99/resolution, Zendesk: $1.50-2.00/resolved ticket).
 
-5. **The Meridian Corp connection:** The app students have been using IS the threat. It replaces Tableau (BI), data integration tools (cross-system merging), and reporting headcount — all from a chat interface. The question for executives: will you drive this change or react to it?
+5. **The XYZ Corp connection:** The app students have been using IS the threat. It replaces Tableau (BI), data integration tools (cross-system merging), and reporting headcount — all from a chat interface. The question for executives: will you drive this change or react to it?
 
-6. **Architect agents above applications:** The strategic move is placing AI agents as an orchestration layer across existing systems — exactly what the Meridian Corp app demonstrates. Don't rip out SAP; put an AI agent on top of it.
+6. **Architect agents above applications:** The strategic move is placing AI agents as an orchestration layer across existing systems — exactly what the XYZ Corp app demonstrates. Don't rip out SAP; put an AI agent on top of it.

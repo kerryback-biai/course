@@ -148,7 +148,7 @@ Kerry Back, Rice University
 <section id="last-week-you-were-the-user" class="slide level2 section-divider center">
 <h2>Last Week, You Were the User</h2>
 <aside class="notes">
-<p>This is the section divider that opens the bridge segment. Take a breath here and let the title land. You are transitioning the class from “user mode” — where they have spent the last week asking questions and getting answers from the Meridian app — into “builder mode,” where they will understand what is happening behind the scenes. This bridge segment should take about 10 minutes total, covering this slide and the next two.</p>
+<p>This is the section divider that opens the bridge segment. Take a breath here and let the title land. You are transitioning the class from “user mode” — where they have spent the last week asking questions and getting answers from the XYZ app — into “builder mode,” where they will understand what is happening behind the scenes. This bridge segment should take about 10 minutes total, covering this slide and the next two.</p>
 <p>Set the tone: “For the past week, you have been the user. You typed questions in plain English, you got charts and narratives back, and hopefully a few of you found something genuinely surprising in the data. Today we flip perspectives. We are going to look under the hood and understand how the technology actually works. By the end of this session, you will know exactly what happens between the moment you press Enter and the moment the answer appears.”</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -187,7 +187,7 @@ Kerry Back, Rice University
 </div>
 <aside class="notes">
 <p>This is the main bridge slide. Spend about two minutes here setting up the session arc. Say something like: “You have spent a week asking questions and getting answers. Some of those answers were great. Some were not. But in every case, something was happening behind the scenes — your English question was being translated into SQL, that SQL was being executed against a real database, and the results were being interpreted and formatted for you.”</p>
-<p>“Today we are going to demystify that entire process. The answer to ‘how does this work?’ is surprisingly simple at the core. The agent loop that powers the Meridian app — and most BI agents on the market — is about 50 lines of code. We will see those 50 lines today. We will also see why going from 50 lines to a production application takes 3,000 lines, and what all that extra code does. That gap — between prototype and production — is one of the most important things you need to understand as an executive evaluating AI tools.”</p>
+<p>“Today we are going to demystify that entire process. The answer to ‘how does this work?’ is surprisingly simple at the core. The agent loop that powers the XYZ app — and most BI agents on the market — is about 50 lines of code. We will see those 50 lines today. We will also see why going from 50 lines to a production application takes 3,000 lines, and what all that extra code does. That gap — between prototype and production — is one of the most important things you need to understand as an executive evaluating AI tools.”</p>
 <p>Transition: “Let me start with our learning objectives for today.”</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -228,7 +228,7 @@ Kerry Back, Rice University
 <h2>The Agent Loop</h2>
 <aside class="notes">
 <p>This section divider opens the agent loop demo segment, which runs from roughly minute 10 to minute 30. Say: “The Agent Loop. This is the core pattern.” Then advance.</p>
-<p>Before you advance, make sure the Meridian app is open in another window and ready for the demo. You will be showing a cross-system question and walking through what happens behind the scenes — the system prompt, the tool call, the SQL execution, the merge, and the final response.</p>
+<p>Before you advance, make sure the XYZ app is open in another window and ready for the demo. You will be showing a cross-system question and walking through what happens behind the scenes — the system prompt, the tool call, the SQL execution, the merge, and the final response.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -291,12 +291,12 @@ Kerry Back, Rice University
 </div>
 <aside class="notes">
 <p>This is the first conceptual slide of the agent loop segment. This segment should take about 20 minutes total (minutes 10-30), including the live demo. Walk through each step deliberately, pointing to each card as you go.</p>
-<p>Say: “When you type a question into the Meridian app — or any AI data agent — four things happen. Step one: the system prompt. Before your question even reaches the LLM, a system prompt has already been loaded that describes the database schema — what tables exist, what columns they have, what the relationships are. Think of this as giving the LLM a map of your data before asking it to navigate.”</p>
+<p>Say: “When you type a question into the XYZ app — or any AI data agent — four things happen. Step one: the system prompt. Before your question even reaches the LLM, a system prompt has already been loaded that describes the database schema — what tables exist, what columns they have, what the relationships are. Think of this as giving the LLM a map of your data before asking it to navigate.”</p>
 <p>“Step two: the tool call. The LLM reads your question, reads the schema, and writes SQL — or sometimes Python — to answer it. But here is the key: it does not just return the SQL to you. It makes a tool call, which is a request to the system to actually execute that code.”</p>
 <p>“Step three: execute and return. The orchestration layer — the code that sits between you and the LLM — takes that SQL, runs it against the database, and sends the results back to the LLM. The LLM never touches the database directly. It writes code, and the system executes it.”</p>
 <p>“Step four: review and deliver. The LLM looks at the results. If something looks wrong — an empty result set, an error message, numbers that do not make sense — it can try again. It might rewrite the SQL, change a filter, fix a join. If the results look good, it formats them into a natural language response with charts and delivers the answer.”</p>
-<p>Transition: “Let me show you this in action. I am going to switch to the Meridian app and ask a cross-system question, but this time I want you to watch what happens behind the scenes.”</p>
-<p>DEMO INSTRUCTIONS: Switch to the Meridian app. Ask a cross-system question like “Which customers buy from multiple divisions and what is their total revenue?” Walk through the system prompt, show the SQL that was generated, show the results coming back, show the Python merge step, and show the final formatted response. Narrate each step as it maps to the four cards on this slide.</p>
+<p>Transition: “Let me show you this in action. I am going to switch to the XYZ app and ask a cross-system question, but this time I want you to watch what happens behind the scenes.”</p>
+<p>DEMO INSTRUCTIONS: Switch to the XYZ app. Ask a cross-system question like “Which customers buy from multiple divisions and what is their total revenue?” Walk through the system prompt, show the SQL that was generated, show the results coming back, show the Python merge step, and show the final formatted response. Narrate each step as it maps to the four cards on this slide.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -352,7 +352,7 @@ Kerry Back, Rice University
             return response.text           # done</code></pre>
 </div>
 <aside class="notes">
-<p>This slide shows the pseudocode for the core agent loop. Walk through it line by line. Say: “Here is the agent loop in pseudocode. This is a simplified version of what the Meridian app runs at its core. Let me walk through it.”</p>
+<p>This slide shows the pseudocode for the core agent loop. Walk through it line by line. Say: “Here is the agent loop in pseudocode. This is a simplified version of what the XYZ app runs at its core. Let me walk through it.”</p>
 <p>“First, we set up the messages list. It starts with two things: the system prompt, which contains the schema description, and the user’s question. That is all the LLM needs to get started.”</p>
 <p>“Then we enter a loop — up to three attempts. On each pass, we send the messages to the LLM and get a response. If the response contains a tool call — meaning the LLM wants to run some SQL or Python — we execute it, take the result, and append it to the messages list. Now the LLM can see what happened. On the next iteration, it will either make another tool call or, if it is satisfied with the results, return a text response.”</p>
 <p>“If the response does not contain a tool call, we are done — the LLM is delivering its final answer.”</p>
@@ -513,7 +513,7 @@ Kerry Back, Rice University
 </div>
 <aside class="notes">
 <p>Walk through each option. Say: “The LLM generates SQL and Python. Something has to execute it. There are three main options, and each involves a different tradeoff.”</p>
-<p>“Option A: Cloud LLM Sandbox. This is the simplest. The vendor — OpenAI, Anthropic, whoever — runs the code on their servers. You send the query, they execute it, they send back the results. The advantage is simplicity: nothing to set up, nothing to maintain. The disadvantage is that your data leaves your network. The query results pass through the vendor’s servers. For non-sensitive data or for prototyping, this is fine. That is what our Meridian demo uses — synthetic data running through a cloud API.”</p>
+<p>“Option A: Cloud LLM Sandbox. This is the simplest. The vendor — OpenAI, Anthropic, whoever — runs the code on their servers. You send the query, they execute it, they send back the results. The advantage is simplicity: nothing to set up, nothing to maintain. The disadvantage is that your data leaves your network. The query results pass through the vendor’s servers. For non-sensitive data or for prototyping, this is fine. That is what our XYZ demo uses — synthetic data running through a cloud API.”</p>
 <p>“Option B: Your Own Containers. This is the production answer for sensitive data. You run Docker containers on your own servers or in your own cloud environment. The LLM still generates the code, but the execution happens inside your infrastructure. Data never leaves your network. The tradeoff is more infrastructure to manage — you need container orchestration, monitoring, security patching.”</p>
 <p>“Option C: SQL-Only Mode. The LLM generates SQL queries, but it never runs Python at all. The SQL goes directly to your database, and the database executes it. This is the safest option for highly regulated environments because the only code that runs is SQL against your own database. The tradeoff is that you lose the ability to do in-memory merges, data transformations, and chart generation. Remember those cross-system merges from Session 2? Those required Python. In SQL-only mode, you cannot do them.”</p>
 <p>Ask the room: “Which of these three options do you think would fit your organization? Think about your data sensitivity, your IT infrastructure, and your compliance requirements.” Let a few people share quick thoughts, but do not let this become a long discussion — save the deeper deployment conversation for Session 5.</p>
@@ -633,7 +633,7 @@ Kerry Back, Rice University
 </div>
 <aside class="notes">
 <p>Let the numbers speak for themselves for a moment. Say: “Fifty lines of core agent logic. Three thousand lines in a production app. A sixty-times growth factor from prototype to production.”</p>
-<p>“The 50 lines are the agent loop we just looked at. The 3,000-plus lines are the actual Meridian app you have been using for the past week. Same core pattern, but wrapped in everything you need to run it reliably, securely, and at scale.”</p>
+<p>“The 50 lines are the agent loop we just looked at. The 3,000-plus lines are the actual XYZ app you have been using for the past week. Same core pattern, but wrapped in everything you need to run it reliably, securely, and at scale.”</p>
 <p>“This ratio — roughly 60 to 1 — is not unusual. It is typical of most software systems. The core logic of most applications is a small fraction of the total codebase. The rest is infrastructure, security, error handling, and operational tooling.”</p>
 <p>“Why does this matter to you as executives? Because when a vendor tells you their AI agent product costs half a million dollars, you need to understand what you are paying for. You are not paying for the 50 lines. You are paying for the other 2,950 lines — and the team that maintains them.”</p>
 <style type="text/css">

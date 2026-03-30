@@ -29,7 +29,7 @@ Welcome, everyone. Let me start with a story that sets the stage for everything 
 
 Now, whether or not you agree with the market's verdict, the technology behind that bet is real, and it is what we are going to be working with for the next four weeks. This course teaches you to use it, understand how it works, evaluate its reliability, and build a strategy for deploying it at your organization.
 
-Before we dive in, a quick reminder of what the pre-program video covered: we have the Meridian Corp simulation, which is a realistic enterprise data environment with ten systems, and for those who want to go deeper, the Linux VM for hands-on building. Today, we start as users. We will get our hands dirty with data right away. Any questions about the course arc or logistics before we begin?
+Before we dive in, a quick reminder of what the pre-program video covered: we have the XYZ Corp simulation, which is a realistic enterprise data environment with ten systems, and for those who want to go deeper, the Linux VM for hands-on building. Today, we start as users. We will get our hands dirty with data right away. Any questions about the course arc or logistics before we begin?
 
 This opening segment should take about 10-12 minutes. Keep the energy high — this is the hook for the entire course.
 :::
@@ -124,7 +124,7 @@ Type the question. Get SQL, a chart, and a narrative --- instantly.
 :::
 
 ::: {.notes}
-This is the transition to the live demo. Open the Meridian Corp app now. Type exactly this question into the chat: "Which customers buy from multiple divisions?" Let the class watch as the agent processes the query, generates SQL, runs it against multiple systems, and returns an answer with a chart and narrative — all in about thirty seconds.
+This is the transition to the live demo. Open the XYZ Corp app now. Type exactly this question into the chat: "Which customers buy from multiple divisions?" Let the class watch as the agent processes the query, generates SQL, runs it against multiple systems, and returns an answer with a chart and narrative — all in about thirty seconds.
 
 As the results come back, narrate what is happening: "Notice it is querying Salesforce for the Industrial division, the Legacy CRM for Energy, and HubSpot for Safety. It is pulling customer lists from each, then using Python to match names across systems and find the overlaps." Ask a follow-up question the class suggests — something a dashboard could never handle because it was not pre-built for it.
 
@@ -184,7 +184,7 @@ By the end of this session, you will be able to:
 ::: {.notes}
 Here are our learning objectives for today. By the end of this session, you will be able to explain why AI agents are disrupting the BI software market and why this matters right now — not in five years, right now. You will have experienced conversational data access firsthand, contrasted it with traditional dashboards, and you will have asked your own business questions in plain English and gotten instant answers with charts.
 
-We are about to shift gears into the business implications of what you just saw, and then we are going to get hands-on with the Meridian app for the rest of the session. Let's talk about what this means strategically.
+We are about to shift gears into the business implications of what you just saw, and then we are going to get hands-on with the XYZ app for the rest of the session. Let's talk about what this means strategically.
 :::
 
 ---
@@ -271,7 +271,7 @@ We'll progress from simple lookups to analytical questions. Each prompt hits a s
 :::
 
 ::: {.notes}
-Now we are going to get hands-on. For the next twenty minutes, you are going to work through a progression of queries against the Meridian app. We start simple and build up. Step one is a simple lookup — "What are our top 10 customers by revenue?" This is the equivalent of a basic database query. Step two adds a filter — "Show me open deals over 100K in the Energy division." Step three introduces aggregation — "What is average deal size by sales rep this quarter?" And step four is analytical — "Which reps are trending above quota? Show me a chart."
+Now we are going to get hands-on. For the next twenty minutes, you are going to work through a progression of queries against the XYZ app. We start simple and build up. Step one is a simple lookup — "What are our top 10 customers by revenue?" This is the equivalent of a basic database query. Step two adds a filter — "Show me open deals over 100K in the Energy division." Step three introduces aggregation — "What is average deal size by sales rep this quarter?" And step four is analytical — "Which reps are trending above quota? Show me a chart."
 
 Each of these prompts hits a single system. We are not crossing systems yet — that comes in Session 2. The point here is to get comfortable with the conversational interface and to feel the difference between waiting for a report and having a conversation with your data.
 
@@ -280,14 +280,14 @@ If you get stuck or the app gives you something unexpected, that is fine — not
 
 ---
 
-## Meet Meridian Corp {.shrink}
+## Meet XYZ Corp {.shrink}
 
 ::: {.info-box}
 ::: {.box-title}
 Your Simulation Environment
 :::
 
-- **Meridian Corp** --- a $500M industrial distributor
+- **XYZ Corp** --- a $500M industrial distributor
 - **3 divisions:** Industrial (~$250M), Energy (~$150M), Safety (~$100M)
 - **10 enterprise systems** --- CRMs, ERP, HRIS, ticketing, and more
 - **41 database tables** across all systems
@@ -295,14 +295,14 @@ Your Simulation Environment
 :::
 
 ::: {.notes}
-Before you start querying, let me tell you about the company you are going to be working with. Meridian Corp is a fictional 500-million-dollar industrial distributor. It has three operating divisions: Industrial at about 250 million, Energy at about 150 million, and Safety at about 100 million. The company runs on ten enterprise systems — CRMs, ERP, HRIS, ticketing, and more — with 41 database tables and over 26,000 rows of realistic, interconnected data spanning three years.
+Before you start querying, let me tell you about the company you are going to be working with. XYZ Corp is a fictional 500-million-dollar industrial distributor. It has three operating divisions: Industrial at about 250 million, Energy at about 150 million, and Safety at about 100 million. The company runs on ten enterprise systems — CRMs, ERP, HRIS, ticketing, and more — with 41 database tables and over 26,000 rows of realistic, interconnected data spanning three years.
 
 This is not a toy dataset. It has the same kind of cross-system friction you deal with in real life: different naming conventions, different date formats, customers that appear under different names in different systems. We built it to feel real because the lessons only land if the data feels real.
 :::
 
 ---
 
-## Meridian's Systems at a Glance {.shrink}
+## XYZ's Systems at a Glance {.shrink}
 
 ::: {.four-cards}
 ::: {.card .card-dark}
@@ -359,7 +359,7 @@ For today, you will be querying individual systems. Next session, we tackle the 
 ## Try It Yourself {.section-divider}
 
 ::: {.notes}
-All right, it is time to get your hands on the keyboard. Everyone should have the Meridian app open in your browser. If you have not logged in yet, do that now — the URL and credentials were in the pre-session email. I will give you a moment to get set up.
+All right, it is time to get your hands on the keyboard. Everyone should have the XYZ app open in your browser. If you have not logged in yet, do that now — the URL and credentials were in the pre-session email. I will give you a moment to get set up.
 
 This is the transition into the hands-on portion. You will have about 30 minutes total — first with guided prompts, then open exploration. Let's go.
 :::
@@ -373,7 +373,7 @@ This is the transition into the hands-on portion. You will have about 30 minutes
 Sample Prompts to Try
 :::
 
-- "What was Meridian's total revenue last year, broken down by division?"
+- "What was XYZ's total revenue last year, broken down by division?"
 - "Who are the top 5 customers in the Industrial division by lifetime value?"
 - "Show me headcount by department. Are any teams growing faster than revenue?"
 - "What's our average days-to-close for deals over $200K?"
@@ -385,7 +385,7 @@ Start with the prompts above, then ask your own questions. The goal is to feel t
 :::
 
 ::: {.notes}
-Here are some sample prompts to get you started. You can type these in exactly as written or riff on them. "What was Meridian's total revenue last year, broken down by division?" is a good warmup — it hits the financial systems. "Who are the top 5 customers in the Industrial division by lifetime value?" goes into the CRM. "Show me headcount by department — are any teams growing faster than revenue?" pulls from Workday and requires the agent to do some analysis. "What is our average days-to-close for deals over 200K?" is a more analytical CRM query. And "Plot monthly revenue trends for all three divisions on one chart" tests the charting capability.
+Here are some sample prompts to get you started. You can type these in exactly as written or riff on them. "What was XYZ's total revenue last year, broken down by division?" is a good warmup — it hits the financial systems. "Who are the top 5 customers in the Industrial division by lifetime value?" goes into the CRM. "Show me headcount by department — are any teams growing faster than revenue?" pulls from Workday and requires the agent to do some analysis. "What is our average days-to-close for deals over 200K?" is a more analytical CRM query. And "Plot monthly revenue trends for all three divisions on one chart" tests the charting capability.
 
 Start with these, then branch out. Ask questions you would actually want to know about a company like this. The goal is not to test the app's limits — we will do that in Session 6. The goal right now is to feel the difference between waiting for a report and having a conversation with your data. Notice how quickly you can iterate: ask a question, see the answer, ask a follow-up, refine.
 
@@ -441,13 +441,13 @@ This breakout should take about 15 minutes. When groups report back, listen for 
 Homework
 :::
 
-- Log into the Meridian app and ask **10 business questions** against any single system
+- Log into the XYZ app and ask **10 business questions** against any single system
 - Write down one question the agent answered well and one where it was unsatisfying or wrong
 - Bring both to Session 2
 :::
 
 ::: {.notes}
-Here is your homework for before our next session on Wednesday. I want you to log into the Meridian app and ask ten business questions against any single system. Ten is the minimum — ask more if you like. The point is to build fluency with conversational data access.
+Here is your homework for before our next session on Wednesday. I want you to log into the XYZ app and ask ten business questions against any single system. Ten is the minimum — ask more if you like. The point is to build fluency with conversational data access.
 
 But here is the important part: write down one question the agent answered well — really nailed it — and one question where the answer was unsatisfying or outright wrong. Bring both to Session 2. I am going to ask three or four of you to share your best and worst answers, and those examples will set up exactly what we cover next time.
 

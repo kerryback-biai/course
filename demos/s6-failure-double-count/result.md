@@ -8,7 +8,7 @@
 | After deduplication | **847** |
 | Duplicates removed | 170 |
 
-The agent stated this with full confidence: "Meridian has 847 unique customers across all three divisions."
+The agent stated this with full confidence: "XYZ has 847 unique customers across all three divisions."
 
 ---
 

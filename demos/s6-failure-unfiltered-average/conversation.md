@@ -3,7 +3,7 @@
 **User:**
 > What is our average deal size this quarter?
 
-**Meridian Data Assistant:**
+**XYZ Data Assistant:**
 
 I'll query Salesforce for Q4 2025 deal data.
 

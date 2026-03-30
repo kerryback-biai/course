@@ -2,9 +2,9 @@
 
 ## Draft 1 — "Summarize Q4 performance"
 
-**Meridian Corp Q4 2025 Summary**
+**XYZ Corp Q4 2025 Summary**
 
-Meridian Corp generated $10.5M in revenue during Q4 2025, up from $9.7M in Q3 2025, representing 7.8% quarter-over-quarter growth.
+XYZ Corp generated $10.5M in revenue during Q4 2025, up from $9.7M in Q3 2025, representing 7.8% quarter-over-quarter growth.
 
 **Revenue by division:**
 - Industrial: $5.9M (56% of total)
@@ -25,7 +25,7 @@ Revenue per employee ranges from $10,829/month (Safety) to $19,127/month (Indust
 
 ## Draft 2 — "Traffic-light format, flag >10% off plan"
 
-**Meridian Corp Q4 2025 — Traffic Light Dashboard**
+**XYZ Corp Q4 2025 — Traffic Light Dashboard**
 
 | Division | Revenue | vs Plan | Headcount Eff. | Customer Risk | Supply Chain | Overall |
 |---|---|---|---|---|---|---|
@@ -51,7 +51,7 @@ Revenue per employee ranges from $10,829/month (Safety) to $19,127/month (Indust
 
 ## Draft 3 — "One page, lead with risk, end with actions"
 
-# Q4 2025 EXECUTIVE BRIEF — MERIDIAN CORP
+# Q4 2025 EXECUTIVE BRIEF — XYZ CORP
 
 ## Biggest risk: Energy division depends on a single customer
 

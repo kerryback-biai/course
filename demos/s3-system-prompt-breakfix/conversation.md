@@ -246,7 +246,7 @@ The agent grabs this number but does not filter for `closedwon` deals — it has
 | Safety revenue pulled from unfiltered HubSpot deals | Includes open, lost, and stalled deals — overstates Safety revenue by ~47% |
 | No mention that data comes from different sources | Industrial/Energy from one system, Safety from another — apples to oranges |
 | No revenue-per-employee calculation | The agent did not think to compute efficiency because it was focused on just getting the numbers to appear |
-| Numbers don't reconcile | $81.2M + $48.7M + $17.9M = $147.8M, but Meridian is a ~$500M company — the agent doesn't flag the mismatch |
+| Numbers don't reconcile | $81.2M + $48.7M + $17.9M = $147.8M, but XYZ is a ~$500M company — the agent doesn't flag the mismatch |
 
 ### Root cause
 

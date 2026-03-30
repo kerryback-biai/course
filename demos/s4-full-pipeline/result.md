@@ -1,4 +1,4 @@
-# MERIDIAN CORP — Q4 2025 QUARTERLY EXECUTIVE SUMMARY
+# XYZ CORP — Q4 2025 QUARTERLY EXECUTIVE SUMMARY
 
 **Prepared by:** AI Data Assistant
 **Date:** January 2026
@@ -8,7 +8,7 @@
 
 ## Executive Summary
 
-Meridian Corp delivered **$10.5M in Q4 revenue**, up **7.8% from Q3** ($9.7M), with growth across all three divisions. Industrial remains the revenue anchor at $5.9M. However, two risks require immediate attention: **Energy division's 34% customer concentration in CAT Energy Services**, and **rising supplier delivery delays in Industrial operations** (16.7% late delivery rate).
+XYZ Corp delivered **$10.5M in Q4 revenue**, up **7.8% from Q3** ($9.7M), with growth across all three divisions. Industrial remains the revenue anchor at $5.9M. However, two risks require immediate attention: **Energy division's 34% customer concentration in CAT Energy Services**, and **rising supplier delivery delays in Industrial operations** (16.7% late delivery rate).
 
 ---
 

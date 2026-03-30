@@ -7,7 +7,7 @@
 | # | Finding | Source |
 |---|---------|--------|
 | 1 | ~~**Sessions 3 and 4 are missing `---` slide separators**~~ — **FALSE POSITIVE.** Browser rendering confirms slides separate correctly. Quarto/revealjs treats `##` headings as implicit slide breaks. No action needed. | Clarity (retracted) |
-| 2 | **Session 1 Meridian systems list has 4 wrong systems** (Coupa, SAP Concur, Jira, SharePoint) and omits 4 real ones (SAP Operations, QuickBooks, Oracle SCM, NetSuite Consolidation). Students will try to query nonexistent systems. | Correctness + Devil's Advocate |
+| 2 | **Session 1 XYZ systems list has 4 wrong systems** (Coupa, SAP Concur, Jira, SharePoint) and omits 4 real ones (SAP Operations, QuickBooks, Oracle SCM, NetSuite Consolidation). Students will try to query nonexistent systems. | Correctness + Devil's Advocate |
 | 3 | **Sessions 3 and 4 are completely missing homework slides**, breaking the cascade: Session 5's flipped format requires Morgan Stanley/AIMultiple/data security pre-readings assigned in Session 4 homework. | Correctness |
 | 4 | **Homework in Sessions 1, 2, 5, 6, 7 doesn't match course design** — wrong counts, wrong readings, missing assignments (e.g., Session 6 doesn't assign Atherton case, breaking Session 7's opening debrief). | Correctness + Devil's Advocate |
 | 5 | **Wrong next-session teasers**: Session 2 says "Can I Trust This Answer?" (should be Session 3: "How Does This Work?"); Session 4 says "When AI Gets It Wrong" (should be Session 5: "Deployment"); Session 6 says "Making It Stick" (should be Session 7: "Document AI"). | Correctness |

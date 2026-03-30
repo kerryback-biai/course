@@ -70,4 +70,4 @@ The failure occurred because:
 
 ### The $1.53M mistake
 
-If Meridian's CFO relied on this answer to terminate the Apex contract — expecting to walk away with just 90 days' notice — the company would be invoiced $1.53M in termination fees that this analysis never mentioned. The AI gave a precise, well-cited, completely confident answer that was missing the most expensive piece of information.
+If XYZ's CFO relied on this answer to terminate the Apex contract — expecting to walk away with just 90 days' notice — the company would be invoiced $1.53M in termination fees that this analysis never mentioned. The AI gave a precise, well-cited, completely confident answer that was missing the most expensive piece of information.

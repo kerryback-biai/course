@@ -31,7 +31,7 @@ The following name variations required fuzzy matching (exact matching missed the
 
 ## Summary
 
-- **10 customers** purchase from 2 or more Meridian divisions.
+- **10 customers** purchase from 2 or more XYZ divisions.
 - **4 of those** buy from all 3 divisions — GE, ExxonMobil, Dow, and Chevron — representing **$56.5M** in combined revenue (11.4% of total).
 - **Only 3 of the 10** had matching names across systems; the other 7 required fuzzy matching to link.
 - Without cross-system matching, these customers would appear as 24 separate accounts in reporting, making it impossible to see the full relationship or negotiate enterprise-level pricing.

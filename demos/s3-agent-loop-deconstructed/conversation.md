@@ -9,9 +9,9 @@
 Before the user says anything, the agent has already loaded a system prompt describing all 10 enterprise systems. Here is the relevant excerpt:
 
 ```
-## Enterprise Systems: Meridian Corp
+## Enterprise Systems: XYZ Corp
 
-Meridian Corp (~$500M revenue) is a B2B industrial supplies distributor
+XYZ Corp (~$500M revenue) is a B2B industrial supplies distributor
 with 3 operating divisions + corporate HQ. Each division runs its own CRM.
 
 | Division     | Revenue | CRM        | Finance           |
@@ -20,15 +20,15 @@ with 3 operating divisions + corporate HQ. Each division runs its own CRM.
 | Energy       | ~$150M  | Legacy CRM | QuickBooks        |
 | Safety       | ~$100M  | HubSpot   | (shared NetSuite) |
 
-### System: salesforce (Meridian Industrial CRM)
+### System: salesforce (XYZ Industrial CRM)
 - sf_accounts: AccountId, AccountName, ...
 - sf_orders: OrderId, AccountId, TotalAmount, Status, OrderDate
 
-### System: legacy_crm (Meridian Energy CRM)
+### System: legacy_crm (XYZ Energy CRM)
 - clients: client_id, client_name, ...
 - client_orders: order_num, client_id, total, order_dt (VARCHAR MM/DD/YYYY)
 
-### System: hubspot (Meridian Safety CRM)
+### System: hubspot (XYZ Safety CRM)
 - hs_companies: company_id, name, ...
 - hs_deals: deal_id, company_id, amount, dealstage, closedate
 

@@ -268,7 +268,7 @@ Kerry Back, Rice University
 <p>Let me frame what we are adding today. On the left is everything you already know — database AI. It queries structured data in rows and columns, writes SQL, runs it, and returns numbers, charts, and narratives. That is Sessions 1 through 6 in a nutshell. On the right is document AI, which is today’s focus. Instead of structured data, it works with unstructured text — PDFs, Word documents, policies, contracts, meeting notes. Instead of writing SQL, it retrieves relevant passages from those documents and synthesizes an answer with citations.</p>
 <p>The key distinction is the source of truth. Database AI pulls from your transactional systems — your CRM, your ERP, your financial systems. Document AI pulls from your document repositories — SharePoint, shared drives, contract management systems. The data types are fundamentally different, and the retrieval mechanisms are fundamentally different. But here is the important point at the bottom of the slide. Most real business questions need both. Read that example in the explainer: “What is our contractual commitment to GE, and how does their actual spending compare?” The contract terms live in a PDF. The actual spending lives in a database. You need document AI for the first part and database AI for the second. We are going to see exactly that kind of combined question in our hands-on today.</p>
 <p>[TIMING: About 2 minutes on this slide. This completes the bridge segment. Transition to the demo next.]</p>
-<p>Transition: Alright, let me show you document AI in action. I am going to switch to the Meridian app and start asking questions of a real document collection.</p>
+<p>Transition: Alright, let me show you document AI in action. I am going to switch to the XYZ app and start asking questions of a real document collection.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -281,11 +281,11 @@ Kerry Back, Rice University
           display:block!important;
       }</style></aside>
 </section>
-<section id="demo-document-qa-with-meridian-corp" class="slide level2 section-divider center">
-<h2>Demo: Document Q&amp;A with Meridian Corp</h2>
+<section id="demo-document-qa-with-xyz-corp" class="slide level2 section-divider center">
+<h2>Demo: Document Q&amp;A with XYZ Corp</h2>
 <aside class="notes">
-<p>[DEMO INSTRUCTIONS: Switch to the Meridian Corp app in your browser. You should have the document Q&amp;A interface ready. This is a 12-minute demo from minute 10 to minute 22. Have your fallback recording cued up in case the app or API is down.]</p>
-<p>We are going to query the same Meridian Corp environment you have been using all course, but now we are going to ask it about documents instead of databases. Meridian has a pre-loaded document collection that mirrors what you would find at any mid-size company — employee handbooks, vendor contracts, compliance policies, board minutes. Let me show you the collection first, and then we will start asking questions.</p>
+<p>[DEMO INSTRUCTIONS: Switch to the XYZ Corp app in your browser. You should have the document Q&amp;A interface ready. This is a 12-minute demo from minute 10 to minute 22. Have your fallback recording cued up in case the app or API is down.]</p>
+<p>We are going to query the same XYZ Corp environment you have been using all course, but now we are going to ask it about documents instead of databases. XYZ has a pre-loaded document collection that mirrors what you would find at any mid-size company — employee handbooks, vendor contracts, compliance policies, board minutes. Let me show you the collection first, and then we will start asking questions.</p>
 <p>[TIMING: Spend about 30 seconds on this divider slide, then advance to show the document collections.]</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -299,8 +299,8 @@ Kerry Back, Rice University
           display:block!important;
       }</style></aside>
 </section>
-<section id="meridians-document-collections" class="slide level2 shrink center">
-<h2>Meridian’s Document Collections</h2>
+<section id="xyzs-document-collections" class="slide level2 shrink center">
+<h2>XYZ’s Document Collections</h2>
 <div class="three-cards">
 <div class="card card-dark">
 <div class="card-title">
@@ -344,13 +344,13 @@ Kerry Back, Rice University
 <p>Now, think about this for a moment. These are the same kinds of documents trapped in SharePoint folders, shared drives, and email attachments at every single company. How do people find information in these documents today? They search SharePoint, maybe get lucky with a keyword match, probably give up and email someone in Legal or HR or Compliance. That email sits in a queue for two days. That is the status quo we are about to replace.</p>
 <p>[DEMO INSTRUCTIONS: Now switch to the live app. Ask these questions in sequence, pausing to point out the citations after each answer:</p>
 <ol type="1">
-<li><p>“What is Meridian’s policy on remote work for the Energy Division?” — Point out the citation with page number and quoted passage. Emphasize that this is not the AI making something up; it is retrieving and quoting from the actual document.</p></li>
+<li><p>“What is XYZ’s policy on remote work for the Energy Division?” — Point out the citation with page number and quoted passage. Emphasize that this is not the AI making something up; it is retrieving and quoting from the actual document.</p></li>
 <li><p>“Which vendor contracts are up for renewal in Q2?” — Show how it pulls from multiple contracts and synthesizes a list. Note the citations for each contract mentioned.</p></li>
 <li><p>“What did the board approve regarding the Safety Division expansion?” — Show it pulling from board minutes. Point out that this information would normally require someone to read through pages of minutes.</p></li>
 <li><p>The combined question: “What is our contractual commitment to GE, and how does their actual spending compare?” — This is the key demo moment. Show that RAG retrieves the contract terms while the database agent pulls the spending data. Two different retrieval paths, one synthesized answer.</p></li>
 </ol>
 <p>If the app is down, switch to the pre-recorded fallback and narrate over it.]</p>
-<p>Let me ask the first question. “What is Meridian’s policy on remote work for the Energy Division?” Watch the answer — and pay attention to the citations.</p>
+<p>Let me ask the first question. “What is XYZ’s policy on remote work for the Energy Division?” Watch the answer — and pay attention to the citations.</p>
 <p>[TIMING: This demo runs from minute 10 to minute 22. Spend about 2 minutes per question, with time for brief reactions between questions. The GE combined question should be the climax — spend an extra minute showing how the two systems work together. If you are running long, you can skip question 3 about board minutes.]</p>
 <p>Transition: So you have seen document AI in action — retrieval, synthesis, citations. Now let me explain how it actually works under the hood.</p>
 <style type="text/css">
@@ -473,7 +473,7 @@ Kerry Back, Rice University
 <p>I want you to internalize this. The LLM does not read your documents. It reads whatever the retrieval system hands it. This means that when you are evaluating a document AI vendor, or scoping a build, the question is not “which LLM are you using?” The question is “how good is your retrieval?” How do you chunk? How do you embed? How do you handle documents that span multiple topics? How do you handle updates? The retrieval pipeline is where the quality lives or dies.</p>
 <p>Think back to Atherton. Their LLM was fine. Their retrieval was broken. Contract clauses split mid-sentence, so the model got half a clause and produced a confident, dangerously incomplete answer. The model did exactly what it was supposed to do — it answered based on the context it was given. The problem was upstream, in the chunking.</p>
 <p>[TIMING: About 1-2 minutes on this slide. Let it sink in. You should be at about minute 30. Transition to the hands-on rounds next.]</p>
-<p>Transition: Now it is your turn. You are going to query the Meridian document collection yourselves. We will do three rounds, each one more challenging than the last.</p>
+<p>Transition: Now it is your turn. You are going to query the XYZ document collection yourselves. We will do three rounds, each one more challenging than the last.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -493,7 +493,7 @@ Kerry Back, Rice University
 <p>Round 1 — Single-Document Questions</p>
 </div>
 <ul>
-<li>“What is Meridian’s policy on remote work?”</li>
+<li>“What is XYZ’s policy on remote work?”</li>
 <li>“What are the expense approval thresholds?”</li>
 <li>“How many vacation days do employees get after 5 years?”</li>
 <li>Notice the <strong>citations</strong> — each answer points back to a specific document and section</li>
@@ -503,7 +503,7 @@ Kerry Back, Rice University
 <p>Start simple. Ask questions that live in a single document. Pay attention to where the system says the answer came from.</p>
 </div>
 <aside class="notes">
-<p>Alright, Round 1. Open the Meridian app and switch to the document Q&amp;A mode. I have three starter questions on the screen, but feel free to ask your own as well. “What is Meridian’s policy on remote work?” “What are the expense approval thresholds?” “How many vacation days do employees get after 5 years?”</p>
+<p>Alright, Round 1. Open the XYZ app and switch to the document Q&amp;A mode. I have three starter questions on the screen, but feel free to ask your own as well. “What is XYZ’s policy on remote work?” “What are the expense approval thresholds?” “How many vacation days do employees get after 5 years?”</p>
 <p>These are intentionally simple — each answer lives in a single document. The goal of this round is to get comfortable with the interface and, more importantly, to start noticing the citations. Every answer should point back to a specific document and section. When you get your answer, check the citation. Does it actually say what the AI claims it says? This is the verification habit we talked about in Session 6, applied to documents instead of data.</p>
 <p>You have about five minutes. Go ahead and start asking questions. I will be watching the chat for anything interesting.</p>
 <p>[TIMING: 5 minutes of hands-on time, from about minute 32 to minute 37. Monitor the chat. If someone finds an interesting result or a surprising answer, call it out to the group. Common things to watch for: questions where the citation is spot-on, questions where the phrasing matters (e.g., “PTO” vs.&nbsp;“vacation days”), and questions that return multiple citations from the same document.]</p>

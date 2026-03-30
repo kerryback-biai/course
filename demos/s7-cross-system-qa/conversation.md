@@ -24,19 +24,19 @@ Searching document store for: "GE General Electric master service agreement comm
 | Term | Detail |
 |---|---|
 | Agreement | Master Service Agreement #MSA-2023-0847 |
-| Parties | Meridian Corp / GE Industrial Solutions |
+| Parties | XYZ Corp / GE Industrial Solutions |
 | Effective date | July 1, 2023 |
 | Term | 3 years (through June 30, 2026) |
 | Minimum annual commitment | $4.2M across all divisions |
 | Volume discount tiers | Tier 1: $0-3M at list price; Tier 2: $3-5M at 8% discount; Tier 3: $5M+ at 12% discount |
-| Shortfall clause | If annual purchases fall below $4.2M, Meridian forfeits Tier 2/3 pricing retroactively for that year |
+| Shortfall clause | If annual purchases fall below $4.2M, XYZ forfeits Tier 2/3 pricing retroactively for that year |
 | Renewal | Auto-renews for 1-year terms unless 90-day notice given |
 
 (GE Master Service Agreement, Sections 3, 8, and Exhibit B)
 
 **Step 2 — Query CRM systems for GE actual spending**
 
-GE purchases from all three Meridian divisions under different names. Querying each system.
+GE purchases from all three XYZ divisions under different names. Querying each system.
 
 ```sql
 -- System: salesforce_crm
@@ -130,7 +130,7 @@ for year, divisions in ge_spending.items():
 
 ### GE Relationship Summary
 
-**Contractual commitment:** Under MSA #MSA-2023-0847, Meridian is committed to purchasing a minimum of **$4.2M annually** from GE across all divisions. The agreement runs through June 30, 2026, and auto-renews unless either party gives 90-day notice (GE MSA, Section 8, p. 11).
+**Contractual commitment:** Under MSA #MSA-2023-0847, XYZ is committed to purchasing a minimum of **$4.2M annually** from GE across all divisions. The agreement runs through June 30, 2026, and auto-renews unless either party gives 90-day notice (GE MSA, Section 8, p. 11).
 
 **Actual spending vs. commitment:**
 
@@ -145,7 +145,7 @@ for year, divisions in ge_spending.items():
 
 2. **Declining trend.** Spending fell 11.3% year-over-year across all three divisions. Energy Division spending dropped 17.7%, the steepest decline — consistent with the broader pullback in Energy Division pipeline visible in the CRM.
 
-3. **Renewal leverage.** The contract auto-renews on June 30, 2026 (92 days from now). If GE invokes the shortfall clause, they gain leverage to renegotiate terms. If Meridian wants to maintain the current discount structure, proactive engagement before the 90-day notice window (April 1) is critical.
+3. **Renewal leverage.** The contract auto-renews on June 30, 2026 (92 days from now). If GE invokes the shortfall clause, they gain leverage to renegotiate terms. If XYZ wants to maintain the current discount structure, proactive engagement before the 90-day notice window (April 1) is critical.
 
 **Recommendation:** Schedule a QBR with the GE account team before April 1 to address the 2025 shortfall and align on 2026 volume projections before the auto-renewal kicks in.
 

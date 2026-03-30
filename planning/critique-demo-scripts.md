@@ -92,7 +92,7 @@ An ambiguous question the agent handles poorly (e.g., "What is GE's annual reven
 
 ### 20. Create companion worksheets
 
-"For Your Company" sheets for each demo that ground Meridian examples in students' real systems: list your data sources, map your entities, identify your document collections, estimate your chunking strategy.
+"For Your Company" sheets for each demo that ground XYZ examples in students' real systems: list your data sources, map your entities, identify your document collections, estimate your chunking strategy.
 
 ### 21. Add a "production reality check" sidebar to each demo
 

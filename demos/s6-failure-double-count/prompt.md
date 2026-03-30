@@ -7,7 +7,7 @@ Session 6 — AI Failures and Limitations (Failure #3)
 > How many unique customers do we have across all divisions?
 
 ## Purpose
-Demonstrate how entity resolution failures cause customer double-counting across systems. Meridian has ~25 customers that appear under different names in different divisions' CRMs. The agent uses fuzzy matching to deduplicate but misses many variants, reporting 847 unique customers when the true number is ~690 — a 23% overcount.
+Demonstrate how entity resolution failures cause customer double-counting across systems. XYZ has ~25 customers that appear under different names in different divisions' CRMs. The agent uses fuzzy matching to deduplicate but misses many variants, reporting 847 unique customers when the true number is ~690 — a 23% overcount.
 
 ## What to Watch For
 - The agent queries 3 separate CRMs

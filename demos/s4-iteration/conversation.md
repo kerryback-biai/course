@@ -16,9 +16,9 @@ The agent queries Salesforce, Legacy CRM, HubSpot, and Workday — same queries 
 
 ### Agent response
 
-> **Meridian Corp Q4 2025 Summary**
+> **XYZ Corp Q4 2025 Summary**
 >
-> Meridian Corp generated $10.5M in revenue during Q4 2025, up from $9.7M in Q3 2025, representing 7.8% quarter-over-quarter growth.
+> XYZ Corp generated $10.5M in revenue during Q4 2025, up from $9.7M in Q3 2025, representing 7.8% quarter-over-quarter growth.
 >
 > **Revenue by division:**
 > - Industrial: $5.9M (56% of total)
@@ -76,7 +76,7 @@ System: `netsuite_corporate`
 
 ### Agent response
 
-> **Meridian Corp Q4 2025 — Traffic Light Dashboard**
+> **XYZ Corp Q4 2025 — Traffic Light Dashboard**
 >
 > | Division | Revenue | vs Plan | Headcount Eff. | Customer Risk | Supply Chain | Overall |
 > |---|---|---|---|---|---|---|
@@ -115,7 +115,7 @@ One page maximum. Lead with the biggest risk. End with three recommended actions
 
 ### Agent response
 
-> # Q4 2025 EXECUTIVE BRIEF — MERIDIAN CORP
+> # Q4 2025 EXECUTIVE BRIEF — XYZ CORP
 >
 > ## Biggest risk: Energy division depends on a single customer
 >

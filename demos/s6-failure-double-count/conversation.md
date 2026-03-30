@@ -3,7 +3,7 @@
 **User:**
 > How many unique customers do we have across all divisions?
 
-**Meridian Data Assistant:**
+**XYZ Data Assistant:**
 
 Great question. I'll pull customer lists from all three division CRMs and deduplicate them.
 
@@ -56,7 +56,7 @@ print(f"Unique customers: {len(unique_customers)}")
 
 **Step 3 — Results:**
 
-After fuzzy matching and deduplication, Meridian has **847 unique customers** across all three divisions.
+After fuzzy matching and deduplication, XYZ has **847 unique customers** across all three divisions.
 
 | Source | Raw Count | After Dedup |
 |--------|-----------|-------------|

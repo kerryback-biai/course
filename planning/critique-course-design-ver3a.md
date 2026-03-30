@@ -12,7 +12,7 @@ Synthesized from three independent reviewers (Correctness & Completeness, Clarit
 
 ### 2. No case studies remain (Devil's Advocate + Clarity)
 
-Klarna was dropped with no replacement. The course relies entirely on the Meridian simulation for real-world grounding. Executives need at least 1-2 brief vignettes (5 min each) of real companies — a deployment that worked, a governance failure that didn't get caught. These anchor the simulation in reality.
+Klarna was dropped with no replacement. The course relies entirely on the XYZ simulation for real-world grounding. Executives need at least 1-2 brief vignettes (5 min each) of real companies — a deployment that worked, a governance failure that didn't get caught. These anchor the simulation in reality.
 
 ---
 
@@ -80,4 +80,4 @@ The demo pairing on line 66 correctly says Session 6, but the description text o
 
 ### 16. Session 7 bridge (line 247) says "five sessions" of structured data
 
-Sessions 1-6 is six sessions of structured data work (even though Session 5 is deployment-focused, it still references the Meridian app). Minor wording issue.
+Sessions 1-6 is six sessions of structured data work (even though Session 5 is deployment-focused, it still references the XYZ app). Minor wording issue.

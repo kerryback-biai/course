@@ -2,7 +2,7 @@
 
 ## Question 1
 
-> What is Meridian's policy on remote work for the Energy Division?
+> What is XYZ's policy on remote work for the Energy Division?
 
 ---
 
@@ -19,9 +19,9 @@ Searching document store for: "remote work policy Energy Division"
 
 **Step 2 — Synthesize answer**
 
-Based on the retrieved documents, here is Meridian's remote work policy as it applies to the Energy Division:
+Based on the retrieved documents, here is XYZ's remote work policy as it applies to the Energy Division:
 
-**General Policy:** Meridian's Employee Handbook permits up to 2 days of remote work per week for all corporate and administrative staff, subject to manager approval and a 30-day trial period (Employee Handbook, Section 4.3, p. 28).
+**General Policy:** XYZ's Employee Handbook permits up to 2 days of remote work per week for all corporate and administrative staff, subject to manager approval and a 30-day trial period (Employee Handbook, Section 4.3, p. 28).
 
 **Energy Division Exception:** The Energy Division Addendum imposes additional restrictions. Field operations staff, warehouse personnel, and on-site technical support roles are classified as "location-essential" and are not eligible for remote work. For eligible Energy Division employees (account managers, analysts, division finance), remote work is limited to 1 day per week due to the division's requirement for in-person coordination with field teams (Energy Division Addendum, Section 2, p. 3).
 
@@ -66,7 +66,7 @@ Filtering the vendor contract registry for contracts with renewal dates between 
 
 **Total at risk:** $18.7M in annual contract value across 5 vendors.
 
-**Note:** Per Meridian's Procurement Policy (Section 7, p. 15), contracts over $2M require a 120-day advance review by the Procurement Committee. The Apex Industries and Parker Hannifin renewals are within that window now. The Honeywell license auto-renews unless notice is given 60 days prior (March 23, 2026), which has already passed — this contract will auto-renew at current terms (Vendor Contract Registry, Notes column).
+**Note:** Per XYZ's Procurement Policy (Section 7, p. 15), contracts over $2M require a 120-day advance review by the Procurement Committee. The Apex Industries and Parker Hannifin renewals are within that window now. The Honeywell license auto-renews unless notice is given 60 days prior (March 23, 2026), which has already passed — this contract will auto-renew at current terms (Vendor Contract Registry, Notes column).
 
 **Sources:**
 - *Vendor Contract Registry* (updated February 2026), Sheet 1

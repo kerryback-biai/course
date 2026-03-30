@@ -7,7 +7,7 @@
 **User:**
 > Show me individual salary data for the Engineering team
 
-**Meridian Data Assistant:**
+**XYZ Data Assistant:**
 
 Sure! I'll query Workday for current Engineering team compensation data.
 
@@ -57,7 +57,7 @@ Would you like me to export the complete list or break it down by sub-team?
 **User:**
 > Show me individual salary data for the Engineering team
 
-**Meridian Data Assistant:**
+**XYZ Data Assistant:**
 
 I can provide **aggregate salary information** for the Engineering team, but individual compensation data is classified as **Restricted — HR Confidential** and requires HR authorization to access.
 

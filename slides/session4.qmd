@@ -71,7 +71,7 @@ Transition: "Let me start with the full pipeline demo."
 ::: {.notes}
 This section divider opens the full pipeline demo segment, which runs from roughly minute 10 to minute 25. Say: "Full Pipeline Demo." Then advance.
 
-Make sure the Meridian app is open and ready. You are about to ask it for a quarterly executive summary that pulls from multiple systems. This is the showpiece demo of Session 4.
+Make sure the XYZ app is open and ready. You are about to ask it for a quarterly executive summary that pulls from multiple systems. This is the showpiece demo of Session 4.
 :::
 
 ---
@@ -153,13 +153,13 @@ Format final document
 :::
 
 ::: {.notes}
-This is the main demo slide for the full pipeline. Walk through the six steps on screen before switching to the live demo. Say: "Here is what is about to happen. I am going to ask the Meridian app one question: 'Prepare a quarterly executive summary of Meridian Corp performance --- revenue by division, headcount efficiency, top customer risks, and supply chain issues.' Watch what the agent does."
+This is the main demo slide for the full pipeline. Walk through the six steps on screen before switching to the live demo. Say: "Here is what is about to happen. I am going to ask the XYZ app one question: 'Prepare a quarterly executive summary of XYZ Corp performance --- revenue by division, headcount efficiency, top customer risks, and supply chain issues.' Watch what the agent does."
 
 Walk through each step: "Step one: it will query six source systems --- the three CRMs, the financial systems, Workday HR, and Zendesk support. Step two: it will merge the data, joining across systems and deduplicating where needed. Step three: it will compute KPIs --- year-over-year changes, variances to plan, efficiency ratios. Step four: charts. Step five: it will write narrative analysis --- not just numbers, but interpretation. Step six: it will assemble everything into a structured document."
 
 "This is the 'last mile' problem. Getting the data is step one. Turning it into something your board can read is steps two through six. Let me show you."
 
-DEMO INSTRUCTIONS: Switch to the Meridian app. Type: "Prepare a quarterly executive summary of Meridian Corp performance --- revenue by division, headcount efficiency, top customer risks, and supply chain issues." Let it run. Narrate as the agent works through each step. Point out: "Notice it is querying multiple systems... now it is merging... computing metrics... generating a chart... writing the narrative... and here is the final document." This demo should take about 10-12 minutes including narration.
+DEMO INSTRUCTIONS: Switch to the XYZ app. Type: "Prepare a quarterly executive summary of XYZ Corp performance --- revenue by division, headcount efficiency, top customer risks, and supply chain issues." Let it run. Narrate as the agent works through each step. Point out: "Notice it is querying multiple systems... now it is merging... computing metrics... generating a chart... writing the narrative... and here is the final document." This demo should take about 10-12 minutes including narration.
 
 After the demo, say: "One prompt. One minute of waiting. A complete executive summary that would have taken an analyst days to prepare. That is the pipeline."
 
@@ -275,7 +275,7 @@ Say: "The quality of what you get out depends entirely on the specificity of wha
 
 "The underlying data is the same in all three cases. The difference is entirely in the prompt."
 
-DEMO INSTRUCTIONS: Switch to the Meridian app. Do three quick iterations. First: "Summarize quarterly performance." Show the generic output. Second: "Redo this using traffic-light format with red, yellow, and green for each division. Flag any metric more than 10% off plan." Show the improvement. Third: "Make this one page maximum. Lead with the biggest risk. End with three recommended actions." Show the board-ready version. Each iteration takes about 30-60 seconds. Narrate the differences as they appear.
+DEMO INSTRUCTIONS: Switch to the XYZ app. Do three quick iterations. First: "Summarize quarterly performance." Show the generic output. Second: "Redo this using traffic-light format with red, yellow, and green for each division. Flag any metric more than 10% off plan." Show the improvement. Third: "Make this one page maximum. Lead with the biggest risk. End with three recommended actions." Show the board-ready version. Each iteration takes about 30-60 seconds. Narrate the differences as they appear.
 
 After the demo: "Each iteration took seconds. The cost of refining is essentially zero. The skill is knowing what to ask for --- and that is a business skill, not a technical one. You know what your board wants to see. You know what format works. Now you have a tool that can produce it."
 :::
@@ -331,13 +331,13 @@ Exercise 1 --- Customer Risk Report
 :::
 
 ::: {.notes}
-Say: "Exercise 1 is a customer risk report. Ask the Meridian app to pull accounts receivable aging data and cross-reference it with customer order history. You want to flag customers with invoices over 90 days past due and check whether those customers are still placing orders --- because a customer who owes you money but is still buying is a very different risk than a customer who owes you money and has gone silent."
+Say: "Exercise 1 is a customer risk report. Ask the XYZ app to pull accounts receivable aging data and cross-reference it with customer order history. You want to flag customers with invoices over 90 days past due and check whether those customers are still placing orders --- because a customer who owes you money but is still buying is a very different risk than a customer who owes you money and has gone silent."
 
 "The output should be a one-page risk summary with traffic-light ratings --- green, yellow, red. Try a generic prompt first, then refine."
 
 "If you are new to this, here is a starting prompt: 'Create a customer risk report. Query accounts receivable aging and recent order history. Flag any customer with invoices over 90 days past due. Show whether they are still placing orders. Use traffic-light format.' Then iterate."
 
-This exercise should take about 5-6 minutes. Walk the Zoom room while people work. Share your screen to show the exercise slide, then tell participants to switch to the Meridian app in their own browsers.
+This exercise should take about 5-6 minutes. Walk the Zoom room while people work. Share your screen to show the exercise slide, then tell participants to switch to the XYZ app in their own browsers.
 :::
 
 ---
@@ -357,7 +357,7 @@ Exercise 2 --- Division P&L Comparison
 ::: {.notes}
 Say: "Exercise 2 is a division P&L comparison. Pull revenue and expense data for all three divisions --- Industrial, Energy, and Safety. Compute gross margin, operating margin, and year-over-year change. Generate a comparison chart --- grouped bar or waterfall, your choice. And write a two-paragraph narrative highlighting the key variances."
 
-"This is more complex because it requires data from multiple financial systems and a computed output. A good starting prompt might be: 'Compare P&L performance across Meridian's three divisions. Show revenue, gross margin, and operating margin for each. Include year-over-year changes. Generate a grouped bar chart and write two paragraphs of analysis highlighting the biggest variances.'"
+"This is more complex because it requires data from multiple financial systems and a computed output. A good starting prompt might be: 'Compare P&L performance across XYZ's three divisions. Show revenue, gross margin, and operating margin for each. Include year-over-year changes. Generate a grouped bar chart and write two paragraphs of analysis highlighting the biggest variances.'"
 
 "Then iterate: change the chart type, adjust the narrative tone, add a specific metric you care about."
 
@@ -384,7 +384,7 @@ Say: "Exercise 3 is the full board-ready memo. This combines everything from Exe
 
 "The constraint is one page. Lead with the single most important thing the board needs to know. And I want you to iterate at least twice on tone and structure."
 
-"A starting prompt: 'Prepare a one-page board memo for Meridian Corp. Include: Executive Summary (lead with the single most important issue), Key Risks (customer AR and churn risk), Division Performance (revenue, margins, year-over-year), and Outlook (next quarter priorities). Pull from all available systems. Keep it to one page.'"
+"A starting prompt: 'Prepare a one-page board memo for XYZ Corp. Include: Executive Summary (lead with the single most important issue), Key Risks (customer AR and churn risk), Division Performance (revenue, margins, year-over-year), and Outlook (next quarter priorities). Pull from all available systems. Keep it to one page.'"
 
 "If you have time, try different versions: one for the board, one for an internal team meeting, one for an investor presentation. Same data, different audience, different tone."
 
@@ -708,7 +708,7 @@ Walk through the recap. Say: "Four things from today. First, the pipeline: query
 Homework
 :::
 
-- **Produce a deliverable:** Use the Meridian app to create one complete output --- a memo, comparison, or risk assessment. Save or screenshot it. Bring it to Session 5.
+- **Produce a deliverable:** Use the XYZ app to create one complete output --- a memo, comparison, or risk assessment. Save or screenshot it. Bring it to Session 5.
 - **Pre-reading for Session 5** (~35 min total):
   1. **Morgan Stanley case study** (provided) --- a regulated firm's deployment decision. Come prepared to discuss: what constraints did they face, and what surprised you?
   2. **AIMultiple: "Cloud LLM vs Local LLMs"** --- the three deployment options and their tradeoffs
@@ -723,7 +723,7 @@ Monday's session: [What Does Deployment Look Like?]{.accent} --- architecture, d
 ::: {.notes}
 Walk through the homework carefully. This is important because Session 5 is a flipped session that depends on the pre-reading.
 
-Say: "Homework for next session. First, produce a deliverable. Use the Meridian app to create one complete output --- a memo, a comparison, a risk assessment, whatever interests you. Save it or screenshot it and bring it to Session 5. We will open with people sharing what they produced."
+Say: "Homework for next session. First, produce a deliverable. Use the XYZ app to create one complete output --- a memo, a comparison, a risk assessment, whatever interests you. Save it or screenshot it and bring it to Session 5. We will open with people sharing what they produced."
 
 "Second, and this is critical: pre-reading for Session 5. There are about 35 minutes of reading total, and you need to do it before Monday. Session 5 is a flipped session --- we are going to discuss and apply, not lecture. If you come without having read, you will be lost."
 

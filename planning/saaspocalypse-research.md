@@ -66,7 +66,7 @@ From Deloitte, Bain, a16z, and Retool research:
 3. **Demand outcome-based pricing.** The per-seat model is structurally broken when AI reduces headcount.
 4. **Expect vendors to add AI aggressively.** Salesforce (Agentforce), ServiceNow, and others are embedding agents. Evaluate before building custom.
 5. **Govern shadow IT.** 60% of teams building outside IT oversight (Retool). Establish guardrails.
-6. **Architect agents above applications.** Place agents as an orchestration layer across systems — exactly the architecture of the Meridian Corp demo.
+6. **Architect agents above applications.** Place agents as an orchestration layer across systems — exactly the architecture of the XYZ Corp demo.
 
 ## Key Sources
 

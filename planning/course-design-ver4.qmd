@@ -30,7 +30,7 @@ format:
 Before Session 1, participants watch a 15--20 minute video covering:
 
 - What AI agents are and why they matter for data-driven decision making
-- The Meridian Corp simulation: a \$500M distributor with 10 enterprise systems across 3 divisions
+- The XYZ Corp simulation: a \$500M distributor with 10 enterprise systems across 3 divisions
 - The Linux VM: an optional hands-on environment for those who want to build agents themselves
 - The course arc: a session-by-session overview so students know where they're headed
 - How to log in to both tools and what to expect in Session 1
@@ -56,7 +56,7 @@ This allows Session 1 to begin immediately with hands-on work.
 | 70--85 | Breakout Discussion (groups of 3--4) | Breakout rooms |
 | 85--90 | Homework | Wrap |
 
-**Homework:** Log into the Meridian app and ask 10 business questions against any single system. Write down one question the agent answered well and one where it was unsatisfying or wrong. Bring both to Session 2.
+**Homework:** Log into the XYZ app and ask 10 business questions against any single system. Write down one question the agent answered well and one where it was unsatisfying or wrong. Bring both to Session 2.
 
 \newpage
 
@@ -120,7 +120,7 @@ This allows Session 1 to begin immediately with hands-on work.
 
 The "From Ad Hoc to Automated" segment includes a real-world example: HPE's CFO Marie Myers used an AI agent to replace a 100-slide weekly performance review. Results: 40% faster reporting cycle, 25% lower processing costs, 90% reduction in manual prep.
 
-**Homework:** (1) Produce one complete deliverable using the Meridian app. Bring it to Session 5. (2) Pre-reading for Session 5 (\textasciitilde 35 min): Morgan Stanley case study, AIMultiple deployment options article, and "What Does Your AI Actually See?" data security primer (all provided). (3) If not read yet, read the a16z and DUNNIXER articles from Session 3 homework.
+**Homework:** (1) Produce one complete deliverable using the XYZ app. Bring it to Session 5. (2) Pre-reading for Session 5 (\textasciitilde 35 min): Morgan Stanley case study, AIMultiple deployment options article, and "What Does Your AI Actually See?" data security primer (all provided). (3) If not read yet, read the a16z and DUNNIXER articles from Session 3 homework.
 
 \newpage
 
@@ -160,7 +160,7 @@ The "From Ad Hoc to Automated" segment includes a real-world example: HPE's CFO 
 | 10--12 | Bridge from Session 5 | Lecture |
 | 12--28 | Demo: When the Agent Gets It Wrong | Live demo |
 | 28--38 | The Maker/Checker Framework | Lecture + discussion |
-| 38--55 | Hands-on: Red-Team the Meridian App | Hands-on |
+| 38--55 | Hands-on: Red-Team the XYZ App | Hands-on |
 | 55--60 | Debrief: What Did You Find? | Discussion |
 | 60--73 | Data Governance and Regulatory Exposure | Lecture + Q&A |
 | 73--85 | Breakout: Your Governance Requirements | Breakout rooms |
@@ -209,9 +209,9 @@ The "From Ad Hoc to Automated" segment includes a real-world example: HPE's CFO 
 
 \newpage
 
-# The Meridian Corp Simulation
+# The XYZ Corp Simulation
 
-The Meridian Corp app is a browser-based AI data assistant that simulates a real enterprise data environment. Students log in and ask questions in plain English. The app connects to **10 enterprise systems** for a fictional \$500M B2B industrial supplies distributor with three operating divisions:
+The XYZ Corp app is a browser-based AI data assistant that simulates a real enterprise data environment. Students log in and ask questions in plain English. The app connects to **10 enterprise systems** for a fictional \$500M B2B industrial supplies distributor with three operating divisions:
 
 - **Industrial Division** (\textasciitilde\$250M): Salesforce CRM, NetSuite Finance, SAP Operations
 - **Energy Division** (\textasciitilde\$150M): Legacy CRM (custom-built), QuickBooks Finance, Oracle SCM

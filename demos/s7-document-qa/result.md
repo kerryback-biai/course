@@ -2,7 +2,7 @@
 
 ## What this demo shows
 
-The AI assistant retrieves information from Meridian's internal document corpus — employee handbook, vendor contracts, board minutes, strategic plans — and answers natural-language questions with specific citations (document name, section, page number).
+The AI assistant retrieves information from XYZ's internal document corpus — employee handbook, vendor contracts, board minutes, strategic plans — and answers natural-language questions with specific citations (document name, section, page number).
 
 ## Three question types demonstrated
 

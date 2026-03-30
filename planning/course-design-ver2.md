@@ -9,7 +9,7 @@ In February 2026, AI agents wiped $2 trillion from software company valuations. 
 
 ## Course Resources
 
-### The Meridian Corp App (browser-based, no installation)
+### The XYZ Corp App (browser-based, no installation)
 
 A web-based AI data assistant that simulates a real enterprise data environment. Students open a browser, log in, and ask questions in plain English. The app connects to **10 enterprise systems** for a fictional $500M B2B industrial supplies distributor with three operating divisions:
 
@@ -69,14 +69,14 @@ Three independent reviews (executive education designer, Fortune 500 CTO, Big 4 
 | Min | Segment | Format |
 |---|---|---|
 | 0-8 | **Cold open.** Show a real scenario: a CEO asks "which of our customers buy from multiple divisions?" The BI team says 3 weeks. Show the email chain. Ask: has this happened to you? | Provocation + discussion |
-| 8-25 | **Demo: Dashboard vs. Chat.** Open the Meridian Corp app and ask the same question. Get an instant answer. Ask follow-ups the dashboard can't handle. Students see SQL, charts, narrative — all from a chat interface. | Live demo |
-| 25-40 | **The Enterprise Software Landscape.** What Salesforce, SAP, Workday, NetSuite actually do. Why every company has 5-15 systems. Introduce Meridian Corp: $500M distributor, 3 divisions, 10 systems. | Lecture |
+| 8-25 | **Demo: Dashboard vs. Chat.** Open the XYZ Corp app and ask the same question. Get an instant answer. Ask follow-ups the dashboard can't handle. Students see SQL, charts, narrative — all from a chat interface. | Live demo |
+| 25-40 | **The Enterprise Software Landscape.** What Salesforce, SAP, Workday, NetSuite actually do. Why every company has 5-15 systems. Introduce XYZ Corp: $500M distributor, 3 divisions, 10 systems. | Lecture |
 | 40-60 | **Hands-on: Your First Queries.** Students log into the app and ask 5-6 guided questions against Salesforce (single system). Guided prompts provided. | Hands-on |
 | 60-75 | **Breakout Discussion (groups of 3).** What surprised you? What would this look like at your company? Who answers these questions today and how long does it take? Each group shares one insight. | Breakout rooms |
 | 75-88 | **The Business Lens.** If a chat interface replaces dashboards, what happens to the tools and teams that build them? Plant the seed — don't go deep yet. | Lecture + Q&A |
 | 88-90 | Homework assignment | Wrap |
 
-**Homework:** Log into the Meridian app and ask 10 business questions of your choosing against any single system. Write down one question the agent answered well and one where it was unsatisfying or wrong. Bring both to Session 2.
+**Homework:** Log into the XYZ app and ask 10 business questions of your choosing against any single system. Write down one question the agent answered well and one where it was unsatisfying or wrong. Bring both to Session 2.
 
 ---
 
@@ -117,9 +117,9 @@ Three independent reviews (executive education designer, Fortune 500 CTO, Big 4 
 | Min | Segment | Format |
 |---|---|---|
 | 0-10 | **Bridge.** "You've spent a week as the user. Now let's look under the hood." | Lecture |
-| 10-30 | **Demo: The Agent Loop, Deconstructed.** Show the Meridian app answering a cross-system question, but this time show what happens behind the scenes: the system prompt (schema description), the tool call (SQL), the result, the merge (Python), the final response. Walk through the 50-line core loop on screen. Emphasize: this is the entire engine. | Live demo + code walkthrough |
+| 10-30 | **Demo: The Agent Loop, Deconstructed.** Show the XYZ app answering a cross-system question, but this time show what happens behind the scenes: the system prompt (schema description), the tool call (SQL), the result, the merge (Python), the final response. Walk through the 50-line core loop on screen. Emphasize: this is the entire engine. | Live demo + code walkthrough |
 | 30-45 | **The System Prompt Is the Secret.** Show how changing the schema description changes the SQL the agent generates. Demo: remove the join key documentation from the prompt → the agent can no longer merge across systems. Add it back → it works. The prompt is the "institutional knowledge" layer. | Live demo |
-| 45-60 | **Discussion: Who Builds This?** If the core is 50 lines, why does deployment take months? Introduce the "complexity iceberg": authentication, error handling, rate limits, access control, monitoring, audit logging, multi-tenancy, failover. Show the actual Meridian app codebase (3,000+ lines) vs. the 50-line core. | Lecture + Q&A |
+| 45-60 | **Discussion: Who Builds This?** If the core is 50 lines, why does deployment take months? Introduce the "complexity iceberg": authentication, error handling, rate limits, access control, monitoring, audit logging, multi-tenancy, failover. Show the actual XYZ app codebase (3,000+ lines) vs. the 50-line core. | Lecture + Q&A |
 | 60-75 | **Breakout: Build vs. Buy First Impressions (groups of 3).** Given what you now know about the technology: for the use case you identified in Session 2, would you build, buy from your existing vendor, or hire a consultant? Why? Share out. | Breakout rooms |
 | 75-88 | **Optional: Live Build with Claude Code.** For the room, demonstrate building a simple agent from scratch in real time using Claude Code on the Linux server. The instructor drives; students watch. Show how AI writes the code from English instructions. This is the "your developer could do this" moment. | Live demo (instructor-driven) |
 | 88-90 | Homework | Wrap |
@@ -143,7 +143,7 @@ Three independent reviews (executive education designer, Fortune 500 CTO, Big 4 
 | Min | Segment | Format |
 |---|---|---|
 | 0-10 | **Check-in.** Anyone try the Linux server exercises? Quick show. Share struggles and surprises. | Discussion |
-| 10-28 | **Demo: The Full Pipeline.** Ask the Meridian app: "Prepare a quarterly executive summary of Meridian Corp performance — revenue by division, headcount efficiency, top customer risks, and supply chain issues." Watch it query 6 systems, merge data, generate charts, and produce a structured memo. This is the "last mile" — not just data, but a delivered artifact. | Live demo |
+| 10-28 | **Demo: The Full Pipeline.** Ask the XYZ app: "Prepare a quarterly executive summary of XYZ Corp performance — revenue by division, headcount efficiency, top customer risks, and supply chain issues." Watch it query 6 systems, merge data, generate charts, and produce a structured memo. This is the "last mile" — not just data, but a delivered artifact. | Live demo |
 | 28-42 | **Architecture Decisions.** Where does the Python run? Three options: (A) cloud LLM sandbox — data leaves your network; (B) SQL-only — can't do cross-system merges; (C) your own containers — production answer. The data exposure problem: even with local execution, the LLM sees results. Four approaches to managing privacy. Key insight: this is a policy decision, not a technology problem. | Lecture |
 | 42-55 | **The Complexity Iceberg.** Walk through what it takes to go from demo to production: API authentication against real systems (OAuth, SOQL, OData — not just parquet files), PII handling, schema changes, monitoring, the fact that Salesforce has 847 custom fields in a real instance. Realistic timeline: pilot in 2-3 months, production in 6-12 months. | Lecture |
 | 55-70 | **Discussion: What Would Your CISO Say?** Each student considers: if you brought this to your security team, what would they flag? Role-play: one student pitches, another plays the skeptical CISO. 2-3 pairs share. | Paired role-play |
@@ -169,7 +169,7 @@ Three independent reviews (executive education designer, Fortune 500 CTO, Big 4 
 | 0-10 | **Homework debrief.** Students share the report they'd replace and what could go wrong. | Discussion |
 | 10-30 | **Demo: When the Agent Gets It Wrong.** Three pre-prepared failures: (a) averages across won and lost deals without filtering — technically correct SQL, misleading answer; (b) cross-division revenue comparison with date format mismatch — Legacy CRM VARCHAR dates cause wrong aggregation; (c) customer count that double-counts due to fuzzy matching failures. Walk through each, show the SQL, identify the error. | Live demo |
 | 30-45 | **The Maker/Checker Framework.** AI is the maker; you are the checker. The skill shift: from producing analysis to verifying it. What to check: source system, filters, join logic, date ranges, NULL handling, row counts. The agent shows SQL for a reason — transparency is a feature. Who in your organization has the judgment to be an effective checker? | Lecture + discussion |
-| 45-60 | **Hands-on: Red-Team the Meridian App.** Students try to break the agent through the chat interface: ask for data they shouldn't see (individual salaries), ask a question where the data doesn't exist (2027 revenue), try to trick it into hallucinating ("What was our revenue from the Atlantis division?"). Record what happens. | Hands-on |
+| 45-60 | **Hands-on: Red-Team the XYZ App.** Students try to break the agent through the chat interface: ask for data they shouldn't see (individual salaries), ask a question where the data doesn't exist (2027 revenue), try to trick it into hallucinating ("What was our revenue from the Atlantis division?"). Record what happens. | Hands-on |
 | 60-75 | **Data Governance and Regulatory Exposure.** Not a 10-minute afterthought — a serious treatment. Who is liable when the agent gives wrong financial data? Does agent output count as a "record" under SOX? GDPR implications of cross-system queries that combine PII from multiple sources. Role-based access control: the VP of Sales should not see HR compensation data, even if the agent can query both systems. | Lecture + Q&A |
 | 75-88 | **Discussion: Your Governance Requirements.** Given your industry and regulatory environment, what guardrails would you require before deploying an AI agent? What's the minimum viable governance framework? | Discussion |
 | 88-90 | Homework | Wrap |
@@ -192,7 +192,7 @@ Three independent reviews (executive education designer, Fortune 500 CTO, Big 4 
 |---|---|---|
 | 0-8 | **Klarna debrief.** Each student: one sentence on what Klarna got right and one on what went wrong. | Quick round |
 | 8-25 | **What Happened in February 2026.** The Cowork announcement, $285B in one day, $2T cumulative. But frame analytically, not apocalyptically: which categories lost value and why? The dividing line: AI replaces the interface layer (BI, workflow, Tier 1 support), not the data layer (ERP, HRIS, financial ledgers). Evidence: Retool survey (29-35% already replacing), pricing shifts (Intercom $0.99/resolution). | Lecture with data |
-| 25-38 | **The Meridian Connection.** Map the app's capabilities to the disruption categories. It replaces Tableau (BI), data integration tools (MuleSoft), reporting headcount. It does NOT replace Salesforce the database, SAP the ERP, or Workday the HR system. | Discussion |
+| 25-38 | **The XYZ Connection.** Map the app's capabilities to the disruption categories. It replaces Tableau (BI), data integration tools (MuleSoft), reporting headcount. It does NOT replace Salesforce the database, SAP the ERP, or Workday the HR system. | Discussion |
 | 38-55 | **Build vs. Buy vs. Extend.** The real decision matrix: (a) buy from incumbent vendor — Salesforce Agentforce, Microsoft Copilot, ServiceNow AI (lowest risk, moderate capability); (b) buy from AI-native startup (highest capability, integration risk); (c) build internally (highest control, requires talent); (d) hybrid — vendor AI where good enough, custom for differentiation. Walk through one specific vendor (Salesforce Agentforce): what it does today, what it costs, where it falls short. Most enterprises land on (d). | Lecture + Q&A |
 | 55-75 | **Workshop: Your Software Vulnerability Map.** Each student maps 10+ products in their company's stack into four quadrants: (1) keep as-is, (2) evaluate vendor AI additions, (3) candidate for custom AI replacement, (4) candidate for retirement. Work individually, then pair-share. | Workshop |
 | 75-88 | **Change Management Preview.** When you replace tools, you displace roles. The VP of FP&A whose team does variance analysis. The BI team that builds dashboards. The analysts who pull cross-system reports. This is not a technology problem — it's a leadership challenge. Preview for Session 7. | Lecture |
@@ -265,7 +265,7 @@ Three independent reviews (executive education designer, Fortune 500 CTO, Big 4 
 - **ROI Template:** Introduced Session 2, updated Sessions 4 and 7, underpins the capstone.
 - **Breakout Rooms:** Sessions 1, 3, 6 — prevents Zoom large-group discussion fatigue.
 - **Role-Play:** Sessions 4 (CISO) and 7 (CEO pitch) — practices the conversations executives will actually have.
-- **The Meridian App:** Used in every session through Session 5 — the shared reference point.
+- **The XYZ App:** Used in every session through Session 5 — the shared reference point.
 - **Linux Server:** Available throughout for self-paced exploration; demonstrated in Session 3; exercises are optional homework.
 
 ## Capstone Template (provided to students)

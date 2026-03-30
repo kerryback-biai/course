@@ -125,24 +125,24 @@ The key distinction is the source of truth. Database AI pulls from your transact
 
 [TIMING: About 2 minutes on this slide. This completes the bridge segment. Transition to the demo next.]
 
-Transition: Alright, let me show you document AI in action. I am going to switch to the Meridian app and start asking questions of a real document collection.
+Transition: Alright, let me show you document AI in action. I am going to switch to the XYZ app and start asking questions of a real document collection.
 :::
 
 ---
 
-## Demo: Document Q&A with Meridian Corp {.section-divider}
+## Demo: Document Q&A with XYZ Corp {.section-divider}
 
 ::: {.notes}
-[DEMO INSTRUCTIONS: Switch to the Meridian Corp app in your browser. You should have the document Q&A interface ready. This is a 12-minute demo from minute 10 to minute 22. Have your fallback recording cued up in case the app or API is down.]
+[DEMO INSTRUCTIONS: Switch to the XYZ Corp app in your browser. You should have the document Q&A interface ready. This is a 12-minute demo from minute 10 to minute 22. Have your fallback recording cued up in case the app or API is down.]
 
-We are going to query the same Meridian Corp environment you have been using all course, but now we are going to ask it about documents instead of databases. Meridian has a pre-loaded document collection that mirrors what you would find at any mid-size company --- employee handbooks, vendor contracts, compliance policies, board minutes. Let me show you the collection first, and then we will start asking questions.
+We are going to query the same XYZ Corp environment you have been using all course, but now we are going to ask it about documents instead of databases. XYZ has a pre-loaded document collection that mirrors what you would find at any mid-size company --- employee handbooks, vendor contracts, compliance policies, board minutes. Let me show you the collection first, and then we will start asking questions.
 
 [TIMING: Spend about 30 seconds on this divider slide, then advance to show the document collections.]
 :::
 
 ---
 
-## Meridian's Document Collections {.shrink}
+## XYZ's Document Collections {.shrink}
 
 ::: {.three-cards}
 ::: {.card .card-dark}
@@ -190,7 +190,7 @@ Now, think about this for a moment. These are the same kinds of documents trappe
 
 [DEMO INSTRUCTIONS: Now switch to the live app. Ask these questions in sequence, pausing to point out the citations after each answer:
 
-1. "What is Meridian's policy on remote work for the Energy Division?" --- Point out the citation with page number and quoted passage. Emphasize that this is not the AI making something up; it is retrieving and quoting from the actual document.
+1. "What is XYZ's policy on remote work for the Energy Division?" --- Point out the citation with page number and quoted passage. Emphasize that this is not the AI making something up; it is retrieving and quoting from the actual document.
 
 2. "Which vendor contracts are up for renewal in Q2?" --- Show how it pulls from multiple contracts and synthesizes a list. Note the citations for each contract mentioned.
 
@@ -200,7 +200,7 @@ Now, think about this for a moment. These are the same kinds of documents trappe
 
 If the app is down, switch to the pre-recorded fallback and narrate over it.]
 
-Let me ask the first question. "What is Meridian's policy on remote work for the Energy Division?" Watch the answer --- and pay attention to the citations.
+Let me ask the first question. "What is XYZ's policy on remote work for the Energy Division?" Watch the answer --- and pay attention to the citations.
 
 [TIMING: This demo runs from minute 10 to minute 22. Spend about 2 minutes per question, with time for brief reactions between questions. The GE combined question should be the climax --- spend an extra minute showing how the two systems work together. If you are running long, you can skip question 3 about board minutes.]
 
@@ -310,7 +310,7 @@ Think back to Atherton. Their LLM was fine. Their retrieval was broken. Contract
 
 [TIMING: About 1-2 minutes on this slide. Let it sink in. You should be at about minute 30. Transition to the hands-on rounds next.]
 
-Transition: Now it is your turn. You are going to query the Meridian document collection yourselves. We will do three rounds, each one more challenging than the last.
+Transition: Now it is your turn. You are going to query the XYZ document collection yourselves. We will do three rounds, each one more challenging than the last.
 :::
 
 ---
@@ -322,7 +322,7 @@ Transition: Now it is your turn. You are going to query the Meridian document co
 Round 1 --- Single-Document Questions
 :::
 
-- "What is Meridian's policy on remote work?"
+- "What is XYZ's policy on remote work?"
 - "What are the expense approval thresholds?"
 - "How many vacation days do employees get after 5 years?"
 - Notice the **citations** --- each answer points back to a specific document and section
@@ -333,7 +333,7 @@ Start simple. Ask questions that live in a single document. Pay attention to whe
 :::
 
 ::: {.notes}
-Alright, Round 1. Open the Meridian app and switch to the document Q&A mode. I have three starter questions on the screen, but feel free to ask your own as well. "What is Meridian's policy on remote work?" "What are the expense approval thresholds?" "How many vacation days do employees get after 5 years?"
+Alright, Round 1. Open the XYZ app and switch to the document Q&A mode. I have three starter questions on the screen, but feel free to ask your own as well. "What is XYZ's policy on remote work?" "What are the expense approval thresholds?" "How many vacation days do employees get after 5 years?"
 
 These are intentionally simple --- each answer lives in a single document. The goal of this round is to get comfortable with the interface and, more importantly, to start noticing the citations. Every answer should point back to a specific document and section. When you get your answer, check the citation. Does it actually say what the AI claims it says? This is the verification habit we talked about in Session 6, applied to documents instead of data.
 
