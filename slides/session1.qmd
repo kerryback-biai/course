@@ -204,70 +204,158 @@ I want you to hold onto this framing throughout the entire course. AI is a fast 
 
 ---
 
-## [LIVE DEMO]{.amber} {.section-divider}
+## And It Produces Real Files {.shrink}
 
-### Claude.ai: Chart → Memo → Slide
+::: {.four-cards}
+::: {.card .card-dark}
+[Excel Workbooks]{.card-title}
 
-::: {.notes}
-Alright, let me switch to the browser and do this live. I have a table of quarterly revenue by product line — four quarters, three product lines. Let me paste it in and ask for a chart. Watch what happens.
-
-I will narrate as I go. First the chart — notice it is interactive, you can hover and see values. Now I will ask for the executive summary. And finally the slide format. Three deliverables, and notice how each one builds on the same underlying data but presents it in a completely different way for a different purpose.
+Formatted `.xlsx` files with formulas, multiple sheets, charts, and conditional formatting
 :::
 
----
-
-## The Tool Landscape {.section-divider}
-
-::: {.notes}
-Now that you have seen what Claude can do, let me explain the tools we will use in this course and which tool fits which situation. You saw claude.ai in the demo — that is our primary tool today. But there are two more you should know about.
-:::
-
----
-
-## Three Tools, Three Use Cases
-
-::: {.comparison-table}
-
-| Tool | Access | Best For | When |
-|---|---|---|---|
-| **Claude.ai** | Browser tab | Quick analysis, charts, documents, brainstorming | Sessions 1-2, anytime |
-| **Claude Desktop** | Installed app | Working with your own files — spreadsheets, PDFs | Session 2 onward |
-| **Claude Code** | Terminal | Building tools and automations from English | Instructor demos; optional |
-
-:::
-
-::: {.notes}
-Here is the landscape. Claude.ai is what you will use today — it runs in your browser, requires no installation, and handles conversational work beautifully: charts, documents, analysis, brainstorming. Claude Desktop is an installed application that can access your local files directly. If you want Claude to read your spreadsheet or work with your documents without copy-pasting, Desktop is the right tool. We will introduce it next session. Claude Code is a terminal-based tool for building software and automations from English descriptions. I will use it in later sessions to build data agents and pipelines. It is available to you on the Linux server if you want to explore, but it is entirely optional.
-:::
-
----
-
-## Which Tool When?
-
-::: {.two-cards}
 ::: {.card .card-light}
-[Today: Claude.ai]{.card-title}
+[Word Documents]{.card-title}
 
-- Quick charts and visualizations
-- Document drafting and editing
-- Interactive calculators and tools
-- Brainstorming and analysis
-- No installation required
+Professional `.docx` files with headings, tables, page breaks, and styled formatting
+:::
+
+::: {.card .card-light}
+[PowerPoint Decks]{.card-title}
+
+`.pptx` slide decks with layouts, bullet points, charts, and speaker notes
 :::
 
 ::: {.card .card-dark}
-[Later: Desktop and Code]{.card-title}
+[Charts & Dashboards]{.card-title}
 
-- Desktop: read your own files directly
-- Desktop: MCP integrations with other tools
-- Code: build automations and agents
-- Code: create reusable data pipelines
-- Both: deeper, more persistent work
+Interactive visualizations, PDF reports, CSV exports --- whatever format the task requires
+:::
+:::
+
+::: {.explainer}
+These are not screenshots or mockups. AI generates [actual files]{.accent} you can open, edit, and send. An executive summary as a Word doc. A financial model as an Excel workbook. A board deck as PowerPoint. We will produce all of these in this course.
+:::
+
+::: {.notes}
+I want to emphasize something important. What Claude produces are not just text responses in a chat window. It generates actual files. Real Excel workbooks with formulas and multiple sheets. Real Word documents with proper formatting. Real PowerPoint decks with layouts and charts. You can download them, open them, edit them, and send them to your colleagues. In this course, we will produce all of these formats. The Meridian Corp app you will use starting in Session 3 generates these same file types from enterprise data.
+:::
+
+---
+
+## Demo Walkthrough {.section-divider}
+
+### Prompt → Output: Chart, Memo, Slide
+
+::: {.notes}
+Let me walk you through an example conversation. I typed these prompts into Claude.ai and I will show you exactly what came back. Pay attention to the speed and the format flexibility — three different deliverables from one conversation.
+:::
+
+---
+
+## The Prompt {.shrink}
+
+::: {.code-box}
+[What we typed]{.box-title}
+
+Here is quarterly revenue by product line (in $K):
+
+| Product Line | Q1 | Q2 | Q3 | Q4 |
+|---|---|---|---|---|
+| Industrial | 62,400 | 64,100 | 58,900 | 67,200 |
+| Energy | 38,100 | 36,800 | 39,400 | 41,200 |
+| Safety | 24,300 | 25,100 | 26,800 | 27,900 |
+
+Create a bar chart comparing Q1 through Q4 revenue by product line.
+:::
+
+::: {.notes}
+Here is exactly what I typed. A simple table of quarterly revenue — three product lines, four quarters — followed by a request for a bar chart. Nothing fancy. Plain English.
+:::
+
+---
+
+## The Output: Chart
+
+::: {.highlight-box}
+Claude generated an **interactive grouped bar chart** with color-coded product lines, hover tooltips showing exact values, and a legend. Total time: about 5 seconds.
+:::
+
+::: {.explainer}
+The chart is not a static image — it is an [interactive artifact]{.accent} you can hover over, filter, and export. Then I followed up: "Turn this into an executive summary memo" and "Now format it as a PowerPoint-ready slide." Same data, three formats, under a minute total.
+:::
+
+::: {.notes}
+What came back was an interactive bar chart — grouped by quarter, color-coded by product line, with hover tooltips. It took about five seconds. Then I asked for an executive summary memo — same data, narrative format, highlighting the Q3 dip in Industrial and the steady growth in Safety. Then I asked for a PowerPoint-ready slide with bullet points. Three formats, one conversation, under a minute. This is what I mean by AI as your analyst.
+:::
+
+---
+
+## How AI + Code + Data Work Together {.section-divider}
+
+::: {.notes}
+Now let me explain something important about how these systems actually work. Understanding this architecture will help you make sense of everything we cover in this course — from personal productivity today to enterprise deployment in later sessions.
+:::
+
+---
+
+## Three Moving Pieces {.shrink}
+
+::: {.three-cards}
+::: {.card .card-dark}
+[The AI Brain]{.card-title}
+
+- The large language model (LLM)
+- [Always in the cloud]{.amber} — hosted by Anthropic, OpenAI, Google, etc.
+- Understands your question
+- Generates text, code, and plans
+- Has no permanent memory
+:::
+
+::: {.card .card-light}
+[The Data]{.card-title}
+
+- Could be on [your computer]{.accent} (spreadsheets, local files)
+- Could be in [SaaS provider storage]{.accent} (Salesforce, Workday, NetSuite)
+- Could be on [company-managed servers]{.accent} (on-prem or cloud)
+- Where data lives determines security requirements
+:::
+
+::: {.card .card-light}
+[Code Execution]{.card-title}
+
+- Something has to run the Python, SQL, or scripts the AI writes
+- Could run on [the LLM provider's hardware]{.accent} (Claude.ai sandbox)
+- Could run on [company servers]{.accent} (Docker, on-prem)
+- Could run on [your computer]{.accent} (Claude Desktop, terminal)
 :::
 :::
 
 ::: {.notes}
-Think of it this way. Claude.ai is your quick-access analyst — open a tab, ask a question, get a deliverable. It is where you start for anything new. Claude Desktop is for when you are working with your own files and want a more integrated experience. And Claude Code is for when you want to go beyond one-off tasks and build something reusable. Today we are focused entirely on Claude.ai. By the end of this session, you will have produced multiple artifacts and you will have a feel for what this tool can and cannot do.
+There are three moving pieces in every AI system, and understanding where each one lives is the key to understanding the whole course. First, the AI brain — the large language model. This is always in the cloud, hosted by the provider. It understands your question, generates text and code, but has no permanent memory. Second, the data. This could be on your own computer — a spreadsheet, a PDF. It could be in SaaS provider storage — your Salesforce CRM, your Workday HR system. Or it could be on company-managed servers. Where your data lives determines the security requirements. Third, code execution. When the AI writes Python or SQL to analyze data, something has to actually run that code. It could run on the LLM provider's hardware — that is what happens when you use Claude.ai's sandbox. It could run on your company's servers. Or it could run on your own computer. Each combination has different implications for security, cost, and capability.
+:::
+
+---
+
+## Today vs. Later in This Course {.shrink}
+
+::: {.comparison-table}
+
+| | Sessions 1-2 | Sessions 3-7 |
+|---|---|---|
+| **AI Brain** | Claude (Anthropic cloud) | Claude (Anthropic cloud) |
+| **Data** | You paste it in or upload it | Meridian Corp databases (10 systems) |
+| **Code Execution** | Claude.ai sandbox (Anthropic's servers) | Meridian app server / Linux VM |
+| **Security concern** | Low — your own data, your choice | High — enterprise data, access control needed |
+| **Your role** | Direct and verify output | Direct, verify, AND govern access |
+
+:::
+
+::: {.explainer}
+This week, all three pieces are simple: Claude's cloud brain, your data pasted in, code running in Claude's sandbox. Starting Session 3, the data lives in enterprise systems and the security questions get real. [That progression is the arc of this course.]{.accent}
+:::
+
+::: {.notes}
+Here is how this maps to our course. This week — Sessions 1 and 2 — it is simple. The AI is Claude in the cloud. The data is whatever you paste in or upload. The code runs in Claude's sandbox on Anthropic's servers. The security concern is low because it is your own data and you are choosing to share it. Starting in Session 3, things get more interesting. The data lives in enterprise databases — CRM, ERP, HR systems. The code execution moves to dedicated servers. And now the security questions get real: who can access what data? Where does it travel? Who is liable if something goes wrong? That progression — from personal productivity with simple architecture to enterprise deployment with complex architecture — is the arc of the entire course. Sessions 5 and 6 are entirely about those deployment and governance decisions.
 :::
 
 ---

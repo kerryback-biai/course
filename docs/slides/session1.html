@@ -400,12 +400,31 @@ Kerry Back, Rice University
           display:block!important;
       }</style></aside>
 </section>
-<section id="live-demo" class="slide level2 section-divider center">
-<h2><span class="amber">LIVE DEMO</span></h2>
-<h3 id="claude.ai-chart-memo-slide">Claude.ai: Chart → Memo → Slide</h3>
+<section id="and-it-produces-real-files" class="slide level2 shrink center">
+<h2>And It Produces Real Files</h2>
+<div class="four-cards">
+<div class="card card-dark">
+<p><span class="card-title">Excel Workbooks</span></p>
+<p>Formatted <code>.xlsx</code> files with formulas, multiple sheets, charts, and conditional formatting</p>
+</div>
+<div class="card card-light">
+<p><span class="card-title">Word Documents</span></p>
+<p>Professional <code>.docx</code> files with headings, tables, page breaks, and styled formatting</p>
+</div>
+<div class="card card-light">
+<p><span class="card-title">PowerPoint Decks</span></p>
+<p><code>.pptx</code> slide decks with layouts, bullet points, charts, and speaker notes</p>
+</div>
+<div class="card card-dark">
+<p><span class="card-title">Charts &amp; Dashboards</span></p>
+<p>Interactive visualizations, PDF reports, CSV exports — whatever format the task requires</p>
+</div>
+</div>
+<div class="explainer">
+<p>These are not screenshots or mockups. AI generates <span class="accent">actual files</span> you can open, edit, and send. An executive summary as a Word doc. A financial model as an Excel workbook. A board deck as PowerPoint. We will produce all of these in this course.</p>
+</div>
 <aside class="notes">
-<p>Alright, let me switch to the browser and do this live. I have a table of quarterly revenue by product line — four quarters, three product lines. Let me paste it in and ask for a chart. Watch what happens.</p>
-<p>I will narrate as I go. First the chart — notice it is interactive, you can hover and see values. Now I will ask for the executive summary. And finally the slide format. Three deliverables, and notice how each one builds on the same underlying data but presents it in a completely different way for a different purpose.</p>
+<p>I want to emphasize something important. What Claude produces are not just text responses in a chat window. It generates actual files. Real Excel workbooks with formulas and multiple sheets. Real Word documents with proper formatting. Real PowerPoint decks with layouts and charts. You can download them, open them, edit them, and send them to your colleagues. In this course, we will produce all of these formats. The Meridian Corp app you will use starting in Session 3 generates these same file types from enterprise data.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -418,10 +437,11 @@ Kerry Back, Rice University
           display:block!important;
       }</style></aside>
 </section>
-<section id="the-tool-landscape" class="slide level2 section-divider center">
-<h2>The Tool Landscape</h2>
+<section id="demo-walkthrough" class="slide level2 section-divider center">
+<h2>Demo Walkthrough</h2>
+<h3 id="prompt-output-chart-memo-slide">Prompt → Output: Chart, Memo, Slide</h3>
 <aside class="notes">
-<p>Now that you have seen what Claude can do, let me explain the tools we will use in this course and which tool fits which situation. You saw claude.ai in the demo — that is our primary tool today. But there are two more you should know about.</p>
+<p>Let me walk you through an example conversation. I typed these prompts into Claude.ai and I will show you exactly what came back. Pay attention to the speed and the format flexibility — three different deliverables from one conversation.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -434,48 +454,49 @@ Kerry Back, Rice University
           display:block!important;
       }</style></aside>
 </section>
-<section id="three-tools-three-use-cases" class="slide level2 center">
-<h2>Three Tools, Three Use Cases</h2>
-<div class="comparison-table">
+<section id="the-prompt" class="slide level2 shrink center">
+<h2>The Prompt</h2>
+<div class="code-box">
+<p><span class="box-title">What we typed</span></p>
+<p>Here is quarterly revenue by product line (in $K):</p>
 <table class="caption-top">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
 <thead>
 <tr class="header">
-<th>Tool</th>
-<th>Access</th>
-<th>Best For</th>
-<th>When</th>
+<th>Product Line</th>
+<th>Q1</th>
+<th>Q2</th>
+<th>Q3</th>
+<th>Q4</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Claude.ai</strong></td>
-<td>Browser tab</td>
-<td>Quick analysis, charts, documents, brainstorming</td>
-<td>Sessions 1-2, anytime</td>
+<td>Industrial</td>
+<td>62,400</td>
+<td>64,100</td>
+<td>58,900</td>
+<td>67,200</td>
 </tr>
 <tr class="even">
-<td><strong>Claude Desktop</strong></td>
-<td>Installed app</td>
-<td>Working with your own files — spreadsheets, PDFs</td>
-<td>Session 2 onward</td>
+<td>Energy</td>
+<td>38,100</td>
+<td>36,800</td>
+<td>39,400</td>
+<td>41,200</td>
 </tr>
 <tr class="odd">
-<td><strong>Claude Code</strong></td>
-<td>Terminal</td>
-<td>Building tools and automations from English</td>
-<td>Instructor demos; optional</td>
+<td>Safety</td>
+<td>24,300</td>
+<td>25,100</td>
+<td>26,800</td>
+<td>27,900</td>
 </tr>
 </tbody>
 </table>
+<p>Create a bar chart comparing Q1 through Q4 revenue by product line.</p>
 </div>
 <aside class="notes">
-<p>Here is the landscape. Claude.ai is what you will use today — it runs in your browser, requires no installation, and handles conversational work beautifully: charts, documents, analysis, brainstorming. Claude Desktop is an installed application that can access your local files directly. If you want Claude to read your spreadsheet or work with your documents without copy-pasting, Desktop is the right tool. We will introduce it next session. Claude Code is a terminal-based tool for building software and automations from English descriptions. I will use it in later sessions to build data agents and pipelines. It is available to you on the Linux server if you want to explore, but it is entirely optional.</p>
+<p>Here is exactly what I typed. A simple table of quarterly revenue — three product lines, four quarters — followed by a request for a bar chart. Nothing fancy. Plain English.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -488,32 +509,140 @@ Kerry Back, Rice University
           display:block!important;
       }</style></aside>
 </section>
-<section id="which-tool-when" class="slide level2 center">
-<h2>Which Tool When?</h2>
-<div class="two-cards">
-<div class="card card-light">
-<p><span class="card-title">Today: Claude.ai</span></p>
+<section id="the-output-chart" class="slide level2 center">
+<h2>The Output: Chart</h2>
+<div class="highlight-box">
+<p>Claude generated an <strong>interactive grouped bar chart</strong> with color-coded product lines, hover tooltips showing exact values, and a legend. Total time: about 5 seconds.</p>
+</div>
+<div class="explainer">
+<p>The chart is not a static image — it is an <span class="accent">interactive artifact</span> you can hover over, filter, and export. Then I followed up: “Turn this into an executive summary memo” and “Now format it as a PowerPoint-ready slide.” Same data, three formats, under a minute total.</p>
+</div>
+<aside class="notes">
+<p>What came back was an interactive bar chart — grouped by quarter, color-coded by product line, with hover tooltips. It took about five seconds. Then I asked for an executive summary memo — same data, narrative format, highlighting the Q3 dip in Industrial and the steady growth in Safety. Then I asked for a PowerPoint-ready slide with bullet points. Three formats, one conversation, under a minute. This is what I mean by AI as your analyst.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="how-ai-code-data-work-together" class="slide level2 section-divider center">
+<h2>How AI + Code + Data Work Together</h2>
+<aside class="notes">
+<p>Now let me explain something important about how these systems actually work. Understanding this architecture will help you make sense of everything we cover in this course — from personal productivity today to enterprise deployment in later sessions.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="three-moving-pieces" class="slide level2 shrink center">
+<h2>Three Moving Pieces</h2>
+<div class="three-cards">
+<div class="card card-dark">
+<p><span class="card-title">The AI Brain</span></p>
 <ul>
-<li>Quick charts and visualizations</li>
-<li>Document drafting and editing</li>
-<li>Interactive calculators and tools</li>
-<li>Brainstorming and analysis</li>
-<li>No installation required</li>
+<li>The large language model (LLM)</li>
+<li><span class="amber">Always in the cloud</span> — hosted by Anthropic, OpenAI, Google, etc.</li>
+<li>Understands your question</li>
+<li>Generates text, code, and plans</li>
+<li>Has no permanent memory</li>
 </ul>
 </div>
-<div class="card card-dark">
-<p><span class="card-title">Later: Desktop and Code</span></p>
+<div class="card card-light">
+<p><span class="card-title">The Data</span></p>
 <ul>
-<li>Desktop: read your own files directly</li>
-<li>Desktop: MCP integrations with other tools</li>
-<li>Code: build automations and agents</li>
-<li>Code: create reusable data pipelines</li>
-<li>Both: deeper, more persistent work</li>
+<li>Could be on <span class="accent">your computer</span> (spreadsheets, local files)</li>
+<li>Could be in <span class="accent">SaaS provider storage</span> (Salesforce, Workday, NetSuite)</li>
+<li>Could be on <span class="accent">company-managed servers</span> (on-prem or cloud)</li>
+<li>Where data lives determines security requirements</li>
+</ul>
+</div>
+<div class="card card-light">
+<p><span class="card-title">Code Execution</span></p>
+<ul>
+<li>Something has to run the Python, SQL, or scripts the AI writes</li>
+<li>Could run on <span class="accent">the LLM provider’s hardware</span> (Claude.ai sandbox)</li>
+<li>Could run on <span class="accent">company servers</span> (Docker, on-prem)</li>
+<li>Could run on <span class="accent">your computer</span> (Claude Desktop, terminal)</li>
 </ul>
 </div>
 </div>
 <aside class="notes">
-<p>Think of it this way. Claude.ai is your quick-access analyst — open a tab, ask a question, get a deliverable. It is where you start for anything new. Claude Desktop is for when you are working with your own files and want a more integrated experience. And Claude Code is for when you want to go beyond one-off tasks and build something reusable. Today we are focused entirely on Claude.ai. By the end of this session, you will have produced multiple artifacts and you will have a feel for what this tool can and cannot do.</p>
+<p>There are three moving pieces in every AI system, and understanding where each one lives is the key to understanding the whole course. First, the AI brain — the large language model. This is always in the cloud, hosted by the provider. It understands your question, generates text and code, but has no permanent memory. Second, the data. This could be on your own computer — a spreadsheet, a PDF. It could be in SaaS provider storage — your Salesforce CRM, your Workday HR system. Or it could be on company-managed servers. Where your data lives determines the security requirements. Third, code execution. When the AI writes Python or SQL to analyze data, something has to actually run that code. It could run on the LLM provider’s hardware — that is what happens when you use Claude.ai’s sandbox. It could run on your company’s servers. Or it could run on your own computer. Each combination has different implications for security, cost, and capability.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="today-vs.-later-in-this-course" class="slide level2 shrink center">
+<h2>Today vs.&nbsp;Later in This Course</h2>
+<div class="comparison-table">
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Sessions 1-2</th>
+<th>Sessions 3-7</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>AI Brain</strong></td>
+<td>Claude (Anthropic cloud)</td>
+<td>Claude (Anthropic cloud)</td>
+</tr>
+<tr class="even">
+<td><strong>Data</strong></td>
+<td>You paste it in or upload it</td>
+<td>Meridian Corp databases (10 systems)</td>
+</tr>
+<tr class="odd">
+<td><strong>Code Execution</strong></td>
+<td>Claude.ai sandbox (Anthropic’s servers)</td>
+<td>Meridian app server / Linux VM</td>
+</tr>
+<tr class="even">
+<td><strong>Security concern</strong></td>
+<td>Low — your own data, your choice</td>
+<td>High — enterprise data, access control needed</td>
+</tr>
+<tr class="odd">
+<td><strong>Your role</strong></td>
+<td>Direct and verify output</td>
+<td>Direct, verify, AND govern access</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="explainer">
+<p>This week, all three pieces are simple: Claude’s cloud brain, your data pasted in, code running in Claude’s sandbox. Starting Session 3, the data lives in enterprise systems and the security questions get real. <span class="accent">That progression is the arc of this course.</span></p>
+</div>
+<aside class="notes">
+<p>Here is how this maps to our course. This week — Sessions 1 and 2 — it is simple. The AI is Claude in the cloud. The data is whatever you paste in or upload. The code runs in Claude’s sandbox on Anthropic’s servers. The security concern is low because it is your own data and you are choosing to share it. Starting in Session 3, things get more interesting. The data lives in enterprise databases — CRM, ERP, HR systems. The code execution moves to dedicated servers. And now the security questions get real: who can access what data? Where does it travel? Who is liable if something goes wrong? That progression — from personal productivity with simple architecture to enterprise deployment with complex architecture — is the arc of the entire course. Sessions 5 and 6 are entirely about those deployment and governance decisions.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
