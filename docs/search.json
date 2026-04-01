@@ -896,11 +896,18 @@
     "text": "What Survives\nData\nThe systems of record. The databases. The institutional knowledge embedded in your CRM, ERP, and HR systems.\nAI does not replace your data — it makes it accessible.\n\nBut here is what does not get replaced: data. Your CRM still holds your customer relationships. Your ERP still tracks your supply chain. Your HR system still manages your people. AI does not replace those systems of record. What it does is make the data inside them dramatically more accessible. Instead of needing a BI team to build a dashboard, you ask a question in English. That is the shift — and it is why we spend the second half of this course on enterprise data."
   },
   {
-    "objectID": "slides/session1.html#but-this-course-starts-with-you",
-    "href": "slides/session1.html#but-this-course-starts-with-you",
+    "objectID": "slides/session1.html#two-questions-this-course-answers",
+    "href": "slides/session1.html#two-questions-this-course-answers",
     "title": "Session 1: What AI Can Do for You",
-    "section": "But This Course Starts With You",
-    "text": "But This Course Starts With You\nBefore AI transforms your organization, it can transform your Tuesday afternoon.\n\nBut we are not starting with enterprise systems. We are starting with something much more immediate. Before AI transforms your organization, it can transform your Tuesday afternoon. The personal productivity gains are available to you right now, today, with no IT department involvement, no deployment project, no budget approval. That is where we begin."
+    "section": "Two Questions This Course Answers",
+    "text": "Two Questions This Course Answers\n\n\n1. Personal Productivity\nHow can I use AI + code to get the data I need, analyze it, and generate deliverables?\n\nCharts, documents, Excel, PowerPoint\nIteration and self-critique\nReusable workflows\nAvailable to you right now\n\n\n\n2. Corporate Implementation\nWhat should my company be doing to implement AI-assisted data handling and analysis?\n\nEnterprise data access and integration\nDeployment architecture and security\nGovernance and verification\nThe 90-day pilot plan\n\n\n\n\nThese are distinct but related. Personal productivity is Week 1. Corporate implementation is Weeks 2–4. The skills from the first feed directly into the second.\n\n\nThis course is organized around two distinct but related questions. The first is personal: how can I use AI plus code to get the data I need, analyze it, and generate deliverables? Charts, documents, Excel workbooks, PowerPoint decks — the things you produce every day. That is what Sessions 1 and 2 are about, and those skills are available to you right now, today, with no IT department involvement.\nThe second question is organizational: what should my company be doing to implement AI-assisted data handling and analysis? How do you connect AI to enterprise databases? Where does the code run? Who governs access? How do you verify the output? That is what Sessions 3 through 8 are about.\nThese two questions are related because the skills you develop for personal productivity — iteration, critique, calibrated trust — are exactly the skills you need to evaluate and govern corporate AI systems. The personal becomes the foundation for the organizational."
+  },
+  {
+    "objectID": "slides/session1.html#we-start-with-you",
+    "href": "slides/session1.html#we-start-with-you",
+    "title": "Session 1: What AI Can Do for You",
+    "section": "We Start With You",
+    "text": "We Start With You\nBefore AI transforms your organization, it can transform your Tuesday afternoon.\n\nWe start with question one — personal productivity. Before AI transforms your organization, it can transform your Tuesday afternoon. The gains are available right now, with no IT approval needed. That is where we begin."
   },
   {
     "objectID": "slides/session1.html#demo-ai-as-your-analyst",

@@ -139,12 +139,52 @@ But here is what does not get replaced: data. Your CRM still holds your customer
 
 ---
 
-## But This Course Starts With You {.section-divider}
+## Two Questions This Course Answers {.shrink}
+
+::: {.two-cards}
+::: {.card .card-dark}
+[1. Personal Productivity]{.card-title}
+
+How can [I]{.amber} use AI + code to get the data I need, analyze it, and generate deliverables?
+
+- Charts, documents, Excel, PowerPoint
+- Iteration and self-critique
+- Reusable workflows
+- Available to you **right now**
+:::
+
+::: {.card .card-light}
+[2. Corporate Implementation]{.card-title}
+
+What should [my company]{.accent} be doing to implement AI-assisted data handling and analysis?
+
+- Enterprise data access and integration
+- Deployment architecture and security
+- Governance and verification
+- The 90-day pilot plan
+:::
+:::
+
+::: {.explainer}
+These are distinct but related. Personal productivity is Week 1. Corporate implementation is Weeks 2--4. The skills from the first feed directly into the second.
+:::
+
+::: {.notes}
+This course is organized around two distinct but related questions. The first is personal: how can I use AI plus code to get the data I need, analyze it, and generate deliverables? Charts, documents, Excel workbooks, PowerPoint decks — the things you produce every day. That is what Sessions 1 and 2 are about, and those skills are available to you right now, today, with no IT department involvement.
+
+The second question is organizational: what should my company be doing to implement AI-assisted data handling and analysis? How do you connect AI to enterprise databases? Where does the code run? Who governs access? How do you verify the output? That is what Sessions 3 through 8 are about.
+
+These two questions are related because the skills you develop for personal productivity — iteration, critique, calibrated trust — are exactly the skills you need to evaluate and govern corporate AI systems. The personal becomes the foundation for the organizational.
+:::
+
+---
+
+## We Start With You {.section-divider}
 
 ### Before AI transforms your organization, it can transform your Tuesday afternoon.
 
 ::: {.notes}
-But we are not starting with enterprise systems. We are starting with something much more immediate. Before AI transforms your organization, it can transform your Tuesday afternoon. The personal productivity gains are available to you right now, today, with no IT department involvement, no deployment project, no budget approval. That is where we begin.
+We start with question one — personal productivity. Before AI transforms your organization, it can transform your Tuesday afternoon. The gains are available right now, with no IT approval needed. That is where we begin.
 :::
 
 ---
