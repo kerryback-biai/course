@@ -29,12 +29,12 @@ Welcome everyone to Session 1 of Business Intelligence and AI. I am excited to h
 
 - **Course tools:** Claude.ai (browser), Claude Desktop (local files), Claude Code (building tools)
 - **The arc:** personal productivity → enterprise data → deployment → strategy
-- **XYZ Corp:** a $500M distributor simulation — starting in Week 2
+- **XYZ Corp Data Simulation:** a $500M distributor simulation — starting in Week 2
 - **By Session 8:** a concrete AI strategy for your organization
 :::
 
 ::: {.notes}
-Before we dive in, let me quickly recap what you saw in the pre-program video. You learned about the three tools we will use — Claude in the browser, Claude Desktop for working with your own files, and Claude Code which I will use to build things in later sessions. You saw the overall arc of the course: we start with personal productivity, move to enterprise data in Week 2, then cover deployment and governance, and finish with strategy. And you got a preview of XYZ Corp, the simulated company we will use starting in Session 3. Today, though, it is all about you and your immediate productivity.
+Before we dive in, let me quickly recap what you saw in the pre-program video. You learned about the three tools we will use — Claude in the browser, Claude Desktop for working with your own files, and Claude Code which I will use to build things in later sessions. You saw the overall arc of the course: we start with personal productivity, move to enterprise data in Week 2, then cover deployment and governance, and finish with strategy. And you got a preview of the XYZ Corp Data Simulation, the simulated company environment we will use starting in Session 3. Today, though, it is all about you and your immediate productivity.
 :::
 
 ---
@@ -277,7 +277,7 @@ These are not screenshots or mockups. AI generates [actual files]{.accent} you c
 :::
 
 ::: {.notes}
-I want to emphasize something important. What Claude produces are not just text responses in a chat window. It generates actual files. Real Excel workbooks with formulas and multiple sheets. Real Word documents with proper formatting. Real PowerPoint decks with layouts and charts. You can download them, open them, edit them, and send them to your colleagues. In this course, we will produce all of these formats. The XYZ Corp app you will use starting in Session 3 generates these same file types from enterprise data.
+I want to emphasize something important. What Claude produces are not just text responses in a chat window. It generates actual files. Real Excel workbooks with formulas and multiple sheets. Real Word documents with proper formatting. Real PowerPoint decks with layouts and charts. You can download them, open them, edit them, and send them to your colleagues. In this course, we will produce all of these formats. The XYZ Corp Data Simulation you will use starting in Session 3 generates these same file types from enterprise data.
 :::
 
 ---
@@ -398,32 +398,33 @@ Now let me connect these architectural concepts to what you will actually do in 
 :::
 
 ::: {.card .card-light}
-[Option 2: Class Cloud Server]{.card-title}
+[Option 2: AI+Code Lab]{.card-title}
 
-- No software to install, no cost to you
-- SSH into a shared Linux server with your own account
-- Data and code execution on [the class server]{.accent}
+- A shared cloud environment with your own account. No software to install, no cost to you.
+- Includes Claude Code and pre-loaded exercises
+- Uses Claude xlsx, docx, and pptx skills, which execute Node.js and Python code
+- Data and code execution on [the Lab]{.accent}
 - AI brain in the cloud (API key provided)
 - **Simulates** working on your own computer --- same experience, zero setup
 :::
 
 ::: {.card .card-light}
-[Option 3: XYZ Corp App]{.card-title}
+[Option 3: XYZ Corp Data Simulation]{.card-title}
 
-- Browser-based, no installation
-- Data lives in [remote databases]{.accent} (10 enterprise systems)
-- Code runs on [a remote server]{.accent} (not your machine)
+- Browser-based enterprise data simulation. No installation.
+- 10 databases, 41 tables, 26,000+ rows
+- Uses Claude xlsx, docx, and pptx skills, which execute Node.js and Python code
+- Simulates corporate AI deployment --- remote data, remote execution
 - AI brain in the cloud
-- **Simulates** corporate deployment --- remote data, remote execution
 :::
 :::
 
 ::: {.notes}
 There are three ways you will experience AI plus code plus data in this course. Option 1: on your own computer. I will provide install files so you can run everything locally — Python, Claude Code, your own data. This requires an Anthropic Pro account, which is not provided by the course, so this is optional for those who want the deepest hands-on experience. You get full control and full privacy — nothing leaves your machine except what goes to the AI brain in the cloud.
 
-Option 2: the class cloud server. This is the zero-friction option. No software to install, no cost to you. You SSH into a shared Linux server where you have your own account. Data and code execution happen on the server. The API key is provided. This simulates working on your own computer — the experience is the same, but there is zero setup.
+Option 2: the AI+Code Lab. This is the zero-friction option. No software to install, no cost to you. You log into a shared cloud environment where you have your own account. It includes Claude Code and pre-loaded exercises. Data and code execution happen on the Lab. The API key is provided. This simulates working on your own computer — the experience is the same, but there is zero setup. Both the Lab and the Data Simulation use Claude xlsx, docx, and pptx skills, which execute Node.js and Python code to generate real Office files.
 
-Option 3: the XYZ Corp app. This is browser-based. The data lives in remote databases — ten enterprise systems — and the code runs on a remote server. This simulates how AI would work in a corporate deployment: the data is not on your machine, the code does not run on your machine, and the AI is in the cloud. This is the architecture most of your companies will use in production.
+Option 3: the XYZ Corp Data Simulation. This is browser-based. The data lives in remote databases — ten enterprise systems, 41 tables, over 26,000 rows — and the code runs on a remote server. This simulates how AI would work in a corporate deployment: the data is not on your machine, the code does not run on your machine, and the AI is in the cloud. This is the architecture most of your companies will use in production.
 :::
 
 ---
@@ -435,8 +436,8 @@ Option 3: the XYZ Corp app. This is browser-based. The data lives in remote data
 | | AI Brain | Data | Code Execution | Simulates |
 |---|---|---|---|---|
 | **Your Computer** | Anthropic cloud | Your local files | Your machine | Personal workstation |
-| **Class Server** | Anthropic cloud | Server files | Server | Personal workstation (no setup) |
-| **XYZ Corp App** | Anthropic cloud | Remote databases | Remote server | Corporate deployment |
+| **AI+Code Lab** | Anthropic cloud | Lab files | Lab server | Personal workstation (no setup) |
+| **XYZ Corp Data Simulation** | Anthropic cloud | Remote databases | Remote server | Corporate deployment |
 
 :::
 
@@ -445,7 +446,7 @@ The AI brain is always in the cloud. What changes is [where the data lives]{.acc
 :::
 
 ::: {.notes}
-Here is how the three options map to the architecture we just discussed. In all three cases, the AI brain is in the cloud — that never changes. What changes is where your data lives and where the code runs. On your own computer, both are local. On the class server, both are on a shared server you SSH into. In the XYZ Corp app, both are remote — databases and code execution are on servers you do not control. That last option is what most corporate deployments look like. And the questions it raises — who can access the data, where does it travel, who governs the output — are exactly what we spend Sessions 5 and 6 on.
+Here is how the three options map to the architecture we just discussed. In all three cases, the AI brain is in the cloud — that never changes. What changes is where your data lives and where the code runs. On your own computer, both are local. On the AI+Code Lab, both are on a shared cloud environment you log into. In the XYZ Corp Data Simulation, both are remote — databases and code execution are on servers you do not control. That last option is what most corporate deployments look like. And the questions it raises — who can access the data, where does it travel, who governs the output — are exactly what we spend Sessions 5 and 6 on.
 :::
 
 ---

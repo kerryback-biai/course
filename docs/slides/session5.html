@@ -201,7 +201,7 @@ Kerry Back, Rice University
 <section id="homework-debrief" class="slide level2 section-divider center">
 <h2>Homework Debrief</h2>
 <aside class="notes">
-<p>Alright, let us start with where we left off. You were asked to produce a complete deliverable using the XYZ Corp app — a memo, a comparison, a risk assessment. I want to hear what you built and, more importantly, whether you would trust it enough to send it upstairs.</p>
+<p>Alright, let us start with where we left off. You were asked to produce a complete deliverable using the XYZ Corp Data Simulation — a memo, a comparison, a risk assessment. I want to hear what you built and, more importantly, whether you would trust it enough to send it upstairs.</p>
 <p>[TIMING: This section divider is a brief transition. Move immediately to the next slide.]</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -223,7 +223,7 @@ Kerry Back, Rice University
 <p>Share Your Deliverable</p>
 </div>
 <ul>
-<li>Walk us through the deliverable you produced in the XYZ Corp app</li>
+<li>Walk us through the deliverable you produced in the Data Simulation</li>
 <li>What question did it answer?</li>
 <li>Who is the audience — and what format did you choose?</li>
 </ul>
@@ -246,7 +246,7 @@ Kerry Back, Rice University
 <p>I would like three or four volunteers to walk us through what they produced. Keep it to about a minute each. Tell us: what question did you ask, who was the intended audience, and what format did you choose — a memo, a dashboard summary, a comparison table?</p>
 <p>After each share, I want the rest of the room to apply the board-ready test. Look at it with fresh eyes. What looks polished and credible at first glance? And then the harder question: what would you want to verify before you put your name on it and sent it to your board of directors? Where might the agent have introduced errors — wrong date ranges, double-counted customers, averages that include data they should not?</p>
 <p>This is the perfect bridge into today’s topic. The gap between an interesting demo output and something you would stake your reputation on is exactly the gap that deployment decisions, data security, and governance are designed to close. That gap is what the rest of this session addresses.</p>
-<p>[TIMING: 8 minutes total for this segment. Call on 3-4 students, about 1.5 minutes each, with brief reactions from the room. If participation is slow, share your own example from the XYZ Corp app to get things started. Transition: “Those verification instincts you just described? They are exactly the right instincts. Now let us talk about the Morgan Stanley case, because they faced the same questions at massive scale.”]</p>
+<p>[TIMING: 8 minutes total for this segment. Call on 3-4 students, about 1.5 minutes each, with brief reactions from the room. If participation is slow, share your own example from the Data Simulation to get things started. Transition: “Those verification instincts you just described? They are exactly the right instincts. Now let us talk about the Morgan Stanley case, because they faced the same questions at massive scale.”]</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -412,7 +412,7 @@ Kerry Back, Rice University
 <p>Cloud API dominates early adoption. But as query volume scales and data sensitivity increases, the economics shift. Morgan Stanley’s choice: <span class="accent">cloud API with zero data retention</span> — the LLM never stores the conversation.</p>
 </div>
 <aside class="notes">
-<p>Let me put some numbers on this. A simple cloud API query costs one to five cents. That sounds trivial, but do the math: if you have a thousand users running twenty queries a day, that is two hundred to a thousand dollars a day just in API costs. And multi-step queries — the kind we have been running in the XYZ Corp app, where the agent queries multiple systems and merges results — those can cost ten to fifty cents each because they involve multiple LLM calls.</p>
+<p>Let me put some numbers on this. A simple cloud API query costs one to five cents. That sounds trivial, but do the math: if you have a thousand users running twenty queries a day, that is two hundred to a thousand dollars a day just in API costs. And multi-step queries — the kind we have been running in the Data Simulation, where the agent queries multiple systems and merges results — those can cost ten to fifty cents each because they involve multiple LLM calls.</p>
 <p>On-premise, you are paying fifty to two hundred thousand dollars upfront for GPU infrastructure, plus ongoing costs for electricity, cooling, and the engineering staff to maintain it. But after that, your marginal cost per query approaches zero.</p>
 <p>The crossover point depends on volume and sensitivity. For a pilot with a hundred users, cloud API wins every time. For an enterprise-wide deployment with sensitive data, the math changes. Morgan Stanley made an interesting choice: they went with cloud API but negotiated zero data retention. The LLM processes the query and immediately forgets it. No conversation history is stored on the vendor’s servers. That was how they satisfied SEC and FINRA requirements while still getting access to the best model.</p>
 <p>[TIMING: 3 minutes. Transition: “Now let us see the data security problem in action. I want to show you something that should make you uncomfortable.”]</p>
@@ -473,7 +473,7 @@ Kerry Back, Rice University
 <p>The question isn’t whether the AI <em>can</em> access the data. It’s whether it <em>should</em> — and who decides.</p>
 </div>
 <aside class="notes">
-<p>[DEMO INSTRUCTIONS: Open the XYZ Corp app. First, with guardrails disabled or in the ungoverned version, type: “Show me individual salary data for the Engineering team.” Let the agent return names, titles, and exact salaries. Let the room see it. Pause for a beat. Then switch to the guardrailed version and ask the same question. Show that it either blocks the query entirely or returns only aggregates: “Average salary for Engineering: $142K, n=47.”]</p>
+<p>[DEMO INSTRUCTIONS: Open the Data Simulation. First, with guardrails disabled or in the ungoverned version, type: “Show me individual salary data for the Engineering team.” Let the agent return names, titles, and exact salaries. Let the room see it. Pause for a beat. Then switch to the guardrailed version and ask the same question. Show that it either blocks the query entirely or returns only aggregates: “Average salary for Engineering: $142K, n=47.”]</p>
 <p>Look at that first result. The agent did exactly what you asked. The SQL was correct. The data is accurate. And if anyone in your company could run this query, you have a governance disaster on your hands. Individual salary data, by name, returned in seconds to anyone with access to the chat interface.</p>
 <p>Now look at the second version. Same question, same underlying data, but the guardrails intercept the query and return only the aggregate. The LLM has the same access to the data — the difference is what the system allows it to return.</p>
 <p>This is the core insight from your pre-reading: the question is not whether the AI can access the data. It is whether it should, and who makes that decision. Let me ask the room: which of the four data security approaches from the primer would have prevented that first result?</p>
@@ -805,7 +805,7 @@ Kerry Back, Rice University
 </div>
 <aside class="notes">
 <p>Let us score this together using the DUNNIXER framework. I will take us through two or three dimensions as a group exercise.</p>
-<p>Data integration: Agentforce gets a high score within the Salesforce ecosystem. If your CRM data is in Salesforce, the connection is native. But how does it score for cross-system queries? If you also need NetSuite financial data or Workday HR data, Agentforce’s reach drops significantly. Think about the XYZ Corp app experience — we were querying across ten systems. Agentforce is strong within one.</p>
+<p>Data integration: Agentforce gets a high score within the Salesforce ecosystem. If your CRM data is in Salesforce, the connection is native. But how does it score for cross-system queries? If you also need NetSuite financial data or Workday HR data, Agentforce’s reach drops significantly. Think about the Data Simulation experience — we were querying across ten systems. Agentforce is strong within one.</p>
 <p>Non-functional requirements: Salesforce already has SOC 2 certification, GDPR compliance, and enterprise-grade uptime SLAs. If your compliance team already trusts Salesforce with your data, the incremental trust required for Agentforce is small. That is a real advantage.</p>
 <p>Extensibility: You can customize prompts and add tools through their low-code interface. But you do not control the underlying model. If Salesforce switches from one LLM provider to another, you go with them. That is the tradeoff of the extend strategy.</p>
 <p>How would you score Agentforce on the remaining dimensions — user experience, nuance and accuracy, and implementation timeline? Anyone want to take a guess based on what you know?</p>
@@ -1045,7 +1045,7 @@ Kerry Back, Rice University
 <p>Three homework items, and they are all about governance — which is exactly where we are headed on Wednesday. First, put yourself in your compliance team’s shoes. For the use case you just drafted a deployment profile for, what governance requirements would they impose? Write down your top three concerns. These might be things like audit trails, access controls, data residency requirements, or regulatory-specific mandates.</p>
 <p>Second, think about the approval chain. Who in your organization would need to sign off on an AI agent deployment? Your CIO? Your chief compliance officer? Your CISO? What objections would each of them raise? Write those down, because on Wednesday we are going to design governance frameworks that address exactly those objections.</p>
 <p>Third, if you did not finish your deployment profile, complete it before Wednesday. You will need it.</p>
-<p>Wednesday’s session is called “Can You Trust It?” and it is going to be a very different experience. We are going to deliberately break the XYZ Corp app. We are going to show you three failures that look like successes, teach you a verification framework, and then turn you loose to red-team the agent yourselves. Come ready to be skeptical.</p>
+<p>Wednesday’s session is called “Can You Trust It?” and it is going to be a very different experience. We are going to deliberately break the Data Simulation. We are going to show you three failures that look like successes, teach you a verification framework, and then turn you loose to red-team the agent yourselves. Come ready to be skeptical.</p>
 <p>[TIMING: 3 minutes. Be clear and concise on the homework. Transition to the closing.]</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {

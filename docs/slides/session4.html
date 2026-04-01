@@ -186,7 +186,7 @@ Kerry Back, Rice University
 </div>
 </div>
 <aside class="notes">
-<p>Say: “Before we dive into new material, let’s debrief the homework. You spent this week asking the XYZ Corp app at least 10 business questions. I want to hear about your best answer and your worst answer.”</p>
+<p>Say: “Before we dive into new material, let’s debrief the homework. You spent this week asking the XYZ Corp Data Simulation at least 10 business questions. I want to hear about your best answer and your worst answer.”</p>
 <p>Call on 3-4 students. For each, ask: “What question did you ask? What made the answer good — or bad?” Listen for common patterns: - Good answers: clear data, well-structured tables, accurate calculations - Bad answers: wrong aggregations, missing filters, misleading charts, hallucinated context</p>
 <p>After sharing, connect to Session 2: “Remember the maker/checker framework? Every one of these answers needs a different level of verification. A chart for your own understanding? Quick glance. A number going into a board presentation? Verify the SQL, check the filters, confirm the row counts.”</p>
 <p>Transition: “Now let me show you what happens when we go from single questions to complete deliverables.”</p>
@@ -255,7 +255,7 @@ Kerry Back, Rice University
 <section id="full-pipeline-demo" class="slide level2 section-divider center">
 <h2>Full Pipeline Demo</h2>
 <aside class="notes">
-<p>This opens the full pipeline demo (minutes 10-25). This is the showpiece demo of Session 4. Make sure the XYZ Corp app is open and ready. You will ask for a quarterly executive summary and then iterate on it.</p>
+<p>This opens the full pipeline demo (minutes 10-25). This is the showpiece demo of Session 4. Make sure the XYZ Corp Data Simulation is open and ready. You will ask for a quarterly executive summary and then iterate on it.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -363,10 +363,10 @@ Kerry Back, Rice University
 </div>
 </div>
 <aside class="notes">
-<p>Walk through each step before switching to the live demo. Say: “Here is what is about to happen. I am going to ask the XYZ Corp app one question: ‘Prepare a quarterly executive summary.’ Watch what the agent does.”</p>
+<p>Walk through each step before switching to the live demo. Say: “Here is what is about to happen. I am going to ask the XYZ Corp Data Simulation one question: ‘Prepare a quarterly executive summary.’ Watch what the agent does.”</p>
 <p>“Step one: it will query six source systems — the three CRMs, the financial systems, Workday HR, and Zendesk support. Step two: merge and deduplicate. Step three: compute KPIs — quarter-over-quarter changes, efficiency ratios, concentration metrics. Step four: charts. Step five: narrative analysis — not just numbers, but interpretation. Step six: assemble everything into a structured document.”</p>
 <p>“Let me show you.”</p>
-<p>Switch to the XYZ Corp app.</p>
+<p>Switch to the Data Simulation.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -390,7 +390,7 @@ revenue by division, headcount efficiency, top customer risks, and
 supply chain issues. Include charts and a narrative summary.</code></pre>
 </div>
 <aside class="notes">
-<p>DEMO INSTRUCTIONS: Switch to the XYZ Corp app. Type the prompt. As it runs, narrate what you see: “It is starting with the CRM queries — pulling revenue by division from each system. Now Workday for headcount. Now Zendesk for support tickets. SAP and Oracle for supply chain.”</p>
+<p>DEMO INSTRUCTIONS: Switch to the Data Simulation. Type the prompt. As it runs, narrate what you see: “It is starting with the CRM queries — pulling revenue by division from each system. Now Workday for headcount. Now Zendesk for support tickets. SAP and Oracle for supply chain.”</p>
 <p>Let the full result render. It should produce: - Revenue by division table with QoQ comparison - Headcount efficiency metrics - Customer concentration risk flags - Supply chain issue summary - Charts and narrative text</p>
 <p>Point out the key insight: “This is a complete executive summary. Revenue, headcount, customer risk, supply chain. All from one prompt. Six systems queried. Charts generated. Narrative written.”</p>
 <p>If the demo fails, switch to the fallback recording and narrate over it.</p>
@@ -649,7 +649,7 @@ supply chain issues. Include charts and a narrative summary.</code></pre>
 <p>This is a <strong>test-and-review cycle</strong>, not a one-shot generation. The LLM writes code, the system executes it, the LLM reviews the results, and decides: deliver or try again.</p>
 </div>
 <aside class="notes">
-<p>Say: “Let me pull back the curtain. When you ask the XYZ Corp app a question, four things happen.”</p>
+<p>Say: “Let me pull back the curtain. When you ask the Data Simulation a question, four things happen.”</p>
 <p>Walk through each step: “Step one: the system prompt. Before your question ever reaches the LLM, a system prompt has been loaded that describes every table, every column, and every relationship. This is the institutional knowledge layer — it tells the LLM what data exists and what it means.”</p>
 <p>“Step two: the tool call. The LLM reads your question, reads the schema, and writes SQL. But it does not just return the SQL. It requests execution — it says ‘run this query against this database.’”</p>
 <p>“Step three: the system runs the SQL and sends the results back to the LLM. The LLM never touches the database directly.”</p>
@@ -855,7 +855,7 @@ IMPORTANT: Customer names differ across systems. Use fuzzy matching.</code></pre
 <section id="live-walkthrough-building-an-agent" class="slide level2 section-divider center">
 <h2>Live Walkthrough: Building an Agent</h2>
 <aside class="notes">
-<p>This opens the live build segment (minutes 48-53). The instructor builds a simple agent on the Linux server using Claude Code. This is a quick, high-impact demonstration — 5 minutes, not a full coding session. The goal is the “your developer could do this” moment.</p>
+<p>This opens the live build segment (minutes 48-53). The instructor builds a simple agent on the AI+Code Lab using Claude Code. This is a quick, high-impact demonstration — 5 minutes, not a full coding session. The goal is the “your developer could do this” moment.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -875,7 +875,7 @@ IMPORTANT: Customer names differ across systems. Use fuzzy matching.</code></pre
 <p>What You Are About to See</p>
 </div>
 <ul>
-<li>The instructor opens a terminal on the Linux server</li>
+<li>The instructor opens a terminal on the AI+Code Lab</li>
 <li>Types English instructions to Claude Code: “Build a Python script that takes a question, sends it to Claude with a schema description, gets SQL back, runs it, and prints the answer”</li>
 <li>Claude Code generates ~50 lines of Python</li>
 <li>We run it. We ask a question. We get an answer.</li>
@@ -885,11 +885,11 @@ IMPORTANT: Customer names differ across systems. Use fuzzy matching.</code></pre
 <p>The entire agent — from blank file to working code — takes about <strong>5 minutes</strong>. This is the “your developer could do this” moment.</p>
 </div>
 <aside class="notes">
-<p>DEMO INSTRUCTIONS: Switch to the Linux server terminal. Open an empty file. Tell Claude Code in English to build the basic agent. Narrate as it generates code:</p>
+<p>DEMO INSTRUCTIONS: Switch to the AI+Code Lab terminal. Open an empty file. Tell Claude Code in English to build the basic agent. Narrate as it generates code:</p>
 <p>“Watch — I am telling Claude Code in plain English to build a data agent. ‘Build a Python script that takes a question, sends it to Claude with a schema description, gets back SQL, runs it against a parquet file, and prints the answer.’”</p>
 <p>“It is writing the code now. About 50 lines. There is the schema description. There is the tool call mechanism. There is the execution loop.”</p>
 <p>Run it. Ask: “How many employees does each division have?” Show the answer.</p>
-<p>Say: “That is the entire core agent. Fifty lines of code. Built from English instructions in about 5 minutes. The XYZ Corp app you have been using is built on this same core loop — it just has 3,000 more lines for error handling, multiple databases, authentication, and the web interface.”</p>
+<p>Say: “That is the entire core agent. Fifty lines of code. Built from English instructions in about 5 minutes. The XYZ Corp Data Simulation you have been using is built on this same core loop — it just has 3,000 more lines for error handling, multiple databases, authentication, and the web interface.”</p>
 <p>“The gap between 50 lines and 3,000 lines is the gap between prototype and production. That gap is real. But the core is simple.”</p>
 <p>If the live demo fails, describe what would have happened and show a pre-prepared screenshot of the code.</p>
 <style type="text/css">
@@ -929,7 +929,7 @@ IMPORTANT: Customer names differ across systems. Use fuzzy matching.</code></pre
 <li>Error handling and retry logic</li>
 <li>Logging, monitoring, audit trail</li>
 <li>Web interface, API, scheduling</li>
-<li><span class="amber">This is the XYZ Corp app</span></li>
+<li><span class="amber">This is the XYZ Corp Data Simulation</span></li>
 </ul>
 </div>
 </div>
@@ -954,7 +954,7 @@ IMPORTANT: Customer names differ across systems. Use fuzzy matching.</code></pre
 <section id="hands-on-build-your-own-report" class="slide level2 section-divider center">
 <h2>Hands-On: Build Your Own Report</h2>
 <aside class="notes">
-<p>This opens the hands-on segment (minutes 53-68). Students use the XYZ Corp app to produce specific deliverables. Three guided exercises, each requiring different combinations of data sources.</p>
+<p>This opens the hands-on segment (minutes 53-68). Students use the Data Simulation to produce specific deliverables. Three guided exercises, each requiring different combinations of data sources.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1236,7 +1236,7 @@ IMPORTANT: Customer names differ across systems. Use fuzzy matching.</code></pre
 <p>Homework for Session 5</p>
 </div>
 <ol type="1">
-<li><strong>Produce one complete deliverable</strong> using the XYZ Corp app — a memo, comparison, or risk assessment. Save or screenshot the output.</li>
+<li><strong>Produce one complete deliverable</strong> using the XYZ Corp Data Simulation — a memo, comparison, or risk assessment. Save or screenshot the output.</li>
 <li><strong>Pre-reading (~35 min):</strong>
 <ul>
 <li>Morgan Stanley case study (provided) — a regulated firm’s deployment decision</li>
@@ -1244,14 +1244,14 @@ IMPORTANT: Customer names differ across systems. Use fuzzy matching.</code></pre
 <li>“What Does Your AI Actually See?” (provided) — four data security approaches</li>
 </ul></li>
 <li><strong>Optional reading:</strong> a16z “How 100 Enterprise CIOs Are Building and Buying Gen AI” + DUNNIXER vendor evaluation scorecard</li>
-<li><strong>Optional:</strong> Linux server Exercises 1–2 + Demos 1–4</li>
+<li><strong>Optional:</strong> AI+Code Lab Exercises 1–2 + Demos 1–4</li>
 </ol>
 </div>
 <aside class="notes">
-<p>Say: “Homework. First, produce one complete deliverable using the XYZ Corp app. Not a single question — a full report. A memo, a comparison, a risk assessment. Whatever interests you. Save or screenshot the output and bring it to Session 5.”</p>
+<p>Say: “Homework. First, produce one complete deliverable using the XYZ Corp Data Simulation. Not a single question — a full report. A memo, a comparison, a risk assessment. Whatever interests you. Save or screenshot the output and bring it to Session 5.”</p>
 <p>“Second, required pre-reading — about 35 minutes total. Three items: the Morgan Stanley case study, the AIMultiple article on cloud vs.&nbsp;local LLMs, and a short piece on what the AI actually sees when it accesses your data. These prepare you for Session 5, which is entirely about deployment and architecture.”</p>
 <p>“Optional: the a16z enterprise AI survey and the DUNNIXER vendor evaluation scorecard. Keep the DUNNIXER scorecard — you will use it in Session 5.”</p>
-<p>“Also optional: the Linux server exercises and recorded demos. If you want to build an agent yourself, Exercises 1 and 2 walk you through it with AI assistance.”</p>
+<p>“Also optional: the AI+Code Lab exercises and recorded demos. If you want to build an agent yourself, Exercises 1 and 2 walk you through it with AI assistance.”</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

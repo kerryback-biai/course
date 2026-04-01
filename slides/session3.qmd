@@ -169,7 +169,7 @@ If the live demo fails, switch to the pre-recorded fallback and narrate over it.
 :::
 
 ::: {.notes}
-Display this summary slide while the demo result is still visible in the app. Say: "Here is what the agent found. Ten customers purchase from multiple divisions. Four of them --- GE, ExxonMobil, Dow, and Chevron --- buy from all three divisions, representing $56.5 million in combined revenue."
+Display this summary slide while the demo result is still visible in the Data Simulation. Say: "Here is what the agent found. Ten customers purchase from multiple divisions. Four of them --- GE, ExxonMobil, Dow, and Chevron --- buy from all three divisions, representing $56.5 million in combined revenue."
 
 "But here is the insight that matters: only 3 of the 10 had matching names across systems. The other 7 required fuzzy matching to link. Without that matching, these customers appear as 24 separate accounts. You cannot negotiate enterprise pricing. You cannot see the full relationship. You cannot even answer the CEO's question."
 
