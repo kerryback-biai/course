@@ -345,10 +345,10 @@ Now let me explain something important about how these systems actually work. Un
 [The AI Brain]{.card-title}
 
 - The large language model (LLM)
-- [Always in the cloud]{.amber} — hosted by Anthropic, OpenAI, Google, etc.
+- [Usually in the cloud]{.amber} — hosted by Anthropic, OpenAI, Google, etc.
+- Can also run [on-premise]{.accent} for sensitive data (Session 5)
 - Understands your question
 - Generates text, code, and plans
-- Has no permanent memory
 :::
 
 ::: {.card .card-light}
@@ -371,7 +371,7 @@ Now let me explain something important about how these systems actually work. Un
 :::
 
 ::: {.notes}
-There are three moving pieces in every AI system, and understanding where each one lives is the key to understanding the whole course. First, the AI brain — the large language model. This is always in the cloud, hosted by the provider. It understands your question, generates text and code, but has no permanent memory. Second, the data. This could be on your own computer — a spreadsheet, a PDF. It could be in SaaS provider storage — your Salesforce CRM, your Workday HR system. Or it could be on company-managed servers. Where your data lives determines the security requirements. Third, code execution. When the AI writes Python or SQL to analyze data, something has to actually run that code. It could run on the LLM provider's hardware — that is what happens when you use Claude.ai's sandbox. It could run on your company's servers. Or it could run on your own computer. Each combination has different implications for security, cost, and capability.
+There are three moving pieces in every AI system, and understanding where each one lives is the key to understanding the whole course. First, the AI brain — the large language model. This is usually in the cloud, hosted by the provider — Anthropic, OpenAI, Google. But it does not have to be. For organizations with sensitive data, you can run an LLM on your own servers — on-premise. The tradeoff is cost and model quality versus full data control. We will cover that decision in detail in Session 5. Second, the data. This could be on your own computer — a spreadsheet, a PDF. It could be in SaaS provider storage — your Salesforce CRM, your Workday HR system. Or it could be on company-managed servers. Where your data lives determines the security requirements. Third, code execution. When the AI writes Python or SQL to analyze data, something has to actually run that code. It could run on the LLM provider's hardware — that is what happens when you use Claude.ai's sandbox. It could run on your company's servers. Or it could run on your own computer. Each combination has different implications for security, cost, and capability.
 :::
 
 ---
@@ -442,7 +442,7 @@ Option 3: the XYZ Corp Data Simulation. This is browser-based. The data lives in
 :::
 
 ::: {.highlight-box}
-The AI brain is always in the cloud. What changes is [where the data lives]{.accent} and [where the code runs]{.accent}. That is the deployment decision every organization faces — and what Sessions 5 and 6 are about.
+In this course, the AI brain is in the cloud. In production, it could also run on-premise. What changes is [where the data lives]{.accent}, [where the code runs]{.accent}, and [where the LLM runs]{.accent}. Those are the deployment decisions every organization faces — and what Sessions 5 and 6 are about.
 :::
 
 ::: {.notes}

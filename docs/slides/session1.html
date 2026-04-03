@@ -597,10 +597,10 @@ Kerry Back, Rice University
 <p><span class="card-title">The AI Brain</span></p>
 <ul>
 <li>The large language model (LLM)</li>
-<li><span class="amber">Always in the cloud</span> — hosted by Anthropic, OpenAI, Google, etc.</li>
+<li><span class="amber">Usually in the cloud</span> — hosted by Anthropic, OpenAI, Google, etc.</li>
+<li>Can also run <span class="accent">on-premise</span> for sensitive data (Session 5)</li>
 <li>Understands your question</li>
 <li>Generates text, code, and plans</li>
-<li>Has no permanent memory</li>
 </ul>
 </div>
 <div class="card card-light">
@@ -623,7 +623,7 @@ Kerry Back, Rice University
 </div>
 </div>
 <aside class="notes">
-<p>There are three moving pieces in every AI system, and understanding where each one lives is the key to understanding the whole course. First, the AI brain — the large language model. This is always in the cloud, hosted by the provider. It understands your question, generates text and code, but has no permanent memory. Second, the data. This could be on your own computer — a spreadsheet, a PDF. It could be in SaaS provider storage — your Salesforce CRM, your Workday HR system. Or it could be on company-managed servers. Where your data lives determines the security requirements. Third, code execution. When the AI writes Python or SQL to analyze data, something has to actually run that code. It could run on the LLM provider’s hardware — that is what happens when you use Claude.ai’s sandbox. It could run on your company’s servers. Or it could run on your own computer. Each combination has different implications for security, cost, and capability.</p>
+<p>There are three moving pieces in every AI system, and understanding where each one lives is the key to understanding the whole course. First, the AI brain — the large language model. This is usually in the cloud, hosted by the provider — Anthropic, OpenAI, Google. But it does not have to be. For organizations with sensitive data, you can run an LLM on your own servers — on-premise. The tradeoff is cost and model quality versus full data control. We will cover that decision in detail in Session 5. Second, the data. This could be on your own computer — a spreadsheet, a PDF. It could be in SaaS provider storage — your Salesforce CRM, your Workday HR system. Or it could be on company-managed servers. Where your data lives determines the security requirements. Third, code execution. When the AI writes Python or SQL to analyze data, something has to actually run that code. It could run on the LLM provider’s hardware — that is what happens when you use Claude.ai’s sandbox. It could run on your company’s servers. Or it could run on your own computer. Each combination has different implications for security, cost, and capability.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -749,7 +749,7 @@ Kerry Back, Rice University
 </table>
 </div>
 <div class="highlight-box">
-<p>The AI brain is always in the cloud. What changes is <span class="accent">where the data lives</span> and <span class="accent">where the code runs</span>. That is the deployment decision every organization faces — and what Sessions 5 and 6 are about.</p>
+<p>In this course, the AI brain is in the cloud. In production, it could also run on-premise. What changes is <span class="accent">where the data lives</span>, <span class="accent">where the code runs</span>, and <span class="accent">where the LLM runs</span>. Those are the deployment decisions every organization faces — and what Sessions 5 and 6 are about.</p>
 </div>
 <aside class="notes">
 <p>Here is how the three options map to the architecture we just discussed. In all three cases, the AI brain is in the cloud — that never changes. What changes is where your data lives and where the code runs. On your own computer, both are local. On the AI+Code Lab, both are on a shared cloud environment you log into. In the XYZ Corp Data Simulation, both are remote — databases and code execution are on servers you do not control. That last option is what most corporate deployments look like. And the questions it raises — who can access the data, where does it travel, who governs the output — are exactly what we spend Sessions 5 and 6 on.</p>
