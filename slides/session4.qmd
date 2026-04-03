@@ -658,6 +658,84 @@ Say: "The core agent is 50 lines. The production application is 3,000 lines. Wha
 
 ---
 
+## From Pipeline to Dashboard
+
+::: {.explainer}
+The reporting pipeline produces a **document** --- a PDF, a memo, a deck. But what if you need something **interactive** --- a dashboard your team can use every day, with filters, drill-downs, and live data?
+:::
+
+::: {.highlight-box}
+One prompt to Claude Code: "Build a Streamlit dashboard that shows revenue by division with filters for date range and product category." Working app in under **5 minutes**.
+:::
+
+::: {.notes}
+Say: "The pipeline we just built produces a static deliverable --- a document. That is the right output for a board memo or a quarterly review. But some use cases need something interactive. A sales manager wants to filter by region. A VP wants to toggle between divisions. That is a dashboard."
+
+"Here is the key insight: the same AI tools that build reporting pipelines can also build interactive applications. One prompt to Claude Code, and you have a working Streamlit dashboard. Let me show you."
+
+Transition to the demo walkthrough.
+:::
+
+---
+
+## Demo Walkthrough: Building a Dashboard {.shrink}
+
+::: {.code-box}
+::: {.box-title}
+The prompt (typed into Claude Code on the AI+Code Lab)
+:::
+```
+Build a Streamlit dashboard that visualizes XYZ Corp data.
+Include: revenue by division (bar chart), a trend line for
+monthly revenue, dropdown filters for date range and product
+category, and a downloadable CSV of the filtered data.
+```
+:::
+
+::: {.info-box}
+::: {.box-title}
+What Claude Code Produces
+:::
+- A single Python file (~80 lines) with Streamlit, Pandas, and Plotly
+- Data loading from the XYZ Corp dataset
+- Interactive dropdown filters for division, date range, and product category
+- Bar chart of revenue by division, trend line of monthly revenue
+- A "Download CSV" button for the filtered dataset
+- **Result:** a working web app you can open in a browser immediately
+:::
+
+::: {.notes}
+Say: "This is what I typed into Claude Code on the AI+Code Lab. It produced a working Streamlit app in about 3 minutes. Let me walk you through what it built."
+
+"The output is a single Python file --- about 80 lines. It loads the XYZ Corp data, creates dropdown filters for division, date range, and product category, generates a bar chart and a trend line, and includes a download button for the filtered data. You run it with one command --- 'streamlit run dashboard.py' --- and you have an interactive web app."
+
+"Notice: no HTML, no CSS, no JavaScript, no front-end framework. Streamlit handles all of that. Claude Code wrote the data logic and the layout. The entire thing took less time than formatting a PowerPoint slide."
+
+If doing this live, switch to the AI+Code Lab and show the running app. If not, describe the result and show a screenshot.
+:::
+
+---
+
+## The SaaSpocalypse in Reverse {.centered-statement}
+
+::: {.highlight-box}
+AI kills dashboards. AI also [builds better ones faster]{.accent}.
+:::
+
+::: {.explainer}
+The dashboard that used to take a team two weeks to spec, design, and deploy can now be prototyped in minutes. The question is not whether dashboards are dead --- it is **who builds them and how fast**.
+:::
+
+::: {.notes}
+Say: "Remember the SaaSpocalypse from Session 1? The argument that AI makes traditional BI dashboards obsolete because you can just ask a question and get an answer? That is half right. AI does replace static dashboards that no one updates. But it also builds interactive dashboards faster than any development team."
+
+"Two weeks of requirements gathering, design reviews, and sprint cycles --- replaced by a five-minute prompt. The dashboard is not dead. The two-week development cycle is dead."
+
+"This is a theme we will keep returning to: AI does not just replace tools, it collapses the time to build them. That applies to reports, dashboards, and --- as you will see in Session 7 --- predictive applications."
+:::
+
+---
+
 ## Hands-On: Build Your Own Report {.section-divider}
 
 ::: {.notes}

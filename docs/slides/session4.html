@@ -951,6 +951,95 @@ IMPORTANT: Customer names differ across systems. Use fuzzy matching.</code></pre
           display:block!important;
       }</style></aside>
 </section>
+<section id="from-pipeline-to-dashboard" class="slide level2 center">
+<h2>From Pipeline to Dashboard</h2>
+<div class="explainer">
+<p>The reporting pipeline produces a <strong>document</strong> — a PDF, a memo, a deck. But what if you need something <strong>interactive</strong> — a dashboard your team can use every day, with filters, drill-downs, and live data?</p>
+</div>
+<div class="highlight-box">
+<p>One prompt to Claude Code: “Build a Streamlit dashboard that shows revenue by division with filters for date range and product category.” Working app in under <strong>5 minutes</strong>.</p>
+</div>
+<aside class="notes">
+<p>Say: “The pipeline we just built produces a static deliverable — a document. That is the right output for a board memo or a quarterly review. But some use cases need something interactive. A sales manager wants to filter by region. A VP wants to toggle between divisions. That is a dashboard.”</p>
+<p>“Here is the key insight: the same AI tools that build reporting pipelines can also build interactive applications. One prompt to Claude Code, and you have a working Streamlit dashboard. Let me show you.”</p>
+<p>Transition to the demo walkthrough.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="demo-walkthrough-building-a-dashboard" class="slide level2 shrink center">
+<h2>Demo Walkthrough: Building a Dashboard</h2>
+<div class="code-box">
+<div class="box-title">
+<p>The prompt (typed into Claude Code on the AI+Code Lab)</p>
+</div>
+<pre><code>Build a Streamlit dashboard that visualizes XYZ Corp data.
+Include: revenue by division (bar chart), a trend line for
+monthly revenue, dropdown filters for date range and product
+category, and a downloadable CSV of the filtered data.</code></pre>
+</div>
+<div class="info-box">
+<div class="box-title">
+<p>What Claude Code Produces</p>
+</div>
+<ul>
+<li>A single Python file (~80 lines) with Streamlit, Pandas, and Plotly</li>
+<li>Data loading from the XYZ Corp dataset</li>
+<li>Interactive dropdown filters for division, date range, and product category</li>
+<li>Bar chart of revenue by division, trend line of monthly revenue</li>
+<li>A “Download CSV” button for the filtered dataset</li>
+<li><strong>Result:</strong> a working web app you can open in a browser immediately</li>
+</ul>
+</div>
+<aside class="notes">
+<p>Say: “This is what I typed into Claude Code on the AI+Code Lab. It produced a working Streamlit app in about 3 minutes. Let me walk you through what it built.”</p>
+<p>“The output is a single Python file — about 80 lines. It loads the XYZ Corp data, creates dropdown filters for division, date range, and product category, generates a bar chart and a trend line, and includes a download button for the filtered data. You run it with one command — ‘streamlit run dashboard.py’ — and you have an interactive web app.”</p>
+<p>“Notice: no HTML, no CSS, no JavaScript, no front-end framework. Streamlit handles all of that. Claude Code wrote the data logic and the layout. The entire thing took less time than formatting a PowerPoint slide.”</p>
+<p>If doing this live, switch to the AI+Code Lab and show the running app. If not, describe the result and show a screenshot.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-saaspocalypse-in-reverse" class="slide level2 centered-statement center">
+<h2>The SaaSpocalypse in Reverse</h2>
+<div class="highlight-box">
+<p>AI kills dashboards. AI also <span class="accent">builds better ones faster</span>.</p>
+</div>
+<div class="explainer">
+<p>The dashboard that used to take a team two weeks to spec, design, and deploy can now be prototyped in minutes. The question is not whether dashboards are dead — it is <strong>who builds them and how fast</strong>.</p>
+</div>
+<aside class="notes">
+<p>Say: “Remember the SaaSpocalypse from Session 1? The argument that AI makes traditional BI dashboards obsolete because you can just ask a question and get an answer? That is half right. AI does replace static dashboards that no one updates. But it also builds interactive dashboards faster than any development team.”</p>
+<p>“Two weeks of requirements gathering, design reviews, and sprint cycles — replaced by a five-minute prompt. The dashboard is not dead. The two-week development cycle is dead.”</p>
+<p>“This is a theme we will keep returning to: AI does not just replace tools, it collapses the time to build them. That applies to reports, dashboards, and — as you will see in Session 7 — predictive applications.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="hands-on-build-your-own-report" class="slide level2 section-divider center">
 <h2>Hands-On: Build Your Own Report</h2>
 <aside class="notes">

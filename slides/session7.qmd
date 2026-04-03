@@ -1039,6 +1039,119 @@ Bridge to the breakout: "You just built a model for churn prediction. Now I want
 
 ---
 
+## From Model to App {.section-divider}
+
+::: {.notes}
+You built a model. Now let us make it usable. A prediction sitting in a Jupyter notebook helps no one. The next step is putting it into the hands of the people who make decisions --- and that means turning it into an application.
+
+[TIMING: 15 seconds. Section divider --- advance immediately.]
+:::
+
+---
+
+## Deploy Your Model as a Dashboard {.shrink}
+
+::: {.code-box}
+::: {.box-title}
+The prompt (typed into Claude Code on the AI+Code Lab)
+:::
+```
+Take the churn prediction model we just built. Create a Streamlit
+app where a user can enter customer attributes (contract length,
+monthly charges, tenure, support tickets) and get a churn
+probability with the top 3 risk factors.
+```
+:::
+
+::: {.info-box}
+::: {.box-title}
+What the App Produces
+:::
+- Input form with sliders and dropdowns for customer attributes
+- A prediction output: "Churn probability: 73% --- High Risk"
+- Feature importance bar chart showing the top 3 risk factors for this customer
+- Recommended actions: "Offer contract upgrade," "Assign dedicated support rep," "Schedule executive check-in"
+- A sales manager could use this every day to prioritize retention outreach
+:::
+
+::: {.notes}
+Say: "This is the full arc. We went from raw data to a predictive model to a deployable application --- all with AI assistance. The model runs inside the app. A sales manager could use this every day to prioritize retention outreach."
+
+"Notice the prompt: one sentence. Paste the model code, ask for a Streamlit wrapper. Claude Code handles the rest --- the input form, the prediction logic, the visualization, the recommended actions. The result is a working web app that anyone on the team can use without touching code or understanding the model."
+
+"This is what 'predictions need action' looks like in practice. The model is embedded in a tool that surfaces recommendations to the person who can act on them."
+:::
+
+---
+
+## The Full Arc {.step-flow}
+
+::: {.step-flow}
+::: {.step-card}
+::: {.step-icon}
+1
+:::
+::: {.step-title}
+Data
+:::
+::: {.step-desc}
+Raw customer records from enterprise systems
+:::
+:::
+
+::: {.step-card}
+::: {.step-icon}
+2
+:::
+::: {.step-title}
+Model
+:::
+::: {.step-desc}
+Gradient boosting trained on historical patterns
+:::
+:::
+
+::: {.step-card}
+::: {.step-icon}
+3
+:::
+::: {.step-title}
+Dashboard
+:::
+::: {.step-desc}
+Streamlit app with inputs, predictions, and actions
+:::
+:::
+
+::: {.step-card}
+::: {.step-icon}
+4
+:::
+::: {.step-title}
+Decision
+:::
+::: {.step-desc}
+Sales manager calls the right customer today
+:::
+:::
+:::
+
+::: {.explainer}
+From raw data to a decision tool. This is what AI + code gives you: not just answers, but [applications]{.accent}.
+:::
+
+::: {.notes}
+Say: "Data, model, dashboard, decision. That is the full arc. You started this session with a CSV file. You built a predictive model. You could deploy it as a Streamlit app. And the result is a decision tool --- a sales manager opens the app, enters a customer's attributes, and gets a recommendation."
+
+"This is optional homework on the AI+Code Lab for those who want to try it. The prompt is straightforward --- paste the model code, ask for a Streamlit wrapper. Claude Code handles the rest. But the concept is what matters: you can go from data to deployable application in a single sitting."
+
+"When you think about your capstone, this is the level of specificity that scores well. Not 'we will use ML' but 'we will build a churn prediction dashboard that the customer success team uses every morning to prioritize outreach.'"
+
+[TIMING: 3 minutes for these three slides. Then move to the breakout.]
+:::
+
+---
+
 ## Breakout: Prediction Opportunities {.section-divider}
 
 ::: {.notes}
@@ -1288,6 +1401,8 @@ Before Session 8 (Monday)
 
 ::: {.highlight-box}
 **Optional:** Demos 6-7 show building a RAG system and combining it with a database agent. Relevant if your capstone includes document AI.
+
+**Optional:** Deploy your churn model as a Streamlit dashboard on the AI+Code Lab. The prompt is one sentence.
 :::
 
 ::: {.notes}
