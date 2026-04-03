@@ -428,10 +428,184 @@ Kerry Back, Rice University
           display:block!important;
       }</style></aside>
 </section>
+<section id="what-on-prem-actually-requires" class="slide level2 section-divider center">
+<h2>What On-Prem Actually Requires</h2>
+<aside class="notes">
+<p>Before we move to data security, I want to make sure everyone understands what choosing on-premise actually means. It is not just downloading a model. Let me show you the full picture.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="more-than-a-model" class="slide level2 shrink center">
+<h2>More Than a Model</h2>
+<div class="three-cards">
+<div class="card card-dark">
+<p><span class="card-title">The Model Layer</span></p>
+<ul>
+<li>Open-source LLM (Llama, Qwen, Mistral)</li>
+<li>GPU servers to run inference</li>
+<li>Model serving software (Ollama, vLLM)</li>
+</ul>
+</div>
+<div class="card card-light">
+<p><span class="card-title">The API Layer</span></p>
+<ul>
+<li>Internal API endpoint (like OpenAI’s, but on your network)</li>
+<li>Authentication, rate limiting, logging</li>
+<li>Lets any internal app call the model programmatically</li>
+</ul>
+</div>
+<div class="card card-light">
+<p><span class="card-title">The Interface Layer</span></p>
+<ul>
+<li>Chat UI for non-technical users</li>
+<li>System prompt management</li>
+<li>Conversation history and audit logs</li>
+</ul>
+</div>
+</div>
+<div class="explainer">
+<p>With a cloud provider, you get all three out of the box. On-prem, <span class="accent">you build each one</span>.</p>
+</div>
+<aside class="notes">
+<p>When someone says “we will run AI on-premise,” they usually mean “we will host the model ourselves.” But the model is only one of three layers you need. You also need an API layer — an internal endpoint with authentication, rate limiting, and logging so your applications can call the model programmatically. And you need an interface layer — a chat UI for non-technical users, system prompt management, and conversation history with audit trails.</p>
+<p>With a cloud provider like Anthropic or OpenAI, you get all three out of the box. On-prem, you build each one. That is the real cost — not just the GPUs, but the entire platform around them.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-developer-tooling-gap" class="slide level2 shrink center">
+<h2>The Developer Tooling Gap</h2>
+<div class="two-cards">
+<div class="card card-dark">
+<p><span class="card-title">What a Coding Agent Needs</span></p>
+<ul>
+<li>File read/write with permission controls</li>
+<li>Terminal execution in a sandbox</li>
+<li>Git integration (commits, diffs, branches)</li>
+<li>Context management (which files to feed the model)</li>
+<li>Multi-agent orchestration</li>
+<li>Memory and session persistence</li>
+</ul>
+</div>
+<div class="card card-light">
+<p><span class="card-title">What Cloud Providers Bundle</span></p>
+<ul>
+<li>Anthropic: Claude Code (~500K lines of tooling)</li>
+<li>GitHub: Copilot (IDE-integrated agent)</li>
+<li>Google: Gemini Code Assist</li>
+<li>All include the harness <span class="accent">for free</span> with API access</li>
+<li>Continuously updated by large engineering teams</li>
+</ul>
+</div>
+</div>
+<div class="explainer">
+<p>The model is the brain. The harness is everything else. On-prem means building or assembling the harness yourself — or using less mature open-source alternatives.</p>
+</div>
+<aside class="notes">
+<p>Here is where it gets really stark. If you want AI-assisted coding and data analysis — the kind of work you have been doing in this course — the LLM is only the brain. Around it sits a harness of tools: file I/O with permission controls, terminal execution in a sandbox, git integration, context management, multi-agent orchestration. Claude Code, the tool we use in the AI+Code Lab, is about 500,000 lines of TypeScript. That is the scale of tooling that sits between a raw language model and a productive user.</p>
+<p>Cloud providers bundle all of this with their API access. On-prem, you either build it yourself, or you use open-source alternatives that are less mature. This is an important consideration for your DUNNIXER evaluation later in this session — when you score “implementation timeline” and “extensibility,” you are really asking: how much of this platform am I building versus buying?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-build-vs-buy-reality" class="slide level2 shrink center">
+<h2>The Build-vs-Buy Reality</h2>
+<div class="comparison-table">
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Cloud API</th>
+<th>On-Premise</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Model</strong></td>
+<td>Frontier model included</td>
+<td>Open-source (Llama, Mistral)</td>
+</tr>
+<tr class="even">
+<td><strong>API</strong></td>
+<td>Included</td>
+<td>Build or assemble</td>
+</tr>
+<tr class="odd">
+<td><strong>Tooling</strong></td>
+<td>Included (Claude Code, etc.)</td>
+<td>Build or use open-source</td>
+</tr>
+<tr class="even">
+<td><strong>Maintenance</strong></td>
+<td>Provider handles updates</td>
+<td>Your engineering team</td>
+</tr>
+<tr class="odd">
+<td><strong>Cost model</strong></td>
+<td>Pay per token (~$3–15/M tokens)</td>
+<td>$50–500K+ upfront + ongoing</td>
+</tr>
+<tr class="even">
+<td><strong>Data control</strong></td>
+<td>Provider policy (zero retention available)</td>
+<td><span class="accent">Complete</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="highlight-box">
+<p>For most organizations, the answer is <span class="accent">hybrid</span>: cloud AI for general work, on-prem for sensitive data. The schema-only pattern — send the table structure to the cloud, run the query locally — gets you both.</p>
+</div>
+<aside class="notes">
+<p>Here is the build-versus-buy reality in one table. Cloud gives you the model, the API, the tooling, and ongoing maintenance — all included in per-token pricing. On-prem gives you complete data control, but you are buying hardware, building or assembling the API and tooling layers, and maintaining everything with your own engineering team.</p>
+<p>For most firms, the answer is hybrid. Use cloud AI for general work where data sensitivity is low. Use on-prem for sensitive data — and the schema-only pattern bridges the two. You send the table structure to the cloud LLM, it writes the SQL, and the query runs locally. The sensitive data never leaves your network, but you still get the best model for query generation.</p>
+<p>This is the practical context for the DUNNIXER framework we will use later today. Now let me show you the data security problem in action.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="the-data-security-problem" class="slide level2 section-divider center">
 <h2>The Data Security Problem</h2>
 <aside class="notes">
-<p>We have been talking about deployment options in the abstract. Now I want to make the data security problem concrete. You read about the four approaches in the primer. Let me show you why they matter.</p>
+<p>We have been talking about deployment options — cloud, on-prem, hybrid — and what on-prem actually requires. Now I want to make the data security problem concrete. You read about the four approaches in the primer. Let me show you why they matter.</p>
 <p>[TIMING: Brief transition. Move immediately to the demo slide.]</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
