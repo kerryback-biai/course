@@ -8,7 +8,7 @@ echo "Rendering Quarto site..."
 quarto render
 
 echo "Encrypting HTML files..."
-staticrypt docs/*.html docs/slides/*.html -r -d docs -p "biai-kback-rice2026" \
+staticrypt docs/*.html docs/slides/*.html -r -d docs -p "exed@rice" \
     --remember 90 --short \
     --template-title "From BI to AI" \
     --template-instructions "Enter the course password." \
