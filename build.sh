@@ -14,6 +14,8 @@ staticrypt docs/*.html docs/slides/*.html -r -d docs -p "execed@rice" \
     --template-instructions "Enter the course password." \
     --template-button "Unlock" \
     --template-placeholder "Course password" \
-    --template-error "Incorrect password. Please try again."
+    --template-error "Incorrect password. Please try again." \
+    --template-color-primary "#00205B" \
+    --template-color-secondary "#7C7E7F"
 
 echo "Done. Site rendered and encrypted."
