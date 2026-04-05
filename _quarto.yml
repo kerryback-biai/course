@@ -21,10 +21,8 @@ website:
   search: false
   navbar:
     search: false
-    title: ""
+    title: "BI to AI"
     left:
-      - href: index.qmd
-        icon: house-fill
       - href: slides.qmd
         text: Slides
       - text: AI Lab
