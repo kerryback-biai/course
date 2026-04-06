@@ -1,10 +1,12 @@
 ---
-title: Slides
+title: Slide Decks
 ---
 
-## Course Slides
 
-Click on a topic to view the slide deck.
+The slide decks are websites.  They open in your browser.  You can navigate through them with the arrow keys on your keyboard.  There is also a navigation guide at the bottom left corner of each slide.  
+
+If you prefer a pdf, choose the Tools menu in the navigation guide, and click the icon beside 'Export to PDF.'  Then, use CTRL-SHFT-P to bring up a print menu as usual.  Choose 'Print to PDF' to get a PDF of the complete slide deck.
+
 
 | # | Session |
 |--:|---------|
