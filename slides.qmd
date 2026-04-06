@@ -3,18 +3,13 @@ title: Slide Decks
 ---
 
 
-The slide decks are websites.  They open in your browser.  You can navigate through them with the arrow keys on your keyboard.  There is also a navigation guide at the bottom left corner of each slide.  
-
-If you prefer a pdf, choose the Tools menu in the navigation guide, and click the icon beside 'Export to PDF.'  Then, use CTRL-SHFT-P to bring up a print menu as usual.  Choose 'Print to PDF' to get a PDF of the complete slide deck.
-
-
 | # | Session |
 |--:|---------|
-| 1 | <a href="slides/session1.html" target="_blank">What AI Can Do for You</a> |
-| 2 | <a href="slides/session2.html" target="_blank">Iterate, Critique, Trust</a> |
-| 3 | <a href="slides/session3.html" target="_blank">AI Meets Your Data</a> |
-| 4 | <a href="slides/session4.html" target="_blank">From Data to Deliverable</a> |
-| 5 | <a href="slides/session5.html" target="_blank">What Does Deployment Look Like?</a> |
-| 6 | <a href="slides/session6.html" target="_blank">Can You Trust It?</a> |
-| 7 | <a href="slides/session7.html" target="_blank">Let the Data Predict</a> |
-| 8 | <a href="slides/session8.html" target="_blank">Your AI Strategy</a> |
+| 1 | [What AI Can Do for You](slides/pdf/session1.pdf) |
+| 2 | [Iterate, Critique, Trust](slides/pdf/session2.pdf) |
+| 3 | [AI Meets Your Data](slides/pdf/session3.pdf) |
+| 4 | [From Data to Deliverable](slides/pdf/session4.pdf) |
+| 5 | [What Does Deployment Look Like?](slides/pdf/session5.pdf) |
+| 6 | [Can You Trust It?](slides/pdf/session6.pdf) |
+| 7 | [Let the Data Predict](slides/pdf/session7.pdf) |
+| 8 | [Your AI Strategy](slides/pdf/session8.pdf) |

@@ -15,6 +15,7 @@ project:
   resources:
     - CNAME
     - .nojekyll
+    - slides/pdf/*.pdf
 
 website:
   title: ""
