@@ -223,7 +223,15 @@ Quick show of hands: based on what you read and what you know about your company
 $0.01--0.05
 :::
 ::: {.stat-label}
-Per simple query --- Cloud API (multi-step queries cost more)
+Per simple query --- Cloud API
+:::
+:::
+::: {.stat-card}
+::: {.stat-number}
+$0.10--1.00+
+:::
+::: {.stat-label}
+Per multi-step agent query --- Cloud API
 :::
 :::
 ::: {.stat-card}
@@ -245,13 +253,15 @@ Of enterprises testing third-party AI tools (a16z 2025 CIO survey)
 :::
 
 ::: {.explainer}
-Cloud API dominates early adoption. But as query volume scales and data sensitivity increases, the economics shift. Morgan Stanley's choice: [cloud API with zero data retention]{.accent} --- the LLM never stores the conversation.
+Cloud API dominates early adoption. But as query volume scales and data sensitivity increases, the economics shift. Morgan Stanley's choice: [cloud API with zero data retention]{.accent} --- the LLM never stores the conversation. *(Pricing as of early 2026.)*
 :::
 
 ::: {.notes}
 Let me put some numbers on this. A simple cloud API query costs one to five cents. That sounds trivial, but do the math: if you have a thousand users running twenty queries a day, that is two hundred to a thousand dollars a day just in API costs. And multi-step queries --- the kind we have been running in the Data Simulation, where the agent queries multiple systems and merges results --- those can cost ten to fifty cents each because they involve multiple LLM calls.
 
-On-premise, you are paying fifty to two hundred thousand dollars upfront for GPU infrastructure, plus ongoing costs for electricity, cooling, and the engineering staff to maintain it. But after that, your marginal cost per query approaches zero.
+The Data Simulation queries participants have been running are multi-step --- each one involves multiple LLM calls for planning, SQL generation, execution, and synthesis, so they fall in the $0.10--1.00+ range.
+
+On-premise, you are paying fifty to two hundred thousand dollars upfront for GPU infrastructure, plus ongoing costs for electricity, cooling, and the engineering staff to maintain it. But after that, your marginal cost per query approaches zero. Note that the "+" in "$50--200K+" is doing a lot of work: for a production-grade deployment with redundancy, networking, storage, and staff, costs can easily exceed $500K. The $50--200K range is a minimal proof-of-concept setup.
 
 The crossover point depends on volume and sensitivity. For a pilot with a hundred users, cloud API wins every time. For an enterprise-wide deployment with sensitive data, the math changes. Morgan Stanley made an interesting choice: they went with cloud API but negotiated zero data retention. The LLM processes the query and immediately forgets it. No conversation history is stored on the vendor's servers. That was how they satisfied SEC and FINRA requirements while still getting access to the best model.
 
@@ -525,7 +535,7 @@ We have covered the "where does it run" question. Now the "who builds it" questi
 
 ::: {.info-box}
 ::: {.box-title}
-Six Dimensions for Evaluating AI Solutions
+Eight Dimensions for Evaluating AI Solutions
 :::
 
 1. **D**ata integration --- How well does it connect to your existing systems?
@@ -534,12 +544,14 @@ Six Dimensions for Evaluating AI Solutions
 4. **N**on-functional requirements --- Security, compliance, scalability, uptime
 5. **I**mplementation timeline --- Weeks, months, or quarters to production?
 6. **X**tensibility --- Can you customize prompts, add tools, evolve it?
+7. **E**conomics --- Total cost of ownership: licensing, infrastructure, and staffing
+8. **R**isk & governance --- Vendor lock-in, regulatory compliance, and auditability
 :::
 
 ::: {.notes}
-DUNNIXER gives you a structured way to evaluate any AI solution, whether you are looking at a vendor product or evaluating whether to build internally. Six dimensions, and every one of them matters.
+DUNNIXER gives you a structured way to evaluate any AI solution, whether you are looking at a vendor product or evaluating whether to build internally. Eight dimensions, and every one of them matters.
 
-Data integration is often the dealbreaker. If a vendor's tool cannot connect to your Salesforce and your NetSuite and your legacy CRM, it does not matter how good the AI is. User experience determines adoption --- if your sales team finds it easier to email the analyst than to use the AI tool, you have wasted your investment. Nuance and accuracy is about domain specificity: does it understand that "deal size" at your company means closed-won only? Non-functional requirements cover the boring but critical stuff: security certifications, uptime SLAs, compliance attestations. Implementation timeline is straightforward: can you get this live in weeks, or are you looking at a multi-quarter project? And extensibility is about the long game: can you customize the prompts, add new data sources, evolve the tool as your needs change, or are you locked into what the vendor ships?
+Data integration is often the dealbreaker. If a vendor's tool cannot connect to your Salesforce and your NetSuite and your legacy CRM, it does not matter how good the AI is. User experience determines adoption --- if your sales team finds it easier to email the analyst than to use the AI tool, you have wasted your investment. Nuance and accuracy is about domain specificity: does it understand that "deal size" at your company means closed-won only? Non-functional requirements cover the boring but critical stuff: security certifications, uptime SLAs, compliance attestations. Implementation timeline is straightforward: can you get this live in weeks, or are you looking at a multi-quarter project? Extensibility is about the long game: can you customize the prompts, add new data sources, evolve the tool as your needs change, or are you locked into what the vendor ships? Economics forces you to look at total cost of ownership --- not just the license fee, but infrastructure, staffing, and ongoing maintenance. And risk and governance covers vendor lock-in, regulatory compliance, and auditability --- the questions your legal and compliance teams will ask before they sign off.
 
 Let us apply this framework together. We are going to score a specific vendor product --- Salesforce Agentforce --- on these dimensions. But first, let me show you the four strategic options you are choosing between.
 

@@ -45,7 +45,7 @@ Transition: advance to the cold open.
 ## The 3-Week Email Chain {.section-divider}
 
 ::: {.notes}
-This is the cold open provocation (minutes 8-13). The goal is to create an emotional anchor: the frustration of waiting weeks for a simple cross-system question. You will present the scenario and then immediately contrast it with the Meridian Corp app demo.
+This is the cold open provocation (minutes 8-13). The goal is to create an emotional anchor: the frustration of waiting weeks for a simple cross-system question. You will present the scenario and then immediately contrast it with the XYZ Corp Data Simulation demo.
 :::
 
 ---
@@ -89,19 +89,19 @@ Pause for responses. Then: "What I am about to show you takes about 30 seconds."
 ## Demo: Dashboard vs. Chat {.section-divider}
 
 ::: {.notes}
-This opens the live demo segment (minutes 13-23). Make sure the Meridian Corp app is open in another browser tab and ready. You are about to ask the same cross-system question and get an instant answer. This is the "wow" moment of the session.
+This opens the live demo segment (minutes 13-23). Make sure the XYZ Corp Data Simulation is open in another browser tab and ready. You are about to ask the same cross-system question and get an instant answer. This is the "wow" moment of the session.
 :::
 
 ---
 
-## Introducing Meridian Corp
+## Introducing XYZ Corp
 
 ::: {.info-box}
 ::: {.box-title}
 The Simulation Environment
 :::
 - **$500M B2B industrial distributor** with 3 operating divisions
-- **10 enterprise systems**: Salesforce, Legacy CRM, HubSpot, NetSuite, SAP, Oracle SCM, Workday, Zendesk, QuickBooks
+- **9 enterprise systems**: Salesforce, Legacy CRM, HubSpot, NetSuite, SAP, Oracle SCM, Workday, Zendesk, QuickBooks
 - **41 tables, 26,000+ rows, 3 years of data**
 - Realistic cross-system friction: different naming conventions, date formats, column styles
 - **Plus a document collection**: employee handbook, vendor contracts, board minutes, strategic plans
@@ -112,13 +112,13 @@ You will log in and query this environment yourself in 15 minutes. First, watch 
 :::
 
 ::: {.notes}
-Briefly introduce the Meridian Corp simulation. Say: "This is the environment you will be working with for the rest of the course. Meridian Corp is a fictional $500M B2B industrial supplies distributor. It has three divisions --- Industrial, Energy, and Safety --- each with their own CRM, plus shared finance, HR, and support systems. Ten systems total. Forty-one database tables. Three years of realistic data."
+Briefly introduce the XYZ Corp Data Simulation. Say: "This is the environment you will be working with for the rest of the course. XYZ Corp is a fictional $500M B2B industrial supplies distributor. It has three divisions --- Industrial, Energy, and Safety --- each with their own CRM, plus shared finance, HR, and support systems. Nine systems total. Forty-one database tables. Three years of realistic data."
 
 "It also has an internal document collection --- an employee handbook, vendor contracts, board minutes, and strategic plans. These are the kinds of unstructured documents that trap knowledge in every organization. You will query both databases and documents today."
 
 "The key word is realistic. The systems have different naming conventions. The Legacy CRM stores dates as text strings. Customers appear under different names across divisions --- General Electric in one system, GE Industrial Solutions in another. This is what real enterprise data looks like."
 
-Switch to the Meridian Corp app and prepare for the live demo.
+Switch to the XYZ Corp Data Simulation and prepare for the live demo.
 :::
 
 ---
@@ -136,7 +136,7 @@ Show combined revenue and flag any name mismatches across systems.
 :::
 
 ::: {.notes}
-DEMO INSTRUCTIONS: Switch to the Meridian Corp app. Type the prompt above (or similar). As results load, narrate what is happening: "Watch --- it is querying Salesforce first, then the Legacy CRM, then HubSpot. Three separate queries. Now it is using Python to merge the results with fuzzy name matching."
+DEMO INSTRUCTIONS: Switch to the XYZ Corp Data Simulation. Type the prompt above (or similar). As results load, narrate what is happening: "Watch --- it is querying Salesforce first, then the Legacy CRM, then HubSpot. Three separate queries. Now it is using Python to merge the results with fuzzy name matching."
 
 Let the full result appear. Point out key elements:
 - The table showing multi-division customers with combined revenue
@@ -174,6 +174,8 @@ Display this summary slide while the demo result is still visible in the Data Si
 "But here is the insight that matters: only 3 of the 10 had matching names across systems. The other 7 required fuzzy matching to link. Without that matching, these customers appear as 24 separate accounts. You cannot negotiate enterprise pricing. You cannot see the full relationship. You cannot even answer the CEO's question."
 
 Pause: "This is the problem that AI solves. Not just querying one database --- any dashboard can do that. Querying multiple systems and reconciling the messy reality of how the same customer appears differently in each one."
+
+"Now, an important caveat: this works because the schema descriptions were pre-written and the data is clean. In your organization, expect 60 to 90 days of data cataloging before the first query. We will cover exactly what that involves later this session."
 :::
 
 ---
@@ -269,7 +271,7 @@ What the Market Saw
 ::: {.card-title}
 What You Just Saw
 :::
-- The Meridian Corp app answered in 30 seconds what took 3 weeks
+- The XYZ Corp Data Simulation answered in 30 seconds what took 3 weeks
 - Fuzzy matching across 3 CRMs with different naming conventions
 - Combined revenue view that no single dashboard could produce
 - [This is the technology behind the valuation collapse]{.accent}
@@ -328,7 +330,7 @@ Walk through each card. Say: "Dashboards are great for monitoring known metrics.
 
 "AI agents sit in a different category. Any question, any time, in plain English. But I want to be clear: this is not a replacement for dashboards or BI teams. It is a force multiplier. Dashboards still monitor KPIs. BI teams still build validated data models. The agent handles the ad hoc questions that today go unanswered or take weeks."
 
-Transition: "Now it is your turn. Let me get you logged into the Meridian Corp app."
+Transition: "Now it is your turn. Let me get you logged into the XYZ Corp Data Simulation."
 :::
 
 ---
@@ -336,7 +338,7 @@ Transition: "Now it is your turn. Let me get you logged into the Meridian Corp a
 ## Hands-On: Your First Enterprise Queries {.section-divider}
 
 ::: {.notes}
-This opens the hands-on segment (minutes 33-53). This is the longest segment of the session --- 20 minutes. Students will log into the Meridian Corp app and work through guided prompts, progressing from single-system to cross-system queries. Make sure login credentials are ready to share.
+This opens the hands-on segment (minutes 33-53). This is the longest segment of the session --- 20 minutes. Students will log into the XYZ Corp Data Simulation and work through guided prompts, progressing from single-system to cross-system queries. Make sure login credentials are ready to share.
 :::
 
 ---
@@ -347,7 +349,7 @@ This opens the hands-on segment (minutes 33-53). This is the longest segment of 
 ::: {.box-title}
 Log In Now
 :::
-1. Open your browser and navigate to the Meridian Corp app URL (in chat)
+1. Open your browser and navigate to the XYZ Corp Data Simulation URL (in chat)
 2. Log in with your provided credentials
 3. You should see a chat interface --- type your first question
 :::
@@ -476,7 +478,7 @@ This requires CRM data (customer revenue) + Zendesk data (support tickets). Go.
 ::: {.notes}
 Say: "Timed challenge. You have 5 minutes. The question is on screen: which division's top customer represents the greatest concentration risk, and what does their support ticket history look like?"
 
-"This requires data from at least two systems --- CRM for customer revenue concentration, and Zendesk for support tickets. Ask the Meridian Corp app and see what you get."
+"This requires data from at least two systems --- CRM for customer revenue concentration, and Zendesk for support tickets. Ask the XYZ Corp Data Simulation and see what you get."
 
 Start a visible timer. After 5 minutes, ask: "Who got an answer? What did you find?" The expected answer is that Energy's top customer (CAT Energy Services) represents 34% of revenue --- a significant concentration risk. If students also surface the support ticket data, even better.
 
@@ -534,7 +536,7 @@ PII Classification
 :::
 
 ::: {.notes}
-Say: "Before we move to the next demo, I need to calibrate expectations. Everything you have seen today was impressive. But the Meridian Corp demo hides something important: the 60 to 90 days of pre-work that happened before the first question was ever asked."
+Say: "Before we move to the next demo, I need to calibrate expectations. Everything you have seen today was impressive. But the XYZ Corp Data Simulation demo hides something important: the 60 to 90 days of pre-work that happened before the first question was ever asked."
 
 Walk through each card quickly: "Someone had to catalog every table and column. Someone had to write schema descriptions the LLM can understand. Someone had to provision API access with proper security. And someone had to classify every field for PII sensitivity."
 
@@ -550,7 +552,7 @@ Transition: advance to the document AI demo.
 ## Not All Knowledge Lives in Databases {.section-divider}
 
 ::: {.notes}
-This opens the document AI / RAG introduction (minutes 58-68). You are pivoting from structured data (databases) to unstructured data (documents). This is a natural extension of the "scattered data" theme --- the same company that has 10 database systems also has hundreds of policies, contracts, and procedures trapped in PDFs and SharePoint folders.
+This opens the document AI / RAG introduction (minutes 58-68). You are pivoting from structured data (databases) to unstructured data (documents). This is a natural extension of the "scattered data" theme --- the same company that has 9 database systems also has hundreds of policies, contracts, and procedures trapped in PDFs and SharePoint folders.
 :::
 
 ---
@@ -567,7 +569,7 @@ You have seen AI query **databases** --- rows, columns, SQL. But think about whe
 80%
 :::
 ::: {.stat-label}
-of enterprise data is unstructured --- policies, contracts, emails, reports
+of enterprise data is unstructured (IDC) --- policies, contracts, emails, reports
 :::
 :::
 
@@ -593,7 +595,7 @@ How many critical answers are trapped in PDFs nobody can search?
 ::: {.notes}
 Say: "Everything we have done so far has been structured data --- rows, columns, SQL queries. But think about where the bulk of your company's knowledge actually lives. It is not in databases. It is in policies nobody has read since onboarding. Contracts buried in a shared drive. Board minutes from last quarter. Procedures documented in PDFs that SharePoint's search function cannot meaningfully query."
 
-"Industry estimates say 80% of enterprise data is unstructured. Zero percent of that shows up in your dashboards. AI can search these documents too --- and it can do something a keyword search cannot: understand what you are asking and synthesize answers across multiple documents."
+"Industry analysts at IDC estimate 80% of enterprise data is unstructured. Zero percent of that shows up in your dashboards. AI can search these documents too --- and it can do something a keyword search cannot: understand what you are asking and synthesize answers across multiple documents."
 
 "Let me show you what that looks like."
 :::
@@ -612,7 +614,7 @@ What is our policy on remote work for the Energy Division?
 :::
 
 ::: {.notes}
-DEMO INSTRUCTIONS: Switch to the Meridian Corp app's document collection. Type the prompt above. As the result loads, narrate: "Watch --- it is searching the document corpus, not a database. It is looking for passages relevant to remote work policy."
+DEMO INSTRUCTIONS: Switch to the XYZ Corp Data Simulation's document collection. Type the prompt above. As the result loads, narrate: "Watch --- it is searching the document corpus, not a database. It is looking for passages relevant to remote work policy."
 
 Let the full result appear. Point out key elements:
 - The answer cites specific documents, sections, and page numbers
@@ -822,6 +824,8 @@ Walk through each step: "First, your documents are split into chunks --- paragra
 "The key concept here is chunking --- how you split your documents determines what the AI can and cannot find. Chunk too large and retrieval is noisy. Chunk too small and you lose context. We will see a chunking failure in the Atherton case you will read before Session 6 --- a $1.5 million contract clause was split across two chunks, and the second half fell below the retrieval threshold. The agent returned a confident, well-cited answer that was missing a critical penalty. That is the kind of failure you need to know about."
 
 "For now, the essential takeaway: the LLM does not memorize your documents. It searches them at query time and answers using only what it retrieves."
+
+"One more thing to keep in mind: RAG is not infallible. Long passages split across chunks can lose meaning. Retrieved passages can be taken out of context. And if source documents are outdated, the answers will be too. We will examine a real-world case of these failures --- the Atherton Financial case --- later in the course."
 :::
 
 ---
@@ -935,7 +939,7 @@ Wrap-up segment (minutes 87-90). Assign homework and close.
 ::: {.box-title}
 Homework for Session 4
 :::
-1. **Log into the Meridian Corp app** and ask **10 business questions** --- at least 3 cross-system and at least 2 from the document collection
+1. **Log into the XYZ Corp Data Simulation** and ask **10 business questions** --- at least 3 cross-system and at least 2 from the document collection
 2. **Write down** one question the agent answered well and one where it was unsatisfying or wrong --- bring both to Session 4
 3. **Complete your data map:** at least 5 systems your company uses, the top 3 cross-system questions you cannot answer today, and 2-3 document collections that trap important knowledge
 4. *Optional viewing:* Demos 6-7 show building a RAG system from scratch and combining it with a database agent --- deeper context for the document Q&A introduced today
@@ -946,7 +950,7 @@ Homework for Session 4
 :::
 
 ::: {.notes}
-Say: "Homework. First, log into the Meridian Corp app this week and ask at least 10 business questions. Push it. Ask at least 3 cross-system questions and at least 2 from the document collection. Write down your best answer and your worst answer --- we will use both in Session 4."
+Say: "Homework. First, log into the XYZ Corp Data Simulation this week and ask at least 10 business questions. Push it. Ask at least 3 cross-system questions and at least 2 from the document collection. Write down your best answer and your worst answer --- we will use both in Session 4."
 
 "Second, complete your data map. List at least 5 systems your company uses, the top 3 cross-system questions you cannot answer today, and 2 to 3 document collections that trap important knowledge. This carries forward to your capstone."
 
@@ -976,7 +980,7 @@ vs. 3 weeks for a cross-system question
 80%
 :::
 ::: {.stat-label}
-of enterprise data is unstructured --- policies, contracts, documents
+of enterprise data is unstructured (IDC) --- policies, contracts, documents
 :::
 :::
 

@@ -420,6 +420,7 @@ Kerry Back, Rice University
 <p>Why are we teaching you one method instead of ten? Because gradient boosting dominates. Over seventy percent of Kaggle competition winners on tabular data — meaning data that looks like a spreadsheet — use some form of gradient boosting. XGBoost, LightGBM, and CatBoost are the three most popular implementations, and they are used by every major tech company.</p>
 <p>You have probably heard about deep learning and neural networks. Those dominate images, text, and language — which is why ChatGPT and Claude are so impressive. But for structured business data — rows and columns, the kind of data in your CRM, your ERP, your financial systems — gradient boosting consistently outperforms neural networks. It handles messy real-world data well: missing values, mixed data types, skewed distributions.</p>
 <p>You do not need to master the implementation. Claude will write the code. But you need to understand the concept so you can evaluate vendor claims and ask the right questions when someone says “we built a machine learning model.”</p>
+<p>This statistic is directionally correct for structured/tabular data competitions through the mid-2020s. The key point is that gradient boosting consistently outperforms other methods on the kind of spreadsheet and database data you work with.</p>
 <p>[TIMING: 3 minutes. Move to the intuition slide.]</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -851,6 +852,19 @@ Kerry Back, Rice University
 </section>
 <section id="regression-metrics-r²-and-rmse" class="slide level2 center">
 <h2>Regression Metrics: R² and RMSE</h2>
+<aside class="notes">
+<p>This section covers regression metrics for completeness. If you are running short on time, this can be skipped — today’s hands-on exercise uses classification only. Point students to these slides as reference material.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <div class="two-cards">
 <div class="card card-light">
 <div class="card-title">
@@ -1292,6 +1306,7 @@ and get a churn probability with the top 3 risk factors.</code></pre>
 <p>Say: “This is the full arc. We went from raw data to a predictive model to a deployable application — all with AI assistance. The model runs inside the app. A sales manager could use this every day to prioritize retention outreach.”</p>
 <p>“Notice the prompt: one sentence. Paste the model code, ask for a web app. Claude Code handles the rest — it picks the framework, builds the input form, the prediction logic, the visualization, the recommended actions. It might use Streamlit, Gradio, or FastAPI depending on the task. The result is a working web app that anyone on the team can use without touching code or understanding the model.”</p>
 <p>“This is what ‘predictions need action’ looks like in practice. The model is embedded in a tool that surfaces recommendations to the person who can act on them.”</p>
+<p>This raises the same deployment questions from Session 5: where does this model run? Cloud API, on-premise, or hybrid? The DUNNIXER framework applies to ML deployment just as it does to data agents. For your capstone, if you include predictive modeling, specify the deployment approach.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

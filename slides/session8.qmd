@@ -474,7 +474,7 @@ The shift from "report pulling" to "strategic dialogue" is where the real ROI li
 :::
 
 ::: {.notes}
-[DEMO INSTRUCTIONS: This is a live demo from minute 78 to about minute 86. Switch to the XYZ app. Have your fallback recording ready.
+[DEMO INSTRUCTIONS: This is a live demo from minute 78 to about minute 86. Switch to the XYZ Corp Data Simulation. Have your fallback recording ready.
 
 Demo sequence:
 1. Ask the data question first: "What were Q4 sales for the Energy Division?" Show the simple answer --- one number, one chart. Point out that this is what you have been doing all course. Useful, but limited.
@@ -487,7 +487,7 @@ Demo sequence:
 
 The point is to model the behavior you want executives to adopt: treat AI as a colleague you argue with, not a tool you query.]
 
-Let me show you the difference. I am going to ask two questions of the XYZ app. First, the data question on the left card: "What were Q4 sales for the Energy Division?" Watch --- one number, one chart, done. That is useful, but it is just report pulling.
+Let me show you the difference. I am going to ask two questions of the XYZ Corp Data Simulation. First, the data question on the left card: "What were Q4 sales for the Energy Division?" Watch --- one number, one chart, done. That is useful, but it is just report pulling.
 
 Now watch what happens when I ask the strategic question on the right card: "I am considering expanding the Energy Division into the Southeast. Based on our pipeline, customer concentration, and support ticket trends, what are the top 3 risks?" See how it reasons across multiple data sources? It is pulling sales trends, looking at customer concentration, checking support ticket patterns. It synthesizes and gives me three risks.
 

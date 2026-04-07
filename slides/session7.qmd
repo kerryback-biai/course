@@ -225,6 +225,8 @@ You have probably heard about deep learning and neural networks. Those dominate 
 
 You do not need to master the implementation. Claude will write the code. But you need to understand the concept so you can evaluate vendor claims and ask the right questions when someone says "we built a machine learning model."
 
+This statistic is directionally correct for structured/tabular data competitions through the mid-2020s. The key point is that gradient boosting consistently outperforms other methods on the kind of spreadsheet and database data you work with.
+
 [TIMING: 3 minutes. Move to the intuition slide.]
 :::
 
@@ -654,6 +656,10 @@ This is a judgment call that AI cannot make for you. The model can give you any 
 
 ## Regression Metrics: R² and RMSE
 
+::: {.notes}
+This section covers regression metrics for completeness. If you are running short on time, this can be skipped --- today's hands-on exercise uses classification only. Point students to these slides as reference material.
+:::
+
 ::: {.two-cards}
 ::: {.card .card-light}
 ::: {.card-title}
@@ -1080,6 +1086,8 @@ Say: "This is the full arc. We went from raw data to a predictive model to a dep
 "Notice the prompt: one sentence. Paste the model code, ask for a web app. Claude Code handles the rest --- it picks the framework, builds the input form, the prediction logic, the visualization, the recommended actions. It might use Streamlit, Gradio, or FastAPI depending on the task. The result is a working web app that anyone on the team can use without touching code or understanding the model."
 
 "This is what 'predictions need action' looks like in practice. The model is embedded in a tool that surfaces recommendations to the person who can act on them."
+
+This raises the same deployment questions from Session 5: where does this model run? Cloud API, on-premise, or hybrid? The DUNNIXER framework applies to ML deployment just as it does to data agents. For your capstone, if you include predictive modeling, specify the deployment approach.
 :::
 
 ---

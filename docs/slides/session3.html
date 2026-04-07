@@ -182,7 +182,7 @@ Kerry Back, Rice University
 <section id="the-3-week-email-chain" class="slide level2 section-divider center">
 <h2>The 3-Week Email Chain</h2>
 <aside class="notes">
-<p>This is the cold open provocation (minutes 8-13). The goal is to create an emotional anchor: the frustration of waiting weeks for a simple cross-system question. You will present the scenario and then immediately contrast it with the Meridian Corp app demo.</p>
+<p>This is the cold open provocation (minutes 8-13). The goal is to create an emotional anchor: the frustration of waiting weeks for a simple cross-system question. You will present the scenario and then immediately contrast it with the XYZ Corp Data Simulation demo.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -241,7 +241,7 @@ Kerry Back, Rice University
 <section id="demo-dashboard-vs.-chat" class="slide level2 section-divider center">
 <h2>Demo: Dashboard vs.&nbsp;Chat</h2>
 <aside class="notes">
-<p>This opens the live demo segment (minutes 13-23). Make sure the Meridian Corp app is open in another browser tab and ready. You are about to ask the same cross-system question and get an instant answer. This is the “wow” moment of the session.</p>
+<p>This opens the live demo segment (minutes 13-23). Make sure the XYZ Corp Data Simulation is open in another browser tab and ready. You are about to ask the same cross-system question and get an instant answer. This is the “wow” moment of the session.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -254,15 +254,15 @@ Kerry Back, Rice University
           display:block!important;
       }</style></aside>
 </section>
-<section id="introducing-meridian-corp" class="slide level2 center">
-<h2>Introducing Meridian Corp</h2>
+<section id="introducing-xyz-corp" class="slide level2 center">
+<h2>Introducing XYZ Corp</h2>
 <div class="info-box">
 <div class="box-title">
 <p>The Simulation Environment</p>
 </div>
 <ul>
 <li><strong>$500M B2B industrial distributor</strong> with 3 operating divisions</li>
-<li><strong>10 enterprise systems</strong>: Salesforce, Legacy CRM, HubSpot, NetSuite, SAP, Oracle SCM, Workday, Zendesk, QuickBooks</li>
+<li><strong>9 enterprise systems</strong>: Salesforce, Legacy CRM, HubSpot, NetSuite, SAP, Oracle SCM, Workday, Zendesk, QuickBooks</li>
 <li><strong>41 tables, 26,000+ rows, 3 years of data</strong></li>
 <li>Realistic cross-system friction: different naming conventions, date formats, column styles</li>
 <li><strong>Plus a document collection</strong>: employee handbook, vendor contracts, board minutes, strategic plans</li>
@@ -272,10 +272,10 @@ Kerry Back, Rice University
 <p>You will log in and query this environment yourself in 15 minutes. First, watch what happens when we ask it the CEO’s question.</p>
 </div>
 <aside class="notes">
-<p>Briefly introduce the Meridian Corp simulation. Say: “This is the environment you will be working with for the rest of the course. Meridian Corp is a fictional $500M B2B industrial supplies distributor. It has three divisions — Industrial, Energy, and Safety — each with their own CRM, plus shared finance, HR, and support systems. Ten systems total. Forty-one database tables. Three years of realistic data.”</p>
+<p>Briefly introduce the XYZ Corp Data Simulation. Say: “This is the environment you will be working with for the rest of the course. XYZ Corp is a fictional $500M B2B industrial supplies distributor. It has three divisions — Industrial, Energy, and Safety — each with their own CRM, plus shared finance, HR, and support systems. Nine systems total. Forty-one database tables. Three years of realistic data.”</p>
 <p>“It also has an internal document collection — an employee handbook, vendor contracts, board minutes, and strategic plans. These are the kinds of unstructured documents that trap knowledge in every organization. You will query both databases and documents today.”</p>
 <p>“The key word is realistic. The systems have different naming conventions. The Legacy CRM stores dates as text strings. Customers appear under different names across divisions — General Electric in one system, GE Industrial Solutions in another. This is what real enterprise data looks like.”</p>
-<p>Switch to the Meridian Corp app and prepare for the live demo.</p>
+<p>Switch to the XYZ Corp Data Simulation and prepare for the live demo.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -298,7 +298,7 @@ Kerry Back, Rice University
 Show combined revenue and flag any name mismatches across systems.</code></pre>
 </div>
 <aside class="notes">
-<p>DEMO INSTRUCTIONS: Switch to the Meridian Corp app. Type the prompt above (or similar). As results load, narrate what is happening: “Watch — it is querying Salesforce first, then the Legacy CRM, then HubSpot. Three separate queries. Now it is using Python to merge the results with fuzzy name matching.”</p>
+<p>DEMO INSTRUCTIONS: Switch to the XYZ Corp Data Simulation. Type the prompt above (or similar). As results load, narrate what is happening: “Watch — it is querying Salesforce first, then the Legacy CRM, then HubSpot. Three separate queries. Now it is using Python to merge the results with fuzzy name matching.”</p>
 <p>Let the full result appear. Point out key elements: - The table showing multi-division customers with combined revenue - The name mismatches (GE vs.&nbsp;General Electric, CAT vs.&nbsp;Caterpillar) - The summary stats: 10 customers across multiple divisions, 4 buying from all 3</p>
 <p>Say: “That took about 30 seconds. The same question that took the BI team 3 weeks. Same data. Same systems. Different interface.”</p>
 <p>If the live demo fails, switch to the pre-recorded fallback and narrate over it.</p>
@@ -387,6 +387,7 @@ Show combined revenue and flag any name mismatches across systems.</code></pre>
 <p>Display this summary slide while the demo result is still visible in the Data Simulation. Say: “Here is what the agent found. Ten customers purchase from multiple divisions. Four of them — GE, ExxonMobil, Dow, and Chevron — buy from all three divisions, representing $56.5 million in combined revenue.”</p>
 <p>“But here is the insight that matters: only 3 of the 10 had matching names across systems. The other 7 required fuzzy matching to link. Without that matching, these customers appear as 24 separate accounts. You cannot negotiate enterprise pricing. You cannot see the full relationship. You cannot even answer the CEO’s question.”</p>
 <p>Pause: “This is the problem that AI solves. Not just querying one database — any dashboard can do that. Querying multiple systems and reconciling the messy reality of how the same customer appears differently in each one.”</p>
+<p>“Now, an important caveat: this works because the schema descriptions were pre-written and the data is clean. In your organization, expect 60 to 90 days of data cataloging before the first query. We will cover exactly what that involves later this session.”</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -501,7 +502,7 @@ Show combined revenue and flag any name mismatches across systems.</code></pre>
 <p>What You Just Saw</p>
 </div>
 <ul>
-<li>The Meridian Corp app answered in 30 seconds what took 3 weeks</li>
+<li>The XYZ Corp Data Simulation answered in 30 seconds what took 3 weeks</li>
 <li>Fuzzy matching across 3 CRMs with different naming conventions</li>
 <li>Combined revenue view that no single dashboard could produce</li>
 <li><span class="accent">This is the technology behind the valuation collapse</span></li>
@@ -564,7 +565,7 @@ Show combined revenue and flag any name mismatches across systems.</code></pre>
 <p>Walk through each card. Say: “Dashboards are great for monitoring known metrics. But they cannot answer questions they were not designed for. Every new question requires a development cycle.”</p>
 <p>“BI teams are highly skilled. But they are a bottleneck. The 3-week email chain is not because anyone is bad at their job — it is because there are too many questions and too few analysts.”</p>
 <p>“AI agents sit in a different category. Any question, any time, in plain English. But I want to be clear: this is not a replacement for dashboards or BI teams. It is a force multiplier. Dashboards still monitor KPIs. BI teams still build validated data models. The agent handles the ad hoc questions that today go unanswered or take weeks.”</p>
-<p>Transition: “Now it is your turn. Let me get you logged into the Meridian Corp app.”</p>
+<p>Transition: “Now it is your turn. Let me get you logged into the XYZ Corp Data Simulation.”</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -580,7 +581,7 @@ Show combined revenue and flag any name mismatches across systems.</code></pre>
 <section id="hands-on-your-first-enterprise-queries" class="slide level2 section-divider center">
 <h2>Hands-On: Your First Enterprise Queries</h2>
 <aside class="notes">
-<p>This opens the hands-on segment (minutes 33-53). This is the longest segment of the session — 20 minutes. Students will log into the Meridian Corp app and work through guided prompts, progressing from single-system to cross-system queries. Make sure login credentials are ready to share.</p>
+<p>This opens the hands-on segment (minutes 33-53). This is the longest segment of the session — 20 minutes. Students will log into the XYZ Corp Data Simulation and work through guided prompts, progressing from single-system to cross-system queries. Make sure login credentials are ready to share.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -600,7 +601,7 @@ Show combined revenue and flag any name mismatches across systems.</code></pre>
 <p>Log In Now</p>
 </div>
 <ol type="1">
-<li>Open your browser and navigate to the Meridian Corp app URL (in chat)</li>
+<li>Open your browser and navigate to the XYZ Corp Data Simulation URL (in chat)</li>
 <li>Log in with your provided credentials</li>
 <li>You should see a chat interface — type your first question</li>
 </ol>
@@ -783,7 +784,7 @@ Show combined revenue and flag any name mismatches across systems.</code></pre>
 </div>
 <aside class="notes">
 <p>Say: “Timed challenge. You have 5 minutes. The question is on screen: which division’s top customer represents the greatest concentration risk, and what does their support ticket history look like?”</p>
-<p>“This requires data from at least two systems — CRM for customer revenue concentration, and Zendesk for support tickets. Ask the Meridian Corp app and see what you get.”</p>
+<p>“This requires data from at least two systems — CRM for customer revenue concentration, and Zendesk for support tickets. Ask the XYZ Corp Data Simulation and see what you get.”</p>
 <p>Start a visible timer. After 5 minutes, ask: “Who got an answer? What did you find?” The expected answer is that Energy’s top customer (CAT Energy Services) represents 34% of revenue — a significant concentration risk. If students also surface the support ticket data, even better.</p>
 <p>Use this as a teaching moment about the value of cross-system questions.</p>
 <style type="text/css">
@@ -859,7 +860,7 @@ Show combined revenue and flag any name mismatches across systems.</code></pre>
 </div>
 </div>
 <aside class="notes">
-<p>Say: “Before we move to the next demo, I need to calibrate expectations. Everything you have seen today was impressive. But the Meridian Corp demo hides something important: the 60 to 90 days of pre-work that happened before the first question was ever asked.”</p>
+<p>Say: “Before we move to the next demo, I need to calibrate expectations. Everything you have seen today was impressive. But the XYZ Corp Data Simulation demo hides something important: the 60 to 90 days of pre-work that happened before the first question was ever asked.”</p>
 <p>Walk through each card quickly: “Someone had to catalog every table and column. Someone had to write schema descriptions the LLM can understand. Someone had to provision API access with proper security. And someone had to classify every field for PII sensitivity.”</p>
 <p>“This pre-work is real. It is not glamorous. And it is the difference between a demo and a production deployment. I name it now so that when you go back to your organizations, you also know what it takes to get there.”</p>
 <p>“We will dig deeper into deployment architecture and data security in Session 5. Now — let me show you something different. Not all company knowledge lives in databases.”</p>
@@ -879,7 +880,7 @@ Show combined revenue and flag any name mismatches across systems.</code></pre>
 <section id="not-all-knowledge-lives-in-databases" class="slide level2 section-divider center">
 <h2>Not All Knowledge Lives in Databases</h2>
 <aside class="notes">
-<p>This opens the document AI / RAG introduction (minutes 58-68). You are pivoting from structured data (databases) to unstructured data (documents). This is a natural extension of the “scattered data” theme — the same company that has 10 database systems also has hundreds of policies, contracts, and procedures trapped in PDFs and SharePoint folders.</p>
+<p>This opens the document AI / RAG introduction (minutes 58-68). You are pivoting from structured data (databases) to unstructured data (documents). This is a natural extension of the “scattered data” theme — the same company that has 9 database systems also has hundreds of policies, contracts, and procedures trapped in PDFs and SharePoint folders.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -903,7 +904,7 @@ Show combined revenue and flag any name mismatches across systems.</code></pre>
 <p>80%</p>
 </div>
 <div class="stat-label">
-<p>of enterprise data is unstructured — policies, contracts, emails, reports</p>
+<p>of enterprise data is unstructured (IDC) — policies, contracts, emails, reports</p>
 </div>
 </div>
 <div class="stat-card">
@@ -925,7 +926,7 @@ Show combined revenue and flag any name mismatches across systems.</code></pre>
 </div>
 <aside class="notes">
 <p>Say: “Everything we have done so far has been structured data — rows, columns, SQL queries. But think about where the bulk of your company’s knowledge actually lives. It is not in databases. It is in policies nobody has read since onboarding. Contracts buried in a shared drive. Board minutes from last quarter. Procedures documented in PDFs that SharePoint’s search function cannot meaningfully query.”</p>
-<p>“Industry estimates say 80% of enterprise data is unstructured. Zero percent of that shows up in your dashboards. AI can search these documents too — and it can do something a keyword search cannot: understand what you are asking and synthesize answers across multiple documents.”</p>
+<p>“Industry analysts at IDC estimate 80% of enterprise data is unstructured. Zero percent of that shows up in your dashboards. AI can search these documents too — and it can do something a keyword search cannot: understand what you are asking and synthesize answers across multiple documents.”</p>
 <p>“Let me show you what that looks like.”</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -948,7 +949,7 @@ Show combined revenue and flag any name mismatches across systems.</code></pre>
 <pre><code>What is our policy on remote work for the Energy Division?</code></pre>
 </div>
 <aside class="notes">
-<p>DEMO INSTRUCTIONS: Switch to the Meridian Corp app’s document collection. Type the prompt above. As the result loads, narrate: “Watch — it is searching the document corpus, not a database. It is looking for passages relevant to remote work policy.”</p>
+<p>DEMO INSTRUCTIONS: Switch to the XYZ Corp Data Simulation’s document collection. Type the prompt above. As the result loads, narrate: “Watch — it is searching the document corpus, not a database. It is looking for passages relevant to remote work policy.”</p>
 <p>Let the full result appear. Point out key elements: - The answer cites specific documents, sections, and page numbers - The agent found a division-specific override in the Energy Division policies that differs from the general handbook - It synthesized across two sources to give a complete answer</p>
 <p>Say: “Notice the citations. Every claim traces to a specific document, section, and page number. This is what makes document AI usable in a corporate setting — the user can verify. It is not just giving you an answer. It is showing you where that answer came from.”</p>
 <p>“Also notice: the Energy Division has a specific override to the general remote work policy. The agent found both the general policy and the override, and synthesized them. A keyword search for ‘remote work’ might have found one; the AI found and connected both.”</p>
@@ -1176,6 +1177,7 @@ actual spending compare?</code></pre>
 <p>“When a user asks a question, their question is embedded the same way and matched against stored chunks — step four. The closest matches are retrieved. Step five: those matches are sent to the LLM as context, and the LLM generates an answer using only the retrieved passages, with citations back to the originals.”</p>
 <p>“The key concept here is chunking — how you split your documents determines what the AI can and cannot find. Chunk too large and retrieval is noisy. Chunk too small and you lose context. We will see a chunking failure in the Atherton case you will read before Session 6 — a $1.5 million contract clause was split across two chunks, and the second half fell below the retrieval threshold. The agent returned a confident, well-cited answer that was missing a critical penalty. That is the kind of failure you need to know about.”</p>
 <p>“For now, the essential takeaway: the LLM does not memorize your documents. It searches them at query time and answers using only what it retrieves.”</p>
+<p>“One more thing to keep in mind: RAG is not infallible. Long passages split across chunks can lose meaning. Retrieved passages can be taken out of context. And if source documents are outdated, the answers will be too. We will examine a real-world case of these failures — the Atherton Financial case — later in the course.”</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1333,7 +1335,7 @@ actual spending compare?</code></pre>
 <p>Homework for Session 4</p>
 </div>
 <ol type="1">
-<li><strong>Log into the Meridian Corp app</strong> and ask <strong>10 business questions</strong> — at least 3 cross-system and at least 2 from the document collection</li>
+<li><strong>Log into the XYZ Corp Data Simulation</strong> and ask <strong>10 business questions</strong> — at least 3 cross-system and at least 2 from the document collection</li>
 <li><strong>Write down</strong> one question the agent answered well and one where it was unsatisfying or wrong — bring both to Session 4</li>
 <li><strong>Complete your data map:</strong> at least 5 systems your company uses, the top 3 cross-system questions you cannot answer today, and 2-3 document collections that trap important knowledge</li>
 <li><em>Optional viewing:</em> Demos 6-7 show building a RAG system from scratch and combining it with a database agent — deeper context for the document Q&amp;A introduced today</li>
@@ -1343,7 +1345,7 @@ actual spending compare?</code></pre>
 <p><strong>Next session:</strong> We go from asking questions to producing <strong>complete deliverables</strong> — memos, reports, risk assessments. The agent becomes your reporting pipeline.</p>
 </div>
 <aside class="notes">
-<p>Say: “Homework. First, log into the Meridian Corp app this week and ask at least 10 business questions. Push it. Ask at least 3 cross-system questions and at least 2 from the document collection. Write down your best answer and your worst answer — we will use both in Session 4.”</p>
+<p>Say: “Homework. First, log into the XYZ Corp Data Simulation this week and ask at least 10 business questions. Push it. Ask at least 3 cross-system questions and at least 2 from the document collection. Write down your best answer and your worst answer — we will use both in Session 4.”</p>
 <p>“Second, complete your data map. List at least 5 systems your company uses, the top 3 cross-system questions you cannot answer today, and 2 to 3 document collections that trap important knowledge. This carries forward to your capstone.”</p>
 <p>“If you want to go deeper on how the document Q&amp;A works, Demos 6 and 7 on the course site show how to build a RAG system from scratch and combine it with a database agent. These are optional but give you a behind-the-scenes look at what you used today.”</p>
 <p>“Next session, we go from asking questions to producing complete deliverables. Instead of getting a number or a chart, you will get a board-ready memo. See you Wednesday.”</p>
@@ -1378,7 +1380,7 @@ actual spending compare?</code></pre>
 <p>80%</p>
 </div>
 <div class="stat-label">
-<p>of enterprise data is unstructured — policies, contracts, documents</p>
+<p>of enterprise data is unstructured (IDC) — policies, contracts, documents</p>
 </div>
 </div>
 <div class="stat-card">

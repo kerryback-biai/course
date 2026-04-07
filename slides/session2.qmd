@@ -235,7 +235,7 @@ AI is the [maker]{.accent}. You are the [checker]{.amber}.
 :::
 
 ::: {.notes}
-The fundamental shift is this: the professional skill used to be producing analysis. Building the spreadsheet, writing the report, creating the presentation. Now the skill is directing and verifying. You tell the AI what to make, and then you check whether it made it correctly. This is not a lesser skill — it requires deep domain expertise, judgment, and an understanding of what "correct" means in context. But it is a different skill, and developing it is what this course is about.
+The fundamental shift is this: the professional skill used to be producing analysis. Building the spreadsheet, writing the report, creating the presentation. Now the skill is directing and verifying. You tell the AI what to make, and then you check whether it made it correctly. This is not a lesser skill — it requires deep domain expertise, judgment, and an understanding of what "correct" means in context. But it is a different skill, and developing it is what this course is about. You already know this as peer review or QA. What is new with AI is the asymmetry: the maker is tireless, fast, and confidently wrong. The specific failure modes — hallucination, silent errors, format misinterpretation — are what make this different from traditional QA.
 :::
 
 ---
@@ -347,7 +347,7 @@ Here is a concrete example. This is a weekly status report skill. It specifies e
 
 ---
 
-## The /critique Pattern: Three Independent Reviewers
+## The Critique Pattern: Three Independent Reviewers
 
 ::: {.three-cards}
 ::: {.card .card-light}
@@ -568,14 +568,14 @@ Here is the shift. In Sessions 1 and 2, you brought the data to the AI — you p
 [A simulated enterprise environment]{.box-title}
 
 - **$500M B2B industrial supplies distributor** with three operating divisions
-- **10 enterprise systems:** Salesforce, NetSuite, SAP, Workday, HubSpot, Oracle, and more
+- **9 enterprise systems:** Salesforce, NetSuite, SAP, Workday, HubSpot, Oracle, and more
 - **41 tables, 26,000+ rows, 3 years of data**
 - Ask questions in plain English — the AI queries the databases for you
 - Cross-system analysis: "Which customers buy from multiple divisions?"
 :::
 
 ::: {.notes}
-Next session you will meet XYZ Corp — a simulated $500 million B2B industrial supplies distributor. It has three operating divisions, ten enterprise systems, 41 tables, and over 26,000 rows of realistic data spanning three years. You will log into a web application, ask questions in plain English, and watch the AI query multiple databases, merge the results, and produce charts and narratives. It is exactly like what you have been doing in Sessions 1 and 2 — but now the data comes from enterprise systems instead of your clipboard. And here is the key: the same iteration, critique, and verification skills you practiced today are exactly what you will use when the AI is querying databases. The stakes just get higher.
+Next session you will meet XYZ Corp — a simulated $500 million B2B industrial supplies distributor. It has three operating divisions, nine enterprise systems, 41 tables, and over 26,000 rows of realistic data spanning three years. You will log into a web application, ask questions in plain English, and watch the AI query multiple databases, merge the results, and produce charts and narratives. It is exactly like what you have been doing in Sessions 1 and 2 — but now the data comes from enterprise systems instead of your clipboard. And here is the key: the same iteration, critique, and verification skills you practiced today are exactly what you will use when the AI is querying databases. The stakes just get higher.
 :::
 
 ---
@@ -642,13 +642,12 @@ Three assignments. First, keep using Claude. Build at least one reusable workflo
 ::: {.card .card-dark}
 [Sessions 7-8]{.card-title}
 
-- Document AI and RAG
-- Combined data + docs
-- Capstone strategy
+- Predictive modeling (classification, regression, gradient boosting, model evaluation)
+- Capstone strategy presentation
 - Pitch to leadership
 :::
 :::
 
 ::: {.notes}
-Here is what the rest of the course looks like. Session 3: we connect AI to enterprise data using the XYZ Corp simulation. Session 4: we build full reporting pipelines — from raw data to board-ready memos. Sessions 5 and 6 cover deployment architecture, vendor evaluation, security, and governance — the practical questions of how to bring this to your organization. And Sessions 7 and 8 combine everything into a capstone strategy that you could present to your leadership. Every session builds on the skills you developed this week. The iteration techniques, the critique patterns, the calibrated trust framework — those are the foundation. See you next session.
+Here is what the rest of the course looks like. Session 3: we connect AI to enterprise data using the XYZ Corp simulation. Session 4: we build full reporting pipelines — from raw data to board-ready memos. Sessions 5 and 6 cover deployment architecture, vendor evaluation, security, and governance — the practical questions of how to bring this to your organization. Session 7 covers predictive modeling — classification, regression, gradient boosting, and model evaluation. And Session 8 is the capstone strategy presentation, where you bring everything together into a pitch you could present to your leadership. Every session builds on the skills you developed this week. The iteration techniques, the critique patterns, the calibrated trust framework — those are the foundation. See you next session.
 :::
