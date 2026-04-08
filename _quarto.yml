@@ -12,6 +12,7 @@ project:
     - slides/session6.qmd
     - slides/session7.qmd
     - slides/session8.qmd
+    - slides/intro-video.qmd
   resources:
     - CNAME
     - .nojekyll

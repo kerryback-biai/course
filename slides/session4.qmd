@@ -45,7 +45,7 @@ Share Your Worst Answer
 :::
 
 ::: {.notes}
-Say: "Before we dive into new material, let's debrief the homework. You spent this week asking the XYZ Corp Data Simulation at least 10 business questions. I want to hear about your best answer and your worst answer."
+Say: "Before we dive into new material, let's debrief the homework. You spent this week asking the XYZ Corp Custom Chatbot at least 10 business questions. I want to hear about your best answer and your worst answer."
 
 Call on 3-4 students. For each, ask: "What question did you ask? What made the answer good --- or bad?" Listen for common patterns:
 - Good answers: clear data, well-structured tables, accurate calculations
@@ -102,7 +102,7 @@ Transition: "Let me show you the full pipeline."
 ## Full Pipeline Demo {.section-divider}
 
 ::: {.notes}
-This opens the full pipeline demo (minutes 10-25). This is the showpiece demo of Session 4. Make sure the XYZ Corp Data Simulation is open and ready. You will ask for a quarterly executive summary and then iterate on it.
+This opens the full pipeline demo (minutes 10-25). This is the showpiece demo of Session 4. Make sure the XYZ Corp Custom Chatbot is open and ready. You will ask for a quarterly executive summary and then iterate on it.
 :::
 
 ---
@@ -204,13 +204,13 @@ Format final document
 :::
 
 ::: {.notes}
-Walk through each step before switching to the live demo. Say: "Here is what is about to happen. I am going to ask the XYZ Corp Data Simulation one question: 'Prepare a quarterly executive summary.' Watch what the agent does."
+Walk through each step before switching to the live demo. Say: "Here is what is about to happen. I am going to ask the XYZ Corp Custom Chatbot one question: 'Prepare a quarterly executive summary.' Watch what the agent does."
 
 "Step one: it will query six source systems --- the three CRMs, the financial systems, Workday HR, and Zendesk support. Step two: merge and deduplicate. Step three: compute KPIs --- quarter-over-quarter changes, efficiency ratios, concentration metrics. Step four: charts. Step five: narrative analysis --- not just numbers, but interpretation. Step six: assemble everything into a structured document."
 
 "Let me show you."
 
-Switch to the Data Simulation.
+Switch to the Custom Chatbot.
 :::
 
 ---
@@ -229,7 +229,7 @@ supply chain issues. Include charts and a narrative summary.
 :::
 
 ::: {.notes}
-DEMO INSTRUCTIONS: Switch to the Data Simulation. Type the prompt. As it runs, narrate what you see: "It is starting with the CRM queries --- pulling revenue by division from each system. Now Workday for headcount. Now Zendesk for support tickets. SAP and Oracle for supply chain."
+DEMO INSTRUCTIONS: Switch to the Custom Chatbot. Type the prompt. As it runs, narrate what you see: "It is starting with the CRM queries --- pulling revenue by division from each system. Now Workday for headcount. Now Zendesk for support tickets. SAP and Oracle for supply chain."
 
 Let the full result render. It should produce:
 - Revenue by division table with QoQ comparison
@@ -267,7 +267,7 @@ Display this slide alongside or after the demo result. Say: "Here is the revenue
 
 "But the agent also flagged a risk: Energy division has 34 percent customer concentration in CAT Energy Services. If that one customer leaves, Energy loses one-third of its revenue. No dashboard would have surfaced that unprompted. The agent did because the prompt asked for 'top customer risks.'"
 
-The simulation data represents a subset of XYZ Corp's operations for demonstration purposes --- the figures shown are illustrative, not meant to represent the full $500M in annual revenue.
+The chatbot data represents a subset of XYZ Corp's operations for demonstration purposes --- the figures shown are illustrative, not meant to represent the full $500M in annual revenue.
 :::
 
 ---
@@ -411,7 +411,7 @@ This is a **test-and-review cycle**, not a one-shot generation. The LLM writes c
 :::
 
 ::: {.notes}
-Say: "Let me pull back the curtain. When you ask the Data Simulation a question, four things happen."
+Say: "Let me pull back the curtain. When you ask the Custom Chatbot a question, four things happen."
 
 Walk through each step: "Step one: the system prompt. Before your question ever reaches the LLM, a system prompt has been loaded that describes every table, every column, and every relationship. This is the institutional knowledge layer --- it tells the LLM what data exists and what it means."
 
@@ -614,7 +614,7 @@ DEMO INSTRUCTIONS: Switch to the AI+Code Lab terminal. Open an empty file. Tell 
 
 Run it. Ask: "How many employees does each division have?" Show the answer.
 
-Say: "That is the entire core agent. Fifty lines of code. Built from English instructions in about 5 minutes. The XYZ Corp Data Simulation you have been using is built on this same core loop --- it just has 3,000 more lines for error handling, multiple databases, authentication, and the web interface."
+Say: "That is the entire core agent. Fifty lines of code. Built from English instructions in about 5 minutes. The XYZ Corp Custom Chatbot you have been using is built on this same core loop --- it just has 3,000 more lines for error handling, multiple databases, authentication, and the web interface."
 
 "The gap between 50 lines and 3,000 lines is the gap between prototype and production. That gap is real. But the core is simple."
 
@@ -646,7 +646,7 @@ If the live demo fails, describe what would have happened and show a pre-prepare
 - Error handling and retry logic
 - Logging, monitoring, audit trail
 - Web interface, API, scheduling
-- [This is the XYZ Corp Data Simulation]{.amber}
+- [This is the XYZ Corp Custom Chatbot]{.amber}
 :::
 :::
 
@@ -745,7 +745,7 @@ To be fair, dashboards have advantages AI agents do not: they provide a shared, 
 ## Hands-On: Build Your Own Report {.section-divider}
 
 ::: {.notes}
-This opens the hands-on segment (minutes 53-68). Students use the Data Simulation to produce specific deliverables. Three guided exercises, each requiring different combinations of data sources.
+This opens the hands-on segment (minutes 53-68). Students use the Custom Chatbot to produce specific deliverables. Three guided exercises, each requiring different combinations of data sources.
 :::
 
 ---
@@ -821,7 +821,7 @@ Display this slide as a reference while students work. You do not need to walk t
 ## Workshop: Your Reporting Candidates {.section-divider}
 
 ::: {.notes}
-This opens the workshop segment (minutes 68-80). Students shift from the XYZ Corp simulation to their own companies. They are identifying recurring reports that follow the data-to-deliverable pattern and could be candidates for automation.
+This opens the workshop segment (minutes 68-80). Students shift from the XYZ Corp Custom Chatbot to their own companies. They are identifying recurring reports that follow the data-to-deliverable pattern and could be candidates for automation.
 :::
 
 ---
@@ -934,7 +934,7 @@ Wrap-up segment (minutes 85-90).
 ::: {.box-title}
 Homework for Session 5
 :::
-1. **Produce one complete deliverable** using the XYZ Corp Data Simulation --- a memo, comparison, or risk assessment. Save or screenshot the output.
+1. **Produce one complete deliverable** using the XYZ Corp Custom Chatbot --- a memo, comparison, or risk assessment. Save or screenshot the output.
 2. **Pre-reading (~35 min):**
     - Morgan Stanley case study (provided) --- a regulated firm's deployment decision
     - [AIMultiple: "Cloud LLM vs Local LLMs"](https://aimultiple.com/cloud-llm) --- three deployment options
@@ -944,7 +944,7 @@ Homework for Session 5
 :::
 
 ::: {.notes}
-Say: "Homework. First, produce one complete deliverable using the XYZ Corp Data Simulation. Not a single question --- a full report. A memo, a comparison, a risk assessment. Whatever interests you. Save or screenshot the output and bring it to Session 5."
+Say: "Homework. First, produce one complete deliverable using the XYZ Corp Custom Chatbot. Not a single question --- a full report. A memo, a comparison, a risk assessment. Whatever interests you. Save or screenshot the output and bring it to Session 5."
 
 "Second, required pre-reading --- about 35 minutes total. Three items: the Morgan Stanley case study, the AIMultiple article on cloud vs. local LLMs, and a short piece on what the AI actually sees when it accesses your data. These prepare you for Session 5, which is entirely about deployment and architecture."
 

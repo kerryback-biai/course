@@ -1,0 +1,12 @@
+- generic [ref=e1]:
+  - heading "XYZ Corp Simulation" [level=1] [ref=e3]
+  - generic [ref=e4]:
+    - heading "Log in to your account" [level=2] [ref=e5]
+    - generic [ref=e6]:
+      - generic [ref=e7]: Username
+      - textbox "Username" [active] [ref=e8]
+      - generic [ref=e9]: Password
+      - generic [ref=e10]:
+        - textbox "Password" [ref=e11]
+        - button "Show" [ref=e12] [cursor=pointer]
+      - button "Log In" [ref=e13] [cursor=pointer]

@@ -474,7 +474,7 @@ The shift from "report pulling" to "strategic dialogue" is where the real ROI li
 :::
 
 ::: {.notes}
-[DEMO INSTRUCTIONS: This is a live demo from minute 78 to about minute 86. Switch to the XYZ Corp Data Simulation. Have your fallback recording ready.
+[DEMO INSTRUCTIONS: This is a live demo from minute 78 to about minute 86. Switch to the XYZ Corp Custom Chatbot. Have your fallback recording ready.
 
 Demo sequence:
 1. Ask the data question first: "What were Q4 sales for the Energy Division?" Show the simple answer --- one number, one chart. Point out that this is what you have been doing all course. Useful, but limited.
@@ -487,7 +487,7 @@ Demo sequence:
 
 The point is to model the behavior you want executives to adopt: treat AI as a colleague you argue with, not a tool you query.]
 
-Let me show you the difference. I am going to ask two questions of the XYZ Corp Data Simulation. First, the data question on the left card: "What were Q4 sales for the Energy Division?" Watch --- one number, one chart, done. That is useful, but it is just report pulling.
+Let me show you the difference. I am going to ask two questions of the XYZ Corp Custom Chatbot. First, the data question on the left card: "What were Q4 sales for the Energy Division?" Watch --- one number, one chart, done. That is useful, but it is just report pulling.
 
 Now watch what happens when I ask the strategic question on the right card: "I am considering expanding the Energy Division into the Southeast. Based on our pipeline, customer concentration, and support ticket trends, what are the top 3 risks?" See how it reasons across multiple data sources? It is pulling sales trends, looking at customer concentration, checking support ticket patterns. It synthesizes and gives me three risks.
 
@@ -734,7 +734,7 @@ This framework is deliberately simple. Complexity is the enemy of execution. Kee
 Continue Your Learning
 :::
 
-- **XYZ Corp environment** --- remains available for 90 days after the course
+- **XYZ Corp chatbot** --- remains available for 90 days after the course
 - **Course materials** --- all slides, case studies, and demo scripts on the course site
 - **Recommended reading** --- curated list of papers, vendor evaluations, and case studies
 - **Office hours** --- monthly drop-in sessions for the next quarter
@@ -742,7 +742,7 @@ Continue Your Learning
 :::
 
 ::: {.notes}
-A few logistics before we close. The XYZ Corp environment stays available for ninety days after the course. If you want to keep experimenting, keep querying, keep testing ideas, it is there. All course materials --- slides, case studies, demo scripts --- are on the course site. The recommended reading list has been updated through Session 8 and includes papers, vendor evaluations, and case studies.
+A few logistics before we close. The XYZ Corp chatbot stays available for ninety days after the course. If you want to keep experimenting, keep querying, keep testing ideas, it is there. All course materials --- slides, case studies, demo scripts --- are on the course site. The recommended reading list has been updated through Session 8 and includes papers, vendor evaluations, and case studies.
 
 Two resources I want to highlight. First, office hours. I am holding monthly drop-in sessions for the next quarter. If you are running your pilot and you hit a wall, or you need help framing a proposal, or you want to talk through a governance question, drop in. Second, your peer network. The people in your breakout group are your first call when you hit a wall. You have spent four weeks together working through these problems. Use that network. Exchange contact information if you have not already.
 
