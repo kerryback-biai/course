@@ -22,7 +22,7 @@ render_site() {
     quarto render
 
     echo "Encrypting slides page..."
-    staticrypt docs/slides.html -r -d docs -p "execed@rice" \
+    staticrypt docs/slides.html -r -d docs -p "jgsb!ai!" \
         --remember 90 --short \
         --template-title "From BI to AI" \
         --template-instructions "Enter the course password." \
