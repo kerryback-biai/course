@@ -13,3 +13,4 @@ title: Slide Decks
 | 6 | [Can You Trust It?](slides/pdf/session6.pdf) |
 | 7 | [Let the Data Predict](slides/pdf/session7.pdf) |
 | 8 | [Your AI Strategy](slides/pdf/session8.pdf) |
+| | [Building Your Own Agent](slides/pdf/agent-sdk.pdf) |
