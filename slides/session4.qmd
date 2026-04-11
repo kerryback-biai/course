@@ -581,15 +581,15 @@ Source: Marie Myers, CFO, HPE --- Fortune interview, 2025.
 
 ---
 
-## Live Walkthrough: Building an Agent {.section-divider}
+## Hands-On: Build Your Own Data Agent {.section-divider}
 
 ::: {.notes}
-This opens the live build segment (minutes 48-53). The instructor builds a simple agent on the AI+Code Lab using Claude Code. This is a quick, high-impact demonstration --- 5 minutes, not a full coding session. The goal is the "your developer could do this" moment.
+This opens the agent-building segment (minutes 48-63). First, a 3-minute instructor demo to show students what they are building. Then students build their own data agent on the AI+Code Lab. This is the "you can do this yourself" moment --- they go from a blank terminal to a working agent in about 10 minutes.
 :::
 
 ---
 
-## From English to Working Code
+## From English to Working Agent
 
 ::: {.info-box}
 ::: {.box-title}
@@ -602,7 +602,7 @@ What You Are About to See
 :::
 
 ::: {.highlight-box}
-The entire agent --- from blank file to working code --- takes about **5 minutes**. This is the "your developer could do this" moment.
+The entire agent --- from blank file to working code --- takes about **3 minutes**. Then you build one yourself.
 :::
 
 ::: {.notes}
@@ -614,11 +614,39 @@ DEMO INSTRUCTIONS: Switch to the AI+Code Lab terminal. Open an empty file. Tell 
 
 Run it. Ask: "How many employees does each division have?" Show the answer.
 
-Say: "That is the entire core agent. Fifty lines of code. Built from English instructions in about 5 minutes. The XYZ Corp Custom Chatbot you have been using is built on this same core loop --- it just has 3,000 more lines for error handling, multiple databases, authentication, and the web interface."
-
-"The gap between 50 lines and 3,000 lines is the gap between prototype and production. That gap is real. But the core is simple."
+Say: "That is the entire core agent. Fifty lines of code. Built from English instructions in about 3 minutes. Now you are going to build one yourself."
 
 If the live demo fails, describe what would have happened and show a pre-prepared screenshot of the code.
+
+[TIMING: 3 minutes for the demo. You should be at about minute 51. Then launch the hands-on.]
+:::
+
+---
+
+## Your Turn: Build a Data Agent
+
+::: {.info-box}
+::: {.box-title}
+Exercise: Build Your Own Agent (12 minutes)
+:::
+
+1. **Open the AI+Code Lab** terminal
+2. **Tell Claude Code:** "Build a Python script that takes a business question, sends it to Claude with a description of the XYZ Corp data schema, gets back a SQL query, runs it against the data file, and prints the answer."
+3. **Test it** with 2-3 questions:
+   - "What is total revenue by division?"
+   - "Which customers have the most support tickets?"
+   - "What is the average deal size in the Energy division?"
+4. **Verify the answers** --- check one result against what you know from the XYZ Corp Custom Chatbot
+:::
+
+::: {.notes}
+Say: "Your turn. Open the AI+Code Lab and build your own data agent. You are not writing code --- you are telling Claude Code what to build, in English, exactly like I just did."
+
+"Here is the prompt to start with. You can copy it from the slide or type your own version. The key elements: it should take a question in English, send it to an LLM with a schema description, get back SQL, execute the SQL, and return the answer."
+
+"Once it is working, test it with two or three questions. Then --- and this is important --- verify at least one answer by asking the same question in the XYZ Corp Custom Chatbot. Does your agent get the same result? If not, why not? This is the maker/checker framework in action."
+
+[TIMING: 12 minutes. Students work individually. Walk the room. Common issues: (1) students who try to write code themselves instead of asking Claude Code --- redirect them to use English. (2) Students whose agent fails on the first question --- tell them to paste the error back into Claude Code and ask it to fix the problem. (3) Students who finish fast --- challenge them to add a feature: "Make it also generate a chart" or "Make it explain its SQL before running it."]
 :::
 
 ---
@@ -628,13 +656,13 @@ If the live demo fails, describe what would have happened and show a pre-prepare
 ::: {.two-cards}
 ::: {.card .card-light}
 ::: {.card-title}
-50 Lines: The Prototype
+50 Lines: What You Just Built
 :::
 - System prompt with schema
 - Tool call mechanism (SQL execution)
 - Basic response formatting
 - Works for one database, one user
-- **This is what you just saw**
+- **Built from English in minutes**
 :::
 
 ::: {.card .card-dark}
@@ -655,165 +683,27 @@ The core is simple. Production is engineering. Understanding the difference help
 :::
 
 ::: {.notes}
-Say: "The core agent is 50 lines. The production application is 3,000 lines. What is the other 2,950 lines? Multiple database connections. Authentication. Error handling. Logging. Monitoring. A web interface. Scheduling. All the things that make it reliable, secure, and usable by more than one person."
+Say: "Look at what you just built. About 50 lines of code, generated from English instructions in a few minutes. Now compare that to the XYZ Corp Custom Chatbot you have been using all week --- that is about 3,000 lines. What is the other 2,950 lines? Multiple database connections. Authentication. Error handling. Logging. Monitoring. A web interface. Scheduling."
 
-"Why does this matter to you? Two reasons. First, when a vendor shows you a demo, you now know that the demo is the easy part. The hard part is the production engineering. Second, when someone on your team says 'I can build this,' they are right about the 50-line prototype --- but make sure they are scoping the 3,000-line production version."
+"Why does this matter? Two reasons. First, when a vendor shows you a demo, you now know that the demo is the easy part. The hard part is the production engineering. Second, you have now built the core yourself --- you understand what the technology actually does, not just what the marketing says it does."
 :::
 
 ---
 
-## From Pipeline to Dashboard
+## From Agent to Dashboard
 
 ::: {.explainer}
-The reporting pipeline produces a **document** --- a PDF, a memo, a deck. But what if you need something **interactive** --- a dashboard your team can use every day, with filters, drill-downs, and live data?
+Your agent answers questions in a terminal. But the same AI tools can build **interactive dashboards** --- web apps with charts, filters, and drill-downs.
 :::
 
 ::: {.highlight-box}
-One prompt to Claude Code: "Build an interactive dashboard that shows revenue by division with filters for date range and product category." Working app in under **5 minutes**.
+One prompt to Claude Code: "Turn my data agent into an interactive dashboard with charts and filters." Working app in under **5 minutes**.
 :::
 
 ::: {.notes}
-Say: "The pipeline we just built produces a static deliverable --- a document. That is the right output for a board memo or a quarterly review. But some use cases need something interactive. A sales manager wants to filter by region. A VP wants to toggle between divisions. That is a dashboard."
+Say: "The agent you just built answers questions in a terminal. That is useful for you, but not something you would hand to your VP of Sales. The next step is turning it into something visual and interactive --- a dashboard."
 
-"Here is the key insight: the same AI tools that build reporting pipelines can also build interactive applications. One prompt to Claude Code, and you have a working dashboard. Let me show you."
-
-Transition to the demo walkthrough.
-:::
-
----
-
-## Demo Walkthrough: Building a Dashboard {.shrink}
-
-::: {.code-box}
-::: {.box-title}
-The prompt (typed into Claude Code on the AI+Code Lab)
-:::
-```
-Build an interactive dashboard that visualizes XYZ Corp data.
-Include: revenue by division (bar chart), a trend line for
-monthly revenue, dropdown filters for date range and product
-category, and a downloadable CSV of the filtered data.
-```
-:::
-
-::: {.info-box}
-::: {.box-title}
-What Claude Code Produces
-:::
-- A single Python file (~80 lines) using a web framework, Pandas, and Plotly
-- Data loading from the XYZ Corp dataset
-- Interactive dropdown filters for division, date range, and product category
-- Bar chart of revenue by division, trend line of monthly revenue
-- A "Download CSV" button for the filtered dataset
-- **Result:** a working web app you can open in a browser immediately
-:::
-
-::: {.notes}
-Say: "This is what I typed into Claude Code on the AI+Code Lab. It produced a working web app in about 3 minutes. Let me walk you through what it built."
-
-"The output is a single Python file --- about 80 lines. Claude Code chose the framework --- it might pick Streamlit, Gradio, or FastAPI depending on the task. It loads the XYZ Corp data, creates dropdown filters for division, date range, and product category, generates a bar chart and a trend line, and includes a download button for the filtered data. One command to run it, and you have an interactive web app."
-
-"The point is: you describe what you want, and the AI picks the right tools and builds it. The entire thing took less time than formatting a PowerPoint slide."
-
-If doing this live, switch to the AI+Code Lab and show the running app. If not, describe the result and show a screenshot.
-:::
-
----
-
-## The SaaSpocalypse in Reverse {.centered-statement}
-
-::: {.highlight-box}
-AI kills dashboards. AI also [builds better ones faster]{.accent}.
-:::
-
-::: {.explainer}
-The dashboard that used to take a team two weeks to spec, design, and deploy can now be prototyped in minutes. The question is not whether dashboards are dead --- it is **who builds them and how fast**.
-:::
-
-::: {.notes}
-Say: "Remember the SaaSpocalypse from Session 1? The argument that AI makes traditional BI dashboards obsolete because you can just ask a question and get an answer? That is half right. AI does replace static dashboards that no one updates. But it also builds interactive dashboards faster than any development team."
-
-"Two weeks of requirements gathering, design reviews, and sprint cycles --- replaced by a five-minute prompt. The dashboard is not dead. The two-week development cycle is dead."
-
-"This is a theme we will keep returning to: AI does not just replace tools, it collapses the time to build them. That applies to reports, dashboards, and --- as you will see in Session 7 --- predictive applications."
-
-To be fair, dashboards have advantages AI agents do not: they provide a shared, stable reference point where everyone sees the same numbers, and they provide governance by design --- the queries are vetted, the filters are fixed, the refresh schedule is known. The future is likely both: AI for exploration and ad-hoc analysis, dashboards for standardized reporting.
-:::
-
----
-
-## Hands-On: Build Your Own Report {.section-divider}
-
-::: {.notes}
-This opens the hands-on segment (minutes 53-68). Students use the Custom Chatbot to produce specific deliverables. Three guided exercises, each requiring different combinations of data sources.
-:::
-
----
-
-## Three Report Exercises
-
-::: {.three-cards}
-::: {.card .card-light}
-::: {.card-title}
-Exercise 1: Customer Risk Report
-:::
-- Combine CRM pipeline data with support ticket trends
-- Which customers are high-revenue AND high-complaint?
-- Include a chart and a recommendation
-:::
-
-::: {.card .card-light}
-::: {.card-title}
-Exercise 2: Division P&L Comparison
-:::
-- Revenue by division from CRMs
-- Headcount from Workday
-- Revenue per employee with commentary
-- Compare divisions head-to-head
-:::
-
-::: {.card .card-dark}
-::: {.card-title}
-Exercise 3: Board Memo
-:::
-- Q3 vs Q4 performance across all divisions
-- Charts, narrative, risk flags
-- [Iterate: make it one page, lead with risk]{.amber}
-- Use the Session 2 techniques
-:::
-:::
-
-::: {.notes}
-Say: "Your turn. Three exercises, each producing a different type of deliverable. You do not need to do all three --- pick the one that interests you most and do it well. If you finish early, try another."
-
-"Exercise 1: customer risk report. Combine CRM data with Zendesk support tickets. Which customers are both high-revenue and high-complaint? That is a risk signal."
-
-"Exercise 2: division P&L comparison. Pull revenue from the CRMs and headcount from Workday. Calculate revenue per employee. Compare divisions."
-
-"Exercise 3: the full board memo. Q3 vs Q4 performance across all divisions, with charts, narrative, and risk flags. Then iterate --- make it one page, lead with the biggest risk. Use the iteration techniques from Session 2."
-
-"You have 15 minutes. Focus on one exercise and make it great. Iterate on your prompt --- the first draft is never the best draft."
-
-Circulate and help. Watch for students who are struggling with prompt specificity --- coach them to be more specific about format, audience, and what to include.
-:::
-
----
-
-## Iteration Tips
-
-::: {.info-box}
-::: {.box-title}
-Getting Better Output
-:::
-- **Be specific about format:** "Traffic-light dashboard" vs. "one-page executive brief"
-- **Name the audience:** "For the CFO" produces different output than "for the sales team"
-- **Set thresholds:** "Flag anything more than 10% off plan"
-- **Ask for critique:** "What is weak about this analysis? What would a skeptical CFO push back on?"
-- **Iterate:** "Lead with risk. End with three actions. Cut to one page."
-:::
-
-::: {.notes}
-Display this slide as a reference while students work. You do not need to walk through each point unless someone asks. The key coaching move is to watch for students getting mediocre output and saying "good enough" --- push them to iterate at least once.
+"Here is the key insight: the same AI tools that build agents also build dashboards. One more prompt to Claude Code, and your terminal agent becomes a web app with charts and filters. We will not do this now --- but this is exactly the kind of extension you could build for your capstone prototype."
 :::
 
 ---
@@ -934,23 +824,26 @@ Wrap-up segment (minutes 85-90).
 ::: {.box-title}
 Homework for Session 5
 :::
-1. **Produce one complete deliverable** using the XYZ Corp Custom Chatbot --- a memo, comparison, or risk assessment. Save or screenshot the output.
+1. **Produce one complete deliverable** using the XYZ Corp Custom Chatbot --- pick one:
+    - **Customer Risk Report:** Combine CRM data with support tickets. Which customers are high-revenue AND high-complaint?
+    - **Division P&L Comparison:** Revenue by division from CRMs + headcount from Workday. Revenue per employee.
+    - **Board Memo:** Q3 vs Q4 performance across all divisions. Charts, narrative, risk flags. Iterate until it fits on one page.
 2. **Pre-reading (~35 min):**
     - Morgan Stanley case study (provided) --- a regulated firm's deployment decision
     - [AIMultiple: "Cloud LLM vs Local LLMs"](https://aimultiple.com/cloud-llm) --- three deployment options
     - "What Does Your AI Actually See?" (provided) --- four data security approaches
 3. **Optional reading:** a16z "How 100 Enterprise CIOs Are Building and Buying Gen AI" + DUNNIXER vendor evaluation scorecard
-4. **Optional:** AI+Code Lab Exercises 1--2 + Demos 1--4
+4. *Optional:* **Extend your agent.** Go back to the AI+Code Lab and improve the data agent you built today. Ideas: add chart generation, add a web interface, connect a second data source. The more you build now, the stronger your capstone prototype will be.
 :::
 
 ::: {.notes}
-Say: "Homework. First, produce one complete deliverable using the XYZ Corp Custom Chatbot. Not a single question --- a full report. A memo, a comparison, a risk assessment. Whatever interests you. Save or screenshot the output and bring it to Session 5."
+Say: "Homework. First, produce one complete deliverable using the XYZ Corp Custom Chatbot. I am giving you three options --- customer risk report, division P&L comparison, or a full board memo. Pick the one that interests you most and make it great. Use the iteration techniques from Session 2 --- do not settle for the first draft."
 
 "Second, required pre-reading --- about 35 minutes total. Three items: the Morgan Stanley case study, the AIMultiple article on cloud vs. local LLMs, and a short piece on what the AI actually sees when it accesses your data. These prepare you for Session 5, which is entirely about deployment and architecture."
 
 "Optional: the a16z enterprise AI survey and the DUNNIXER vendor evaluation scorecard. Keep the DUNNIXER scorecard --- you will use it in Session 5."
 
-"Also optional: the AI+Code Lab exercises and recorded demos. If you want to build an agent yourself, Exercises 1 and 2 walk you through it with AI assistance."
+"Also optional but recommended: go back to the AI+Code Lab and extend the data agent you built today. Add chart generation, add a web interface, connect a second data source. The more you build now, the stronger your capstone prototype will be in Session 8. You are building toward something real."
 :::
 
 ---
@@ -978,26 +871,463 @@ In the final session, we will see AI used not just to analyze data but as a thin
 
 ---
 
+## Deep Dive: Inside an Agent {.section-divider}
+
+::: {.notes}
+This opens the deep-dive segment. Having built a data agent from English and seen the 50-line vs. 3,000-line gap, we now look inside a different agent --- a portfolio analyst --- to see exactly what those 50 lines do. The goal is not to turn students into developers, but to give them enough understanding to evaluate vendors, scope internal builds, and act as informed checkers.
+:::
+
+---
+
+## What Is an Agent?
+
+An agent is a program that:
+
+1. Maintains a conversation with a user
+2. Has access to **tools** (functions it can call)
+3. **Decides which tools to use** based on the question
+4. Chains multiple tool calls before responding
+
+::: {.explainer}
+This is different from a script that always runs the same steps. The agent [reasons]{.amber} about what information it needs and fetches it on the fly.
+:::
+
+::: {.notes}
+Say: "You just built an agent from English instructions. Now let me show you what is actually inside those 50 lines --- using a different example that might hit closer to home."
+:::
+
+---
+
+## Why an Agent, Not a Script?
+
+::: {.two-cards}
+::: {.card .card-light}
+::: {.card-title}
+A Script
+:::
+- Fixed sequence of steps
+- Same analysis every time
+- Can't handle follow-up questions
+- New analysis = new code
+:::
+
+::: {.card .card-dark}
+::: {.card-title}
+An Agent
+:::
+- Chooses tools based on context
+- Different path for each question
+- Conversational --- remembers context
+- New analysis = just ask
+:::
+:::
+
+::: {.explainer}
+You write the tools once; the agent figures out how to combine them.
+:::
+
+---
+
+## Our Example: Portfolio Review Agent
+
+We'll walk through a **portfolio analyst** that can:
+
+- Look up current holdings and tax lots
+- Query a live price database
+- Compute returns, correlations, and statistics in Python
+- Compare sector weights against targets
+- Identify tax-loss harvesting opportunities
+- Find the most correlated Strong Buy replacement
+
+::: {.explainer}
+The agent chooses its own path. Asking "review the portfolio" triggers different tools than "find tax-loss candidates in energy."
+:::
+
+::: {.notes}
+Say: "This agent manages a stock portfolio. It has five tools --- three return portfolio data, one runs SQL against a price database, and one runs Python for analytics. Think about your own portfolio: you might ask about sector allocation one day and tax-loss harvesting the next. The same five tools handle both questions --- the agent decides which ones to call."
+:::
+
+---
+
+## Architecture
+
+```{mermaid}
+flowchart LR
+    U[User] <-->|conversation| A[Claude Agent]
+    A -->|get_holdings| M[Portfolio Data]
+    A -->|get_target_allocation| M
+    A -->|get_analyst_recommendations| M
+    A -->|run_sql| DB[(Price Database)]
+    A -->|run_python| P[Python Runtime]
+```
+
+::: {.explainer}
+Five tools. Three return portfolio data. One executes SQL against a live price database. One runs Python for analytics.
+:::
+
+---
+
+## Tools Are JSON Descriptions {.shrink}
+
+Each tool has a `name`, `description`, and `input_schema`. The description tells the agent [when and why]{.amber} to use it.
+
+```python
+tools = [
+    {
+        "name": "get_holdings",
+        "description": (
+            "Retrieve all portfolio holdings with tax lot detail. "
+            "Returns each position's ticker, sector, and individual "
+            "lots (date acquired, shares, cost basis per share)."
+        ),
+        "input_schema": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+        },
+    },
+    # ... more tools
+]
+```
+
+::: {.explainer}
+The description is the critical part --- it tells the agent when to use this tool. A tool with no inputs (like `get_holdings`) acts as a simple lookup.
+:::
+
+::: {.notes}
+Say: "Every tool the agent can use is defined by three things: a name, a description, and a schema of what inputs it accepts. The description is the most important part --- it is how the agent decides when to call this tool. Think of it as a menu item: the name is the dish, the description is what is in it."
+:::
+
+---
+
+## The SQL and Python Tools {.shrink}
+
+The agent can [write its own queries]{.amber} and [run its own analytics]{.amber}:
+
+::: {.two-cards}
+::: {.card .card-light}
+::: {.card-title}
+run_sql
+:::
+```
+Execute a SQL query against the
+price database.
+Available tables:
+  - sep: daily stock prices
+  - tickers: stock metadata
+Use closeadj for return calculations.
+```
+
+Input: a SQL string the agent composes on the fly
+:::
+
+::: {.card .card-dark}
+::: {.card-title}
+run_python
+:::
+```
+Execute Python code and return
+printed output.
+pandas, numpy, and json are
+available.
+The namespace persists across calls.
+```
+
+Input: Python code --- the agent decides [what]{.amber} to compute
+:::
+:::
+
+::: {.explainer}
+Multi-tool chains: `run_sql` fetches prices → `run_python` computes correlations. The agent decides the sequence.
+:::
+
+---
+
+## The Tool Router
+
+```python
+def execute_tool(name: str, inputs: dict) -> str:
+    """Route a tool call to the appropriate handler."""
+    if name == "get_holdings":
+        return json.dumps(HOLDINGS)
+    elif name == "get_target_allocation":
+        return json.dumps(TARGET_ALLOCATION)
+    elif name == "get_analyst_recommendations":
+        sector = inputs["sector"]
+        recs = STRONG_BUY.get(sector, [])
+        return json.dumps({"sector": sector, "strong_buy": recs})
+    elif name == "run_sql":
+        return run_sql_query(inputs["sql"])
+    elif name == "run_python":
+        return run_python_code(inputs["code"])
+```
+
+::: {.explainer}
+This is your code --- you control what each tool does. The agent only sees the tool's name, description, and the result you return.
+:::
+
+::: {.notes}
+Say: "This is the traffic cop. When the agent says 'I want to call get_holdings,' this function catches that request and returns the actual data. When it says 'run this SQL,' the function connects to the database and runs it. You wrote the tools --- you control what happens."
+:::
+
+---
+
+## The Core Loop
+
+```python
+import anthropic
+
+client = anthropic.Anthropic()
+messages = [{"role": "user", "content": user_input}]
+
+while True:
+    response = client.messages.create(
+        model="claude-sonnet-4-6",
+        system=SYSTEM_PROMPT,
+        tools=tools,
+        messages=messages,
+        max_tokens=4096,
+    )
+
+    if response.stop_reason == "tool_use":
+        # Agent wants to call tools — execute and feed results back
+        ...
+    else:
+        # Agent is done — display its response
+        break
+```
+
+::: {.explainer}
+The loop keeps running until the agent has all the information it needs. It might call one tool or five.
+:::
+
+::: {.notes}
+Say: "Here is the heart of every agent. It is a loop. Send the user's question to the model. The model either responds with text --- meaning it is done --- or it requests a tool call. If it requests a tool, you execute it, send the result back, and loop again. That is it. Every agent you have used in this course runs some version of this loop."
+:::
+
+---
+
+## Handling Tool Calls {.shrink}
+
+```python
+if response.stop_reason == "tool_use":
+    # Save the assistant's message
+    messages.append({"role": "assistant", "content": response.content})
+
+    # Execute each tool and collect results
+    tool_results = []
+    for block in response.content:
+        if block.type == "tool_use":
+            result = execute_tool(block.name, block.input)
+            tool_results.append({
+                "type": "tool_result",
+                "tool_use_id": block.id,
+                "content": result,
+            })
+
+    # Send results back to the agent
+    messages.append({"role": "user", "content": tool_results})
+```
+
+::: {.explainer}
+The `tool_use_id` links each result to the corresponding call. The agent can make [multiple tool calls]{.amber} in one turn.
+:::
+
+---
+
+## The System Prompt
+
+```python
+SYSTEM_PROMPT = """\
+You are a portfolio analyst assistant. You help review a client
+portfolio, identify tax-loss harvesting opportunities, and
+recommend replacement securities.
+
+When harvesting losses, sell the lots with the largest unrealized
+loss first (highest cost basis relative to current price).
+
+When recommending a replacement, compute return correlations
+between the stock being sold and each Strong Buy candidate,
+then recommend the most highly correlated candidate.
+
+When writing SQL, use closeadj for return calculations.
+"""
+```
+
+::: {.explainer}
+The system prompt gives the agent its [strategy]{.amber} --- domain expertise that guides tool selection. Compare this to the XYZ Corp system prompt you saw earlier --- same pattern, different domain.
+:::
+
+---
+
+## Example: Tax-Loss Harvesting
+
+> **You:** Harvest the INTC losses. What should I buy to replace the exposure?
+
+The agent:
+
+1. Identifies INTC lots with the largest unrealized losses
+2. Calculates the realized loss
+3. Checks if selling moves Technology below target weight
+4. Calls `get_analyst_recommendations("Technology")`
+5. Calls `run_sql` to fetch daily prices for INTC and each candidate
+6. Calls `run_python` to compute return correlations
+7. Recommends the most [highly correlated]{.amber} Strong Buy stock
+
+::: {.explainer}
+Seven tool calls across three tools, [none predetermined]{.amber}. The path depends on what the human asks and what the data shows.
+:::
+
+::: {.notes}
+Say: "One question. Seven tool calls. Three different tools. And none of that was predetermined --- the agent decided the sequence based on the question and what it found along the way. This is the same loop you just saw, running seven times before it had enough information to answer."
+:::
+
+---
+
+## The Agent SDK Simplifies This {.section-divider}
+
+::: {.notes}
+Say: "Now --- you have seen the raw machinery. In practice, you do not have to write the loop yourself. SDKs handle the plumbing for you."
+:::
+
+---
+
+## Before and After {.shrink}
+
+::: {.two-cards}
+::: {.card .card-light}
+::: {.card-title}
+Manual Loop (~30 lines of plumbing)
+:::
+
+```python
+client = anthropic.Anthropic()
+messages = [{"role": "user", "content": prompt}]
+
+while True:
+    response = client.messages.create(
+        model="claude-sonnet-4-6",
+        system=SYSTEM_PROMPT,
+        tools=tools,
+        messages=messages,
+        max_tokens=4096,
+    )
+    if response.stop_reason == "tool_use":
+        messages.append({"role": "assistant",
+                         "content": response.content})
+        tool_results = []
+        for block in response.content:
+            if block.type == "tool_use":
+                result = execute_tool(
+                    block.name, block.input
+                )
+                tool_results.append({
+                    "type": "tool_result",
+                    "tool_use_id": block.id,
+                    "content": result,
+                })
+        messages.append(
+            {"role": "user", "content": tool_results}
+        )
+    else:
+        break
+```
+:::
+
+::: {.card .card-dark}
+::: {.card-title}
+Agent SDK (~5 lines)
+:::
+
+```python
+from claude_agent_sdk import (
+    query, ClaudeAgentOptions
+)
+
+async for message in query(
+    prompt="Review the portfolio",
+    options=ClaudeAgentOptions(
+        allowed_tools=[
+            "Read", "Edit", "Bash",
+        ],
+    ),
+):
+    print(message.result)
+```
+
+- [The loop is gone]{.amber} --- the SDK handles it
+- Tool execution is automatic
+- Message tracking is automatic
+- You focus on **what** the agent does, not **how** it loops
+:::
+:::
+
+::: {.notes}
+Say: "On the left, the manual loop you just learned. On the right, the same thing using Anthropic's Agent SDK. The loop is gone. Tool execution is automatic. You define the tools and the prompt; the SDK handles everything else. This is what production code looks like --- you build on the SDK, not on the raw loop."
+:::
+
+---
+
+## Why Both Matter
+
+::: {.three-cards}
+::: {.card .card-light}
+::: {.card-title}
+Understanding the Loop
+:::
+- You saw the raw machinery
+- You know what happens at each step
+- You can evaluate vendors and debug failures
+- The [checker]{.amber} needs to understand the system
+:::
+
+::: {.card .card-light}
+::: {.card-title}
+Using the SDK
+:::
+- Faster to build
+- Less code to maintain
+- Fewer places for bugs
+- Production-ready patterns built in
+:::
+
+::: {.card .card-dark}
+::: {.card-title}
+The Takeaway
+:::
+- The manual loop teaches you [what agents are]{.amber}
+- The SDK lets you [build them fast]{.amber}
+- Both use the same tools, same system prompt, same model
+- The difference is plumbing, not capability
+:::
+:::
+
+::: {.notes}
+Say: "Why did I show you the hard way first? Because the checker needs to understand the system. When a vendor demos an agent and it gets something wrong, you now know where the failure could be --- the system prompt, the tool definitions, the tool router, or the model's reasoning. That knowledge makes you a better buyer, a better scoper, and a better checker. The SDK makes you faster. Understanding the loop makes you smarter."
+:::
+
+---
+
 ## Session 4 Summary {.centered-statement}
 
-## From Data to Deliverable
+## From Data to Deliverable --- and You Built the Agent
 
 ::: {.stat-cards}
-::: {.stat-card}
-::: {.stat-number}
-6
-:::
-::: {.stat-label}
-systems queried in one prompt
-:::
-:::
-
 ::: {.stat-card}
 ::: {.stat-number}
 50
 :::
 ::: {.stat-label}
-lines of code in the core agent loop
+lines of code you built from English
+:::
+:::
+
+::: {.stat-card}
+::: {.stat-number}
+3,000
+:::
+::: {.stat-label}
+lines separate prototype from production
 :::
 :::
 
@@ -1012,5 +1342,5 @@ manual prep reduction at HPE
 :::
 
 ::: {.notes}
-Recap slide to display as students leave. Key takeaways: the pipeline goes from one prompt to a complete deliverable, the core agent is surprisingly simple (50 lines), and this is already working at scale in companies like HPE.
+Recap slide to display as students leave. Key takeaways: you built the core agent yourself (50 lines from English), the gap between prototype and production is real but understandable (3,000 lines), and this is already working at scale in companies like HPE. The agent you built today is the seed for your capstone prototype.
 :::

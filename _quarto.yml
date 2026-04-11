@@ -13,7 +13,6 @@ project:
     - slides/session7.qmd
     - slides/session8.qmd
     - slides/intro-video.qmd
-    - slides/agent-sdk.qmd
   resources:
     - CNAME
     - .nojekyll

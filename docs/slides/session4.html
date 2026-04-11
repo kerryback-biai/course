@@ -28,8 +28,73 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-80873d3a46d0a92d285a31910fb8318b.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-f13d298167f9bf09771ba3f251fefacc.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -121,6 +186,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -848,10 +916,10 @@ IMPORTANT: Customer names differ across systems. Use fuzzy matching.</code></pre
           display:block!important;
       }</style></aside>
 </section>
-<section id="live-walkthrough-building-an-agent" class="slide level2 section-divider center">
-<h2>Live Walkthrough: Building an Agent</h2>
+<section id="hands-on-build-your-own-data-agent" class="slide level2 section-divider center">
+<h2>Hands-On: Build Your Own Data Agent</h2>
 <aside class="notes">
-<p>This opens the live build segment (minutes 48-53). The instructor builds a simple agent on the AI+Code Lab using Claude Code. This is a quick, high-impact demonstration — 5 minutes, not a full coding session. The goal is the “your developer could do this” moment.</p>
+<p>This opens the agent-building segment (minutes 48-63). First, a 3-minute instructor demo to show students what they are building. Then students build their own data agent on the AI+Code Lab. This is the “you can do this yourself” moment — they go from a blank terminal to a working agent in about 10 minutes.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -864,8 +932,8 @@ IMPORTANT: Customer names differ across systems. Use fuzzy matching.</code></pre
           display:block!important;
       }</style></aside>
 </section>
-<section id="from-english-to-working-code" class="slide level2 center">
-<h2>From English to Working Code</h2>
+<section id="from-english-to-working-agent" class="slide level2 center">
+<h2>From English to Working Agent</h2>
 <div class="info-box">
 <div class="box-title">
 <p>What You Are About to See</p>
@@ -878,16 +946,51 @@ IMPORTANT: Customer names differ across systems. Use fuzzy matching.</code></pre
 </ul>
 </div>
 <div class="highlight-box">
-<p>The entire agent — from blank file to working code — takes about <strong>5 minutes</strong>. This is the “your developer could do this” moment.</p>
+<p>The entire agent — from blank file to working code — takes about <strong>3 minutes</strong>. Then you build one yourself.</p>
 </div>
 <aside class="notes">
 <p>DEMO INSTRUCTIONS: Switch to the AI+Code Lab terminal. Open an empty file. Tell Claude Code in English to build the basic agent. Narrate as it generates code:</p>
 <p>“Watch — I am telling Claude Code in plain English to build a data agent. ‘Build a Python script that takes a question, sends it to Claude with a schema description, gets back SQL, runs it against a parquet file, and prints the answer.’”</p>
 <p>“It is writing the code now. About 50 lines. There is the schema description. There is the tool call mechanism. There is the execution loop.”</p>
 <p>Run it. Ask: “How many employees does each division have?” Show the answer.</p>
-<p>Say: “That is the entire core agent. Fifty lines of code. Built from English instructions in about 5 minutes. The XYZ Corp Custom Chatbot you have been using is built on this same core loop — it just has 3,000 more lines for error handling, multiple databases, authentication, and the web interface.”</p>
-<p>“The gap between 50 lines and 3,000 lines is the gap between prototype and production. That gap is real. But the core is simple.”</p>
+<p>Say: “That is the entire core agent. Fifty lines of code. Built from English instructions in about 3 minutes. Now you are going to build one yourself.”</p>
 <p>If the live demo fails, describe what would have happened and show a pre-prepared screenshot of the code.</p>
+<p>[TIMING: 3 minutes for the demo. You should be at about minute 51. Then launch the hands-on.]</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="your-turn-build-a-data-agent" class="slide level2 center">
+<h2>Your Turn: Build a Data Agent</h2>
+<div class="info-box">
+<div class="box-title">
+<p>Exercise: Build Your Own Agent (12 minutes)</p>
+</div>
+<ol type="1">
+<li><strong>Open the AI+Code Lab</strong> terminal</li>
+<li><strong>Tell Claude Code:</strong> “Build a Python script that takes a business question, sends it to Claude with a description of the XYZ Corp data schema, gets back a SQL query, runs it against the data file, and prints the answer.”</li>
+<li><strong>Test it</strong> with 2-3 questions:
+<ul>
+<li>“What is total revenue by division?”</li>
+<li>“Which customers have the most support tickets?”</li>
+<li>“What is the average deal size in the Energy division?”</li>
+</ul></li>
+<li><strong>Verify the answers</strong> — check one result against what you know from the XYZ Corp Custom Chatbot</li>
+</ol>
+</div>
+<aside class="notes">
+<p>Say: “Your turn. Open the AI+Code Lab and build your own data agent. You are not writing code — you are telling Claude Code what to build, in English, exactly like I just did.”</p>
+<p>“Here is the prompt to start with. You can copy it from the slide or type your own version. The key elements: it should take a question in English, send it to an LLM with a schema description, get back SQL, execute the SQL, and return the answer.”</p>
+<p>“Once it is working, test it with two or three questions. Then — and this is important — verify at least one answer by asking the same question in the XYZ Corp Custom Chatbot. Does your agent get the same result? If not, why not? This is the maker/checker framework in action.”</p>
+<p>[TIMING: 12 minutes. Students work individually. Walk the room. Common issues: (1) students who try to write code themselves instead of asking Claude Code — redirect them to use English. (2) Students whose agent fails on the first question — tell them to paste the error back into Claude Code and ask it to fix the problem. (3) Students who finish fast — challenge them to add a feature: “Make it also generate a chart” or “Make it explain its SQL before running it.”]</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -905,14 +1008,14 @@ IMPORTANT: Customer names differ across systems. Use fuzzy matching.</code></pre
 <div class="two-cards">
 <div class="card card-light">
 <div class="card-title">
-<p>50 Lines: The Prototype</p>
+<p>50 Lines: What You Just Built</p>
 </div>
 <ul>
 <li>System prompt with schema</li>
 <li>Tool call mechanism (SQL execution)</li>
 <li>Basic response formatting</li>
 <li>Works for one database, one user</li>
-<li><strong>This is what you just saw</strong></li>
+<li><strong>Built from English in minutes</strong></li>
 </ul>
 </div>
 <div class="card card-dark">
@@ -933,8 +1036,8 @@ IMPORTANT: Customer names differ across systems. Use fuzzy matching.</code></pre
 <p>The core is simple. Production is engineering. Understanding the difference helps you evaluate vendors and scope internal builds.</p>
 </div>
 <aside class="notes">
-<p>Say: “The core agent is 50 lines. The production application is 3,000 lines. What is the other 2,950 lines? Multiple database connections. Authentication. Error handling. Logging. Monitoring. A web interface. Scheduling. All the things that make it reliable, secure, and usable by more than one person.”</p>
-<p>“Why does this matter to you? Two reasons. First, when a vendor shows you a demo, you now know that the demo is the easy part. The hard part is the production engineering. Second, when someone on your team says ‘I can build this,’ they are right about the 50-line prototype — but make sure they are scoping the 3,000-line production version.”</p>
+<p>Say: “Look at what you just built. About 50 lines of code, generated from English instructions in a few minutes. Now compare that to the XYZ Corp Custom Chatbot you have been using all week — that is about 3,000 lines. What is the other 2,950 lines? Multiple database connections. Authentication. Error handling. Logging. Monitoring. A web interface. Scheduling.”</p>
+<p>“Why does this matter? Two reasons. First, when a vendor shows you a demo, you now know that the demo is the easy part. The hard part is the production engineering. Second, you have now built the core yourself — you understand what the technology actually does, not just what the marketing says it does.”</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -947,183 +1050,17 @@ IMPORTANT: Customer names differ across systems. Use fuzzy matching.</code></pre
           display:block!important;
       }</style></aside>
 </section>
-<section id="from-pipeline-to-dashboard" class="slide level2 center">
-<h2>From Pipeline to Dashboard</h2>
+<section id="from-agent-to-dashboard" class="slide level2 center">
+<h2>From Agent to Dashboard</h2>
 <div class="explainer">
-<p>The reporting pipeline produces a <strong>document</strong> — a PDF, a memo, a deck. But what if you need something <strong>interactive</strong> — a dashboard your team can use every day, with filters, drill-downs, and live data?</p>
+<p>Your agent answers questions in a terminal. But the same AI tools can build <strong>interactive dashboards</strong> — web apps with charts, filters, and drill-downs.</p>
 </div>
 <div class="highlight-box">
-<p>One prompt to Claude Code: “Build an interactive dashboard that shows revenue by division with filters for date range and product category.” Working app in under <strong>5 minutes</strong>.</p>
+<p>One prompt to Claude Code: “Turn my data agent into an interactive dashboard with charts and filters.” Working app in under <strong>5 minutes</strong>.</p>
 </div>
 <aside class="notes">
-<p>Say: “The pipeline we just built produces a static deliverable — a document. That is the right output for a board memo or a quarterly review. But some use cases need something interactive. A sales manager wants to filter by region. A VP wants to toggle between divisions. That is a dashboard.”</p>
-<p>“Here is the key insight: the same AI tools that build reporting pipelines can also build interactive applications. One prompt to Claude Code, and you have a working dashboard. Let me show you.”</p>
-<p>Transition to the demo walkthrough.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="demo-walkthrough-building-a-dashboard" class="slide level2 shrink center">
-<h2>Demo Walkthrough: Building a Dashboard</h2>
-<div class="code-box">
-<div class="box-title">
-<p>The prompt (typed into Claude Code on the AI+Code Lab)</p>
-</div>
-<pre><code>Build an interactive dashboard that visualizes XYZ Corp data.
-Include: revenue by division (bar chart), a trend line for
-monthly revenue, dropdown filters for date range and product
-category, and a downloadable CSV of the filtered data.</code></pre>
-</div>
-<div class="info-box">
-<div class="box-title">
-<p>What Claude Code Produces</p>
-</div>
-<ul>
-<li>A single Python file (~80 lines) using a web framework, Pandas, and Plotly</li>
-<li>Data loading from the XYZ Corp dataset</li>
-<li>Interactive dropdown filters for division, date range, and product category</li>
-<li>Bar chart of revenue by division, trend line of monthly revenue</li>
-<li>A “Download CSV” button for the filtered dataset</li>
-<li><strong>Result:</strong> a working web app you can open in a browser immediately</li>
-</ul>
-</div>
-<aside class="notes">
-<p>Say: “This is what I typed into Claude Code on the AI+Code Lab. It produced a working web app in about 3 minutes. Let me walk you through what it built.”</p>
-<p>“The output is a single Python file — about 80 lines. Claude Code chose the framework — it might pick Streamlit, Gradio, or FastAPI depending on the task. It loads the XYZ Corp data, creates dropdown filters for division, date range, and product category, generates a bar chart and a trend line, and includes a download button for the filtered data. One command to run it, and you have an interactive web app.”</p>
-<p>“The point is: you describe what you want, and the AI picks the right tools and builds it. The entire thing took less time than formatting a PowerPoint slide.”</p>
-<p>If doing this live, switch to the AI+Code Lab and show the running app. If not, describe the result and show a screenshot.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="the-saaspocalypse-in-reverse" class="slide level2 centered-statement center">
-<h2>The SaaSpocalypse in Reverse</h2>
-<div class="highlight-box">
-<p>AI kills dashboards. AI also <span class="accent">builds better ones faster</span>.</p>
-</div>
-<div class="explainer">
-<p>The dashboard that used to take a team two weeks to spec, design, and deploy can now be prototyped in minutes. The question is not whether dashboards are dead — it is <strong>who builds them and how fast</strong>.</p>
-</div>
-<aside class="notes">
-<p>Say: “Remember the SaaSpocalypse from Session 1? The argument that AI makes traditional BI dashboards obsolete because you can just ask a question and get an answer? That is half right. AI does replace static dashboards that no one updates. But it also builds interactive dashboards faster than any development team.”</p>
-<p>“Two weeks of requirements gathering, design reviews, and sprint cycles — replaced by a five-minute prompt. The dashboard is not dead. The two-week development cycle is dead.”</p>
-<p>“This is a theme we will keep returning to: AI does not just replace tools, it collapses the time to build them. That applies to reports, dashboards, and — as you will see in Session 7 — predictive applications.”</p>
-<p>To be fair, dashboards have advantages AI agents do not: they provide a shared, stable reference point where everyone sees the same numbers, and they provide governance by design — the queries are vetted, the filters are fixed, the refresh schedule is known. The future is likely both: AI for exploration and ad-hoc analysis, dashboards for standardized reporting.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="hands-on-build-your-own-report" class="slide level2 section-divider center">
-<h2>Hands-On: Build Your Own Report</h2>
-<aside class="notes">
-<p>This opens the hands-on segment (minutes 53-68). Students use the Custom Chatbot to produce specific deliverables. Three guided exercises, each requiring different combinations of data sources.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="three-report-exercises" class="slide level2 center">
-<h2>Three Report Exercises</h2>
-<div class="three-cards">
-<div class="card card-light">
-<div class="card-title">
-<p>Exercise 1: Customer Risk Report</p>
-</div>
-<ul>
-<li>Combine CRM pipeline data with support ticket trends</li>
-<li>Which customers are high-revenue AND high-complaint?</li>
-<li>Include a chart and a recommendation</li>
-</ul>
-</div>
-<div class="card card-light">
-<div class="card-title">
-<p>Exercise 2: Division P&amp;L Comparison</p>
-</div>
-<ul>
-<li>Revenue by division from CRMs</li>
-<li>Headcount from Workday</li>
-<li>Revenue per employee with commentary</li>
-<li>Compare divisions head-to-head</li>
-</ul>
-</div>
-<div class="card card-dark">
-<div class="card-title">
-<p>Exercise 3: Board Memo</p>
-</div>
-<ul>
-<li>Q3 vs Q4 performance across all divisions</li>
-<li>Charts, narrative, risk flags</li>
-<li><span class="amber">Iterate: make it one page, lead with risk</span></li>
-<li>Use the Session 2 techniques</li>
-</ul>
-</div>
-</div>
-<aside class="notes">
-<p>Say: “Your turn. Three exercises, each producing a different type of deliverable. You do not need to do all three — pick the one that interests you most and do it well. If you finish early, try another.”</p>
-<p>“Exercise 1: customer risk report. Combine CRM data with Zendesk support tickets. Which customers are both high-revenue and high-complaint? That is a risk signal.”</p>
-<p>“Exercise 2: division P&amp;L comparison. Pull revenue from the CRMs and headcount from Workday. Calculate revenue per employee. Compare divisions.”</p>
-<p>“Exercise 3: the full board memo. Q3 vs Q4 performance across all divisions, with charts, narrative, and risk flags. Then iterate — make it one page, lead with the biggest risk. Use the iteration techniques from Session 2.”</p>
-<p>“You have 15 minutes. Focus on one exercise and make it great. Iterate on your prompt — the first draft is never the best draft.”</p>
-<p>Circulate and help. Watch for students who are struggling with prompt specificity — coach them to be more specific about format, audience, and what to include.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="iteration-tips" class="slide level2 center">
-<h2>Iteration Tips</h2>
-<div class="info-box">
-<div class="box-title">
-<p>Getting Better Output</p>
-</div>
-<ul>
-<li><strong>Be specific about format:</strong> “Traffic-light dashboard” vs.&nbsp;“one-page executive brief”</li>
-<li><strong>Name the audience:</strong> “For the CFO” produces different output than “for the sales team”</li>
-<li><strong>Set thresholds:</strong> “Flag anything more than 10% off plan”</li>
-<li><strong>Ask for critique:</strong> “What is weak about this analysis? What would a skeptical CFO push back on?”</li>
-<li><strong>Iterate:</strong> “Lead with risk. End with three actions. Cut to one page.”</li>
-</ul>
-</div>
-<aside class="notes">
-<p>Display this slide as a reference while students work. You do not need to walk through each point unless someone asks. The key coaching move is to watch for students getting mediocre output and saying “good enough” — push them to iterate at least once.</p>
+<p>Say: “The agent you just built answers questions in a terminal. That is useful for you, but not something you would hand to your VP of Sales. The next step is turning it into something visual and interactive — a dashboard.”</p>
+<p>“Here is the key insight: the same AI tools that build agents also build dashboards. One more prompt to Claude Code, and your terminal agent becomes a web app with charts and filters. We will not do this now — but this is exactly the kind of extension you could build for your capstone prototype.”</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1322,7 +1259,12 @@ category, and a downloadable CSV of the filtered data.</code></pre>
 <p>Homework for Session 5</p>
 </div>
 <ol type="1">
-<li><strong>Produce one complete deliverable</strong> using the XYZ Corp Custom Chatbot — a memo, comparison, or risk assessment. Save or screenshot the output.</li>
+<li><strong>Produce one complete deliverable</strong> using the XYZ Corp Custom Chatbot — pick one:
+<ul>
+<li><strong>Customer Risk Report:</strong> Combine CRM data with support tickets. Which customers are high-revenue AND high-complaint?</li>
+<li><strong>Division P&amp;L Comparison:</strong> Revenue by division from CRMs + headcount from Workday. Revenue per employee.</li>
+<li><strong>Board Memo:</strong> Q3 vs Q4 performance across all divisions. Charts, narrative, risk flags. Iterate until it fits on one page.</li>
+</ul></li>
 <li><strong>Pre-reading (~35 min):</strong>
 <ul>
 <li>Morgan Stanley case study (provided) — a regulated firm’s deployment decision</li>
@@ -1330,14 +1272,14 @@ category, and a downloadable CSV of the filtered data.</code></pre>
 <li>“What Does Your AI Actually See?” (provided) — four data security approaches</li>
 </ul></li>
 <li><strong>Optional reading:</strong> a16z “How 100 Enterprise CIOs Are Building and Buying Gen AI” + DUNNIXER vendor evaluation scorecard</li>
-<li><strong>Optional:</strong> AI+Code Lab Exercises 1–2 + Demos 1–4</li>
+<li><em>Optional:</em> <strong>Extend your agent.</strong> Go back to the AI+Code Lab and improve the data agent you built today. Ideas: add chart generation, add a web interface, connect a second data source. The more you build now, the stronger your capstone prototype will be.</li>
 </ol>
 </div>
 <aside class="notes">
-<p>Say: “Homework. First, produce one complete deliverable using the XYZ Corp Custom Chatbot. Not a single question — a full report. A memo, a comparison, a risk assessment. Whatever interests you. Save or screenshot the output and bring it to Session 5.”</p>
+<p>Say: “Homework. First, produce one complete deliverable using the XYZ Corp Custom Chatbot. I am giving you three options — customer risk report, division P&amp;L comparison, or a full board memo. Pick the one that interests you most and make it great. Use the iteration techniques from Session 2 — do not settle for the first draft.”</p>
 <p>“Second, required pre-reading — about 35 minutes total. Three items: the Morgan Stanley case study, the AIMultiple article on cloud vs.&nbsp;local LLMs, and a short piece on what the AI actually sees when it accesses your data. These prepare you for Session 5, which is entirely about deployment and architecture.”</p>
 <p>“Optional: the a16z enterprise AI survey and the DUNNIXER vendor evaluation scorecard. Keep the DUNNIXER scorecard — you will use it in Session 5.”</p>
-<p>“Also optional: the AI+Code Lab exercises and recorded demos. If you want to build an agent yourself, Exercises 1 and 2 walk you through it with AI assistance.”</p>
+<p>“Also optional but recommended: go back to the AI+Code Lab and extend the data agent you built today. Add chart generation, add a web interface, connect a second data source. The more you build now, the stronger your capstone prototype will be in Session 8. You are building toward something real.”</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1378,26 +1320,509 @@ category, and a downloadable CSV of the filtered data.</code></pre>
           display:block!important;
       }</style></aside>
 </section>
+<section id="deep-dive-inside-an-agent" class="slide level2 section-divider center">
+<h2>Deep Dive: Inside an Agent</h2>
+<aside class="notes">
+<p>This opens the deep-dive segment. Having built a data agent from English and seen the 50-line vs.&nbsp;3,000-line gap, we now look inside a different agent — a portfolio analyst — to see exactly what those 50 lines do. The goal is not to turn students into developers, but to give them enough understanding to evaluate vendors, scope internal builds, and act as informed checkers.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="what-is-an-agent" class="slide level2 center">
+<h2>What Is an Agent?</h2>
+<p>An agent is a program that:</p>
+<ol type="1">
+<li>Maintains a conversation with a user</li>
+<li>Has access to <strong>tools</strong> (functions it can call)</li>
+<li><strong>Decides which tools to use</strong> based on the question</li>
+<li>Chains multiple tool calls before responding</li>
+</ol>
+<div class="explainer">
+<p>This is different from a script that always runs the same steps. The agent <span class="amber">reasons</span> about what information it needs and fetches it on the fly.</p>
+</div>
+<aside class="notes">
+<p>Say: “You just built an agent from English instructions. Now let me show you what is actually inside those 50 lines — using a different example that might hit closer to home.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="why-an-agent-not-a-script" class="slide level2 center">
+<h2>Why an Agent, Not a Script?</h2>
+<div class="two-cards">
+<div class="card card-light">
+<div class="card-title">
+<p>A Script</p>
+</div>
+<ul>
+<li>Fixed sequence of steps</li>
+<li>Same analysis every time</li>
+<li>Can’t handle follow-up questions</li>
+<li>New analysis = new code</li>
+</ul>
+</div>
+<div class="card card-dark">
+<div class="card-title">
+<p>An Agent</p>
+</div>
+<ul>
+<li>Chooses tools based on context</li>
+<li>Different path for each question</li>
+<li>Conversational — remembers context</li>
+<li>New analysis = just ask</li>
+</ul>
+</div>
+</div>
+<div class="explainer">
+<p>You write the tools once; the agent figures out how to combine them.</p>
+</div>
+</section>
+<section id="our-example-portfolio-review-agent" class="slide level2 center">
+<h2>Our Example: Portfolio Review Agent</h2>
+<p>We’ll walk through a <strong>portfolio analyst</strong> that can:</p>
+<ul>
+<li>Look up current holdings and tax lots</li>
+<li>Query a live price database</li>
+<li>Compute returns, correlations, and statistics in Python</li>
+<li>Compare sector weights against targets</li>
+<li>Identify tax-loss harvesting opportunities</li>
+<li>Find the most correlated Strong Buy replacement</li>
+</ul>
+<div class="explainer">
+<p>The agent chooses its own path. Asking “review the portfolio” triggers different tools than “find tax-loss candidates in energy.”</p>
+</div>
+<aside class="notes">
+<p>Say: “This agent manages a stock portfolio. It has five tools — three return portfolio data, one runs SQL against a price database, and one runs Python for analytics. Think about your own portfolio: you might ask about sector allocation one day and tax-loss harvesting the next. The same five tools handle both questions — the agent decides which ones to call.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="architecture" class="slide level2 center">
+<h2>Architecture</h2>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    U[User] &lt;--&gt;|conversation| A[Claude Agent]
+    A --&gt;|get_holdings| M[Portfolio Data]
+    A --&gt;|get_target_allocation| M
+    A --&gt;|get_analyst_recommendations| M
+    A --&gt;|run_sql| DB[(Price Database)]
+    A --&gt;|run_python| P[Python Runtime]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<div class="explainer">
+<p>Five tools. Three return portfolio data. One executes SQL against a live price database. One runs Python for analytics.</p>
+</div>
+</section>
+<section id="tools-are-json-descriptions" class="slide level2 shrink center">
+<h2>Tools Are JSON Descriptions</h2>
+<p>Each tool has a <code>name</code>, <code>description</code>, and <code>input_schema</code>. The description tells the agent <span class="amber">when and why</span> to use it.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>tools <span class="op">=</span> [</span>
+<span id="cb3-2"><a></a>    {</span>
+<span id="cb3-3"><a></a>        <span class="st">"name"</span>: <span class="st">"get_holdings"</span>,</span>
+<span id="cb3-4"><a></a>        <span class="st">"description"</span>: (</span>
+<span id="cb3-5"><a></a>            <span class="st">"Retrieve all portfolio holdings with tax lot detail. "</span></span>
+<span id="cb3-6"><a></a>            <span class="st">"Returns each position's ticker, sector, and individual "</span></span>
+<span id="cb3-7"><a></a>            <span class="st">"lots (date acquired, shares, cost basis per share)."</span></span>
+<span id="cb3-8"><a></a>        ),</span>
+<span id="cb3-9"><a></a>        <span class="st">"input_schema"</span>: {</span>
+<span id="cb3-10"><a></a>            <span class="st">"type"</span>: <span class="st">"object"</span>,</span>
+<span id="cb3-11"><a></a>            <span class="st">"properties"</span>: {},</span>
+<span id="cb3-12"><a></a>            <span class="st">"required"</span>: [],</span>
+<span id="cb3-13"><a></a>        },</span>
+<span id="cb3-14"><a></a>    },</span>
+<span id="cb3-15"><a></a>    <span class="co"># ... more tools</span></span>
+<span id="cb3-16"><a></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="explainer">
+<p>The description is the critical part — it tells the agent when to use this tool. A tool with no inputs (like <code>get_holdings</code>) acts as a simple lookup.</p>
+</div>
+<aside class="notes">
+<p>Say: “Every tool the agent can use is defined by three things: a name, a description, and a schema of what inputs it accepts. The description is the most important part — it is how the agent decides when to call this tool. Think of it as a menu item: the name is the dish, the description is what is in it.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-sql-and-python-tools" class="slide level2 shrink center">
+<h2>The SQL and Python Tools</h2>
+<p>The agent can <span class="amber">write its own queries</span> and <span class="amber">run its own analytics</span>:</p>
+<div class="two-cards">
+<div class="card card-light">
+<div class="card-title">
+<p>run_sql</p>
+</div>
+<pre><code>Execute a SQL query against the
+price database.
+Available tables:
+  - sep: daily stock prices
+  - tickers: stock metadata
+Use closeadj for return calculations.</code></pre>
+<p>Input: a SQL string the agent composes on the fly</p>
+</div>
+<div class="card card-dark">
+<div class="card-title">
+<p>run_python</p>
+</div>
+<pre><code>Execute Python code and return
+printed output.
+pandas, numpy, and json are
+available.
+The namespace persists across calls.</code></pre>
+<p>Input: Python code — the agent decides <span class="amber">what</span> to compute</p>
+</div>
+</div>
+<div class="explainer">
+<p>Multi-tool chains: <code>run_sql</code> fetches prices → <code>run_python</code> computes correlations. The agent decides the sequence.</p>
+</div>
+</section>
+<section id="the-tool-router" class="slide level2 center">
+<h2>The Tool Router</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="kw">def</span> execute_tool(name: <span class="bu">str</span>, inputs: <span class="bu">dict</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb6-2"><a></a>    <span class="co">"""Route a tool call to the appropriate handler."""</span></span>
+<span id="cb6-3"><a></a>    <span class="cf">if</span> name <span class="op">==</span> <span class="st">"get_holdings"</span>:</span>
+<span id="cb6-4"><a></a>        <span class="cf">return</span> json.dumps(HOLDINGS)</span>
+<span id="cb6-5"><a></a>    <span class="cf">elif</span> name <span class="op">==</span> <span class="st">"get_target_allocation"</span>:</span>
+<span id="cb6-6"><a></a>        <span class="cf">return</span> json.dumps(TARGET_ALLOCATION)</span>
+<span id="cb6-7"><a></a>    <span class="cf">elif</span> name <span class="op">==</span> <span class="st">"get_analyst_recommendations"</span>:</span>
+<span id="cb6-8"><a></a>        sector <span class="op">=</span> inputs[<span class="st">"sector"</span>]</span>
+<span id="cb6-9"><a></a>        recs <span class="op">=</span> STRONG_BUY.get(sector, [])</span>
+<span id="cb6-10"><a></a>        <span class="cf">return</span> json.dumps({<span class="st">"sector"</span>: sector, <span class="st">"strong_buy"</span>: recs})</span>
+<span id="cb6-11"><a></a>    <span class="cf">elif</span> name <span class="op">==</span> <span class="st">"run_sql"</span>:</span>
+<span id="cb6-12"><a></a>        <span class="cf">return</span> run_sql_query(inputs[<span class="st">"sql"</span>])</span>
+<span id="cb6-13"><a></a>    <span class="cf">elif</span> name <span class="op">==</span> <span class="st">"run_python"</span>:</span>
+<span id="cb6-14"><a></a>        <span class="cf">return</span> run_python_code(inputs[<span class="st">"code"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="explainer">
+<p>This is your code — you control what each tool does. The agent only sees the tool’s name, description, and the result you return.</p>
+</div>
+<aside class="notes">
+<p>Say: “This is the traffic cop. When the agent says ‘I want to call get_holdings,’ this function catches that request and returns the actual data. When it says ‘run this SQL,’ the function connects to the database and runs it. You wrote the tools — you control what happens.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-core-loop-1" class="slide level2 center">
+<h2>The Core Loop</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="im">import</span> anthropic</span>
+<span id="cb7-2"><a></a></span>
+<span id="cb7-3"><a></a>client <span class="op">=</span> anthropic.Anthropic()</span>
+<span id="cb7-4"><a></a>messages <span class="op">=</span> [{<span class="st">"role"</span>: <span class="st">"user"</span>, <span class="st">"content"</span>: user_input}]</span>
+<span id="cb7-5"><a></a></span>
+<span id="cb7-6"><a></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb7-7"><a></a>    response <span class="op">=</span> client.messages.create(</span>
+<span id="cb7-8"><a></a>        model<span class="op">=</span><span class="st">"claude-sonnet-4-6"</span>,</span>
+<span id="cb7-9"><a></a>        system<span class="op">=</span>SYSTEM_PROMPT,</span>
+<span id="cb7-10"><a></a>        tools<span class="op">=</span>tools,</span>
+<span id="cb7-11"><a></a>        messages<span class="op">=</span>messages,</span>
+<span id="cb7-12"><a></a>        max_tokens<span class="op">=</span><span class="dv">4096</span>,</span>
+<span id="cb7-13"><a></a>    )</span>
+<span id="cb7-14"><a></a></span>
+<span id="cb7-15"><a></a>    <span class="cf">if</span> response.stop_reason <span class="op">==</span> <span class="st">"tool_use"</span>:</span>
+<span id="cb7-16"><a></a>        <span class="co"># Agent wants to call tools — execute and feed results back</span></span>
+<span id="cb7-17"><a></a>        ...</span>
+<span id="cb7-18"><a></a>    <span class="cf">else</span>:</span>
+<span id="cb7-19"><a></a>        <span class="co"># Agent is done — display its response</span></span>
+<span id="cb7-20"><a></a>        <span class="cf">break</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="explainer">
+<p>The loop keeps running until the agent has all the information it needs. It might call one tool or five.</p>
+</div>
+<aside class="notes">
+<p>Say: “Here is the heart of every agent. It is a loop. Send the user’s question to the model. The model either responds with text — meaning it is done — or it requests a tool call. If it requests a tool, you execute it, send the result back, and loop again. That is it. Every agent you have used in this course runs some version of this loop.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="handling-tool-calls" class="slide level2 shrink center">
+<h2>Handling Tool Calls</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="cf">if</span> response.stop_reason <span class="op">==</span> <span class="st">"tool_use"</span>:</span>
+<span id="cb8-2"><a></a>    <span class="co"># Save the assistant's message</span></span>
+<span id="cb8-3"><a></a>    messages.append({<span class="st">"role"</span>: <span class="st">"assistant"</span>, <span class="st">"content"</span>: response.content})</span>
+<span id="cb8-4"><a></a></span>
+<span id="cb8-5"><a></a>    <span class="co"># Execute each tool and collect results</span></span>
+<span id="cb8-6"><a></a>    tool_results <span class="op">=</span> []</span>
+<span id="cb8-7"><a></a>    <span class="cf">for</span> block <span class="kw">in</span> response.content:</span>
+<span id="cb8-8"><a></a>        <span class="cf">if</span> block.<span class="bu">type</span> <span class="op">==</span> <span class="st">"tool_use"</span>:</span>
+<span id="cb8-9"><a></a>            result <span class="op">=</span> execute_tool(block.name, block.<span class="bu">input</span>)</span>
+<span id="cb8-10"><a></a>            tool_results.append({</span>
+<span id="cb8-11"><a></a>                <span class="st">"type"</span>: <span class="st">"tool_result"</span>,</span>
+<span id="cb8-12"><a></a>                <span class="st">"tool_use_id"</span>: block.<span class="bu">id</span>,</span>
+<span id="cb8-13"><a></a>                <span class="st">"content"</span>: result,</span>
+<span id="cb8-14"><a></a>            })</span>
+<span id="cb8-15"><a></a></span>
+<span id="cb8-16"><a></a>    <span class="co"># Send results back to the agent</span></span>
+<span id="cb8-17"><a></a>    messages.append({<span class="st">"role"</span>: <span class="st">"user"</span>, <span class="st">"content"</span>: tool_results})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="explainer">
+<p>The <code>tool_use_id</code> links each result to the corresponding call. The agent can make <span class="amber">multiple tool calls</span> in one turn.</p>
+</div>
+</section>
+<section id="the-system-prompt" class="slide level2 center">
+<h2>The System Prompt</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>SYSTEM_PROMPT <span class="op">=</span> <span class="st">"""</span><span class="ch">\</span></span>
+<span id="cb9-2"><a></a><span class="st">You are a portfolio analyst assistant. You help review a client</span></span>
+<span id="cb9-3"><a></a><span class="st">portfolio, identify tax-loss harvesting opportunities, and</span></span>
+<span id="cb9-4"><a></a><span class="st">recommend replacement securities.</span></span>
+<span id="cb9-5"><a></a></span>
+<span id="cb9-6"><a></a><span class="st">When harvesting losses, sell the lots with the largest unrealized</span></span>
+<span id="cb9-7"><a></a><span class="st">loss first (highest cost basis relative to current price).</span></span>
+<span id="cb9-8"><a></a></span>
+<span id="cb9-9"><a></a><span class="st">When recommending a replacement, compute return correlations</span></span>
+<span id="cb9-10"><a></a><span class="st">between the stock being sold and each Strong Buy candidate,</span></span>
+<span id="cb9-11"><a></a><span class="st">then recommend the most highly correlated candidate.</span></span>
+<span id="cb9-12"><a></a></span>
+<span id="cb9-13"><a></a><span class="st">When writing SQL, use closeadj for return calculations.</span></span>
+<span id="cb9-14"><a></a><span class="st">"""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="explainer">
+<p>The system prompt gives the agent its <span class="amber">strategy</span> — domain expertise that guides tool selection. Compare this to the XYZ Corp system prompt you saw earlier — same pattern, different domain.</p>
+</div>
+</section>
+<section id="example-tax-loss-harvesting" class="slide level2 center">
+<h2>Example: Tax-Loss Harvesting</h2>
+<blockquote>
+<p><strong>You:</strong> Harvest the INTC losses. What should I buy to replace the exposure?</p>
+</blockquote>
+<p>The agent:</p>
+<ol type="1">
+<li>Identifies INTC lots with the largest unrealized losses</li>
+<li>Calculates the realized loss</li>
+<li>Checks if selling moves Technology below target weight</li>
+<li>Calls <code>get_analyst_recommendations("Technology")</code></li>
+<li>Calls <code>run_sql</code> to fetch daily prices for INTC and each candidate</li>
+<li>Calls <code>run_python</code> to compute return correlations</li>
+<li>Recommends the most <span class="amber">highly correlated</span> Strong Buy stock</li>
+</ol>
+<div class="explainer">
+<p>Seven tool calls across three tools, <span class="amber">none predetermined</span>. The path depends on what the human asks and what the data shows.</p>
+</div>
+<aside class="notes">
+<p>Say: “One question. Seven tool calls. Three different tools. And none of that was predetermined — the agent decided the sequence based on the question and what it found along the way. This is the same loop you just saw, running seven times before it had enough information to answer.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-agent-sdk-simplifies-this" class="slide level2 section-divider center">
+<h2>The Agent SDK Simplifies This</h2>
+<aside class="notes">
+<p>Say: “Now — you have seen the raw machinery. In practice, you do not have to write the loop yourself. SDKs handle the plumbing for you.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="before-and-after" class="slide level2 shrink center">
+<h2>Before and After</h2>
+<div class="two-cards">
+<div class="card card-light">
+<div class="card-title">
+<p>Manual Loop (~30 lines of plumbing)</p>
+</div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a>client <span class="op">=</span> anthropic.Anthropic()</span>
+<span id="cb10-2"><a></a>messages <span class="op">=</span> [{<span class="st">"role"</span>: <span class="st">"user"</span>, <span class="st">"content"</span>: prompt}]</span>
+<span id="cb10-3"><a></a></span>
+<span id="cb10-4"><a></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb10-5"><a></a>    response <span class="op">=</span> client.messages.create(</span>
+<span id="cb10-6"><a></a>        model<span class="op">=</span><span class="st">"claude-sonnet-4-6"</span>,</span>
+<span id="cb10-7"><a></a>        system<span class="op">=</span>SYSTEM_PROMPT,</span>
+<span id="cb10-8"><a></a>        tools<span class="op">=</span>tools,</span>
+<span id="cb10-9"><a></a>        messages<span class="op">=</span>messages,</span>
+<span id="cb10-10"><a></a>        max_tokens<span class="op">=</span><span class="dv">4096</span>,</span>
+<span id="cb10-11"><a></a>    )</span>
+<span id="cb10-12"><a></a>    <span class="cf">if</span> response.stop_reason <span class="op">==</span> <span class="st">"tool_use"</span>:</span>
+<span id="cb10-13"><a></a>        messages.append({<span class="st">"role"</span>: <span class="st">"assistant"</span>,</span>
+<span id="cb10-14"><a></a>                         <span class="st">"content"</span>: response.content})</span>
+<span id="cb10-15"><a></a>        tool_results <span class="op">=</span> []</span>
+<span id="cb10-16"><a></a>        <span class="cf">for</span> block <span class="kw">in</span> response.content:</span>
+<span id="cb10-17"><a></a>            <span class="cf">if</span> block.<span class="bu">type</span> <span class="op">==</span> <span class="st">"tool_use"</span>:</span>
+<span id="cb10-18"><a></a>                result <span class="op">=</span> execute_tool(</span>
+<span id="cb10-19"><a></a>                    block.name, block.<span class="bu">input</span></span>
+<span id="cb10-20"><a></a>                )</span>
+<span id="cb10-21"><a></a>                tool_results.append({</span>
+<span id="cb10-22"><a></a>                    <span class="st">"type"</span>: <span class="st">"tool_result"</span>,</span>
+<span id="cb10-23"><a></a>                    <span class="st">"tool_use_id"</span>: block.<span class="bu">id</span>,</span>
+<span id="cb10-24"><a></a>                    <span class="st">"content"</span>: result,</span>
+<span id="cb10-25"><a></a>                })</span>
+<span id="cb10-26"><a></a>        messages.append(</span>
+<span id="cb10-27"><a></a>            {<span class="st">"role"</span>: <span class="st">"user"</span>, <span class="st">"content"</span>: tool_results}</span>
+<span id="cb10-28"><a></a>        )</span>
+<span id="cb10-29"><a></a>    <span class="cf">else</span>:</span>
+<span id="cb10-30"><a></a>        <span class="cf">break</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="card card-dark">
+<div class="card-title">
+<p>Agent SDK (~5 lines)</p>
+</div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="im">from</span> claude_agent_sdk <span class="im">import</span> (</span>
+<span id="cb11-2"><a></a>    query, ClaudeAgentOptions</span>
+<span id="cb11-3"><a></a>)</span>
+<span id="cb11-4"><a></a></span>
+<span id="cb11-5"><a></a><span class="cf">async</span> <span class="cf">for</span> message <span class="kw">in</span> query(</span>
+<span id="cb11-6"><a></a>    prompt<span class="op">=</span><span class="st">"Review the portfolio"</span>,</span>
+<span id="cb11-7"><a></a>    options<span class="op">=</span>ClaudeAgentOptions(</span>
+<span id="cb11-8"><a></a>        allowed_tools<span class="op">=</span>[</span>
+<span id="cb11-9"><a></a>            <span class="st">"Read"</span>, <span class="st">"Edit"</span>, <span class="st">"Bash"</span>,</span>
+<span id="cb11-10"><a></a>        ],</span>
+<span id="cb11-11"><a></a>    ),</span>
+<span id="cb11-12"><a></a>):</span>
+<span id="cb11-13"><a></a>    <span class="bu">print</span>(message.result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><span class="amber">The loop is gone</span> — the SDK handles it</li>
+<li>Tool execution is automatic</li>
+<li>Message tracking is automatic</li>
+<li>You focus on <strong>what</strong> the agent does, not <strong>how</strong> it loops</li>
+</ul>
+</div>
+</div>
+<aside class="notes">
+<p>Say: “On the left, the manual loop you just learned. On the right, the same thing using Anthropic’s Agent SDK. The loop is gone. Tool execution is automatic. You define the tools and the prompt; the SDK handles everything else. This is what production code looks like — you build on the SDK, not on the raw loop.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="why-both-matter" class="slide level2 center">
+<h2>Why Both Matter</h2>
+<div class="three-cards">
+<div class="card card-light">
+<div class="card-title">
+<p>Understanding the Loop</p>
+</div>
+<ul>
+<li>You saw the raw machinery</li>
+<li>You know what happens at each step</li>
+<li>You can evaluate vendors and debug failures</li>
+<li>The <span class="amber">checker</span> needs to understand the system</li>
+</ul>
+</div>
+<div class="card card-light">
+<div class="card-title">
+<p>Using the SDK</p>
+</div>
+<ul>
+<li>Faster to build</li>
+<li>Less code to maintain</li>
+<li>Fewer places for bugs</li>
+<li>Production-ready patterns built in</li>
+</ul>
+</div>
+<div class="card card-dark">
+<div class="card-title">
+<p>The Takeaway</p>
+</div>
+<ul>
+<li>The manual loop teaches you <span class="amber">what agents are</span></li>
+<li>The SDK lets you <span class="amber">build them fast</span></li>
+<li>Both use the same tools, same system prompt, same model</li>
+<li>The difference is plumbing, not capability</li>
+</ul>
+</div>
+</div>
+<aside class="notes">
+<p>Say: “Why did I show you the hard way first? Because the checker needs to understand the system. When a vendor demos an agent and it gets something wrong, you now know where the failure could be — the system prompt, the tool definitions, the tool router, or the model’s reasoning. That knowledge makes you a better buyer, a better scoper, and a better checker. The SDK makes you faster. Understanding the loop makes you smarter.”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="session-4-summary" class="slide level2 centered-statement center">
 <h2>Session 4 Summary</h2>
 </section>
-<section id="from-data-to-deliverable" class="slide level2 center">
-<h2>From Data to Deliverable</h2>
+<section id="from-data-to-deliverable-and-you-built-the-agent" class="slide level2 center">
+<h2>From Data to Deliverable — and You Built the Agent</h2>
 <div class="stat-cards">
-<div class="stat-card">
-<div class="stat-number">
-<p>6</p>
-</div>
-<div class="stat-label">
-<p>systems queried in one prompt</p>
-</div>
-</div>
 <div class="stat-card">
 <div class="stat-number">
 <p>50</p>
 </div>
 <div class="stat-label">
-<p>lines of code in the core agent loop</p>
+<p>lines of code you built from English</p>
+</div>
+</div>
+<div class="stat-card">
+<div class="stat-number">
+<p>3,000</p>
+</div>
+<div class="stat-label">
+<p>lines separate prototype from production</p>
 </div>
 </div>
 <div class="stat-card">
@@ -1410,7 +1835,7 @@ category, and a downloadable CSV of the filtered data.</code></pre>
 </div>
 </div>
 <aside class="notes">
-<p>Recap slide to display as students leave. Key takeaways: the pipeline goes from one prompt to a complete deliverable, the core agent is surprisingly simple (50 lines), and this is already working at scale in companies like HPE.</p>
+<p>Recap slide to display as students leave. Key takeaways: you built the core agent yourself (50 lines from English), the gap between prototype and production is real but understandable (3,000 lines), and this is already working at scale in companies like HPE. The agent you built today is the seed for your capstone prototype.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
